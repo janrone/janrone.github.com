@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Python | Janrone's Blog]]></title>
+  <link href="http://janrone.github.com/blog/categories/python/atom.xml" rel="self"/>
+  <link href="http://janrone.github.com/"/>
+  <updated>2013-05-14T16:59:41+08:00</updated>
+  <id>http://janrone.github.com/</id>
+  <author>
+    <name><![CDATA[Janrone]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Think Python]]></title>
+    <link href="http://janrone.github.com/blog/2013/04/14/think-python/"/>
+    <updated>2013-04-14T20:18:00+08:00</updated>
+    <id>http://janrone.github.com/blog/2013/04/14/think-python</id>
+    <content type="html"><![CDATA[<h2>Chapter 1</h2>
+
+<h2><em>The way of the program</em></h2>
+
+<h3>1.The Python programming language</h3>
+
+<ul>
+<li>Python is an example of a <strong>high-level language</strong> .</li>
+<li>There are also <strong>low-level language</strong>.</li>
+<li>Computers can only run programs writter in low-level-language. So program written in a high-level language have to be processed before the can run .</li>
+<li>Two kinds of programs preocess high-level language into low-level languages:<strong>interpreters</strong> and <strong>compilers</strong>.</li>
+<li>Python is considered an interpreted language because Python programs are executed by an interpreter.</li>
+</ul>
+
+
+<h3>2.What is a program ?</h3>
+
+<ul>
+<li><p>A <strong>program</strong> is a sequence of instrucations that specifies how to preform a computation.</p>
+
+<p>  base instrucations</p>
+
+<pre><code>  input 
+  output
+  math
+  conditionan execution
+  repetition
+</code></pre>
+
+<p>  algorithms.</p>
+
+<p>  <!--more--></p></li>
+</ul>
+
+
+<h3>3.What is debugging ?</h3>
+
+<p>Program errors are called  <strong>bugs</strong> and the process of tracking the down is callede <strong>debugging</strong>.<br/>
+Three kinds of errors can occur in a program:</p>
+
+<ul>
+<li>Syntax errors.</li>
+<li>Runtime errors.</li>
+<li>Semantic errors.</li>
+</ul>
+
+
+<h3>4.Formal and natural languages</h3>
+
+<ul>
+<li>Natural languages are the language people speak.</li>
+<li>Formal languages are language the are designed by people for specific applications.<br/>
+  <strong>Programming languages are formal languages that have been designed to express computations.</strong></li>
+</ul>
+
+
+<h3>5.The first program</h3>
+
+<p>In Python 3 , display the words "Hello World !"</p>
+
+<pre><code>&gt;&gt;&gt; print('Hello World!')
+Hello world
+&gt;&gt;&gt; 
+</code></pre>
+
+<h2>Chapter 2</h2>
+
+<h2><em>Variables, expressions and statements</em></h2>
+
+<h3>1.Valuse and types</h3>
+
+<p>if you are not sure what type a values has,  the interpreter can tell you.</p>
+
+<pre><code>&gt;&gt;&gt; type('Hello Hoo')
+&lt;type 'str'&gt;
+&gt;&gt;&gt; type('2')
+&lt;type 'str'&gt;
+&gt;&gt;&gt; type(2)
+&lt;type 'int'&gt;
+&gt;&gt;&gt; type(2.222)
+&lt;type 'float'&gt;
+&gt;&gt;&gt; mile = 30   
+&gt;&gt;&gt; type(mile)
+&lt;type 'int'&gt;
+&gt;&gt;&gt; 
+</code></pre>
+
+<h5>types: int, str, float .</h5>
+
+<h3>2.Variables</h3>
+
+<p>An assignment statement creates new variables and gives the values:</p>
+
+<pre><code>&gt;&gt;&gt; name = "hoo"
+&gt;&gt;&gt; name = 'hoo'
+&gt;&gt;&gt; i = 15
+&gt;&gt;&gt; j = 13.11
+&gt;&gt;&gt; 
+</code></pre>
+
+<h3>3.Variable names and keywords</h3>
+
+<ul>
+<li>Variable names can be arbitrarily long.</li>
+<li>They can contain both letters and numbers,but they have to begin with a letter.</li>
+<li>It is a good idea to begin variable names with a lowercse letter than uppercase letter.</li>
+<li>The underscore character,_,can appear in a name often used in namse with multiple words, such  as my_name or type_of_value.</li>
+<li>Keywords cannot be used variable names.</li>
+</ul>
+
+
+<p>if you giva a variable an illegal name, you get a sytax error.</p>
+
+<p>Python 2 has 31 keywords:</p>
+
+<table>
+<thead>
+<tr>
+<th> and  </th>
+<th>  del </th>
+<th> from  </th>
+<th> not  </th>
+<th> while</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> as   </td>
+<td> elif </td>
+<td> global</td>
+<td> or   </td>
+<td> with</td>
+</tr>
+<tr>
+<td>assert</td>
+<td>esle  </td>
+<td>   if  </td>
+<td> pass </td>
+<td> yield</td>
+</tr>
+<tr>
+<td>break </td>
+<td>except</td>
+<td>import </td>
+<td> print</td>
+<td> class</td>
+</tr>
+<tr>
+<td>exec  </td>
+<td> in   </td>
+<td> raise </td>
+<td> continue</td>
+<td>finally</td>
+</tr>
+<tr>
+<td>is  </td>
+<td> return </td>
+<td> def </td>
+<td> for </td>
+<td> lambda </td>
+</tr>
+<tr>
+<td> try</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+
+<p>In Python 3, <strong>exec</strong> is no longer a keyword, but  <strong>nonlocal</strong>  is.</p>
+
+<h3>4.Operators and operands</h3>
+
+<p>The operators +, _, *, /, and ** peform addition, subtraction, multiplication, division and exponentiation .</p>
+
+<p>eg:  <em>20+31,   4-1, 5*2, 6/2, 5**2</em></p>
+
+<pre><code>&gt;&gt;&gt; 5*2
+10
+&gt;&gt;&gt; 5**2
+25
+</code></pre>
+
+<p>In Python 2</p>
+
+<pre><code>&gt;&gt;&gt; 59/60
+0
+&gt;&gt;&gt; 
+</code></pre>
+
+<h6>The reason for the discrepancy is that Python is performing floor division.</h6>
+
+<p>In Pytion 3</p>
+
+<pre><code>&gt;&gt;&gt; 59/60
+0.98333333333333328
+&gt;&gt;&gt; 
+</code></pre>
+
+<h6>and the new operator <strong>//</strong> performs floor division.</h6>
+
+<p>If either of the operands is a floating-point number, Python preforms floating-point divition, and the result is a float :</p>
+
+<pre><code>&gt;&gt;&gt; 59/60
+0.98333333333333328
+&gt;&gt;&gt; 
+</code></pre>
+
+<h3>5.Expressions and statements</h3>
+
+<ul>
+<li>An expression is a combination of values, variables, and operators. eg: x + 17</li>
+<li>A statement is a unit of code that the Python interpreter can execute.</li>
+</ul>
+
+
+<h3>6.Interactive mode and script mode</h3>
+
+<ul>
+<li>the scripte mode should use 'print' to display the value.</li>
+</ul>
+
+
+<h3>7.String operations</h3>
+
+<p> The + operator wokrs wiht strings, it performs concatenation, which means joining the strings by linking the end-to-end.</p>
+
+<pre><code>&gt;&gt;&gt; first = 'bed'
+&gt;&gt;&gt; second ='room'
+&gt;&gt;&gt; first + second
+'bedroom'
+&gt;&gt;&gt; 
+</code></pre>
+
+<p>The * operator also wokrs on stirngs; it performs repetition .</p>
+
+<pre><code>&gt;&gt;&gt; sound = 'da'
+&gt;&gt;&gt; sound * 4
+'dadadada'
+&gt;&gt;&gt; 
+</code></pre>
+
+<h3>8.Comments</h3>
+
+<p>The notes added to your programs called comments, and they start with hte # symobol. These to explain in natural language what the program is doing.</p>
+
+<h2>Chapter 3</h2>
+
+<h2><em>Functions</em></h2>
+
+<h3>1.Function calls</h3>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[在android上搭建python环境]]></title>
+    <link href="http://janrone.github.com/blog/2013/04/09/zai-androidshang-da-jian-pythonhuan-jing/"/>
+    <updated>2013-04-09T14:00:00+08:00</updated>
+    <id>http://janrone.github.com/blog/2013/04/09/zai-androidshang-da-jian-pythonhuan-jing</id>
+    <content type="html"><![CDATA[<h3>1.下载和安装 Scripting Layer for Android (SL4A)</h3>
+
+<p>Scripting Layer for Android (SL4A) 是一个开源项目，目标是为android系统提供脚本语言的支持，使用户可以直接在android平台上进行脚本语言的编辑、解释和执行。这些脚本语言已 经可是使用很多封装好的android API来开发功能丰富的android应用程序，并且使开发变得更加的简单和高效!
+这个平台支持多种脚本语言，比如 Python, Perl, JRuby, Lua, BeanShell, JavaScript, Tcl, shell 等，你可以选择你熟悉的语言进行开发，本系列教程使用Python为编程脚本语言
+SL4A项目的地址: <a href="http://code.google.com/p/android-scripting/">http://code.google.com/p/android-scripting/</a></p>
+
+<h3>2.下载和安装 Python for android</h3>
+
+<p>在项目主页面的右上方，有该应用支持的所有脚本语言的下载列表，如下图所示;</p>
+
+<p> <img src="/images/post/2013-04-09-01.png" alt="" /></p>
+
+<p> <!--more--></p>
+
+<p>选择你使用的语言，打开相应的语言环境的下载页面，与下载SL4A的方式类似，将该语言包应用下载并安装到你的手机上。</p>
+
+<p>或者直接去Python for android项目地址 <a href="https://code.google.com/p/python-for-android/">https://code.google.com/p/python-for-android/</a> 下载</p>
+
+<p>程序安装完成后，打开Python for Android应用，在应用的最上方会有一个Install的按钮，点击该按钮，就会自动下载Python相关的文件并解压和安装，这个过程结束后，你的android手机上的Python开发环境就配置好了！</p>
+
+<p>多两个应用 ，如图</p>
+
+<p> <img src="/images/post/20130409115645.png" alt="" /></p>
+
+<h3>3.脚本模式 第一个HelloWorld程序</h3>
+
+<p>打开SL4A应用，会进入Python示例代码列表，基本上是对主要API的演示，部分示例可能由于偏老，运行时会提示方法过期或者运行异常的问题，这个至少修改少许代码即可，有机会的话，我会在后续课程中介绍这是示例以及修正的方法。
+点Menu键，然后点击Add，选择Python2.6.2，就会新建一个Python脚本文件，将文件的名字命名为：HelloPythonInAndroid.py
+点击屏幕进入脚本编辑区，开始输入如下内容：</p>
+
+<p>import android
+droid = android.Android()
+droid.makeToast(‘Hello, Python in Android’）</p>
+
+<p>输入完成后，如下图所示:</p>
+
+<p>点击Menu，选择Save&amp;Run，恭喜你，你已经用Python完成了第一个Android应用：HelloPythonInAndroid!</p>
+
+<h3>4.交互模式 Python命令行，第一个HelloWorld程序</h3>
+
+<p>1.打开SL4A，点击menu按钮，点击view 选择interpreters,如图</p>
+
+<p> <img src="/images/post/20130409121629.png" alt="" /></p>
+
+<p> <img src="/images/post/20130409120507.jpg" alt="" /></p>
+
+<p>2.点击interpreters按钮，选择Pythonx.x.x 即可进入python命令行,如图</p>
+
+<p>  <img src="/images/post/20130409120537.png" alt="" /></p>
+
+<p>3.在命令行里运行所要编写的代码，这里我们以hello，python world为例！如图</p>
+
+<p> <img src="/images/post/20130409120724.png" alt="" /></p>
+
+<h2>完</h2>
+]]></content>
+  </entry>
+  
+</feed>

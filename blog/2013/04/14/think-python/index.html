@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Janrone's Blog</title>
+  <title>Think Python - Janrone's Blog</title>
   <meta name="author" content="Janrone">
 
   
@@ -19,7 +19,7 @@ There are also low-level language &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://janrone.github.com/">
+  <link rel="canonical" href="http://janrone.github.com/blog/2013/04/14/think-python/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -64,15 +64,12 @@ There are also low-level language &hellip;">
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/04/14/think-python/">Think Python</a></h1>
+      <h1 class="entry-title">Think Python</h1>
     
     
       <p class="meta">
@@ -95,7 +92,7 @@ There are also low-level language &hellip;">
   </header>
 
 
-  <div class="entry-content"><h2>Chapter 1</h2>
+<div class="entry-content"><h2>Chapter 1</h2>
 
 <h2><em>The way of the program</em></h2>
 
@@ -126,78 +123,240 @@ There are also low-level language &hellip;">
 
 <p>  algorithms.</p>
 
-<p>  </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/04/14/think-python/">Read on &rarr;</a>
-    </footer>
-  
+<p>  <!--more--></p></li>
+</ul>
 
 
-    </article>
-  
-  
-    <article>
+<h3>3.What is debugging ?</h3>
+
+<p>Program errors are called  <strong>bugs</strong> and the process of tracking the down is callede <strong>debugging</strong>.<br/>
+Three kinds of errors can occur in a program:</p>
+
+<ul>
+<li>Syntax errors.</li>
+<li>Runtime errors.</li>
+<li>Semantic errors.</li>
+</ul>
+
+
+<h3>4.Formal and natural languages</h3>
+
+<ul>
+<li>Natural languages are the language people speak.</li>
+<li>Formal languages are language the are designed by people for specific applications.<br/>
+  <strong>Programming languages are formal languages that have been designed to express computations.</strong></li>
+</ul>
+
+
+<h3>5.The first program</h3>
+
+<p>In Python 3 , display the words &#8220;Hello World !&#8221;</p>
+
+<pre><code>&gt;&gt;&gt; print('Hello World!')
+Hello world
+&gt;&gt;&gt; 
+</code></pre>
+
+<h2>Chapter 2</h2>
+
+<h2><em>Variables, expressions and statements</em></h2>
+
+<h3>1.Valuse and types</h3>
+
+<p>if you are not sure what type a values has,  the interpreter can tell you.</p>
+
+<pre><code>&gt;&gt;&gt; type('Hello Hoo')
+&lt;type 'str'&gt;
+&gt;&gt;&gt; type('2')
+&lt;type 'str'&gt;
+&gt;&gt;&gt; type(2)
+&lt;type 'int'&gt;
+&gt;&gt;&gt; type(2.222)
+&lt;type 'float'&gt;
+&gt;&gt;&gt; mile = 30   
+&gt;&gt;&gt; type(mile)
+&lt;type 'int'&gt;
+&gt;&gt;&gt; 
+</code></pre>
+
+<h5>types: int, str, float .</h5>
+
+<h3>2.Variables</h3>
+
+<p>An assignment statement creates new variables and gives the values:</p>
+
+<pre><code>&gt;&gt;&gt; name = "hoo"
+&gt;&gt;&gt; name = 'hoo'
+&gt;&gt;&gt; i = 15
+&gt;&gt;&gt; j = 13.11
+&gt;&gt;&gt; 
+</code></pre>
+
+<h3>3.Variable names and keywords</h3>
+
+<ul>
+<li>Variable names can be arbitrarily long.</li>
+<li>They can contain both letters and numbers,but they have to begin with a letter.</li>
+<li>It is a good idea to begin variable names with a lowercse letter than uppercase letter.</li>
+<li>The underscore character,_,can appear in a name often used in namse with multiple words, such  as my_name or type_of_value.</li>
+<li>Keywords cannot be used variable names.</li>
+</ul>
+
+
+<p>if you giva a variable an illegal name, you get a sytax error.</p>
+
+<p>Python 2 has 31 keywords:</p>
+
+<table>
+<thead>
+<tr>
+<th> and  </th>
+<th>  del </th>
+<th> from  </th>
+<th> not  </th>
+<th> while</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> as   </td>
+<td> elif </td>
+<td> global</td>
+<td> or   </td>
+<td> with</td>
+</tr>
+<tr>
+<td>assert</td>
+<td>esle  </td>
+<td>   if  </td>
+<td> pass </td>
+<td> yield</td>
+</tr>
+<tr>
+<td>break </td>
+<td>except</td>
+<td>import </td>
+<td> print</td>
+<td> class</td>
+</tr>
+<tr>
+<td>exec  </td>
+<td> in   </td>
+<td> raise </td>
+<td> continue</td>
+<td>finally</td>
+</tr>
+<tr>
+<td>is  </td>
+<td> return </td>
+<td> def </td>
+<td> for </td>
+<td> lambda </td>
+</tr>
+<tr>
+<td> try</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+
+<p>In Python 3, <strong>exec</strong> is no longer a keyword, but  <strong>nonlocal</strong>  is.</p>
+
+<h3>4.Operators and operands</h3>
+
+<p>The operators +, _, *, /, and ** peform addition, subtraction, multiplication, division and exponentiation .</p>
+
+<p>eg:  <em>20+31,   4-1, 5*2, 6/2, 5**2</em></p>
+
+<pre><code>&gt;&gt;&gt; 5*2
+10
+&gt;&gt;&gt; 5**2
+25
+</code></pre>
+
+<p>In Python 2</p>
+
+<pre><code>&gt;&gt;&gt; 59/60
+0
+&gt;&gt;&gt; 
+</code></pre>
+
+<h6>The reason for the discrepancy is that Python is performing floor division.</h6>
+
+<p>In Pytion 3</p>
+
+<pre><code>&gt;&gt;&gt; 59/60
+0.98333333333333328
+&gt;&gt;&gt; 
+</code></pre>
+
+<h6>and the new operator <strong>//</strong> performs floor division.</h6>
+
+<p>If either of the operands is a floating-point number, Python preforms floating-point divition, and the result is a float :</p>
+
+<pre><code>&gt;&gt;&gt; 59/60
+0.98333333333333328
+&gt;&gt;&gt; 
+</code></pre>
+
+<h3>5.Expressions and statements</h3>
+
+<ul>
+<li>An expression is a combination of values, variables, and operators. eg: x + 17</li>
+<li>A statement is a unit of code that the Python interpreter can execute.</li>
+</ul>
+
+
+<h3>6.Interactive mode and script mode</h3>
+
+<ul>
+<li>the scripte mode should use &#8216;print&#8217; to display the value.</li>
+</ul>
+
+
+<h3>7.String operations</h3>
+
+<p> The + operator wokrs wiht strings, it performs concatenation, which means joining the strings by linking the end-to-end.</p>
+
+<pre><code>&gt;&gt;&gt; first = 'bed'
+&gt;&gt;&gt; second ='room'
+&gt;&gt;&gt; first + second
+'bedroom'
+&gt;&gt;&gt; 
+</code></pre>
+
+<p>The * operator also wokrs on stirngs; it performs repetition .</p>
+
+<pre><code>&gt;&gt;&gt; sound = 'da'
+&gt;&gt;&gt; sound * 4
+'dadadada'
+&gt;&gt;&gt; 
+</code></pre>
+
+<h3>8.Comments</h3>
+
+<p>The notes added to your programs called comments, and they start with hte # symobol. These to explain in natural language what the program is doing.</p>
+
+<h2>Chapter 3</h2>
+
+<h2><em>Functions</em></h2>
+
+<h3>1.Function calls</h3>
+</div>
+
+
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/04/09/zai-androidshang-da-jian-pythonhuan-jing/">在android上搭建python环境</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">Janrone</span></span>
 
-<time datetime="2013-04-09T14:00:00+08:00" pubdate data-updated="true">Apr 9<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>1.下载和安装 Scripting Layer for Android (SL4A)</h3>
-
-<p>Scripting Layer for Android (SL4A) 是一个开源项目，目标是为android系统提供脚本语言的支持，使用户可以直接在android平台上进行脚本语言的编辑、解释和执行。这些脚本语言已 经可是使用很多封装好的android API来开发功能丰富的android应用程序，并且使开发变得更加的简单和高效!
-这个平台支持多种脚本语言，比如 Python, Perl, JRuby, Lua, BeanShell, JavaScript, Tcl, shell 等，你可以选择你熟悉的语言进行开发，本系列教程使用Python为编程脚本语言
-SL4A项目的地址: <a href="http://code.google.com/p/android-scripting/">http://code.google.com/p/android-scripting/</a></p>
-
-<h3>2.下载和安装 Python for android</h3>
-
-<p>在项目主页面的右上方，有该应用支持的所有脚本语言的下载列表，如下图所示;</p>
-
-<p> <img src="/images/post/2013-04-09-01.png" alt="" /></p>
-
-<p> </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/04/09/zai-androidshang-da-jian-pythonhuan-jing/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/04/08/mac-os-xxia-zai-he-bian-yi-android-4-dot-2-2-yuan-ma/">Mac Os X下载和编译android 4.2.2 源码</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -209,107 +368,44 @@ SL4A项目的地址: <a href="http://code.google.com/p/android-scripting/">http:
   
 
 
-<time datetime="2013-04-08T15:56:00+08:00" pubdate data-updated="true">Apr 8<span>th</span>, 2013</time>
-        
-      </p>
+<time datetime="2013-04-14T20:18:00+08:00" pubdate data-updated="true">Apr 14<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/python/'>Python</a>, <a class='category' href='/blog/categories/read/'>Read</a>
+  
+</span>
+
+
+    </p>
     
-  </header>
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://janrone.github.com/blog/2013/04/14/think-python/" data-via="" data-counturl="http://janrone.github.com/blog/2013/04/14/think-python/" >Tweet</a>
+  
+  
+  
+</div>
 
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/04/09/zai-androidshang-da-jian-pythonhuan-jing/" title="Previous Post: 在android上搭建python环境">&laquo; 在android上搭建python环境</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
-  <div class="entry-content"><h3>创建一个映像用来下载android源码</h3>
-
-<p>1, $ hdiutil create -type SPARSE -fs &#8216;Case-sensitive Journaled HFS+&#8217; -size 40g ~/android.sparseimage</p>
-
-<p>2, $ hdiutil attach ~/android.sparseimage -mountpoint /Volumes/android</p>
-
-<p>3,  $ mkdir ~/bin</p>
-
-<p>4,  $ PATH=~/bin:$PATH</p>
-
-<p>5,  $ curl https://dl-ssl.google.com/dl/googlesource/git-repo/repo > ~/bin/repo</p>
-
-<p>6,  $ chmod a+x ~/bin/repo</p>
-
-<p>7,  $ cd /Volumes/android/</p>
-
-<p>8,  $ mkdir WORKING_DIRECTORY</p>
-
-<p>9,  $ CD WORKING_DIRECTORY/</p>
-
-<p>10, $ repo init -u https://android.googlesource.com/platform/manifest -b android-4.2.2_r1</p>
-
-<p>11, $repo sync</p>
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/04/08/mac-os-xxia-zai-he-bian-yi-android-4-dot-2-2-yuan-ma/">Read on &rarr;</a>
-    </footer>
-  
 
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/01/12/zen-yao-da-jian-octopress-zai-github/">怎么搭建 Octopress 在 Github !</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-12T20:34:00+08:00" pubdate data-updated="true">Jan 12<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>git 和 github 配置</h3>
-
-<h6>1.先注册一个github账号， 创建github pages 。</h6>
-
-<p>创建一个新的Repository。这里须要重视的是，若是想要博客的首页是http://yourname.github.com，则Repository的project name就必须是yourname.github.com。</p>
-
-<p>安装Git并进行设置，mac下git默认已经装好 。</p>
-
-<h6>2.接下来设置 SH Keys  .</h6>
-
-<p>履行ssh-keygen -t rsa -C &#8220;your_email＠youremail.com&#8221;，回车。</p>
-
-<p>然后输入两遍暗码。</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/01/12/zen-yao-da-jian-octopress-zai-github/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
 <aside class="sidebar">
   
     <section>
@@ -360,7 +456,7 @@ SL4A项目的地址: <a href="http://code.google.com/p/android-scripting/">http:
 <section id="blogroll">
 <h1>Blogroll</h1>
 <ul  style="padding-left:0">
-	<li><a target="_blank" href="http://caok.github.com/">Caok&#8217;s Blog</a></li>
+	<li><a target="_blank" href="http://caok.github.com/">Caok's Blog</a></li>
 	<li><a target="_blank" href="http://www.udpwork.com/">IT牛人博客聚合</a></li>
 	<li><a target="_blank" href="http://yanping.me/cn/">雁起平沙</a></li>
 	<li><a target="_blank" href="http://loyhome.com">丽云</a></li>
@@ -378,6 +474,7 @@ SL4A项目的地址: <a href="http://code.google.com/p/android-scripting/">http:
   
 </aside>
 
+
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -392,7 +489,10 @@ SL4A项目的地址: <a href="http://code.google.com/p/android-scripting/">http:
       var disqus_shortname = 'janronesblog';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://janrone.github.com/blog/2013/04/14/think-python/';
+        var disqus_url = 'http://janrone.github.com/blog/2013/04/14/think-python/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

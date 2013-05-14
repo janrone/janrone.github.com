@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Read | Janrone's Blog]]></title>
+  <link href="http://janrone.github.com/blog/categories/read/atom.xml" rel="self"/>
+  <link href="http://janrone.github.com/"/>
+  <updated>2013-05-14T16:59:41+08:00</updated>
+  <id>http://janrone.github.com/</id>
+  <author>
+    <name><![CDATA[Janrone]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Think Python]]></title>
+    <link href="http://janrone.github.com/blog/2013/04/14/think-python/"/>
+    <updated>2013-04-14T20:18:00+08:00</updated>
+    <id>http://janrone.github.com/blog/2013/04/14/think-python</id>
+    <content type="html"><![CDATA[<h2>Chapter 1</h2>
+
+<h2><em>The way of the program</em></h2>
+
+<h3>1.The Python programming language</h3>
+
+<ul>
+<li>Python is an example of a <strong>high-level language</strong> .</li>
+<li>There are also <strong>low-level language</strong>.</li>
+<li>Computers can only run programs writter in low-level-language. So program written in a high-level language have to be processed before the can run .</li>
+<li>Two kinds of programs preocess high-level language into low-level languages:<strong>interpreters</strong> and <strong>compilers</strong>.</li>
+<li>Python is considered an interpreted language because Python programs are executed by an interpreter.</li>
+</ul>
+
+
+<h3>2.What is a program ?</h3>
+
+<ul>
+<li><p>A <strong>program</strong> is a sequence of instrucations that specifies how to preform a computation.</p>
+
+<p>  base instrucations</p>
+
+<pre><code>  input 
+  output
+  math
+  conditionan execution
+  repetition
+</code></pre>
+
+<p>  algorithms.</p>
+
+<p>  <!--more--></p></li>
+</ul>
+
+
+<h3>3.What is debugging ?</h3>
+
+<p>Program errors are called  <strong>bugs</strong> and the process of tracking the down is callede <strong>debugging</strong>.<br/>
+Three kinds of errors can occur in a program:</p>
+
+<ul>
+<li>Syntax errors.</li>
+<li>Runtime errors.</li>
+<li>Semantic errors.</li>
+</ul>
+
+
+<h3>4.Formal and natural languages</h3>
+
+<ul>
+<li>Natural languages are the language people speak.</li>
+<li>Formal languages are language the are designed by people for specific applications.<br/>
+  <strong>Programming languages are formal languages that have been designed to express computations.</strong></li>
+</ul>
+
+
+<h3>5.The first program</h3>
+
+<p>In Python 3 , display the words "Hello World !"</p>
+
+<pre><code>&gt;&gt;&gt; print('Hello World!')
+Hello world
+&gt;&gt;&gt; 
+</code></pre>
+
+<h2>Chapter 2</h2>
+
+<h2><em>Variables, expressions and statements</em></h2>
+
+<h3>1.Valuse and types</h3>
+
+<p>if you are not sure what type a values has,  the interpreter can tell you.</p>
+
+<pre><code>&gt;&gt;&gt; type('Hello Hoo')
+&lt;type 'str'&gt;
+&gt;&gt;&gt; type('2')
+&lt;type 'str'&gt;
+&gt;&gt;&gt; type(2)
+&lt;type 'int'&gt;
+&gt;&gt;&gt; type(2.222)
+&lt;type 'float'&gt;
+&gt;&gt;&gt; mile = 30   
+&gt;&gt;&gt; type(mile)
+&lt;type 'int'&gt;
+&gt;&gt;&gt; 
+</code></pre>
+
+<h5>types: int, str, float .</h5>
+
+<h3>2.Variables</h3>
+
+<p>An assignment statement creates new variables and gives the values:</p>
+
+<pre><code>&gt;&gt;&gt; name = "hoo"
+&gt;&gt;&gt; name = 'hoo'
+&gt;&gt;&gt; i = 15
+&gt;&gt;&gt; j = 13.11
+&gt;&gt;&gt; 
+</code></pre>
+
+<h3>3.Variable names and keywords</h3>
+
+<ul>
+<li>Variable names can be arbitrarily long.</li>
+<li>They can contain both letters and numbers,but they have to begin with a letter.</li>
+<li>It is a good idea to begin variable names with a lowercse letter than uppercase letter.</li>
+<li>The underscore character,_,can appear in a name often used in namse with multiple words, such  as my_name or type_of_value.</li>
+<li>Keywords cannot be used variable names.</li>
+</ul>
+
+
+<p>if you giva a variable an illegal name, you get a sytax error.</p>
+
+<p>Python 2 has 31 keywords:</p>
+
+<table>
+<thead>
+<tr>
+<th> and  </th>
+<th>  del </th>
+<th> from  </th>
+<th> not  </th>
+<th> while</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> as   </td>
+<td> elif </td>
+<td> global</td>
+<td> or   </td>
+<td> with</td>
+</tr>
+<tr>
+<td>assert</td>
+<td>esle  </td>
+<td>   if  </td>
+<td> pass </td>
+<td> yield</td>
+</tr>
+<tr>
+<td>break </td>
+<td>except</td>
+<td>import </td>
+<td> print</td>
+<td> class</td>
+</tr>
+<tr>
+<td>exec  </td>
+<td> in   </td>
+<td> raise </td>
+<td> continue</td>
+<td>finally</td>
+</tr>
+<tr>
+<td>is  </td>
+<td> return </td>
+<td> def </td>
+<td> for </td>
+<td> lambda </td>
+</tr>
+<tr>
+<td> try</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+
+<p>In Python 3, <strong>exec</strong> is no longer a keyword, but  <strong>nonlocal</strong>  is.</p>
+
+<h3>4.Operators and operands</h3>
+
+<p>The operators +, _, *, /, and ** peform addition, subtraction, multiplication, division and exponentiation .</p>
+
+<p>eg:  <em>20+31,   4-1, 5*2, 6/2, 5**2</em></p>
+
+<pre><code>&gt;&gt;&gt; 5*2
+10
+&gt;&gt;&gt; 5**2
+25
+</code></pre>
+
+<p>In Python 2</p>
+
+<pre><code>&gt;&gt;&gt; 59/60
+0
+&gt;&gt;&gt; 
+</code></pre>
+
+<h6>The reason for the discrepancy is that Python is performing floor division.</h6>
+
+<p>In Pytion 3</p>
+
+<pre><code>&gt;&gt;&gt; 59/60
+0.98333333333333328
+&gt;&gt;&gt; 
+</code></pre>
+
+<h6>and the new operator <strong>//</strong> performs floor division.</h6>
+
+<p>If either of the operands is a floating-point number, Python preforms floating-point divition, and the result is a float :</p>
+
+<pre><code>&gt;&gt;&gt; 59/60
+0.98333333333333328
+&gt;&gt;&gt; 
+</code></pre>
+
+<h3>5.Expressions and statements</h3>
+
+<ul>
+<li>An expression is a combination of values, variables, and operators. eg: x + 17</li>
+<li>A statement is a unit of code that the Python interpreter can execute.</li>
+</ul>
+
+
+<h3>6.Interactive mode and script mode</h3>
+
+<ul>
+<li>the scripte mode should use 'print' to display the value.</li>
+</ul>
+
+
+<h3>7.String operations</h3>
+
+<p> The + operator wokrs wiht strings, it performs concatenation, which means joining the strings by linking the end-to-end.</p>
+
+<pre><code>&gt;&gt;&gt; first = 'bed'
+&gt;&gt;&gt; second ='room'
+&gt;&gt;&gt; first + second
+'bedroom'
+&gt;&gt;&gt; 
+</code></pre>
+
+<p>The * operator also wokrs on stirngs; it performs repetition .</p>
+
+<pre><code>&gt;&gt;&gt; sound = 'da'
+&gt;&gt;&gt; sound * 4
+'dadadada'
+&gt;&gt;&gt; 
+</code></pre>
+
+<h3>8.Comments</h3>
+
+<p>The notes added to your programs called comments, and they start with hte # symobol. These to explain in natural language what the program is doing.</p>
+
+<h2>Chapter 3</h2>
+
+<h2><em>Functions</em></h2>
+
+<h3>1.Function calls</h3>
+]]></content>
+  </entry>
+  
+</feed>

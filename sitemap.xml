@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+    <url>
+        <loc>http://janrone.github.com/blog/2013/01/12/zen-yao-da-jian-octopress-zai-github/</loc>
+        <lastmod>2013-05-14T16:58:47+08:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://janrone.github.com/blog/2013/04/08/mac-os-xxia-zai-he-bian-yi-android-4-dot-2-2-yuan-ma/
+        </loc>
+        <lastmod>2013-04-08T18:21:36+08:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://janrone.github.com/blog/2013/04/09/zai-androidshang-da-jian-pythonhuan-jing/
+        </loc>
+        <lastmod>2013-04-10T23:54:17+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://janrone.github.com/blog/2013/04/14/think-python/</loc>
+        <lastmod>2013-04-22T09:08:18+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://janrone.github.com/blog/archives/</loc>
+        <lastmod>2013-05-14T16:58:47+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://janrone.github.com/</loc>
+        <lastmod>2013-05-14T16:58:47+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://janrone.github.com/robots.txt</loc>
+        <lastmod>2013-04-07T00:49:42+08:00</lastmod>
+    </url>
+</urlset>
