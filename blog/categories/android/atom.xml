@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Android | Janrone's Blog]]></title>
   <link href="http://janrone.github.com/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://janrone.github.com/"/>
-  <updated>2013-05-14T16:59:41+08:00</updated>
+  <updated>2013-05-23T20:39:28+08:00</updated>
   <id>http://janrone.github.com/</id>
   <author>
     <name><![CDATA[Janrone]]></name>
@@ -12,6 +12,333 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Anroid应用自动打包]]></title>
+    <link href="http://janrone.github.com/blog/2013/05/23/anroidying-yong-zi-dong-da-bao/"/>
+    <updated>2013-05-23T20:37:00+08:00</updated>
+    <id>http://janrone.github.com/blog/2013/05/23/anroidying-yong-zi-dong-da-bao</id>
+    <content type="html"><![CDATA[<h3>1.创建一个Android项</h3>
+
+<pre><code>android create project -k com.android.hello -a hello -t 1 -p ~/Download/Hello 
+
+结果：
+Created project directory: /Users/povol/Download/Hello
+Created directory /Users/povol/Download/Hello/src/com/android/hello
+Added file /Users/povol/Download/Hello/src/com/android/hello/hello.java
+Created directory /Users/povol/Download/Hello/res
+Created directory /Users/povol/Download/Hello/bin
+Created directory /Users/povol/Download/Hello/libs
+Created directory /Users/povol/Download/Hello/res/values
+Added file /Users/povol/Download/Hello/res/values/strings.xml
+Created directory /Users/povol/Download/Hello/res/layout
+Added file /Users/povol/Download/Hello/res/layout/main.xml
+Added file /Users/povol/Download/Hello/AndroidManifest.xml
+Added file /Users/povol/Download/Hello/build.xml
+Added file /Users/povol/Download/Hello/proguard-project.txt
+</code></pre>
+
+<p>参数说明：-k /--package 为命名空间（包名）-a /--name 工程名  -t 为目标平台的版本编号 -p /--path 项目路径</p>
+
+<p>列出 -t：target id，可以如命令：android list targets , Hello项目使用得id 1。</p>
+
+<pre><code>    Available Android targets:
+----------
+id: 1 or "android-8"
+     Name: Android 2.2
+    Type: Platform
+    API level: 8
+    Revision: 3
+    Skins: HVGA, QVGA, WQVGA400, WQVGA432, WVGA800 (default), WVGA854
+    ABIs : armeabi
+----------
+id: 2 or "Google Inc.:Google APIs:8"
+    Name: Google APIs
+    Type: Add-On
+    Vendor: Google Inc.
+    Revision: 2
+    Description: Android + Google APIs
+    Based on Android 2.2 (API level 8)
+    Libraries:
+    * com.google.android.maps (maps.jar)
+        API for Google Maps
+    Skins: WVGA854, WQVGA400, HVGA, WQVGA432, WVGA800 (default), QVGA
+    ABIs : armeabi
+----------
+</code></pre>
+
+<h3>2.已有项目更新</h3>
+
+<p>对已经存在的Android工程,可以update下（修改平台的版本）,这样会自动添加build.xml 等ant 的配置文件</p>
+
+<pre><code>android update project -n Hello -t 2 -p ~/Download/Hello
+</code></pre>
+
+<p>参数说明：－n 项目名称  －t target id －p 项目路径</p>
+
+<h5>以上命令你要在android sdk tools的目录下。</h5>
+
+<h3>3.配置 ant.properties</h3>
+
+<pre><code>key.store=hello.keystroe
+key.store.password=helloworld
+key.alias=hello.keystroe
+key.alias.password=helloworld
+</code></pre>
+
+<p>要发布Adnroid应用，需要给apk签名，前提需要是有keystore，在这使用命令生产，你也可以用其他方式。</p>
+
+<h3>4.生产keystore</h3>
+
+<p>需要用得keytool，这个安装完了java sdk 就会有的。</p>
+
+<pre><code>povolmatoMacBook-Pro:Hello povol$ keytool -genkey -alias hello.keystore -keyalg RSA -   validity 25 -keystore hello.keystroe
+Enter keystore password:  
+Re-enter new password: 
+What is your first and last name?
+[Unknown]:  hello world
+What is the name of your organizational unit?
+[Unknown]:  hello world
+What is the name of your organization?
+[Unknown]:  hello world
+What is the name of your City or Locality?
+[Unknown]:  cn
+What is the name of your State or Province?
+[Unknown]:  bj
+What is the two-letter country code for this unit?
+[Unknown]:  cn
+Is CN=hello world, OU=hello world, O=hello world, L=cn, ST=bj, C=cn correct?
+[no]:  Y
+
+Enter key password for &lt;hello.keystore&gt;
+(RETURN if same as keystore password):  
+Re-enter new password: 
+povolmatoMacBook-Pro:Hello povol$ 
+</code></pre>
+
+<p>在Hello目录下生成了 hello.keystroe 。<br/>
+<img src="/images/post/2013-05-23-20-21-56.png" alt="" /></p>
+
+<h3>5.编译</h3>
+
+<pre><code>ant relase
+
+povolmatoMacBook-Pro:Hello povol$ ant release
+Buildfile: /Users/povol/Download/Hello/build.xml
+
+-set-mode-check:
+
+-set-release-mode:
+
+-release-obfuscation-check:
+    [echo] proguard.config is ${proguard.config}
+
+-pre-build:
+
+-check-env:
+[checkenv] Android SDK Tools Revision 21.1.0
+[checkenv] Installed at /Users/povol/myapp/android-sdk-macosx
+
+-setup:
+    [echo] Project Name: Hello
+[gettype] Project Type: Application
+
+-build-setup:
+    [echo] Resolving Build Target for Hello...
+[gettarget] Project Target:   Google APIs
+[gettarget] Vendor:           Google Inc.
+[gettarget] Platform Version: 2.2
+[gettarget] API level:        8
+[gettarget] WARNING: No minSdkVersion value set. Application will install on all Android    versions.
+    [echo] ----------
+    [echo] Creating output directories if needed...
+    [mkdir] Created dir: /Users/povol/Download/Hello/bin
+    [mkdir] Created dir: /Users/povol/Download/Hello/bin/res
+    [mkdir] Created dir: /Users/povol/Download/Hello/gen
+    [mkdir] Created dir: /Users/povol/Download/Hello/bin/classes
+    [mkdir] Created dir: /Users/povol/Download/Hello/bin/dexedLibs
+    [echo] ----------
+    [echo] Resolving Dependencies for Hello...
+[dependency] Library dependencies:
+[dependency] No Libraries
+[dependency] 
+[dependency] ------------------
+[dependency] API&lt;=15: Adding annotations.jar to the classpath.
+    [echo] ----------
+    [echo] Building Libraries with 'release'...
+[subant] No sub-builds to iterate on
+
+-code-gen:
+[mergemanifest] Merging AndroidManifest files into one.
+[mergemanifest] Manifest merger disabled. Using project manifest only.
+    [echo] Handling aidl files...
+    [aidl] No AIDL files to compile.
+    [echo] ----------
+    [echo] Handling RenderScript files...
+[renderscript] No RenderScript files to compile.
+    [echo] ----------
+    [echo] Handling Resources...
+    [aapt] Generating resource IDs...
+    [echo] ----------
+    [echo] Handling BuildConfig class...
+[buildconfig] Generating BuildConfig class.
+
+-pre-compile:
+
+-compile:
+    [javac] Compiling 3 source files to /Users/povol/Download/Hello/bin/classes
+
+-post-compile:
+
+-obfuscate:
+
+-dex:
+    [dex] input: /Users/povol/Download/Hello/bin/classes
+    [dex] input: /Users/povol/myapp/android-sdk-macosx/tools/support/annotations.jar
+    [dex] Pre-Dexing /Users/povol/myapp/android-sdk-macosx/tools/support/annotations.jar -&gt; annotations-18bac9ff24ac0be23db54c4d77951e76.jar
+    [dex] Converting compiled files and external libraries into /Users/povol/Download/Hello/bin/classes.dex...
+    [dx] Merged dex A (6 defs/1.8KiB) with dex B (2 defs/1.1KiB). Result is 8 defs/2.8KiB. Took 0.0s
+
+-crunch:
+[crunch] Crunching PNG Files in source dir: /Users/povol/Download/Hello/res
+[crunch] To destination dir: /Users/povol/Download/Hello/bin/res
+[crunch] Crunched 0 PNG files to update cache
+
+-package-resources:
+ [aapt] Creating full resource package...
+
+-package:
+[apkbuilder] Current build type is different than previous build: forced apkbuilder run.
+[apkbuilder] Creating Hello-release-unsigned.apk for release...
+
+-post-package:
+
+-release-prompt-for-password:
+
+-release-nosign:
+
+-release-sign:
+    [echo] Signing final apk...
+[zipalign] Running zip align on final apk...
+    [echo] Release Package: /Users/povol/Download/Hello/bin/Hello-release.apk
+[propertyfile] Creating new property file: /Users/povol/Download/Hello/bin/build.prop
+[propertyfile] Updating property file: /Users/povol/Download/Hello/bin/build.prop
+[propertyfile] Updating property file: /Users/povol/Download/Hello/bin/build.prop
+[propertyfile] Updating property file: /Users/povol/Download/Hello/bin/build.prop
+
+-post-build:
+
+release:
+
+BUILD SUCCESSFUL
+Total time: 4 seconds
+povolmatoMacBook-Pro:Hello povol$ 
+</code></pre>
+
+<p>至此，编译成功。</p>
+
+<p><img src="/images/post/2013-05-23-20-21-55.png" alt="" /></p>
+
+<h3>6.安装运行</h3>
+
+<p>结果：<br/>
+ <img src="/images/post/2013-05-23-20-21-57.png" alt="" /></p>
+
+<h4>附：keytool用法：</h4>
+
+<pre><code>  -certreq     [-v] [-protected]
+               [-alias &lt;别名&gt;] [-sigalg &lt;sigalg&gt;]
+               [-file &lt;csr_file&gt;] [-keypass &lt;密钥库口令&gt;]
+               [-keystore &lt;密钥库&gt;] [-storepass &lt;存储库口令&gt;]
+               [-storetype &lt;存储类型&gt;] [-providername &lt;名称&gt;]
+               [-providerclass &lt;提供方类名称&gt; [-providerarg &lt;参数&gt;]] ...
+               [-providerpath &lt;路径列表&gt;]
+
+  -changealias [-v] [-protected] -alias &lt;别名&gt; -destalias &lt;目标别名&gt;
+               [-keypass &lt;密钥库口令&gt;]
+               [-keystore &lt;密钥库&gt;] [-storepass &lt;存储库口令&gt;]
+               [-storetype &lt;存储类型&gt;] [-providername &lt;名称&gt;]
+               [-providerclass &lt;提供方类名称&gt; [-providerarg &lt;参数&gt;]] ...
+               [-providerpath &lt;路径列表&gt;]
+
+  -delete      [-v] [-protected] -alias &lt;别名&gt;
+               [-keystore &lt;密钥库&gt;] [-storepass &lt;存储库口令&gt;]
+               [-storetype &lt;存储类型&gt;] [-providername &lt;名称&gt;]
+               [-providerclass &lt;提供方类名称&gt; [-providerarg &lt;参数&gt;]] ...
+               [-providerpath &lt;路径列表&gt;]
+
+  -exportcert  [-v] [-rfc] [-protected]
+               [-alias &lt;别名&gt;] [-file &lt;认证文件&gt;]
+               [-keystore &lt;密钥库&gt;] [-storepass &lt;存储库口令&gt;]
+               [-storetype &lt;存储类型&gt;] [-providername &lt;名称&gt;]
+               [-providerclass &lt;提供方类名称&gt; [-providerarg &lt;参数&gt;]] ...
+               [-providerpath &lt;路径列表&gt;]
+
+  -genkeypair  [-v] [-protected]
+               [-alias &lt;别名&gt;]
+               [-keyalg &lt;keyalg&gt;] [-keysize &lt;密钥大小&gt;]
+               [-sigalg &lt;sigalg&gt;] [-dname &lt;dname&gt;]
+               [-validity &lt;valDays&gt;] [-keypass &lt;密钥库口令&gt;]
+               [-keystore &lt;密钥库&gt;] [-storepass &lt;存储库口令&gt;]
+               [-storetype &lt;存储类型&gt;] [-providername &lt;名称&gt;]
+               [-providerclass &lt;提供方类名称&gt; [-providerarg &lt;参数&gt;]] ...
+               [-providerpath &lt;路径列表&gt;]
+
+  -genseckey   [-v] [-protected]
+               [-alias &lt;别名&gt;] [-keypass &lt;密钥库口令&gt;]
+               [-keyalg &lt;keyalg&gt;] [-keysize &lt;密钥大小&gt;]
+               [-keystore &lt;密钥库&gt;] [-storepass &lt;存储库口令&gt;]
+               [-storetype &lt;存储类型&gt;] [-providername &lt;名称&gt;]
+               [-providerclass &lt;提供方类名称&gt; [-providerarg &lt;参数&gt;]] ...
+               [-providerpath &lt;路径列表&gt;]
+
+  -help
+
+  -importcert  [-v] [-noprompt] [-trustcacerts] [-protected]
+               [-alias &lt;别名&gt;]
+               [-file &lt;认证文件&gt;] [-keypass &lt;密钥库口令&gt;]
+               [-keystore &lt;密钥库&gt;] [-storepass &lt;存储库口令&gt;]
+               [-storetype &lt;存储类型&gt;] [-providername &lt;名称&gt;]
+               [-providerclass &lt;提供方类名称&gt; [-providerarg &lt;参数&gt;]] ...
+               [-providerpath &lt;路径列表&gt;]
+
+  -importkeystore [-v]
+               [-srckeystore &lt;源密钥库&gt;] [-destkeystore &lt;目标密钥库&gt;]
+               [-srcstoretype &lt;源存储类型&gt;] [-deststoretype &lt;目标存储类型&gt;]
+               [-srcstorepass &lt;源存储库口令&gt;] [-deststorepass &lt;目标存储库口令&gt;]
+               [-srcprotected] [-destprotected]
+               [-srcprovidername &lt;源提供方名称&gt;]
+               [-destprovidername &lt;目标提供方名称&gt;]
+               [-srcalias &lt;源别名&gt; [-destalias &lt;目标别名&gt;]
+                 [-srckeypass &lt;源密钥库口令&gt;] [-destkeypass &lt;目标密钥库口令&gt;]]
+               [-noprompt]
+               [-providerclass &lt;提供方类名称&gt; [-providerarg &lt;参数&gt;]] ...
+               [-providerpath &lt;路径列表&gt;]
+
+  -keypasswd   [-v] [-alias &lt;别名&gt;]
+               [-keypass &lt;旧密钥库口令&gt;] [-new &lt;新密钥库口令&gt;]
+               [-keystore &lt;密钥库&gt;] [-storepass &lt;存储库口令&gt;]
+               [-storetype &lt;存储类型&gt;] [-providername &lt;名称&gt;]
+               [-providerclass &lt;提供方类名称&gt; [-providerarg &lt;参数&gt;]] ...
+               [-providerpath &lt;路径列表&gt;]
+
+  -list        [-v | -rfc] [-protected]
+               [-alias &lt;别名&gt;]
+               [-keystore &lt;密钥库&gt;] [-storepass &lt;存储库口令&gt;]
+               [-storetype &lt;存储类型&gt;] [-providername &lt;名称&gt;]
+               [-providerclass &lt;提供方类名称&gt; [-providerarg &lt;参数&gt;]] ...
+               [-providerpath &lt;路径列表&gt;]
+
+  -printcert   [-v] [-file &lt;认证文件&gt;]
+
+  -storepasswd [-v] [-new &lt;新存储库口令&gt;]
+               [-keystore &lt;密钥库&gt;] [-storepass &lt;存储库口令&gt;]
+               [-storetype &lt;存储类型&gt;] [-providername &lt;名称&gt;]
+               [-providerclass &lt;提供方类名称&gt; [-providerarg &lt;参数&gt;]] ...
+               [-providerpath &lt;路径列表&gt;]
+</code></pre>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[在android上搭建python环境]]></title>
