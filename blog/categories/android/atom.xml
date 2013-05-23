@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Android | Janrone's Blog]]></title>
   <link href="http://janrone.github.com/blog/categories/android/atom.xml" rel="self"/>
   <link href="http://janrone.github.com/"/>
-  <updated>2013-05-23T20:53:47+08:00</updated>
+  <updated>2013-05-23T20:58:46+08:00</updated>
   <id>http://janrone.github.com/</id>
   <author>
     <name><![CDATA[Janrone]]></name>
@@ -243,6 +243,8 @@ povolmatoMacBook-Pro:Hello povol$
 
 <p>结果：<br/>
  <img src="/images/post/2013-05-23-20-21-57.png" alt="" /></p>
+
+<h4>签名参考 Signing Your Applications  <a href="http://developer.android.com/tools/publishing/app-signing.html">http://developer.android.com/tools/publishing/app-signing.html</a></h4>
 
 <h4>附：keytool用法：</h4>
 
