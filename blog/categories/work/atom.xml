@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Work | Janrone's Blog]]></title>
   <link href="http://janrone.github.com/blog/categories/work/atom.xml" rel="self"/>
   <link href="http://janrone.github.com/"/>
-  <updated>2013-05-23T20:47:58+08:00</updated>
+  <updated>2013-05-23T20:53:47+08:00</updated>
   <id>http://janrone.github.com/</id>
   <author>
     <name><![CDATA[Janrone]]></name>
@@ -40,7 +40,7 @@ Added file /Users/povol/Download/Hello/proguard-project.txt
 
 <p>参数说明：-k /--package 为命名空间（包名）-a /--name 工程名  -t 为目标平台的版本编号 -p /--path 项目路径</p>
 
-<p>列出 -t：target id，可以如命令：android list targets , Hello项目使用得id 1。</p>
+<p>列出 -t：target id，可以如命令：android list targets , Hello项目使用得id为1。</p>
 
 <pre><code>    Available Android targets:
 ----------
