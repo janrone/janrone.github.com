@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Python | Janrone's Blog]]></title>
   <link href="http://janrone.github.com/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://janrone.github.com/"/>
-  <updated>2013-05-23T20:43:25+08:00</updated>
+  <updated>2013-05-23T20:47:58+08:00</updated>
   <id>http://janrone.github.com/</id>
   <author>
     <name><![CDATA[Janrone]]></name>
@@ -276,7 +276,7 @@ Hello world
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[在android上搭建python环境]]></title>
+    <title type="html"><![CDATA[在Android上搭建Python环境]]></title>
     <link href="http://janrone.github.com/blog/2013/04/09/zai-androidshang-da-jian-pythonhuan-jing/"/>
     <updated>2013-04-09T14:00:00+08:00</updated>
     <id>http://janrone.github.com/blog/2013/04/09/zai-androidshang-da-jian-pythonhuan-jing</id>

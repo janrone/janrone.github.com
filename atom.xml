@@ -4,7 +4,7 @@
   <title><![CDATA[Janrone's Blog]]></title>
   <link href="http://janrone.github.com/atom.xml" rel="self"/>
   <link href="http://janrone.github.com/"/>
-  <updated>2013-05-23T20:43:25+08:00</updated>
+  <updated>2013-05-23T20:47:58+08:00</updated>
   <id>http://janrone.github.com/</id>
   <author>
     <name><![CDATA[Janrone]]></name>
@@ -603,7 +603,7 @@ Hello world
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[在android上搭建python环境]]></title>
+    <title type="html"><![CDATA[在Android上搭建Python环境]]></title>
     <link href="http://janrone.github.com/blog/2013/04/09/zai-androidshang-da-jian-pythonhuan-jing/"/>
     <updated>2013-04-09T14:00:00+08:00</updated>
     <id>http://janrone.github.com/blog/2013/04/09/zai-androidshang-da-jian-pythonhuan-jing</id>
@@ -666,7 +666,7 @@ droid.makeToast(‘Hello, Python in Android’）</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[mac os x下载和编译android 4.2.2 源码]]></title>
+    <title type="html"><![CDATA[Mac OS x下载和编译Android 4.2.2 源码]]></title>
     <link href="http://janrone.github.com/blog/2013/04/08/mac-os-xxia-zai-he-bian-yi-android-4-dot-2-2-yuan-ma/"/>
     <updated>2013-04-08T15:56:00+08:00</updated>
     <id>http://janrone.github.com/blog/2013/04/08/mac-os-xxia-zai-he-bian-yi-android-4-dot-2-2-yuan-ma</id>
