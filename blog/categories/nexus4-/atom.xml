@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Nexus4, | Janrone's Blog]]></title>
+  <link href="http://janrone.github.com/blog/categories/nexus4-/atom.xml" rel="self"/>
+  <link href="http://janrone.github.com/"/>
+  <updated>2014-04-09T15:30:01+08:00</updated>
+  <id>http://janrone.github.com/</id>
+  <author>
+    <name><![CDATA[Janrone]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[玩具Nexus手机]]></title>
+    <link href="http://janrone.github.com/blog/2014/04/09/wan-ju-nexusshou-ji/"/>
+    <updated>2014-04-09T15:10:00+08:00</updated>
+    <id>http://janrone.github.com/blog/2014/04/09/wan-ju-nexusshou-ji</id>
+    <content type="html"><![CDATA[<h2>1.打开手机调试功能，安装ADB，链接电脑。</h2>
+
+<h2>2.shell中直接运行：adb reboot bootloader ，如图：</h2>
+
+<p><img src="/images/post/2014-04-09-01.png" alt="" /></p>
+
+<h2>3. 接着运行： fastboot oem unlock</h2>
+
+<p><img src="/images/post/2014-04-09-02.png" alt="" /></p>
+
+<h2>出现上图，按音量键盘，选择yes ，这时你手机上的所有数据都将被抹去,LOCK STATE将变成unlocked 。</h2>
+]]></content>
+  </entry>
+  
+</feed>
