@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Root | Janrone's Blog]]></title>
   <link href="http://janrone.github.com/blog/categories/root/atom.xml" rel="self"/>
   <link href="http://janrone.github.com/"/>
-  <updated>2014-05-25T13:42:19+08:00</updated>
+  <updated>2014-05-25T22:42:53+08:00</updated>
   <id>http://janrone.github.com/</id>
   <author>
     <name><![CDATA[Janrone]]></name>
@@ -29,6 +29,8 @@
 <h2>3. 接着运行： fastboot oem unlock</h2>
 
 <p><img src="/images/post/2014-04-09-02.png" alt="" /></p>
+
+<p>   <!--more--></p>
 
 <h2>出现上图，按音量键盘，选择yes ，这时你手机上的所有数据都将被抹去,LOCK STATE将变成unlocked 。</h2>
 
