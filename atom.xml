@@ -4,7 +4,7 @@
   <title><![CDATA[Janrone's Blog]]></title>
   <link href="http://janrone.github.com/atom.xml" rel="self"/>
   <link href="http://janrone.github.com/"/>
-  <updated>2014-04-09T15:30:01+08:00</updated>
+  <updated>2014-05-25T13:42:19+08:00</updated>
   <id>http://janrone.github.com/</id>
   <author>
     <name><![CDATA[Janrone]]></name>
@@ -18,7 +18,9 @@
     <link href="http://janrone.github.com/blog/2014/04/09/wan-ju-nexusshou-ji/"/>
     <updated>2014-04-09T15:10:00+08:00</updated>
     <id>http://janrone.github.com/blog/2014/04/09/wan-ju-nexusshou-ji</id>
-    <content type="html"><![CDATA[<h2>1.打开手机调试功能，安装ADB，链接电脑。</h2>
+    <content type="html"><![CDATA[<h1>解锁</h1>
+
+<h2>1.打开手机调试功能，安装ADB，链接电脑。</h2>
 
 <h2>2.shell中直接运行：adb reboot bootloader ，如图：</h2>
 
@@ -29,293 +31,29 @@
 <p><img src="http://janrone.github.com/images/post/2014-04-09-02.png" alt="" /></p>
 
 <h2>出现上图，按音量键盘，选择yes ，这时你手机上的所有数据都将被抹去,LOCK STATE将变成unlocked 。</h2>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Anroid试题]]></title>
-    <link href="http://janrone.github.com/blog/2013/10/18/anroidshi-ti/"/>
-    <updated>2013-10-18T09:17:00+08:00</updated>
-    <id>http://janrone.github.com/blog/2013/10/18/anroidshi-ti</id>
-    <content type="html"><![CDATA[<p>1，谈谈你对Activity的理解？</p>
 
-<p>对于这种“你对什么什么怎么理解”的面试题，最好的回到方式就是用你自己的理解说出来，通俗中夹杂些专业术语，偶尔再蹦出几个英文。当然如果你很牛X，你可以往深了说，只要别漫无目的的说就行。围绕一条主线。这其中如果你对某一方面比较精通，你就应该往你精通的方向引。面试官可能就会顺着你的思路走了。不过现在有很多面试问Android方面的知识不多，问java方面的比较多。</p>
+<h1>ROOT</h1>
 
-<p>通俗的讲，Activity就是一个应用程序的门面，也可以理解成就是WEB程序中一个页面，当然与web程序中的页面不同的是，web中的一个页面可能只是一个纯粹的展示页面不与用户进行任何交互，而几乎所有的Activity都会与用户交互。当然两者在架构上也有本质区别，Activity与用户的交互通过触发UI的不同事件完成的。而Web程序是通过请求，响应来完成交互的。还有在android中颠覆了很多常规想法，比如在一个Activity中可以打开另一个不在同一应用的Activity。这在其他程序是不可想象的。当然这种设计的出发点也是为了节省系统资源。从View层的角度来看，Activity承载了与用户交互的不同控件。从控制层看，也就是内部逻辑，Activity需要保持各个界面的状态，背后会做很多持久化的操作。包括妥善管理生命周期的各个阶段。（把生命周期引出来了，没准就会问你这方面的）。</p>
+<h2>1. 进入fastboot模式, 可以用 adb reboot bootloader ，也可以在关机状态下，同时按音量+/-和电源键进入fastboot模式。</h2>
 
-<p>下面是文档式的回答：（最好的回答方式两者结合）</p>
+<h2>2.下载CF-Auto-root工具 nexus 4 安卓4.4.2 KOT49H root包下载</h2>
 
-<p>首先Activity是android四大组件之一。它是单独的，作为用户与程序交互的一个载体。几乎所有的Activity都与用户交互。Activity创建了一个窗口，你可以通过setContentView这个方法将需要的UI放置在窗口。任何一个应用程序都可以调用单独的一个Activity。</p>
+<p>  如果运行SuperSu 提示更新su二进制文件，需要重新root。</p>
 
-<p>其次，Activity的继承关系Activity→ContextThemeWrapper→ContextWrapper→Context</p>
+<h2>3. 解压并根据您的操作系统选择执行下面的文件</h2>
 
-<p>最后大部分的Activity的子类都需要实现以下两个接口：</p>
+<p>Windows:
+&#8212; 双击运行root-windows.bat</p>
 
-<p>onCreate(Bundle  savedInstanceState)接口是初始化activity的地方. 在这儿通常可以调用setContentView(int)设置在资源文件中定义的UI, 使用findViewById(int) 可以获得UI中定义的窗口.</p>
+<ul>
+<li><p>Linux
+&#8212; chmod +x root-linux.sh
+&#8212; 运行 root-linux.sh</p></li>
+<li><p>Mac OS X
+&#8212; chmod +x root-mac.sh
+&#8212; 运行 root-mac.sh</p></li>
+</ul>
 
-<p>onPause()接口是使用者准备离开activity的地方，在这儿，任何的修改都应该被提交(通常用于ContentProvider保存数据).</p>
-
-<p>所有Activity必须在清单文件里注册一下才能使用。</p>
-
-<p>2，Activity的生命周期？</p>
-
-<p>在系统中的Activity被一个Activity栈所管理。当一个新的Activity启动时，将被放置到栈顶，成为运行中的Activity，前一个Activity保留在栈中，不再放到前台，直到新的Activity退出为止。</p>
-
-<p>Activity有四种本质区别的状态：</p>
-
-<p>1）在屏幕的前台（Activity栈顶），叫做活动状态或者运行状态（active or running）</p>
-
-<p>2）如果一个Activity失去焦点，但是依然可见（一个新的非全屏的Activity 或者一个透明的Activity 被放置在栈顶），叫做暂停状态（Paused）。一个暂停状态的Activity依然保持活力（保持所有的状态，成员信息，和窗口管理器保持连接），但是在系统内存极端低下的时候将被杀掉。</p>
-
-<p>3）如果一个Activity被另外的Activity完全覆盖掉，叫做停止状态（Stopped）。它依然保持所有状态和成员信息，但是它不再可见，所以它的窗口被隐藏，当系统内存需要被用在其他地方的时候，Stopped的Activity将被杀掉。</p>
-
-<p>4）如果一个Activity是Paused或者Stopped状态，系统可以将该Activity从内存中删除，Android系统采用两种方式进行删除，要么要求该Activity结束，要么直接杀掉它的进程。当该Activity再次显示给用户时，它必须重新开始和重置前面的状态。</p>
-
-<p>Activity提供了7个生命周期方法：</p>
-
-<p>onCreate(),onStart(),onResume(),onPause(),onStop(),onDestory(),onRestart()。在这七个生命周期方法中有三个关键的循环。其实官方给的那张图画得很明白，但估计很少人能有耐心去揣摩。那就换种方式展现。看图吧：</p>
-
-<p>1）以下该图呈现了一个Activity完整的生命周期，从onCreate(Bundle)开始到onDestroy()结束。Activity在onCreate()设置所有的“全局”状态，在onDestory()释放所有的资源。</p>
-
-<p>首先我们运行程序，这是打开MainActivity依次调用onCreate->onStart->onResume，这时MainActivity在栈顶，与我们交互的Activity都在栈顶。然后我按下返回键，则会依次调用onPause->onStop->onDestory。这属于一个完整的生命周期。</p>
-
-<p>2）可见的生命周期，从onStart()开始到onStop()结束。说白了就是一个Activity被另一个activity完全覆盖掉，然后又重新回到前台这个一个过程称之为可见生命周期。</p>
-
-<p>首先我们打开OtherActivity这个窗口。此时MainActivity将被覆盖掉。则会依次调用onPause->onStop。在内存不足的时候，系统也会杀死MainActivity进程。</p>
-
-<p>然后，按下返回键，MainActivity又回到前台此时会调用onRestart->onStart->onResume。</p>
-
-<p>3）前台的生命周期，从onResume()开始到onPause()结束。在这段时间里，该Activity处于所有Activity的最前面，和用户进行交互。Activity可以经常性地在resumed和paused状态之间切换。说白了就是一个Activity覆盖到另一个Activity上面，但是并没有完全覆盖掉。</p>
-
-<p>首先，我们将OtherActivity打开，这是OtherActivity以对话框模式打开，悬浮在MainActivity上面。直接调用的onPause()。</p>
-
-<p>然后我们按下返回键，则调用的onResume。对于这种没用完全覆盖的状态只会在onPause与onResume两个方法之间切换。</p>
-
-<p>注：还有一种特殊情况，当屏幕发生改变的时候生命周期是怎样的呢？比如由竖屏调整为横屏。生命周期的方法依次用：onPause->onStop->onDestroy->onCreate->onStart->onResume。这么一个过程。它会销毁掉原先的activity，重新创建。</p>
-
-<p>3，Acitvity启动模式？</p>
-
-<p>对于这种题，最后就是自己写个例子，观察一下，才能真正明白。</p>
-
-<p>Activty启动提供了四种启动模式。launchMode:</p>
-
-<p>standard:每次启动新的活动窗口(new操作)</p>
-
-<p>singleTop:如果在栈顶是目标活动,则直接打开.否则开启新的活动窗口(new).</p>
-
-<p>singleTask和singleInstance基本上相同.差别在于若根活动设置为singleTask时,则由此所开启的活动也在同一任务中，即taskId相同。.而若根活动设置为singleInstance时,由此开启的活动在新的任务中.即栈中只有一个活动，taskid不同。.其余情况相同.</p>
-
-<p>4，在onCreate方法中Bundle savedInstanceState 这个参数有什么作用？</p>
-
-<p>在onCreate方法中有saveInstanceState这个参数，其实这个参数对应两个方法。</p>
-
-<p>void onSaveInstanceState(Bundle outState)；void onRestoreInstanceState(Bundle savedInstanceState)。当某个activity变得“容易”被系统销毁时，说白了就是系统在内存不足或者其他异常情况下把你的Activity销毁时，将调用这个方法。需要注意的是它是系统调用的，并且你的Activity是被动得被销毁。你可以在销毁的时候保存一下数据。然后在onCreate方法中拿出来。那什么情况下能触发这两个方法呢？</p>
-
-<p>1）、当用户按下HOME键时。</p>
-
-<p>这是显而易见的，系统不知道你按下HOME后要运行多少其他的程序，自然也不知道activity A是否会被销毁，故系统会调用onSaveInstanceState，让用户有机会保存某些非永久性的数据。以下几种情况的分析都遵循该原则</p>
-
-<p>2）、长按HOME键，选择运行其他的程序时。</p>
-
-<p>3）、按下电源按键（关闭屏幕显示）时。</p>
-
-<p>4）、从activity A中启动一个新的activity时。</p>
-
-<p>5）、屏幕方向切换时，例如从竖屏切换到横屏时。</p>
-
-<p>在屏幕切换之前，系统会销毁activity A，在屏幕切换之后系统又会自动地创建activity A，所以onSaveInstanceState一定会被执行</p>
-
-<p>总而言之，onSaveInstanceState的调用遵循一个重要原则，即当系统“未经你许可”时销毁了你的activity，则onSaveInstanceState会被系统调用，这是系统的责任，因为它必须要提供一个机会让你保存你的数据（当然你不保存那就随便你了）。</p>
-
-<p>至于onRestoreInstanceState方法，需要注意的是，onSaveInstanceState方法和onRestoreInstanceState方法“不一定”是成对的被调用的，onRestoreInstanceState被调用的前提是，activity A“确实”被系统销毁了，而如果仅仅是停留在有这种可能性的情况下，则该方法不会被调用，例如，当正在显示activity A的时候，用户按下HOME键回到主界面，然后用户紧接着又返回到activity A，这种情况下activity A一般不会因为内存的原因被系统销毁，故activity A的onRestoreInstanceState方法不会被执行</p>
-
-<p>另外，onRestoreInstanceState的bundle参数也会传递到onCreate方法中，你也可以选择在onCreate方法中做数据还原。</p>
-
-<p>5，谈谈你对BroadCastRceiver的理解？</p>
-
-<p>广播接收者，android四大组件之一，也是唯一一个能动态注册的组件。</p>
-
-<p>1）广播接收者是一个专注于接收广播通知信息，并做出对应处理的组件。很多广播是源自于系统──比如，通知时区改变、电池电量低、拍摄了一张照片或者用户改变了语言选项。应用程序也可以进行广播──比如说，通知其它应用程序一些数据下载完成并处于可用状态。</p>
-
-<p>2）应用程序可以拥有任意数量的广播接收者以对所有它感兴趣的通知信息予以响应。所有的接收器均继承自BroadcastReceiver基类。</p>
-
-<p>3）广播接收者没有用户界面。然而，它们可以启动一个activity来响应它们收到的信息，或者用NotificationManager来通知用户。通知可以用很多种方式来吸引用户的注意力──闪动背灯、震动、播放声音等等。一般来说是在状态栏上放一个持久的图标，用户可以打开它并获取消息。</p>
-
-<p>6，广播分几种？他们有什么区别？</p>
-
-<p>广播被分为两种不同的类型：“普通广播（Normal broadcasts）”和“有序广播（Ordered broadcasts）”。普通广播是完全异步的，可以在同一时刻（逻辑上）被所有接收者接收到，消息传递的效率比较高，但缺点是：接收者不能将处理结果传递给下一个接收者，并且无法终止广播Intent的传播。</p>
-
-<pre><code>然而有序广播是按照接收者声明的优先级别，被接收者依次接收广播。如：A的级别高于B,B的级别高于C,那么，广播先传给A，再传给B，最后传给C 。优先级别声明在intent-filter 元素的android:priority 属性中，数越大优先级别越高,取值范围:-1000到1000，优先级别也可以调用IntentFilter对象的setPriority()进行设置。有序广播的接收者可以终止广播Intent的传播，广播Intent的传播一旦终止，后面的接收者就无法接收到广播。
-</code></pre>
-
-<p>   另外，有序广播的接收者可以将数据传递给下一个接收者，如：A得到广播后，可以往它的结果对象中存入数据，当广播传给B时,B可以从A的结果对象中得到A存入的数据。</p>
-
-<p>   Context.sendBroadcast()</p>
-
-<p>发送的是普通广播，所有订阅者都有机会获得并进行处理。</p>
-
-<p>   Context.sendOrderedBroadcast()</p>
-
-<p>发送的是有序广播，系统会根据接收者声明的优先级别按顺序逐个执行接收者，</p>
-
-<p> 前面的接收者有权终止广播(BroadcastReceiver.abortBroadcast())，如果广播被前面的接收者终止，后面的接收者就再也无法获取到广播。对于有序广播，前面的接收者可以将数据通过setResultExtras(Bundle)方法存放进结果对象，然后传给下一个接收者，下一个接收者通过代码：Bundle bundle = getResultExtras(true))可以获取上一个接收者存入在结果对象中的数据。</p>
-
-<p>7，广播的生命周期？</p>
-
-<p>广播的生命周期是非常短的，当发送之后intent会到AndroidManifest.xml文件中找是不是有匹配的action，如果有就会调用Receiver ，然后获得Receiver 对象，再执行onReceive方法，这时候Receiver对象就没有用了，当我们再次点击按钮的时候就会重新获得对象，这就是BroadcastReceiver的生命周期.</p>
-
-<p>在BroadcastReceiver里不能做一些比较耗时的操作,否侧会弹出ANR(Application No</p>
-
-<p>Response)的对话框.</p>
-
-<p>如果需要完成一项比较耗时的工作,应该通过发送Intent给Service,由Service来完成.这里不能使用子线程来解决,因为BroadcastReceiver的生命周期很短,子线程可能还没有结束，BroadcastReceiver就先结束了.BroadcastReceiver一旦结束,此时BroadcastReceiver的所在进程很容易在系统需要内存时被优先杀死,因为它属于空进程(没有任何活动组件的进程).如果它的宿主进程被杀死,那么正在工作的子线程也会被杀死.所以采用子线程来解决是不可靠的.</p>
-
-<p>8，两种注册BroadcastReceiver的方法？</p>
-
-<p>使用在manifest中注册的方法注册BroadcastReceiver，即使你的应用程序没有启动，或者已经被关闭，这个BroadcastReceiver依然会继续运行，这样的运行机制可能会给软件的用户造成困扰。所以作为程序的开发者，我们希望能够有一种灵活的机制完成BroadcastReceiver的绑定和解除绑定操作。Android当然也考虑到了这些问题，所以在Context这个类当中提供了如下两个函数可以在代码中注册：</p>
-
-<p>i. registerReceiver(receiver,filter);</p>
-
-<pre><code>这个函数的作用就是将一个BroadcastReceiver注册到应用程序当中，这个函数接收两个参数，第一个参数是需要注册的BroadcastReceiver对象，第二个是一个IntentFilter。第一个参数是非常容易理解的，第二个参数的作用是定义了哪些Intent才能触发这个注册的BroadcastReceiver对象。
-</code></pre>
-
-<p>ii. unregisterReceiver(receiver);</p>
-
-<pre><code>这个方法就非常的简单了，用于解除BroadcastReceiver的绑定状态。一旦解除完成，响应的BroadcastReceiver就不会再接收系统所广播的Intent了。
-</code></pre>
-
-<p>两种注册BroadcastReceiver的方法</p>
-
-<p>  1.在应用程序的代码中进行注册</p>
-
-<p>   注册BroadcastReceiver</p>
-
-<pre><code>registerReceiver（receiver,filter）;
-</code></pre>
-
-<p>   取消注册BroadcastReceiver</p>
-
-<pre><code>unregisterReceiver（receiver);
-</code></pre>
-
-<p>  2.在AndroidManifest.xml当中进行注册</p>
-
-<p>   <receiver android:name="SMSReceiver"></p>
-
-<pre><code>&lt;intent-filter&gt;
-
- &lt;action android:name="android.provider.Telephony.SMS_RECEIVED" /&gt;
-
-&lt;/intent-filter&gt;
-</code></pre>
-
-<p>   </receiver></p>
-
-<p>两种注册BroadcastReceiver方法的比较：</p>
-
-<p>现在我们了解了两种注册BroadcastReceiver的方法之后，需要考虑一下这两种方法适用的场合：</p>
-
-<p>i. 第一种注册的方法可以保证在应用程序安装之后，BroadcastReceiver始终处于活动状态，通常用于监听系统状态的改变，比如说手机的电量，wifi网卡的状态（当然，监视这些东西也是取决于软件的需求）。对于这样的BroadcastReceiver，通常是在产生某个特定的系统事件之后，进行相应的操作，比如说wifi网卡打开时，给用户一个提示；</p>
-
-<p>ii. 第二种注册方法相对第一种要灵活的多，这样注册的BroadcastReceiver通常用于更新UI的状态。一般来说，都是在一个Activity启动的时候使用这样的方法注册BroadcastReceiver，一旦接收到广播的事件，就可以在onReceive方法当中更新当前的这个Activity当中的控件。但是需要注意的是如果这个Activity不可见了，就应该调用unregisterReceiver方法来解除注册</p>
-
-<p>9，粘性广播有什么作用？怎么使用？</p>
-
-<p>粘性广播主要为了解决，在发送完广播之后，动态注册的接收者，也能够收到广播。举个例子首先发送一广播，我的接收者是通过程序中的某个按钮动态注册的。如果不是粘性广播，我注册完接收者肯定无法收到广播了。这是通过发送粘性广播就能够在我动态注册接收者后也能收到广播。</p>
-
-<p>用法：</p>
-
-<p>//发送粘性广播</p>
-
-<p>Public void sendStickyBroadCast(){</p>
-
-<pre><code>    Intent intent=new Intent();
-</code></pre>
-
-<p>intent.setAction(“com.iteye.myreceiver.action”);</p>
-
-<p>intent.putExtra(“name”,”tom”);</p>
-
-<p>this.sendStickyBroadCast(intent);</p>
-
-<p>}</p>
-
-<p>发送粘性广播还需要发送粘性广播的权限：<uses-permission android:name="android.permission.BROADCAST_STICKY" /></p>
-
-<p>//动态注册广播接收者</p>
-
-<p>MyReceiver mr = new MyReceiver ();</p>
-
-<p>IntentFilter filter = new IntentFilter();</p>
-
-<p>filter.addAction(&#8220;com.iteye.myreceiver.action &#8220;);</p>
-
-<p>filter.addCategory(Intent.CATEGORY_DEFAULT);</p>
-
-<p>Intent ii = this.registerReceiver(mr, filter);</p>
-
-<p>String n = ii.getStringExtra(&#8220;name&#8221;);</p>
-
-<p>Toast.makeText(this, &#8220;动态注册接收者完成,收到粘性广播,name=&#8221; + n, 1).show();</p>
-
-<p>10，如何控制接收者或者发送方得权限？</p>
-
-<pre><code>   1）如果广播发送方要求接收方必须有某个权限才能收到广播怎么做呢？
-
-   /**
-
-    * 发送广播,指定接收者权限
-
-    * sendBroadcast(i, "com.iteye.permission.receiver");//指定接收者权限
-
-    */
-
-   public void sendBroadcast() {
-
-          //隐式意图,发送广播
-
-          Intent i = new Intent();
-
-          i.setAction("com.iteye.receiver.action");
-
-          i.putExtra("name", "tom");
-
-          this.sendBroadcast(i, " com.iteye.permission.receiver ");
-
-          Log.i("Other",".send ok!");
-
-   }
-
-   在清单文件里receiver必须有这个权限才能收到广播。
-
-   首先，需要定义权限：&lt;permission android:name=" com.iteye.permission.receiver " /&gt;
-
-   然后，声明权限：&lt;uses-permission android:name=" com.iteye.permission.receiver " /&gt;
-
-   这时接收者就能收到发送的广播。
-
-   2）反过来，如果接收者要求发送方必须拥有某个权限，我才接收你的广播怎么办呢？
-
-   &lt;!-- 注册广播接收者
-
-           android:permission:控制发送方需要具备指定权限,才接收其广播.
-
---&gt;
-
- &lt;receiver android:name=".MyReceiver" android:permission="com.permission.sender"&gt;
-
-           &lt;intent-filter android:priority="100"&gt;
-
-                  &lt;action android:name="com.iteye.receiver.action" /&gt;
-
-                  &lt;category android:name="android.intent.category.DEFAULT" /&gt;
-
-           &lt;/intent-filter&gt;
-
-  &lt;/receiver&gt;
-
-   即使过滤器匹配，如果发送方没有相应权限，接收者也不会接收其广播
-</code></pre>
 ]]></content>
   </entry>
   
