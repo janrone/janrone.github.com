@@ -167,6 +167,34 @@
 	<li><a target="_blank" href="http://ryantang.me/">Ryan's Zone</a></li> 
 </ul>
 </section>
+<section id="date">
+<script language="javascript" type="text/javascript"> 
+
+
+function daysBetween(DateOne,DateTwo)  
+{   
+    var OneMonth = DateOne.substring(5,DateOne.lastIndexOf ('-'));  
+    var OneDay = DateOne.substring(DateOne.length,DateOne.lastIndexOf ('-')+1);  
+    var OneYear = DateOne.substring(0,DateOne.indexOf ('-'));  
+  
+    var TwoMonth = DateTwo.substring(5,DateTwo.lastIndexOf ('-'));  
+    var TwoDay = DateTwo.substring(DateTwo.length,DateTwo.lastIndexOf ('-')+1);  
+    var TwoYear = DateTwo.substring(0,DateTwo.indexOf ('-'));  
+  
+    var cha=((Date.parse(OneMonth+'/'+OneDay+'/'+OneYear)- Date.parse(TwoMonth+'/'+TwoDay+'/'+TwoYear))/86400000);   
+	
+	
+	document.getElementById('showdate').innerHTML =Math.abs(cha);	
+
+} 
+</script>
+
+<body onload="daysBetween('2014-03-10', '2015-03-10')">
+
+<div id="showdate" >  </div>
+
+</body>
+</section>
 
   
 </aside>
