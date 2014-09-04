@@ -191,7 +191,49 @@
 
 <aside class="sidebar">
   
-    <section>
+    <section id="date">
+<script language="javascript" type="text/javascript"> 
+
+
+function daysBetween(DateOne,DateTwo)  
+{   
+    var OneMonth = DateOne.substring(5,DateOne.lastIndexOf ('-'));  
+    var OneDay = DateOne.substring(DateOne.length,DateOne.lastIndexOf ('-')+1);  
+    var OneYear = DateOne.substring(0,DateOne.indexOf ('-'));  
+  
+    var TwoMonth = DateTwo.substring(5,DateTwo.lastIndexOf ('-'));  
+    var TwoDay = DateTwo.substring(DateTwo.length,DateTwo.lastIndexOf ('-')+1);  
+    var TwoYear = DateTwo.substring(0,DateTwo.indexOf ('-'));  
+  
+    var cha=((Date.parse(OneMonth+'/'+OneDay+'/'+OneYear)- Date.parse(TwoMonth+'/'+TwoDay+'/'+TwoYear))/86400000);   
+	
+	
+	document.getElementById('showdate').innerHTML = '认识珊珊已经' + Math.abs(cha) + '天';	
+
+} 
+
+function fomateDate(oDate, sFomate, bZone)
+{
+sFomate = sFomate.replace("YYYY", oDate.getFullYear());
+sFomate = sFomate.replace("YY", String(oDate.getFullYear()).substr(2))
+sFomate = sFomate.replace("MM", oDate.getMonth()+1)
+sFomate = sFomate.replace("DD", oDate.getDate());
+sFomate = sFomate.replace("hh", oDate.getHours());
+sFomate = sFomate.replace("mm", oDate.getMinutes());
+sFomate = sFomate.replace("ss", oDate.getSeconds());
+if (bZone) sFomate = sFomate.replace(/\b(\d)\b/g, '0$1');
+return sFomate;
+}
+</script>
+
+<body onload="daysBetween('2014-03-10',fomateDate(new Date(), 'YYYY-MM-DD'))">
+<h1>Meetday</h1>
+<br/>
+<div id="showdate" >  </div>
+
+</body>
+</section>
+<section>
   <ul id="social">
     <li class="post">
       <a href="http://janrone.github.com" alt="Home"><img src="/images/home.png"></a>
@@ -258,35 +300,6 @@
 	<li><a target="_blank" href="http://www.madeye.me/">MADEYE</a></li>
 	<li><a target="_blank" href="http://ryantang.me/">Ryan's Zone</a></li> 
 </ul>
-</section>
-<section id="date">
-<script language="javascript" type="text/javascript"> 
-
-
-function daysBetween(DateOne,DateTwo)  
-{   
-    var OneMonth = DateOne.substring(5,DateOne.lastIndexOf ('-'));  
-    var OneDay = DateOne.substring(DateOne.length,DateOne.lastIndexOf ('-')+1);  
-    var OneYear = DateOne.substring(0,DateOne.indexOf ('-'));  
-  
-    var TwoMonth = DateTwo.substring(5,DateTwo.lastIndexOf ('-'));  
-    var TwoDay = DateTwo.substring(DateTwo.length,DateTwo.lastIndexOf ('-')+1);  
-    var TwoYear = DateTwo.substring(0,DateTwo.indexOf ('-'));  
-  
-    var cha=((Date.parse(OneMonth+'/'+OneDay+'/'+OneYear)- Date.parse(TwoMonth+'/'+TwoDay+'/'+TwoYear))/86400000);   
-	
-	
-	document.getElementById('showdate').innerHTML =Math.abs(cha);	
-
-} 
-</script>
-
-<body onload="daysBetween('2014-03-10', '2015-03-10')">
-<h1>Meetday</h1>
-
-<div id="showdate" >  </div>
-
-</body>
 </section>
 
   
