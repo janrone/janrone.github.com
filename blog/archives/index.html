@@ -176,11 +176,26 @@ Apr 14 2013 &hellip;">
 <aside class="sidebar">
   
     <section id="date">
+
+    <head>
 <script language="javascript" type="text/javascript"> 
 
+    function fomateDate(oDate, sFomate, bZone)
+    {
+        sFomate = sFomate.replace("YYYY", oDate.getFullYear());
+        sFomate = sFomate.replace("YY", String(oDate.getFullYear()).substr(2))
+        sFomate = sFomate.replace("MM", oDate.getMonth()+1)
+        sFomate = sFomate.replace("DD", oDate.getDate());
+        sFomate = sFomate.replace("hh", oDate.getHours());
+        sFomate = sFomate.replace("mm", oDate.getMinutes());
+        sFomate = sFomate.replace("ss", oDate.getSeconds());
+        if (bZone) sFomate = sFomate.replace(/\b(\d)\b/g, '0$1');
+        return sFomate;
+    }
 
-function daysBetween(DateOne,DateTwo)  
-{   
+    var DateOne = '2014-03-10';
+    var DateTwo = fomateDate(new Date(), 'YYYY-MM-DD');
+    
     var OneMonth = DateOne.substring(5,DateOne.lastIndexOf ('-'));  
     var OneDay = DateOne.substring(DateOne.length,DateOne.lastIndexOf ('-')+1);  
     var OneYear = DateOne.substring(0,DateOne.indexOf ('-'));  
@@ -194,23 +209,15 @@ function daysBetween(DateOne,DateTwo)
 	
 	document.getElementById('showdate').innerHTML = '认识珊珊已经' + Math.abs(cha) + '天';	
 
-} 
-
-function fomateDate(oDate, sFomate, bZone)
-{
-sFomate = sFomate.replace("YYYY", oDate.getFullYear());
-sFomate = sFomate.replace("YY", String(oDate.getFullYear()).substr(2))
-sFomate = sFomate.replace("MM", oDate.getMonth()+1)
-sFomate = sFomate.replace("DD", oDate.getDate());
-sFomate = sFomate.replace("hh", oDate.getHours());
-sFomate = sFomate.replace("mm", oDate.getMinutes());
-sFomate = sFomate.replace("ss", oDate.getSeconds());
-if (bZone) sFomate = sFomate.replace(/\b(\d)\b/g, '0$1');
-return sFomate;
-}
 </script>
 
-<body onload="daysBetween('2014-03-10',fomateDate(new Date(), 'YYYY-MM-DD'))">
+</head>
+<!--
+    daysBetween('2014-03-10',fomateDate(new Date(), 'YYYY-MM-DD'));
+    function daysBetween(DateOne,DateTwo)  
+
+    onload="daysBetween('2014-03-10',fomateDate(new Date(), 'YYYY-MM-DD'))" -->
+<body>
 <h1>Meetday</h1>
 <br/>
 <div id="showdate" >  </div>
