@@ -297,7 +297,17 @@ ile&#8217;
   
     <section id="date">
 
-    <head>
+<!--
+    daysBetween('2014-03-10',fomateDate(new Date(), 'YYYY-MM-DD'));
+    function daysBetween(DateOne,DateTwo)  
+
+    onload="daysBetween('2014-03-10',fomateDate(new Date(), 'YYYY-MM-DD'))" -->
+<body>
+<h1>Meetday</h1>
+<br/>
+
+<div id="showdate" >  </div>
+
 <script language="javascript" type="text/javascript"> 
 
     function fomateDate(oDate, sFomate, bZone)
@@ -315,7 +325,7 @@ ile&#8217;
 
     var DateOne = '2014-03-10';
     var DateTwo = fomateDate(new Date(), 'YYYY-MM-DD');
-    
+
     var OneMonth = DateOne.substring(5,DateOne.lastIndexOf ('-'));  
     var OneDay = DateOne.substring(DateOne.length,DateOne.lastIndexOf ('-')+1);  
     var OneYear = DateOne.substring(0,DateOne.indexOf ('-'));  
@@ -325,22 +335,11 @@ ile&#8217;
     var TwoYear = DateTwo.substring(0,DateTwo.indexOf ('-'));  
   
     var cha=((Date.parse(OneMonth+'/'+OneDay+'/'+OneYear)- Date.parse(TwoMonth+'/'+TwoDay+'/'+TwoYear))/86400000);   
-	
-	
-	document.getElementById('showdate').innerHTML = '认识珊珊已经' + Math.abs(cha) + '天';	
+    
+    
+    document.getElementById('showdate').innerHTML = '认识珊珊已经' + Math.abs(cha) + '天'; 
 
 </script>
-
-</head>
-<!--
-    daysBetween('2014-03-10',fomateDate(new Date(), 'YYYY-MM-DD'));
-    function daysBetween(DateOne,DateTwo)  
-
-    onload="daysBetween('2014-03-10',fomateDate(new Date(), 'YYYY-MM-DD'))" -->
-<body>
-<h1>Meetday</h1>
-<br/>
-<div id="showdate" >  </div>
 
 </body>
 </section>
