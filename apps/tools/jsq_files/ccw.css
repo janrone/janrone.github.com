@@ -1,0 +1,372 @@
+@charset "utf-8";
+*{margin:0;padding:0;}
+
+body {
+	font-family: 'Microsoft YaHei', "微软雅黑", SimSun;
+	color: #555;
+	background-color: #FFFFFF;	/*background-image: url(repeat.jpg);*/
+
+}
+img{border: 0;display:block;}
+li{list-style-type: none;}
+a{text-decoration: none;color: #CC6600;}
+a:hover{color: #669999;}
+i,em{
+	font-style: normal;
+}
+input,textarea{
+	background-color: #FFFFFF;
+}
+label{cursor:pointer}
+.Main{
+	background: #FFFFFF url(bky.png) repeat-y right;
+	border:1px solid #ccc;
+	line-height: 180%;
+}
+.widths{margin: 0 auto 0 auto;width: 910px;font-size: 14px;text-align: left;}
+
+.JS-Invalid p{
+	color: #FF0000;
+	background-color: #FFCC33;
+	line-height: 190%;
+}
+
+.bai{
+	margin: 0 3%;height: 100%;padding-top: 1px;
+}
+.logo{
+	float: left;
+	width: 188px;
+}
+.Tool{width: 100%;
+	height: 100%;
+	margin: 15px 0;
+	overflow: hidden;
+
+}
+.site{
+	margin: 0 4px 8px 0;
+	padding: 9px 25px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #F4F4F4;
+	color: #A4A4A4;
+	overflow: hidden;
+}
+.site a{
+color: #A4A4A4;
+}
+/*CSS3 效果
+/*0.5秒减速淡出*/
+.pic a img{-webkit-transition:all .3s ease-in-out;-moz-transition:all .3s ease-in-out;-o-transition:all .3s ease-in-out;-ms-transition:all .3s ease-in-out;transition:all .3s ease-in-out;-webkit-backface-visibility:hidden}
+/*2°旋转并放大1.1倍*/
+.pic a:hover img{-webkit-transform:scale(1.1) rotate(2deg);-moz-transform:scale(1.1) rotate(2deg);-o-transform:scale(1.1) rotate(2deg);-ms-transform:scale(1.1) rotate(2deg);transform:scale(1.1) rotate(2deg)}
+/******/
+.top{
+	height: 60px;
+	background-image: url(block.gif);
+	background-repeat: repeat-x;
+}
+.pgtop{
+	height: 60px;
+
+	
+}
+.Toolinf{
+	width: 48%;
+	float: left;
+	
+}
+
+.toollogo{
+	padding: 5px;
+
+	height: auto;
+	width: auto;
+	float: left;
+	background-color: #FFFFFF;
+	margin:0 15px 0 0;
+}
+
+.Toolname i{
+	width: 33%;
+
+	overflow: hidden;
+	float: left;
+}
+.Toolname{
+
+	margin-bottom: 9px;
+
+}
+.Toolname h1{
+	font-size: 180%;
+	color: #666666;
+	font-weight: bold;
+	letter-spacing: 5px;
+	margin-bottom: 18px;
+	line-height: normal;
+}
+.Toolname span{
+	color: #996633;
+}
+.you{
+	float: right;width: 48%;
+	
+}
+#nav{
+	height:58px;
+	width: 70%;
+	float: right;
+	position: relative;
+	z-index: 9999;
+}
+#nav ul{
+	overflow: hidden;
+	position: absolute;
+	border: 1px solid #993300;
+	display: none;
+	background-color: #FFFFFF;
+	right: 0px;
+	top: 59px;
+	z-index: 99;
+	
+	
+		/*CSS3投影效果*/
+-moz-border-radius: 5px 5px 5px 5px;
+-moz-box-shadow:2px 2px 10px #969696;
+-webkit-box-shadow:2px 2px 10px #969696;
+box-shadow:1px 2px 12px #969696;
+
+
+	
+}
+#nav .ns{
+	width:88px;
+	color:#FFFFFF;
+	text-align:center;
+	font-weight: bold;
+	height: 35px;
+	position: relative;
+	float: right;
+	z-index: 99889;
+	padding-top: 10px;
+	top: 15px;
+}
+
+/******我的工具********/
+
+
+.mytool .wt{
+	width: 15px;
+	text-align: center;
+	line-height: 130%;
+
+	color: #FFFFFF;
+	padding: 6px;
+	font-weight: bold;
+	font-family: "微软雅黑";
+	background-image: url(nav.png);
+	background-repeat: repeat;
+}
+.mytool i{
+	cursor: pointer;
+	color: #FF6633;
+}
+.mytool a{
+	color: #669900;
+
+}
+
+.rd{
+	margin: 15px 9px;
+	overflow: hidden;
+display: block;
+
+}
+.rd img{
+	margin: auto;
+
+}
+.rd p{
+	margin: 1.2%;
+	float: left;
+	width: 30%;
+
+	text-align: center;
+	overflow: hidden;
+	white-space: nowrap;
+	padding: 9px 0;
+	position: relative;
+	
+}
+
+
+.rd p i{
+	position: absolute;
+	right: -2px;
+	line-height: 80%;
+	display: none;
+	top: 1px;
+	padding: 5px;
+	font-size: 16px;
+}
+*html .rd p i{
+	display:block;
+	color: #CCCCCC;
+}
+.rd p:hover i{
+	display:block;
+}
+
+
+
+
+
+.ll{
+	overflow: hidden;
+	margin: 15px 38px;
+	display: block;
+}
+
+.ll p{
+	overflow: hidden;
+	padding: 3px 0;
+}
+.ll p em{
+	float: right;
+	width: 30%;
+	margin-right: 5px;
+}
+.ll p i{
+	float: right;
+	
+}
+
+
+
+
+/*********功能区*****************/
+
+.del a{
+	float: left;
+	height: 28px;
+	width:29px;
+	background-color: #FFFFFF;
+	background-image: url(block.gif);
+	background-position: -266px -78px;
+
+}
+.del a:hover{background-position: -299px -78px;}
+
+
+/**************************/
+
+
+
+#screen{position:absolute; top:0;left:0;background-color:#777;opacity:0.7; filter: alpha(opacity=70); width:100%; display: none;z-index:9998;}
+
+
+
+
+
+
+.but{
+	cursor:pointer;
+	background-color: #F4F4F4;
+	border: 1px solid #CCCCCC;
+	font-size: 20px;
+	font-weight: bold;
+	color: #336699;
+	padding: 5px;
+	float: right;
+	width: 15%;
+	height: 43px;
+	font-family: 'Microsoft YaHei',微软雅黑,SimSun;
+}
+
+/************/
+#lawin{
+	z-index: 8888;
+	background-color: #FFFFFF;
+	width: 600px;
+	border: 8px solid #7A6047;
+	position: absolute;
+	left: 50%;
+	display: none;
+	font-size: 14px;
+	margin-left: -310px;
+}
+
+#lawin,#Prompt{
+/**CSS3投影效果*/
+	-moz-border-radius: 5px 5px 5px 5px;
+filter: progid:DXImageTransform.Microsoft.Shadow(color='#969696', Direction=135, Strength=6);
+
+-moz-box-shadow:2px 2px 10px #969696;
+-webkit-box-shadow:2px 2px 10px #969696;
+	box-shadow:2px 2px 10px #969696;
+	text-align: left;
+	}
+	
+#bxq{
+	overflow: hidden;
+	width: 168px;
+	float: right;
+	height: 112px;
+	border-left: 5px solid #7A6047;
+
+}
+#bxq i{
+	float: left;
+	height: 50px;
+	width: 50px;
+	cursor:pointer;
+	margin: 2px;
+	border: 1px solid #999999;
+}
+#bxq i:hover{
+	border: 1px solid #FF6699;
+}
+
+#code{
+	float: left;
+	height: 50px;
+	width: 204px;
+	border: 1px solid #CCCCCC;
+}
+#code i{
+	float: left;
+	height: 50px;
+	width: 50px;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #CCCCCC;
+}
+/***************/
+#Prompt{
+	background-color: #996600;
+	border: 1px solid #FFCC33;
+	position: absolute;
+	z-index: 888888;
+	left: 50%;
+	padding: 18px;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 16px;
+}
+#full {
+	width: 39px;
+	height: 39px;
+	z-index: 999;
+	cursor: pointer;
+	background-image: url(block.gif);
+	right: 0px;
+	bottom: 0px;
+	position: fixed;
+	margin-right: 1%;
+	margin-bottom: 15%;
+	background-repeat: no-repeat;
+	background-position: -221px -74px;
+}
+

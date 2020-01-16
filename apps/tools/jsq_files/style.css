@@ -1,0 +1,598 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0}
+ol,ul{list-style:none}
+fieldset,img{border:0}
+em,i{font-style:normal;}
+.clearfix{*zoom:1}
+.clearfix:before,.clearfix:after{display:table;content:""}
+.clearfix:after{clear:both}
+a {
+    color: #444;
+    text-decoration: none;
+}
+body {
+    font-family: "Microsoft Yahei","寰蒋闆呴粦",SimSun,"瀹嬩綋",tahoma,arial,sans-serif normal;
+	font-size:12px;
+	background: none repeat scroll 0 0 white;
+    line-height: 1.5;
+	margin:0;
+	padding:0;
+}
+.topbar{
+    background-color:#f4f4f4;
+    border-bottom: 1px solid #e4e4e4;
+    color: #777;
+    font-size: 12px;
+    height: 32px;
+    line-height: 32px;
+}
+.w960{
+	width:960px;
+	margin:0 auto;
+}
+.w700{
+	width:700px;
+	float:left;
+}
+.w250{
+	width:250px;
+	float:right;
+}
+.mt10{margin-top:10px;}
+.topbartxt{
+	width:560px;
+	float:left;
+}
+.headerBox{
+    background-color:#f8f8f8;
+    border-bottom: 1px solid #d4d4d4;
+}
+.header{
+    height: 82px;
+}
+.header .logo{
+	width:310px;
+	float:left;
+}
+.header .headad{
+	width:470px;
+	height:60px;
+	margin-top:10px;
+	float:left;
+}
+.menu{
+    background-color:#438bc8;
+    border-top: 5px solid #438bc8;
+    height: 39px;
+    overflow: hidden;
+    position: relative;
+}
+.menu ul{
+    background-color:#f8f8f8;
+	border:1px solid #d4d4d4;
+	border-top:none;
+    height: 39px;
+    position: relative;
+    width: 958px;
+}
+.menu ul li{
+	list-style:none;
+	float: left;
+    font-size: 14px;
+    margin-left: -1px;
+    padding: 9px 20px;
+    position: relative;
+	border-left:1px solid #d4d4d4;
+}
+.menu li.hover {
+    background-color:#438bc8;
+    border-image: none;
+    color: #fff;
+    position: relative;
+	border:1px solid #438bc8;
+	border-top:none;
+	border-right:none;
+}
+.menu li.hover a{
+    color: #fff;
+}
+.menu li a{
+    color: #434343;
+}
+.menu li a:hover{
+	text-decoration:underline;
+}
+.hot_div{
+	margin-top:10px;
+	position:relative;
+}
+.hot_div span.hot {
+    background: url("hotimg.png") no-repeat scroll center top rgba(0, 0, 0, 0);
+    display: block;
+    height: 81px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 80px;
+}
+.hotbox{
+    border: 2px solid #63b2f1;
+    overflow: hidden;
+    width: 956px;
+}
+.hotbox ul,.mainBox ul, .nr_nrBox ul{
+    display: inline-block;
+    padding: 15px 0 15px 14px;
+}
+.hotbox ul li, .mainBox ul li, .nr_nrBox ul li{
+    float: left;
+    font-size: 12px;
+    margin: 12px 10px 0 11px;
+    padding-top: 3px;
+    position: relative;
+    text-align: center;
+    width: 72px;
+}
+.hotbox ul li a img, .mainBox ul li a img, .nr_nrBox ul li a img {
+    display: block;
+    height: 64px;
+    margin: 0 auto 5px;
+    overflow: hidden;
+    width: 64px;
+}
+.hotbox ul li a:hover img,.mainBox ul li a:hover img,.nr_nrBox ul li a:hover img {
+    opacity: 0.7;
+}
+.cover{
+    background: url("cover.png") no-repeat;
+    cursor: pointer;
+    display: block;
+    height: 70px;
+    left: 1px;
+    position: absolute;
+    top: 0;
+    width: 70px;
+}
+
+.mainBox{
+    border: 1px solid #d8d8d8;
+    clear: both;
+    overflow: hidden;
+    width: 698px;
+}
+.sbox{
+    border: 1px solid #d8d8d8;
+    clear: both;
+    overflow: hidden;
+    width: 248px;
+}
+.mainBoxTitle,.sboxTitle,.linkBoxTitle{
+    background:#f5f5f5;
+    border-bottom: 1px solid #d8d8d8;
+    font-size: 14px;
+    font-weight: bold;
+    height: 39px;
+    line-height: 39px;
+    padding: 0 20px;
+    position: relative;
+}
+.mainBoxTitle span{
+    background: url("ee.gif") no-repeat scroll 4px 10px;
+    border-bottom: 2px solid #438bc8;
+    float: left;
+    height: 38px;
+    margin-bottom: -1px;
+    padding: 0 5px 0 23px;
+    position: relative;
+}
+.sboxTitle span,.linkBoxTitle span {
+    border-bottom: 2px solid #438bc8;
+	padding:0 5px;
+    color: #4f4f4f;
+    display: inline;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    height: 36px;
+}
+.mainBoxTitle a.more,.sboxTitle a.more {
+    float: right;
+    font-size: 12px;
+    font-weight: normal;
+}
+.mainBox ul, .mainBox dl, .mainBox ol {
+    border-top: 1px solid #f5f5f5;
+}
+.mainBox ul li {
+    font-size: 12px;
+    margin: 15px 6px 0;
+}
+.swEditList {
+    width: 248px;
+	font-size:12px;
+}
+.swEditList li {
+    border-bottom: 1px dashed #cdcdcd;
+    float: left;
+    height: 74px;
+    width: 248px;
+}
+.swEditList li span {
+    display: inline;
+    float: left;
+    height: 54px;
+    margin: 10px 0 0 10px;
+    position: relative;
+    width: 54px;
+}
+.swEditList li span img {
+    height: 48px;
+    margin: 3px auto 5px;
+    overflow: hidden;
+    width: 48px;
+}
+.swEditList li span a em.htAzCover {
+    background: url("swBg1.png") no-repeat;
+    display: block;
+    height: 54px;
+    left: -3px;
+    position: absolute;
+    top: 0;
+    width: 54px;
+}
+.swEditList li span a:hover em.htAzCover {
+    background: url("swBg2.png") no-repeat;
+}
+.swEditList li dl {
+    display: inline;
+    float: left;
+    margin: 10px 0 0 5px;
+    width: 175px;
+}
+.swEditList li dl dt {
+    font-weight: bold;
+    height: 15px;
+    line-height: 15px;
+    overflow: hidden;
+    width: 175px;
+}
+.cBlue a {
+    color: #438bc8;
+    text-decoration: none;
+}
+.cBlue a:hover {
+    color: #ff6600;
+    text-decoration: underline;
+}
+.swEditList li dl dd {
+    color: #999999;
+    height: 40px;
+    line-height: 20px;
+    margin-top: 5px;
+    overflow: hidden;
+    width: 175px;
+}
+.linkBox {
+    border: 1px solid #d8d8d8;
+    clear: both;
+    display: block;
+    width: 958px;
+	margin:5px auto;
+}
+.linkBox ul {
+    font-size: 12px;
+    line-height: 25px;
+    padding: 10px 20px;
+}
+.linkBox a{
+	margin-right:5px;
+}
+.linkBox a:hover{
+	text-decoration:underline;
+	color:#438bc8;
+}
+.footer{
+    background:#f8f8f8;
+    border-top: 1px solid #c1c5cb;
+    font-size: 12px;
+	color:#999;
+	line-height:25px;
+	margin-top:10px;
+	height:50px;
+	text-align:center;
+}
+
+
+/* 鍐呴〉 */
+.mbxdh{
+	height:30px;
+	line-height:30px;
+	width:960px;
+	margin:0 auto;
+}
+.mbxdh a{
+    color: #005eac;
+}
+.mbxdh a:hover{
+	text-decoration:underline;
+}
+.nrbox {
+    border: 1px solid #d8d8d8;
+}
+.nrbox_tit {
+    border-bottom: 1px solid #e4e4e4;
+    display: block;
+    overflow: hidden;
+    padding: 16px 20px;
+}
+.nrbox_tit a {
+    display: block;
+    float: left;
+    position: relative;
+    width: 72px;
+}
+.nrbox_tit img {
+    float: left;
+    height: 64px;
+    margin-left: 4px;
+    margin-top: 3px;
+    width: 64px;
+}
+.nrbox_tit h1, .nrbox_tit p {
+    color: #333;
+    font-size: 12px;
+    margin-left: 74px;
+    position: relative;
+}
+.nrbox_tit h1 {
+    color: #005eac;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+.boxNr {
+    border-bottom: 1px solid #d8d8d8;
+    display: block;
+    overflow: hidden;
+    padding: 20px 10px;
+}
+.boxjs,.boxjs2{
+	border:1px solid #aaccee;
+	padding:20px;
+	background-color:#f8f8f8;
+}
+.boxjs2{
+	width:415px;
+	float:left;
+	margin-right:10px;
+}
+.boxj3{
+	padding:20px;
+    font-size: 15px;
+}
+.boxjs div,.boxjs2 div{
+	line-height:45px;
+	font-size:18px;
+}
+.boxjs dl{
+	height:40px;
+	line-height:40px;
+}
+.boxjs dl dt{
+	width:60px;
+	float:left;
+	text-align:right;
+}
+.tian,.zhi{
+	border:1px solid #d8d8d8;
+	font-size: 16px;
+    margin: 5px 2px;
+    padding: 4px;
+}
+.tian:focus{
+	border: 1px solid #eebbaa;
+}
+.btn{
+	background-color:#438bc8;
+	border:none;
+	border-radius: 2px;
+	color:#FFF;
+	cursor: pointer;
+    font-size: 14px;
+    padding: 5px 8px;
+	margin:8px 5px 0 0;
+    text-align: center;
+}
+.btn:hover{
+	background-color:#2d79ba;
+}
+.sharebox {
+    clear: right;
+    display: inline-block;
+    padding: 10px 20px;
+}
+.nr_nrBox {
+    clear: both;
+}
+.nr_nrBox p {
+    font-size: 14px;
+    line-height: 25px;
+    padding: 20px;
+}
+.nr_nrBox_title{
+    background:#f5f5f5;
+    border-bottom: 1px solid #d8d8d8;
+    border-top: 1px solid #d8d8d8;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+	font-size:16px;
+}
+
+
+
+/*  鍒楄〃 */
+.demand {
+    border: 1px solid #d8d8d8;
+    display: block;
+}
+.tit {
+    background:#f5f5f5;
+    border-bottom: 1px solid #d8d8d8;
+    color: #333;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+}
+.demand ul {
+    border-top: 1px solid #f5f5f5;
+    display: inline-block;
+}
+.demand ul li {
+    border-bottom: 1px solid #d8d8d8;
+    border-right: 1px solid #d8d8d8;
+    float: left;
+    height: 95px;
+    margin: -1px;
+    position: relative;
+    width: 240px;
+}
+.demand ul li a {
+    display: block;
+    height: 80px;
+    padding: 15px 0 0 20px;
+    width: 220px;
+}
+.demand ul li img {
+    float: left;
+    height: 64px;
+    width: 64px;
+}
+.demand ul li h1 {
+    color: #005eac;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+.demand ul li h1, .demand ul li p{
+    color: #333;
+    font-size: 12px;
+    margin-left: 74px;
+    position: relative;
+}
+.demand ul li a .cover {
+    left: 17px;
+    top: 12px;
+}
+.demand ul li a:hover {
+    background: none repeat scroll 0 0 #f2f3f5;
+    color: #005eac;
+    height: 80px;
+    margin-left: 2px;
+    margin-top: 2px;
+    padding: 13px 0 0 18px;
+    text-decoration: none;
+    width: 220px;
+}
+.divtitle{
+	width:100px;
+	display:inline-block;
+	text-align:right;
+	font-size:14px;
+}
+.bigdivtitle{
+	width:150px;
+	display:inline-block;
+	text-align:right;
+	font-size:14px;
+}
+.boxjs .smtxt,.boxjs2 .smtxt{
+	font-size:14px;
+	line-height:25px;
+}
+.boxjs .tjjg{
+	font-size:14px;
+	line-height:25px;
+}
+.tjjg span{
+	color:#F00;
+}
+.blankline{height:8px; font-size:1px; clear:both;overflow:hidden;}
+.dttable{
+	width:750px;
+	border-top:1px solid #aaccee;
+	border-right:1px solid #aaccee;
+}
+.dttable dl{
+	width:375px;
+	float:left;
+	height:45px;
+	line-height:45px;
+	border-bottom:1px solid #aaccee;
+}
+.dttable dl dt{
+	width:80px;
+	float:left;
+	text-align:center;
+	border-left:1px solid #aaccee;
+	border-right:1px solid #aaccee;
+	background-color:#f8f8f8;
+}
+.dttable dl dd{
+	width:280px;
+	float:left;
+	padding-left:5px;
+}
+
+.conad{
+	height:250px;
+	border-bottom:1px solid #d8d8d8;
+	padding-left:5px;
+}
+	
+	
+
+/* 知识列表*/
+.art_list{ width:910px; margin-bottom:20px;}
+.art_list dl{ width:910px;border-bottom:1px dashed #DDD;padding:20px 0;overflow:hidden}
+.art_list dl dt{float:left;margin-right:15px; margin-left:5px;}
+.art_list dl dt img{display:block;width:190px;height:140px}
+.art_list dl dd{overflow:hidden}
+.art_share{padding:5px 0 0}
+.art_list dl dd.name{font:22px "Microsoft YaHei"}
+.art_list dl dd.name a{float:left;color:#000}
+.art_list dl dd.name a:hover{color:#7b0}
+.art_list dl dd.contt{margin:20px 0 0;font:14px/24px "Microsoft YaHei";color:#666}
+.art_list dl dd.contt a{color:#7b0}
+.article_share{float:right;padding:15px 0 0;font:14px/16px "Microsoft YaHei";color:#999}
+.article_share div{float:right;margin-left:25px}
+.article_share em{float:left;width:20px;height:14px;background:url("icon.png") no-repeat;margin:2px 5px 0 0}
+
+/* 知识文章*/
+
+.nrwen_tit {
+    border-bottom: 1px solid #e4e4e4;
+    display: block;
+    overflow: hidden;
+    padding: 16px 20px;
+}
+
+.nrwen_tit h1, .nrbox_tit p {
+    color: #333;
+    font-size: 12px;
+    margin-left: 10px;
+    position: relative;
+}
+.nrwen_tit h1 {
+    color: #005eac;
+    font-size: 18px;
+	margin-left:0px;
+    margin-bottom: 5px;
+}
+
+/*分页样式2*/
+.showpage .epages {text-align: center;}
+.epages{margin:15px auto 0;line-height:36px;font-family:"Microsoft Yahei", simsun;text-align  center;font-size: 14px;}
+.epages *{vertical-align:middle;}
+.epages a{margin:0px 3px;padding:8px 15px 8px;border:1px solid #008ee1; background:#eee;text-align:center;text-decoration:none;font-family:"Microsoft Yahei", simsun;}
+.epages a:hover{border:#008ee1 1px solid;background:#008ee1;text-decoration:none;color:#FFF}
+.epages input{margin-bottom:0px;border:1px solid #0096A5;height:15px;padding-bottom:1px;padding-left:1px;margin-right:1px;color:#0096A5}
+.epages b{margin:0px 3px;padding:8px 15px 8px;border:1px solid #008ee1; background:#008ee1; color:#FFF;text-align:center;text-decoration:none;}

@@ -1,0 +1,1099 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta name="baidu-site-verification" content="ZMO2TPlYMV" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Janrone's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="1.创建一个Android项android create project -k com.android.hello -a hello -t 1 -p ~/Download/Hello 
+
+结果：
+Created project directory: /Users/povol/Download/Hello
+Created directory /Users/povol/Download/Hello/s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Anroid应用自动打包">
+<meta property="og:url" content="http://janrone.allone.top/2013/05/23/Anroid应用自动打包/index.html">
+<meta property="og:site_name" content="Janrone's Blog">
+<meta property="og:description" content="1.创建一个Android项android create project -k com.android.hello -a hello -t 1 -p ~/Download/Hello 
+
+结果：
+Created project directory: /Users/povol/Download/Hello
+Created directory /Users/povol/Download/Hello/s">
+<meta property="og:image" content="http://janrone.allone.top/images/post/2013-05-23-20-21-56.png">
+<meta property="og:image" content="http://janrone.allone.top/images/post/2013-05-23-20-21-55.png">
+<meta property="og:image" content="http://janrone.allone.top/images/post/2013-05-23-20-21-57.png">
+<meta property="og:updated_time" content="2020-01-16T02:52:59.534Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Anroid应用自动打包">
+<meta name="twitter:description" content="1.创建一个Android项android create project -k com.android.hello -a hello -t 1 -p ~/Download/Hello 
+
+结果：
+Created project directory: /Users/povol/Download/Hello
+Created directory /Users/povol/Download/Hello/s">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6239181267347178000,
+      author: '博主'
+    }
+  };
+</script>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  <title> Anroid应用自动打包 | Janrone's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-72351220-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Janrone's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">The gold housese in the books .</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tools">
+          <a href="/tools" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-bookmark"></i> <br />
+            
+            工具
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-videos">
+          <a href="/videos" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-youtube-play"></i> <br />
+            
+            视频
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-eye"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'if_KrtoyZR9acx37Pibb','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+<div id="ads" style="padding-top:50px">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- janrone.com -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7563402430440865"
+     data-ad-slot="8020904262"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K7LQ83LN95"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-K7LQ83LN95');
+</script>
+</div>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Anroid应用自动打包
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2013-05-23T20:37:00+08:00" content="2013-05-23">
+              2013-05-23
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2013/05/23/Anroid应用自动打包/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2013/05/23/Anroid应用自动打包/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv">本文共被围观
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="1-_u521B_u5EFA_u4E00_u4E2AAndroid_u9879"><a href="#1-_u521B_u5EFA_u4E00_u4E2AAndroid_u9879" class="headerlink" title="1.创建一个Android项"></a>1.创建一个Android项</h3><pre><code>android create project -k com.android.hello -a hello -t 1 -p ~/Download/Hello 
+
+结果：
+Created project directory: /Users/povol/Download/Hello
+Created directory /Users/povol/Download/Hello/src/com/android/hello
+Added file /Users/povol/Download/Hello/src/com/android/hello/hello.java
+Created directory /Users/povol/Download/Hello/res
+Created directory /Users/povol/Download/Hello/bin
+Created directory /Users/povol/Download/Hello/libs
+Created directory /Users/povol/Download/Hello/res/values
+Added file /Users/povol/Download/Hello/res/values/strings.xml
+Created directory /Users/povol/Download/Hello/res/layout
+Added file /Users/povol/Download/Hello/res/layout/main.xml
+Added file /Users/povol/Download/Hello/AndroidManifest.xml
+Added file /Users/povol/Download/Hello/build.xml
+Added file /Users/povol/Download/Hello/proguard-project.txt
+</code></pre><p>参数说明：-k /–package 为命名空间（包名）-a /–name 工程名  -t 为目标平台的版本编号 -p /–path 项目路径  </p>
+<p>列出 -t：target id，可以如命令：android list targets , Hello项目使用得id为1。</p>
+<pre><code>    Available Android targets:
+----------
+id: 1 or &quot;android-8&quot;
+     Name: Android 2.2
+     Type: Platform
+     API level: 8
+     Revision: 3
+     Skins: HVGA, QVGA, WQVGA400, WQVGA432, WVGA800 (default), WVGA854
+     ABIs : armeabi
+----------
+id: 2 or &quot;Google Inc.:Google APIs:8&quot;
+     Name: Google APIs
+     Type: Add-On
+     Vendor: Google Inc.
+     Revision: 2
+     Description: Android + Google APIs
+     Based on Android 2.2 (API level 8)
+     Libraries:
+      * com.google.android.maps (maps.jar)
+          API for Google Maps
+     Skins: WVGA854, WQVGA400, HVGA, WQVGA432, WVGA800 (default), QVGA
+     ABIs : armeabi
+----------
+</code></pre><a id="more"></a>     
+<h3 id="2-_u5DF2_u6709_u9879_u76EE_u66F4_u65B0"><a href="#2-_u5DF2_u6709_u9879_u76EE_u66F4_u65B0" class="headerlink" title="2.已有项目更新"></a>2.已有项目更新</h3><p>对已经存在的Android工程,可以update下（修改平台的版本）,这样会自动添加build.xml 等ant 的配置文件</p>
+<pre><code>android update project -n Hello -t 2 -p ~/Download/Hello
+</code></pre><p>参数说明：－n 项目名称  －t target id －p 项目路径</p>
+<p>#####以上命令你要在android sdk tools的目录下。</p>
+<h3 id="3-_u914D_u7F6E_ant-properties"><a href="#3-_u914D_u7F6E_ant-properties" class="headerlink" title="3.配置 ant.properties"></a>3.配置 ant.properties</h3><pre><code>key.store=hello.keystroe
+key.store.password=helloworld
+key.alias=hello.keystroe
+key.alias.password=helloworld
+</code></pre><p>要发布Adnroid应用，需要给apk签名，前提需要是有keystore，在这使用命令生产，你也可以用其他方式。</p>
+<h3 id="4-_u751F_u4EA7keystore"><a href="#4-_u751F_u4EA7keystore" class="headerlink" title="4.生产keystore"></a>4.生产keystore</h3><p>需要用得keytool，这个安装完了java sdk 就会有的。  </p>
+<pre><code>povolmatoMacBook-Pro:Hello povol$ keytool -genkey -alias hello.keystore -keyalg RSA -    validity 25 -keystore hello.keystroe
+Enter keystore password:  
+Re-enter new password: 
+What is your first and last name?
+  [Unknown]:  hello world
+What is the name of your organizational unit?
+  [Unknown]:  hello world
+What is the name of your organization?
+  [Unknown]:  hello world
+What is the name of your City or Locality?
+  [Unknown]:  cn
+What is the name of your State or Province?
+  [Unknown]:  bj
+What is the two-letter country code for this unit?
+  [Unknown]:  cn
+Is CN=hello world, OU=hello world, O=hello world, L=cn, ST=bj, C=cn correct?
+  [no]:  Y
+
+Enter key password for &lt;hello.keystore&gt;
+(RETURN if same as keystore password):  
+Re-enter new password: 
+povolmatoMacBook-Pro:Hello povol$ 
+</code></pre><p>在Hello目录下生成了 hello.keystroe 。<br><img src="/images/post/2013-05-23-20-21-56.png" alt=""></p>
+<h3 id="5-_u7F16_u8BD1"><a href="#5-_u7F16_u8BD1" class="headerlink" title="5.编译"></a>5.编译</h3><pre><code>ant relase
+
+povolmatoMacBook-Pro:Hello povol$ ant release
+Buildfile: /Users/povol/Download/Hello/build.xml
+
+-set-mode-check:
+
+-set-release-mode:
+
+-release-obfuscation-check:
+     [echo] proguard.config is ${proguard.config}
+
+-pre-build:
+
+-check-env:
+ [checkenv] Android SDK Tools Revision 21.1.0
+ [checkenv] Installed at /Users/povol/myapp/android-sdk-macosx
+
+-setup:
+     [echo] Project Name: Hello
+  [gettype] Project Type: Application
+
+-build-setup:
+     [echo] Resolving Build Target for Hello...
+[gettarget] Project Target:   Google APIs
+[gettarget] Vendor:           Google Inc.
+[gettarget] Platform Version: 2.2
+[gettarget] API level:        8
+[gettarget] WARNING: No minSdkVersion value set. Application will install on all Android     versions.
+     [echo] ----------
+     [echo] Creating output directories if needed...
+    [mkdir] Created dir: /Users/povol/Download/Hello/bin
+    [mkdir] Created dir: /Users/povol/Download/Hello/bin/res
+    [mkdir] Created dir: /Users/povol/Download/Hello/gen
+    [mkdir] Created dir: /Users/povol/Download/Hello/bin/classes
+    [mkdir] Created dir: /Users/povol/Download/Hello/bin/dexedLibs
+     [echo] ----------
+     [echo] Resolving Dependencies for Hello...
+[dependency] Library dependencies:
+[dependency] No Libraries
+[dependency] 
+[dependency] ------------------
+[dependency] API&lt;=15: Adding annotations.jar to the classpath.
+     [echo] ----------
+     [echo] Building Libraries with &apos;release&apos;...
+   [subant] No sub-builds to iterate on
+
+-code-gen:
+[mergemanifest] Merging AndroidManifest files into one.
+[mergemanifest] Manifest merger disabled. Using project manifest only.
+     [echo] Handling aidl files...
+     [aidl] No AIDL files to compile.
+     [echo] ----------
+     [echo] Handling RenderScript files...
+[renderscript] No RenderScript files to compile.
+     [echo] ----------
+     [echo] Handling Resources...
+     [aapt] Generating resource IDs...
+     [echo] ----------
+     [echo] Handling BuildConfig class...
+[buildconfig] Generating BuildConfig class.
+
+-pre-compile:
+
+-compile:
+    [javac] Compiling 3 source files to /Users/povol/Download/Hello/bin/classes
+
+-post-compile:
+
+-obfuscate:
+
+-dex:
+      [dex] input: /Users/povol/Download/Hello/bin/classes
+      [dex] input: /Users/povol/myapp/android-sdk-macosx/tools/support/annotations.jar
+      [dex] Pre-Dexing /Users/povol/myapp/android-sdk-macosx/tools/support/annotations.jar -&gt; annotations-18bac9ff24ac0be23db54c4d77951e76.jar
+      [dex] Converting compiled files and external libraries into /Users/povol/Download/Hello/bin/classes.dex...
+       [dx] Merged dex A (6 defs/1.8KiB) with dex B (2 defs/1.1KiB). Result is 8 defs/2.8KiB. Took 0.0s
+
+-crunch:
+   [crunch] Crunching PNG Files in source dir: /Users/povol/Download/Hello/res
+   [crunch] To destination dir: /Users/povol/Download/Hello/bin/res
+   [crunch] Crunched 0 PNG files to update cache
+
+-package-resources:
+ [aapt] Creating full resource package...
+
+-package:
+[apkbuilder] Current build type is different than previous build: forced apkbuilder run.
+[apkbuilder] Creating Hello-release-unsigned.apk for release...
+
+-post-package:
+
+-release-prompt-for-password:
+
+-release-nosign:
+
+-release-sign:
+     [echo] Signing final apk...
+ [zipalign] Running zip align on final apk...
+     [echo] Release Package: /Users/povol/Download/Hello/bin/Hello-release.apk
+[propertyfile] Creating new property file: /Users/povol/Download/Hello/bin/build.prop
+[propertyfile] Updating property file: /Users/povol/Download/Hello/bin/build.prop
+[propertyfile] Updating property file: /Users/povol/Download/Hello/bin/build.prop
+[propertyfile] Updating property file: /Users/povol/Download/Hello/bin/build.prop
+
+-post-build:
+
+release:
+
+BUILD SUCCESSFUL
+Total time: 4 seconds
+povolmatoMacBook-Pro:Hello povol$ 
+</code></pre><p>至此，编译成功。</p>
+<p><img src="/images/post/2013-05-23-20-21-55.png" alt=""></p>
+<h3 id="6-_u5B89_u88C5_u8FD0_u884C"><a href="#6-_u5B89_u88C5_u8FD0_u884C" class="headerlink" title="6.安装运行"></a>6.安装运行</h3><p>结果：<br> <img src="/images/post/2013-05-23-20-21-57.png" alt=""></p>
+<h4 id="u7B7E_u540D_u53C2_u8003_Signing_Your_Applications_http_3A//developer-android-com/tools/publishing/app-signing-html"><a href="#u7B7E_u540D_u53C2_u8003_Signing_Your_Applications_http_3A//developer-android-com/tools/publishing/app-signing-html" class="headerlink" title="签名参考 Signing Your Applications  http://developer.android.com/tools/publishing/app-signing.html"></a>签名参考 Signing Your Applications  <a href="http://developer.android.com/tools/publishing/app-signing.html" target="_blank" rel="external">http://developer.android.com/tools/publishing/app-signing.html</a></h4><h4 id="u9644_uFF1Akeytool_u7528_u6CD5_uFF1A"><a href="#u9644_uFF1Akeytool_u7528_u6CD5_uFF1A" class="headerlink" title="附：keytool用法："></a>附：keytool用法：</h4><pre><code>-certreq     [-v] [-protected]
+             [-alias &lt;别名&gt;] [-sigalg &lt;sigalg&gt;]
+             [-file &lt;csr_file&gt;] [-keypass &lt;密钥库口令&gt;]
+             [-keystore &lt;密钥库&gt;] [-storepass &lt;存储库口令&gt;]
+             [-storetype &lt;存储类型&gt;] [-providername &lt;名称&gt;]
+             [-providerclass &lt;提供方类名称&gt; [-providerarg &lt;参数&gt;]] ...
+             [-providerpath &lt;路径列表&gt;]
+
+-changealias [-v] [-protected] -alias &lt;别名&gt; -destalias &lt;目标别名&gt;
+             [-keypass &lt;密钥库口令&gt;]
+             [-keystore &lt;密钥库&gt;] [-storepass &lt;存储库口令&gt;]
+             [-storetype &lt;存储类型&gt;] [-providername &lt;名称&gt;]
+             [-providerclass &lt;提供方类名称&gt; [-providerarg &lt;参数&gt;]] ...
+             [-providerpath &lt;路径列表&gt;]
+
+-delete      [-v] [-protected] -alias &lt;别名&gt;
+             [-keystore &lt;密钥库&gt;] [-storepass &lt;存储库口令&gt;]
+             [-storetype &lt;存储类型&gt;] [-providername &lt;名称&gt;]
+             [-providerclass &lt;提供方类名称&gt; [-providerarg &lt;参数&gt;]] ...
+             [-providerpath &lt;路径列表&gt;]
+
+-exportcert  [-v] [-rfc] [-protected]
+             [-alias &lt;别名&gt;] [-file &lt;认证文件&gt;]
+             [-keystore &lt;密钥库&gt;] [-storepass &lt;存储库口令&gt;]
+             [-storetype &lt;存储类型&gt;] [-providername &lt;名称&gt;]
+             [-providerclass &lt;提供方类名称&gt; [-providerarg &lt;参数&gt;]] ...
+             [-providerpath &lt;路径列表&gt;]
+
+-genkeypair  [-v] [-protected]
+             [-alias &lt;别名&gt;]
+             [-keyalg &lt;keyalg&gt;] [-keysize &lt;密钥大小&gt;]
+             [-sigalg &lt;sigalg&gt;] [-dname &lt;dname&gt;]
+             [-validity &lt;valDays&gt;] [-keypass &lt;密钥库口令&gt;]
+             [-keystore &lt;密钥库&gt;] [-storepass &lt;存储库口令&gt;]
+             [-storetype &lt;存储类型&gt;] [-providername &lt;名称&gt;]
+             [-providerclass &lt;提供方类名称&gt; [-providerarg &lt;参数&gt;]] ...
+             [-providerpath &lt;路径列表&gt;]
+
+-genseckey   [-v] [-protected]
+             [-alias &lt;别名&gt;] [-keypass &lt;密钥库口令&gt;]
+             [-keyalg &lt;keyalg&gt;] [-keysize &lt;密钥大小&gt;]
+             [-keystore &lt;密钥库&gt;] [-storepass &lt;存储库口令&gt;]
+             [-storetype &lt;存储类型&gt;] [-providername &lt;名称&gt;]
+             [-providerclass &lt;提供方类名称&gt; [-providerarg &lt;参数&gt;]] ...
+             [-providerpath &lt;路径列表&gt;]
+
+-help
+
+-importcert  [-v] [-noprompt] [-trustcacerts] [-protected]
+             [-alias &lt;别名&gt;]
+             [-file &lt;认证文件&gt;] [-keypass &lt;密钥库口令&gt;]
+             [-keystore &lt;密钥库&gt;] [-storepass &lt;存储库口令&gt;]
+             [-storetype &lt;存储类型&gt;] [-providername &lt;名称&gt;]
+             [-providerclass &lt;提供方类名称&gt; [-providerarg &lt;参数&gt;]] ...
+             [-providerpath &lt;路径列表&gt;]
+
+-importkeystore [-v]
+             [-srckeystore &lt;源密钥库&gt;] [-destkeystore &lt;目标密钥库&gt;]
+             [-srcstoretype &lt;源存储类型&gt;] [-deststoretype &lt;目标存储类型&gt;]
+             [-srcstorepass &lt;源存储库口令&gt;] [-deststorepass &lt;目标存储库口令&gt;]
+             [-srcprotected] [-destprotected]
+             [-srcprovidername &lt;源提供方名称&gt;]
+             [-destprovidername &lt;目标提供方名称&gt;]
+             [-srcalias &lt;源别名&gt; [-destalias &lt;目标别名&gt;]
+               [-srckeypass &lt;源密钥库口令&gt;] [-destkeypass &lt;目标密钥库口令&gt;]]
+             [-noprompt]
+             [-providerclass &lt;提供方类名称&gt; [-providerarg &lt;参数&gt;]] ...
+             [-providerpath &lt;路径列表&gt;]
+
+-keypasswd   [-v] [-alias &lt;别名&gt;]
+             [-keypass &lt;旧密钥库口令&gt;] [-new &lt;新密钥库口令&gt;]
+             [-keystore &lt;密钥库&gt;] [-storepass &lt;存储库口令&gt;]
+             [-storetype &lt;存储类型&gt;] [-providername &lt;名称&gt;]
+             [-providerclass &lt;提供方类名称&gt; [-providerarg &lt;参数&gt;]] ...
+             [-providerpath &lt;路径列表&gt;]
+
+-list        [-v | -rfc] [-protected]
+             [-alias &lt;别名&gt;]
+             [-keystore &lt;密钥库&gt;] [-storepass &lt;存储库口令&gt;]
+             [-storetype &lt;存储类型&gt;] [-providername &lt;名称&gt;]
+             [-providerclass &lt;提供方类名称&gt; [-providerarg &lt;参数&gt;]] ...
+             [-providerpath &lt;路径列表&gt;]
+
+-printcert   [-v] [-file &lt;认证文件&gt;]
+
+-storepasswd [-v] [-new &lt;新存储库口令&gt;]
+             [-keystore &lt;密钥库&gt;] [-storepass &lt;存储库口令&gt;]
+             [-storetype &lt;存储类型&gt;] [-providername &lt;名称&gt;]
+             [-providerclass &lt;提供方类名称&gt; [-providerarg &lt;参数&gt;]] ...
+             [-providerpath &lt;路径列表&gt;]
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>梦想还是要有的，万一实现了呢？</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat_donate.png" alt="Janrone WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/wechat_donate.png" alt="Janrone Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/04/14/think-python/" rel="next" title="Think Python">
+                <i class="fa fa-chevron-left"></i> Think Python
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2014/04/09/Nexus4手机解锁root/" rel="prev" title="Nexus4手机 解锁 root ">
+                Nexus4手机 解锁 root  <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2013/05/23/Anroid应用自动打包/"
+           data-title="Anroid应用自动打包" data-url="http://janrone.allone.top/2013/05/23/Anroid应用自动打包/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar92.png"
+               alt="Janrone" />
+          <p class="site-author-name" itemprop="name">Janrone</p>
+          <p class="site-description motion-element" itemprop="description">The gold housese in the books .</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">35</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/janrone" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://hujiaweibujidao.github.io/" title="家威" target="_blank">家威</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.figotan.org/" title="非戈" target="_blank">非戈</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://quanqi.org/" title="圈齐" target="_blank">圈齐</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.zhaiyifan.cn/" title="markzhai" target="_blank">markzhai</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-_u521B_u5EFA_u4E00_u4E2AAndroid_u9879"><span class="nav-number">1.</span> <span class="nav-text">1.创建一个Android项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-_u5DF2_u6709_u9879_u76EE_u66F4_u65B0"><span class="nav-number">2.</span> <span class="nav-text">2.已有项目更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-_u914D_u7F6E_ant-properties"><span class="nav-number">3.</span> <span class="nav-text">3.配置 ant.properties</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-_u751F_u4EA7keystore"><span class="nav-number">4.</span> <span class="nav-text">4.生产keystore</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-_u7F16_u8BD1"><span class="nav-number">5.</span> <span class="nav-text">5.编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-_u5B89_u88C5_u8FD0_u884C"><span class="nav-number">6.</span> <span class="nav-text">6.安装运行</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u7B7E_u540D_u53C2_u8003_Signing_Your_Applications_http_3A//developer-android-com/tools/publishing/app-signing-html"><span class="nav-number">6.1.</span> <span class="nav-text">签名参考 Signing Your Applications  http://developer.android.com/tools/publishing/app-signing.html</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u9644_uFF1Akeytool_u7528_u6CD5_uFF1A"><span class="nav-number">6.2.</span> <span class="nav-text">附：keytool用法：</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2012 - 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Janrone</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="powered-by">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+<div class="theme-info">
+  Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"janrone"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

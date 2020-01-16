@@ -1,0 +1,920 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta name="baidu-site-verification" content="ZMO2TPlYMV" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Janrone's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="创建一个映像用来下载android源码1, $ hdiutil create -type SPARSE -fs ‘Case-sensitive Journaled HFS+’ -size 40g ~/android.sparseimage
+2, $ hdiutil attach ~/android.sparseimage -mountpoint /Volumes/android
+3,    $ m">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac OS x下载和编译Android 4.2.2 源码">
+<meta property="og:url" content="http://janrone.allone.top/2013/04/08/Mac下载和编译Android 4.2.2源码/index.html">
+<meta property="og:site_name" content="Janrone's Blog">
+<meta property="og:description" content="创建一个映像用来下载android源码1, $ hdiutil create -type SPARSE -fs ‘Case-sensitive Journaled HFS+’ -size 40g ~/android.sparseimage
+2, $ hdiutil attach ~/android.sparseimage -mountpoint /Volumes/android
+3,    $ m">
+<meta property="og:image" content="http://janrone.allone.top/images/post/2013-04-08-01.png">
+<meta property="og:updated_time" content="2020-01-16T02:52:59.530Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mac OS x下载和编译Android 4.2.2 源码">
+<meta name="twitter:description" content="创建一个映像用来下载android源码1, $ hdiutil create -type SPARSE -fs ‘Case-sensitive Journaled HFS+’ -size 40g ~/android.sparseimage
+2, $ hdiutil attach ~/android.sparseimage -mountpoint /Volumes/android
+3,    $ m">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6239181267347178000,
+      author: '博主'
+    }
+  };
+</script>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  <title> Mac OS x下载和编译Android 4.2.2 源码 | Janrone's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-72351220-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Janrone's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">The gold housese in the books .</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tools">
+          <a href="/tools" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-bookmark"></i> <br />
+            
+            工具
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-videos">
+          <a href="/videos" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-youtube-play"></i> <br />
+            
+            视频
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-eye"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'if_KrtoyZR9acx37Pibb','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+<div id="ads" style="padding-top:50px">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- janrone.com -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7563402430440865"
+     data-ad-slot="8020904262"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K7LQ83LN95"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-K7LQ83LN95');
+</script>
+</div>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Mac OS x下载和编译Android 4.2.2 源码
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2013-04-08T15:56:00+08:00" content="2013-04-08">
+              2013-04-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2013/04/08/Mac下载和编译Android 4.2.2源码/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2013/04/08/Mac下载和编译Android 4.2.2源码/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv">本文共被围观
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="u521B_u5EFA_u4E00_u4E2A_u6620_u50CF_u7528_u6765_u4E0B_u8F7Dandroid_u6E90_u7801"><a href="#u521B_u5EFA_u4E00_u4E2A_u6620_u50CF_u7528_u6765_u4E0B_u8F7Dandroid_u6E90_u7801" class="headerlink" title="创建一个映像用来下载android源码"></a>创建一个映像用来下载android源码</h3><p>1, $ hdiutil create -type SPARSE -fs ‘Case-sensitive Journaled HFS+’ -size 40g ~/android.sparseimage</p>
+<p>2, $ hdiutil attach ~/android.sparseimage -mountpoint /Volumes/android</p>
+<p>3,    $ mkdir ~/bin</p>
+<p>4,    $ PATH=~/bin:$PATH</p>
+<p>5,    $ curl <a href="https://dl-ssl.google.com/dl/googlesource/git-repo/repo" target="_blank" rel="external">https://dl-ssl.google.com/dl/googlesource/git-repo/repo</a> &gt; ~/bin/repo</p>
+<p>6,    $ chmod a+x ~/bin/repo</p>
+<p>7,    $ cd /Volumes/android/</p>
+<p>8,    $ mkdir WORKING_DIRECTORY</p>
+<p>9,    $ CD WORKING_DIRECTORY/</p>
+<p>10, $ repo init -u <a href="https://android.googlesource.com/platform/manifest" target="_blank" rel="external">https://android.googlesource.com/platform/manifest</a> -b android-4.2.2_r1</p>
+<p>11, $repo sync</p>
+<a id="more"></a>
+<h3 id="u8BBE_u7F6E_u5FC5_u8981_u7684_u7F16_u8BD1_u73AF_u5883_u521D_u59CB_u5316_u7F16_u8BD1_u73AF_u5883_uFF1A"><a href="#u8BBE_u7F6E_u5FC5_u8981_u7684_u7F16_u8BD1_u73AF_u5883_u521D_u59CB_u5316_u7F16_u8BD1_u73AF_u5883_uFF1A" class="headerlink" title="设置必要的编译环境初始化编译环境："></a>设置必要的编译环境初始化编译环境：</h3><p>1, $source build/envsetup.sh</p>
+<p>2, 选择编译目标 $lunch full-eng  </p>
+<h3 id="u5F00_u59CB_u7F16_u8BD1_u4EE3_u7801"><a href="#u5F00_u59CB_u7F16_u8BD1_u4EE3_u7801" class="headerlink" title="开始编译代码"></a>开始编译代码</h3><p>$make -j8</p>
+<p>开始时间 2013－03-28 19:17<br>编译到了 40分钟左右的时候出现了错误 No space left on device，看错误3解决方法。<br>之后接着编译 make 这次没有是用 －j,因为心疼电脑，嘿嘿 ，大概半小时编译完成。</p>
+<p>nstalled file list: out/target/product/generic/installed-files.txt<br>Target system fs image: out/target/product/generic/obj/PACKAGING/systemimage_intermediates/system.img<br>Running:  mkyaffs2image -f out/target/product/generic/system out/target/product/generic/obj/PACKAGING/systemimage_intermediates/system.img<br>Install system fs image: out/target/product/generic/system.img</p>
+<p>编译完成后运行：emulator -kernel ./prebuilts/qemu-kernel/arm/kernel-qemu -sysdir ./out/target/product/generic -system system.img -data userdata.img -ramdisk ramdisk.img</p>
+<p>出现错误 qemu: could not load initrd ‘ramdisk.img’，看错误4解决方法</p>
+<p>直接运行：<br>emulator -kernel ./prebuilts/qemu-kernel/arm/kernel-qemu-armv7 -sysdir ./out/target/product/generic/ -system system.img -data userdata.img </p>
+<p>##最终结果图 ：<br><img src="/images/post/2013-04-08-01.png" alt=""></p>
+<hr>
+<p>###错误 1</p>
+<p>在android4.0源码中，mm编译apk时出现下面的错误：  </p>
+<pre><code>make: *** No rule to make target `out/target/common/obj/JAVA_LIBRARIES/android_stubs_current_intermediates/javalib.jar&apos;, needed by `out/target/common/obj/APPS/NativeTimer_intermediates/classes-full-debug.jar&apos;.  Stop.
+</code></pre><p>解决方法：<br>在源码根目录执行：<br>make clobber<br>make -j8</p>
+<p>这个错误的好像是由于在make一个任务时，并没有结束，这时在进行make就会报<br>make clobber的功能是把上一次make命令生成的文件或目录清除掉，效果比make clean更严格。<br>这样编译完成后，在编译apk就可以了。</p>
+<hr>
+<p>###错误2</p>
+<p>povolmatoMacBook-Pro:untitled povol$ source build/envsetup.sh<br>including device/asus/grouper/vendorsetup.sh<br>including device/asus/tilapia/vendorsetup.sh<br>including device/generic/armv7-a-neon/vendorsetup.sh<br>including device/generic/armv7-a/vendorsetup.sh<br>including device/generic/mips/vendorsetup.sh<br>including device/generic/x86/vendorsetup.sh<br>including device/lge/mako/vendorsetup.sh<br>including device/samsung/maguro/vendorsetup.sh<br>including device/samsung/manta/vendorsetup.sh<br>including device/samsung/toro/vendorsetup.sh<br>including device/samsung/toroplus/vendorsetup.sh<br>including device/ti/panda/vendorsetup.sh<br>including sdk/bash_completion/adb.bash  </p>
+<pre><code>povolmatoMacBook-Pro:untitled povol$ lunch full-eng
+build/core/combo/HOST_darwin-x86.mk:62: *****************************************************
+build/core/combo/HOST_darwin-x86.mk:63: * Cannot find SDK 10.6 at /Applications/Xcode.app/
+Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.6.sdk
+build/core/combo/HOST_darwin-x86.mk:65: * If you wish to build using higher version of SDK, 
+build/core/combo/HOST_darwin-x86.mk:66: * try setting BUILD_MAC_SDK_EXPERIMENTAL=1 before 
+build/core/combo/HOST_darwin-x86.mk:67: * rerunning this command 
+build/core/combo/HOST_darwin-x86.mk:69: *****************************************************
+build/core/combo/HOST_darwin-x86.mk:70: *** Stop..  Stop.
+
+** Don&apos;t have a product spec for: &apos;full&apos;
+** Do you have the right repo manifest?
+
+
+//**//找不到mac os x sdk 10.6 执行 
+povolmatoMacBook-Pro:untitled povol$ export BUILD_MAC_SDK_EXPERIMENTAL=1
+
+povolmatoMacBook-Pro:untitled povol$ lunch full-eng
+
+一些初始化信息
+
+============================================
+PLATFORM_VERSION_CODENAME=REL
+PLATFORM_VERSION=4.2.2
+TARGET_PRODUCT=full
+TARGET_BUILD_VARIANT=eng
+TARGET_BUILD_TYPE=release
+TARGET_BUILD_APPS=
+TARGET_ARCH=arm
+TARGET_ARCH_VARIANT=armv7-a
+HOST_ARCH=x86
+HOST_OS=darwin
+HOST_OS_EXTRA=Darwin-12.3.0-x86_64-i386-64bit
+HOST_BUILD_TYPE=release
+BUILD_ID=JDQ39
+OUT_DIR=out
+</code></pre><p>============================================</p>
+<p>povolmatoMacBook-Pro:untitled povol$ </p>
+<p>========================================================</p>
+<p>###错误3</p>
+<pre><code>/Volumes/untitled/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.6/bin/../lib/gcc/arm-linux-androideabi/4.6.x-google/../../../../arm-linux-androideabi/bin/ld: fatal error: out/target/product/generic/obj/SHARED_LIBRARIES/libmock_ril_intermediates/LINKED/libmock_ril.so: No space left on device
+collect2: ld returned 1 exit status
+make: *** [out/target/product/generic/obj/SHARED_LIBRARIES/libmock_ril_intermediates/LINKED/libmock_ril.so] Error 1
+make: *** Waiting for unfinished jobs....
+/Volumes/untitled/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.6/bin/../lib/gcc/arm-linux-androideabi/4.6.x-google/../../../../arm-linux-androideabi/bin/ld: warning: hidden symbol &apos;mkstemp&apos; in out/target/product/generic/obj/SHARED_LIBRARIES/libchromium_net_intermediates/base/file_util_android.o is referenced by DSO out/target/product/generic/obj/lib/libcutils.so
+/Volumes/untitled/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.6/bin/../lib/gcc/arm-linux-androideabi/4.6.x-google/../../../../arm-linux-androideabi/bin/ld: fatal error: out/target/product/generic/obj/SHARED_LIBRARIES/libchromium_net_intermediates/LINKED/libchromium_net.so: No space left on device
+collect2: ld returned 1 exit status
+make: *** [out/target/product/generic/obj/SHARED_LIBRARIES/libchromium_net_intermediates/LINKED/libchromium_net.so] Error 1
+/Volumes/untitled/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.6/bin/../lib/gcc/arm-linux-androideabi/4.6.x-google/../../../../arm-linux-androideabi/bin/ld: fatal error: out/target/product/generic/obj/SHARED_LIBRARIES/libbcc_intermediates/LINKED/libbcc.so: No space left on device
+collect2: ld returned 1 exit status
+make: *** [out/target/product/generic/obj/SHARED_LIBRARIES/libbcc_intermediates/LINKED/libbcc.so] Error 1
+</code></pre><p>解决：</p>
+<p>执行 df －li 查看 iused  我的在untitled 显示100% </p>
+<pre><code>povolmatoMacBook-Pro:untitled povol$ df -li 
+Filesystem   512-blocks      Used Available Capacity  iused    ifree %iused  Mounted on
+/dev/disk0s2  777343744 450761888 326069856    59% 56409234 40758732   58%   /
+/dev/disk0s4  197748728  82422896 115325832    42%   183830 57683118    0%   /Volumes/BOOTCAMP
+/dev/disk1      8388608   1611096   6777512    20%   201385   847189   19%   /Volumes/RamDisk
+
+/dev/disk3s2   83214256  83193528     20728   100% 10399189     2591  100%   /Volumes/untitled
+</code></pre><p>所以提示 No space left on device</p>
+<p>重新启动了mac之后</p>
+<pre><code>povolmatoMacBook-Pro:android povol$ df -li 
+Filesystem   512-blocks      Used Available Capacity  iused    ifree %iused  Mounted on
+/dev/disk0s2  777343744 482859288 293972456    63% 60421409 36746557   62%   /
+
+/dev/disk0s4  197748728  82422896 115325832    42%   183830 57683118    0%   /Volumes/BOOTCAMP
+
+/dev/disk1      8388608     73632   8314976     1%     9202  1039372    1%   /Volumes/RamDisk
+
+/dev/disk3s2   83214256  50383960  32830296    61%  6297993  4103787   61%   /Volumes/untitled
+</code></pre><p>这次显示／Volumes/untitled iused 为61% 接着运行 make<br>编译成功 。</p>
+<p> <br></p>
+<hr>
+<p>###错误 4</p>
+<p>qemu: could not load initrd ‘ramdisk.img’，</p>
+<p>直接参数-ramdisk ramdisk.img去掉，结果模拟器跑起来了，是运行出窗口后，就是黑屏。</p>
+<p>换下kernel，用./prebuilts/qemu-kernel/arm/kernel-qemu-armv7，之后运行成功 。  </p>
+<p><br><br><br></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>梦想还是要有的，万一实现了呢？</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat_donate.png" alt="Janrone WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/wechat_donate.png" alt="Janrone Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag">#Android</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/01/12/怎么搭建Octopress在github/" rel="next" title="怎么搭建 Octopress 在 github ! ">
+                <i class="fa fa-chevron-left"></i> 怎么搭建 Octopress 在 github ! 
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/04/09/在Android上搭建Python环境/" rel="prev" title="在Android上搭建Python环境">
+                在Android上搭建Python环境 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2013/04/08/Mac下载和编译Android 4.2.2源码/"
+           data-title="Mac OS x下载和编译Android 4.2.2 源码" data-url="http://janrone.allone.top/2013/04/08/Mac下载和编译Android 4.2.2源码/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar92.png"
+               alt="Janrone" />
+          <p class="site-author-name" itemprop="name">Janrone</p>
+          <p class="site-description motion-element" itemprop="description">The gold housese in the books .</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">35</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/janrone" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://hujiaweibujidao.github.io/" title="家威" target="_blank">家威</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.figotan.org/" title="非戈" target="_blank">非戈</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://quanqi.org/" title="圈齐" target="_blank">圈齐</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.zhaiyifan.cn/" title="markzhai" target="_blank">markzhai</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#u521B_u5EFA_u4E00_u4E2A_u6620_u50CF_u7528_u6765_u4E0B_u8F7Dandroid_u6E90_u7801"><span class="nav-number">1.</span> <span class="nav-text">创建一个映像用来下载android源码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u8BBE_u7F6E_u5FC5_u8981_u7684_u7F16_u8BD1_u73AF_u5883_u521D_u59CB_u5316_u7F16_u8BD1_u73AF_u5883_uFF1A"><span class="nav-number">2.</span> <span class="nav-text">设置必要的编译环境初始化编译环境：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5F00_u59CB_u7F16_u8BD1_u4EE3_u7801"><span class="nav-number">3.</span> <span class="nav-text">开始编译代码</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2012 - 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Janrone</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="powered-by">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+<div class="theme-info">
+  Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"janrone"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

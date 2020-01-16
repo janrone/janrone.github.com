@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0045)http://www.tglygl.cn/gupiao/gupiaobucang.html -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="Cache-Control" content="no-transform">
+		<meta http-equiv="Cache-Control" content="no-siteapp">
+		<title>股票补仓计算器_在线股票补仓成本计算器_计算器在线网</title>
+		<meta name="description" content="本工具是一款集股票补仓成本计算、总资产盈亏计算、股票涨停价格计算为一体的在线工具,这款工具可在集合竞价之前快速准确的计算出涨停价格，挂涨停价买入，有一定的几率可以抢到连板">
+		<link href="./jsq_files/style.css" rel="stylesheet" type="text/css">
+		<script src="./jsq_files/hm.js"></script>
+		<script src="./jsq_files/ca-pub-8843589514426294.js"></script>
+		<script type="text/javascript">if(window.location.toString().indexOf('pref=padindex') != -1){}else{if(/AppleWebKit.*Mobile/i.test(navigator.userAgent) || (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(navigator.userAgent))){if(window.location.href.indexOf("?mobile")<0){try{if(/Android|Windows Phone|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)){window.location.href="/m"+location.pathname+location.search;}else if(/iPad/i.test(navigator.userAgent)){}else{}}catch(e){}}}}</script>
+
+		<link rel="stylesheet" href="./jsq_files/ccw.css">
+		<style type="text/css"><!--#TheResults 			div{float:left;width:38%;margin-bottom:15px;overflow:hidden;line-height:200%;}.zdzs{width:90%;float:left;margin-top:18px;margin-bottom:0px;border:1px solid 			#ECECEC;margin-right:6px;margin-left:6px;text-align:center;color:#333333;}#TheResults ul{margin-right:15px;margin-left:15px;}#TheResults ul 			li{float:left;width:100%;}.zdzs 			a{width:100%;background-color:#F9F9F9;float:left;border-top-width:1px;border-top-style:solid;border-top-color:#F0F0F0;}em{color:#003366;text-align:center;float:left;width:60px;margin-right:5px;}#ztj{color:#FF0000;}#dtj{color:#009900;}.chicang{color:#333333;}.bucang{color:#3366CC;}hr{border:1px solid #F0F0F0;margin-top:9px;margin-bottom:9px;}.addpl {padding:8px 30px 8px 8px;border:1px solid #E0E0E0;height:25px;line-height:180%;float:left;font-size:20px;overflow:auto;font-weight:bold;letter-spacing:2px;color:#999999;}--></style>
+		<script type="text/javascript">
+			var pmcc=screen.width,bodys=document.getElementsByTagName("body")[0]; 			if(pmcc<=1024){bodys.className="wi930";}else{if(pmcc<=1280){bodys.className="wi1020";}else{ 			if(pmcc<=1440){bodys.className="wi1080";}else{if(pmcc<=1680){bodys.className="wi1200";}else{bodys.className="wi1260";}}}} var 			tinfo="1~股票计算器~1/10.png~gpjsq";function G(id){return document.getElementById(id);}
+		</script>
+			
+	</head>
+
+<body>
+
+
+  
+<div class="w960 mt10">
+	<div class="nrbox">		
+         <div class="boxNr">
+        	<div class="boxjs">
+	<div class="Main widths">
+		<!--功能区-->
+		<div class="bai">
+			<div class="Tool">
+				<input class="addpl" id="Closingprice" name="Closingprice" placeholder="例8.5 / 5000 / 6.52 / 1000" style="width: 68%;" type="text"> <input class="but" id="but" styyle="margin-right: 20px;" type="button" value="开始计算"></div>
+			<div class="Tool">
+				<div id="TheResults" style="padding-top: 15px;"><div id="ztj"><ul><li><em>1板</em><p>涨停价：135801.60　　涨幅：10.00%</p></li></ul><span class="zdzs"><p>总涨：12345.60元　　总涨幅：10.00%</p><a href="javascript:;" onclick="ccwban(135801.60,1);">再来一个涨板</a></span></div> <div id="dtj"><ul><li><em>1板</em><p>跌停价：111110.40　　跌幅：10.00%</p></li></ul><span class="zdzs"><p>总跌：12345.60元　　总跌幅：-10.00%</p><a href="javascript:;" onclick="ccwban(111110.40,0);">再来一个跌板</a></span></div></div>
+			</div>
+		</div>
+	</div>
+	<div id="full" style="display: block;">
+		&nbsp;</div>
+	<script type="text/javascript" src="./jsq_files/tool.js"></script><script>var ztjs=0,dtjs=0;var Closingprice=0;G('but').onclick=function(){Closingprice=G('Closingprice').value;Closingprice=Closingprice.replace(/\s/ig,'');if(!Closingprice){alert("\u8bf7\u586b\u5199\u80a1\u7968\u6536\u76d8\u4ef7!");return;}
+Closingprice=Closingprice.replace(/[\/|\u3001|\uff0f|\uff0d|\\]/g,"-");if(Closingprice.indexOf("-")!=-1){var cb=Closingprice.split("-");if(cb.length==4){var cb0=parseFloat(cb[0]);var cb1=parseFloat(cb[1]);var cb2=parseFloat(cb[2]);var cb3=parseFloat(cb[3]);var yfdyk=(cb1*cb2-cb0*cb1)/(cb0*cb1)*100;var bchjg=(cb0*cb1+cb2*cb3)/(cb1+cb3);var bchfb=(cb3*cb2-bchjg*cb3)/(bchjg*cb3)*100;var bchgs=cb1+cb3;G('TheResults').innerHTML="<span class='chicang'>\u6301\u4ed3\u6210\u672c\u4ef7\uff1a"+cb0+"\u5143<br>\u6301\u4ed3\u80a1\u7968\u6570\uff1a"+cb1+"\u80a1<br>\u6301\u4ed3\u80a1\u76c8\u4e8f\u6bd4\uff1a"+ccwzfpd(yfdyk,'%')
++"\u3000\uff08\u6b64\u76c8\u4e8f\u6bd4\u4f9d\u8865\u4ed3\u4ef7\u4f4d\u8ba1\u7b97\uff0c\u4ec5\u4f5c\u4e3a\u8865\u4ed3\u540e\u5bf9\u6bd4\uff09</span><hr><p>\u60a8\u62df\u8865\u4ed3"+cb3+"\u80a1\uff0c\u8865\u4ed3\u4ef7\u683c\u4e3a\u6bcf\u80a1"+cb2+"\u5143\uff0c\u81f3\u5c11\u9700\u6295\u5165\u8d44\u91d1"+(cb2*cb3).toFixed(2)+"\u5143\u3002\u4ee5\u4e0b\u4e3a\u8865\u4ed3\u540e\u7684\u6570\u636e\uff0c\u4e0d\u542b\u4ea4\u6613\u8d39\uff0c\u4ec5\u4f9b\u53c2\u8003\u3002</p><span class='bucang'>\u8865\u4ed3\u540e\u6210\u672c\u4ef7\uff1a"+bchjg.toFixed(3)+"\u5143<br>\u8865\u4ed3\u540e\u6d6e\u76c8\u4e8f\uff1a"+ccwzfpd((cb2*bchgs)-(bchjg*bchgs),'\u5143')+"<br>\u8865\u4ed3\u540e\u76c8\u4e8f\u6bd4\uff1a"+ccwzfpd(bchfb,'%')+"<br>\u8865\u4ed3\u540e\u80a1\u7968\u6570\uff1a"+bchgs+"\u80a1</span>";}else{var cb0=parseFloat(cb[0]);var cb1=parseFloat(cb[1]);var zdfd,yuan;if(cb0<=cb1){yuan=cb1-cb0;zdfd=parseFloat((cb1-cb0)/cb0*100);G('TheResults').innerHTML="<p style='font-size: 18px;'>\u6da8\u8dcc\uff1a<font color='red'>"+yuan+"\u5143</font>\u3000\u6da8\u5e45\uff1a<font color='red'>"+zdfd.toFixed(2)+"%</font></p>";}else{yuan=cb0-cb1;zdfd=parseFloat((cb0-cb1)/cb1*90);G('TheResults').innerHTML="<p style='font-size: 18px;'>\u6da8\u8dcc\uff1a<font color='#093'>-"+yuan+"\u5143</font>\u3000\u6da8\u5e45\uff1a<font color='#093'>-"+zdfd.toFixed(2)+"%</font></p>";}}}else{Closingprice=parseFloat(Closingprice);ztjs=0,dtjs=0;G('TheResults').innerHTML="<div id='ztj'><ul></ul><span class='zdzs'></span></div> <div id='dtj'><ul></ul><span class='zdzs'></span></div>";ccwban(Closingprice,1);ccwban(Closingprice,0);}}
+function ccwban(gujia,zd){if(zd==1){var ztj=(gujia*1.1).toFixed(2);var zfb=(ztj-gujia)/gujia*100;ztjs++;var ljzj=ztj-Closingprice;var ljzf=(ztj-Closingprice)/Closingprice*100;G('ztj').getElementsByTagName("ul")[0].innerHTML+="<li><em>"+ztjs+"\u677f</em><p>\u6da8\u505c\u4ef7\uff1a"+ztj+"\u3000\u3000\u6da8\u5e45\uff1a"+zfb.toFixed(2)+"%</p></li>";G('ztj').getElementsByTagName("span")[0].innerHTML="<p>\u603b\u6da8\uff1a"+ljzj.toFixed(2)+"\u5143\u3000\u3000\u603b\u6da8\u5e45\uff1a"+ljzf.toFixed(2)+"%</p><a href='javascript:;' onClick='ccwban("+ztj+",1);'>\u518d\u6765\u4e00\u4e2a\u6da8\u677f</a>";}else{var dtj=(gujia*0.9).toFixed(2);var dfb=(gujia-dtj)/dtj*90;if(dtj<0.09){G('dtj').innerHTML+="<p>\u4e0d\u80fd\u518d\u8dcc\u4e86</p>";}else{dtjs++;var ljdj=Closingprice-dtj;var ljdf=(Closingprice-dtj)/dtj*90;G('dtj').getElementsByTagName("ul")[0].innerHTML+="<li><em>"+dtjs+"\u677f</em><p>\u8dcc\u505c\u4ef7\uff1a"+dtj+"\u3000\u3000\u8dcc\u5e45\uff1a"+dfb.toFixed(2)+"%</p></li>";G('dtj').getElementsByTagName("span")[0].innerHTML="<p>\u603b\u8dcc\uff1a"+ljdj.toFixed(2)+"\u5143\u3000\u3000\u603b\u8dcc\u5e45\uff1a-"+ljdf.toFixed(2)+"%</p><a href='javascript:;' onClick='ccwban("+dtj+",0);'>\u518d\u6765\u4e00\u4e2a\u8dcc\u677f</a>";}}}
+function ccwzfpd(num,hz){var echo;num=num.toFixed(2);if(num>0){echo="<font color='red'>"+num+hz+"</font>";}else{echo="<font color='#009933'>"+num+hz+"</font>";}
+return echo;}
+function CCWBanJiao(str){if(str){var code,tmp="";for(var i=0;i<str.length;i++)
+{code=str.charCodeAt(i);if(code<127){tmp=tmp+String.fromCharCode(code+65248);}else{tmp=tmp+str[i];}}
+return tmp;}}</script></div>
+<br>
+
+        </div>
+        <div class="nr_nrBox">
+        	<div class="nr_nrBox_title">应用说明：</div>
+            <div class="boxj3">
+            <p></p><div>
+	&nbsp; &nbsp; 本工具是一款集股票补仓成本计算、总资产盈亏计算、股票涨停价格计算为一体的在线工具。由于我们在股票操作上面经常会遇到这方面的计算，如：股票涨停价格，开盘前是不显示涨停价位的，在连板中如果不早早挂单是无法买到的，有了这款工具股友可在集合竞价之前快速准确的计算出涨停价格，挂涨停价买入，有一定的几率可以抢到连板中的筹码。</div>
+<div>
+	&nbsp;</div>
+<div>
+	<strong>股票补仓计算公式</strong></div>
+<div>
+	&nbsp;</div>
+<div>
+	补仓后成本均价=（前期每股均价*前期所购股票数量+补仓每股均价*补仓股票数量）/（前期股票数量+补仓股票数量）&nbsp;</div>
+<div>
+	&nbsp;</div>
+<div>
+	<span style="color:#ff0000;">例子：8.170 = （8.5 * 5000 + 6.52 * 1000）/ （5000 + 1000 ）</span></div>
+<p></p>
+            </div> 
+        </div>
+        
+    </div>
+</div>
+</body></html>

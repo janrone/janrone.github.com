@@ -1,0 +1,869 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta name="baidu-site-verification" content="ZMO2TPlYMV" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="express,node," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Janrone's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="前言JavaScript、 Node 和 Express 的组合是 Web 团队的理想选择， 这个强大的、 可快速部署的技术栈得到了开发社区和大公司的广泛认可。
+Node 和 Express 就像发射 JavaScript 希望之银弹的机关枪。
+初识Express老实说， JavaScript 确实降低了业余选手进入的门槛， 也有很多充斥着各种问题的 JavaScript 代码， 这损坏了 Jav">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Node与Express开发笔记一">
+<meta property="og:url" content="http://janrone.allone.top/2016/05/26/Node与Express开发笔记一/index.html">
+<meta property="og:site_name" content="Janrone's Blog">
+<meta property="og:description" content="前言JavaScript、 Node 和 Express 的组合是 Web 团队的理想选择， 这个强大的、 可快速部署的技术栈得到了开发社区和大公司的广泛认可。
+Node 和 Express 就像发射 JavaScript 希望之银弹的机关枪。
+初识Express老实说， JavaScript 确实降低了业余选手进入的门槛， 也有很多充斥着各种问题的 JavaScript 代码， 这损坏了 Jav">
+<meta property="og:updated_time" content="2020-01-16T02:52:59.534Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Node与Express开发笔记一">
+<meta name="twitter:description" content="前言JavaScript、 Node 和 Express 的组合是 Web 团队的理想选择， 这个强大的、 可快速部署的技术栈得到了开发社区和大公司的广泛认可。
+Node 和 Express 就像发射 JavaScript 希望之银弹的机关枪。
+初识Express老实说， JavaScript 确实降低了业余选手进入的门槛， 也有很多充斥着各种问题的 JavaScript 代码， 这损坏了 Jav">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6239181267347178000,
+      author: '博主'
+    }
+  };
+</script>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  <title> Node与Express开发笔记一 | Janrone's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-72351220-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Janrone's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">The gold housese in the books .</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tools">
+          <a href="/tools" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-bookmark"></i> <br />
+            
+            工具
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-videos">
+          <a href="/videos" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-youtube-play"></i> <br />
+            
+            视频
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-eye"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'if_KrtoyZR9acx37Pibb','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+<div id="ads" style="padding-top:50px">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- janrone.com -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7563402430440865"
+     data-ad-slot="8020904262"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K7LQ83LN95"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-K7LQ83LN95');
+</script>
+</div>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Node与Express开发笔记一
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-26T18:38:13+08:00" content="2016-05-26">
+              2016-05-26
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Node/" itemprop="url" rel="index">
+                    <span itemprop="name">Node</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/26/Node与Express开发笔记一/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/26/Node与Express开发笔记一/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv">本文共被围观
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="u524D_u8A00"><a href="#u524D_u8A00" class="headerlink" title="前言"></a>前言</h3><p>JavaScript、 Node 和 Express 的组合是 Web 团队的理想选择， 这个强大的、 可快速部署的技术栈得到了开发社区和大公司的广泛认可。</p>
+<p>Node 和 Express 就像发射 JavaScript 希望之银弹的机关枪。</p>
+<h3 id="u521D_u8BC6Express"><a href="#u521D_u8BC6Express" class="headerlink" title="初识Express"></a>初识Express</h3><p>老实说， JavaScript 确实降低了业余选手进入的门槛， 也有很多充斥着各种问题的 JavaScript 代码， 这损坏了 JavaScript 的名声。 用句通俗的话说， 即“ 不是游戏太差， 而是玩家太烂”。</p>
+<p>Express 网站上是这样介绍 Express 的：“ 精简的、 灵活的 Node.js Web 程序框架， 为构建单页、 多页及混合的 Web 程序提供了一系列健壮的功能特性。” </p>
+<h4 id="u5355_u9875Web_u7A0B_u5E8F"><a href="#u5355_u9875Web_u7A0B_u5E8F" class="headerlink" title="单页Web程序"></a>单页Web程序</h4><p>单页 Web 程序是比较新颖的想法。<br>不像之前的网站， 用户每次访问不同的页面都要发起网络请求， 单页 Web 程序把整个网站（ 或很大一部分） 都下载到客户端浏览器上。经过初始下载后， 用户访问不同页面的速度更快了， 因为几乎不需要或者只要很少的服务端通信。<br>单页程序的开发可以使用 Angular 或 Ember 等流行框架， Express 跟它们都配合得很好。</p>
+<p>Express 的缔造者 TJ Holowaychuk 说 Express 是在 Sinatra 的启发下创建的， 后者是一个基于 Ruby 的框架。</p>
+<p>Express 从 2.x 升级到 3.0 时做了大量的改写， 从 3.x 到 4.0 时也是这样。 本书会重点介绍版本 4.0。</p>
+<p>Node 和传统的 Web 服务器之间的另一个主要区别是： Node 是单线程的。</p>
+<p>如果你需要多线程程序的性能， 只需启用更多的 Node 实例， 就可以得到多线程的性能优势。</p>
+<h4 id="Node_uFF1A__u4E00_u79CD_u65B0_u578BWeb_u670D_u52A1_u5668"><a href="#Node_uFF1A__u4E00_u79CD_u65B0_u578BWeb_u670D_u52A1_u5668" class="headerlink" title="Node： 一种新型Web服务器"></a>Node： 一种新型Web服务器</h4><p>Node 跟其他流行的 Web 服务器， 比如微软的互联网信息服务（ IIS） 或Apache， 有很多共同点。 然而更有趣的是探究它的不同之处， 所以我们先从讨论它的不同开始。<br>Node 实现 Web 服务器的方式跟 Express 很像， 也非常精简。<br>Node 的搭建和配置非常容易，不像 IIS 或 Apache 要花费多年的时间才能掌握。</p>
+<p>Node 程序更像 PHP 或 Ruby。</p>
+<p>Node 所用的 JavaScript 引擎（ 谷歌的 V8） 确实会将 JavaScript 编译为本地机器码（ 更像C 或 C++）， 但这一操作是透明的 ， 所以从用户的角度来看， 它表现的还是像纯粹的解释型语言一样。 没有单独的编译步骤， 这减少了维护和部署的麻烦。 你所要做的只是更新JavaScript 文件， 然后你的修改就自动生效了。<br>Node 程序的另一个好处是它的平台无关性。</p>
+<h4 id="Node__u7684_u751F_u6001_u7CFB_u7EDF"><a href="#Node__u7684_u751F_u6001_u7CFB_u7EDF" class="headerlink" title="Node 的生态系统"></a>Node 的生态系统</h4><p>“ 技术栈” 的缩略语。<br>比如说， Linux、 Apache、 MySQL 和 PHP 被称为 LAMP 栈。<br>MongoDB的工程师 Valeri Karpov 发明了一个缩略语 MEAN， 指代 Mongo、 Express、 Angular 和Node。</p>
+<p>将所有这些技术结合到一起的是 JavaScript， 所以为了做到兼容并包， 我将其称为“ JavaScript 技术栈”。 对于本书而言， 即指 Node、 Express 和 MongoDB。</p>
+<h3 id="u6388_u6743"><a href="#u6388_u6743" class="headerlink" title="授权"></a>授权</h3><p>GNU通用公共授权（ GPL）<br>GPL 是非常流行的开源授权， 它为保证软件的自由做了精巧的构思。 这意味着如果你在项目中用了 GPL 授权的代码， 那么你的项目必须也是 GPL 授权的。 这自然也就意味着你的项目不能是闭源的。</p>
+<p>Apache 2.0<br>这个授权像 MIT 一样， 你可以为自己的项目使用不同的授权， 包括闭源的授权。 然而，你必须对那些使用 Apache 2.0 授权的组件做出声明。</p>
+<p>伯克利软件分发（ BSD）<br>与 Apache 类似， 这个授权允许你为自己的项目使用任何授权， 只是你声明使用了 BSD授权的组件。</p>
+<h3 id="u4ECENode_u5F00_u59CB"><a href="#u4ECENode_u5F00_u59CB" class="headerlink" title="从Node开始"></a>从Node开始</h3><p>npm 是随处可见的 Node 开发包管理器（ 我们就是用它获取并安装 Express 的）。“ npm” 跟PHP、 GNU、 WINE 等那些古怪的传统名字不一样， 它不是首字母缩写（ 所以也没有大写）， 而是“ npm 不是缩写” 的递归缩写。</p>
+<pre><code>npm install npm@latest -g  //升级npm到最新版本
+</code></pre><h4 id="u8FDB_u5165_Node__u7684_u9996_u9875_http_3A//nodejs-org__u3002"><a href="#u8FDB_u5165_Node__u7684_u9996_u9875_http_3A//nodejs-org__u3002" class="headerlink" title="进入 Node 的首页 http://nodejs.org 。"></a>进入 Node 的首页 <a href="http://nodejs.org" target="_blank" rel="external">http://nodejs.org</a> 。</h4><p> npm 是一个快速、高能并且毫不费力的包管理器，包管理器的两个主要职责是安装开发包和管理依赖项。</p>
+<p>在使用 npm 时，（ 毫无悬念） 最主要的命令是 install。 比如要安装 Grunt（ 一个流行的JavaScript 任务执行器）， 你将会（ 在控制台里） 发起下面这个命令：<br>npm install -g grunt-cli<br>标记 -g 的意思是告诉 npm 这个包要全局安装， 即系统全局都可以访问它。</p>
+<p>用Node实现的简单Web服务器</p>
+<p>Node 所提供的范式跟传统的 Web 服务器不同： 你写的程序就是 Web 服务器。 Node 只是给你提供了一个构建 Web 服务器的框架。</p>
+<p>如果你用的是远程的机器（ 比如通过 SSH 访问的）， 记得浏览 localhost 时访问的不是你眼前的那台机器。</p>
+<h3 id="Hello_World"><a href="#Hello_World" class="headerlink" title="Hello World"></a>Hello World</h3><pre><code>  var http = require(&apos;http&apos;);
+http.createServer(function(req,res){
+    res.writeHead(200, { &apos;Content-Type&apos;: &apos;text/plain&apos; });
+    res.end(&apos;Hello world!&apos;);
+}).listen(3000);
+console.log(&apos;Server started on localhost:3000; press Ctrl-C to terminate....&apos;);
+</code></pre><p>确保是和 helloWorld.js 在同一个目录下， 输入 node hello World.js。<br>然后打开浏览器访问<a href="http://localhost:3000，" target="_blank" rel="external">http://localhost:3000，</a> 你的第一个 Web 服务器就建成啦！</p>
+<pre><code>在开发过程中，每次修改代码保存后，我们都需要手动重启程序，才能查看改动的效果。使用 supervisor 可以解决这个繁琐的问题，全局安装 supervisor：
+npm install -g supervisor
+运行 supervisor --harmony index 启动程序 。
+</code></pre><p>事件驱动编程Node 的核心理念是事件驱动编程。</p>
+<p>路由是指向客户端提供它所发出的请求内容的机制。</p>
+<pre><code>var http = require(&apos;http&apos;);
+http.createServer(function(req,res){
+var path = req.url.replace(/\/?(?:\?.*)?$/,&apos;&apos;).toLowerCase();
+switch(path){
+    case &apos;&apos;:
+        res.writeHead(200,{&apos;Content-Type&apos;:&apos;text/plain&apos;});
+        res.end(&apos;Homepage&apos;);
+    break;
+    case &apos;/about&apos;:
+        res.writeHead(200,{&apos;Content-Type&apos;:&apos;text/plain&apos;});
+        res.end(&apos;About&apos;);
+    break;
+    default:
+        res.writeHead(200,{&apos;Content-Type&apos;:&apos;text/plain&apos;});
+        res.end(&apos;Not Found&apos;);
+    break;
+}
+}).listen(3000);
+console.log(&apos;Server started on localhost:3000; press Ctrl-C to terminate&apos;);
+</code></pre><p>运行这段代码， 你会发现现在你可以访问首页（ <a href="http://localhost" target="_blank" rel="external">http://localhost</a>: 3000） 和关于页面（ <a href="http://localhost:3000/about）。" target="_blank" rel="external">http://localhost:3000/about）。</a><br>所有查询字符串都会被忽略（ 所以 <a href="http://localhost:3000/?foo=bar" target="_blank" rel="external">http://localhost:3000/?foo=bar</a> 也是返回首页）， 并且其他所有 URL（ <a href="http://localhost:3000/foo）" target="_blank" rel="external">http://localhost:3000/foo）</a> 返回的都是未找到页面。</p>
+<p>ejs 有 3 种常用标签：<br>    &lt;% code %&gt;：运行 JavaScript 代码，不输出<br>    &lt;%= code %&gt;：显示转义后的 HTML内容<br>    &lt;%- code %&gt;：显示原始 HTML 内容<br>注意：&lt;%= code %&gt; 和 &lt;%- code %&gt; 都可以是 JavaScript 表达式生成的字符串，当变量 code 为普通字符串时，两者没有区别。当 code 比如为 </p><h1>hello</h1> 这种字符串时，&lt;%= code %&gt; 会原样输出 <h1>hello</h1>，而 &lt;%- code %&gt; 则会显示 H1 大的 hello 字符串。<p></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>梦想还是要有的，万一实现了呢？</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat_donate.png" alt="Janrone WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/wechat_donate.png" alt="Janrone Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/express/" rel="tag">#express</a>
+          
+            <a href="/tags/node/" rel="tag">#node</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/10/利用Daocloud持续部署Hexo/" rel="next" title="利用Daocloud持续部署Hexo">
+                <i class="fa fa-chevron-left"></i> 利用Daocloud持续部署Hexo
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/29/Shell命令/" rel="prev" title="Shell命令">
+                Shell命令 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/05/26/Node与Express开发笔记一/"
+           data-title="Node与Express开发笔记一" data-url="http://janrone.allone.top/2016/05/26/Node与Express开发笔记一/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar92.png"
+               alt="Janrone" />
+          <p class="site-author-name" itemprop="name">Janrone</p>
+          <p class="site-description motion-element" itemprop="description">The gold housese in the books .</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">35</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/janrone" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://hujiaweibujidao.github.io/" title="家威" target="_blank">家威</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.figotan.org/" title="非戈" target="_blank">非戈</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://quanqi.org/" title="圈齐" target="_blank">圈齐</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.zhaiyifan.cn/" title="markzhai" target="_blank">markzhai</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#u524D_u8A00"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u521D_u8BC6Express"><span class="nav-number">2.</span> <span class="nav-text">初识Express</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u5355_u9875Web_u7A0B_u5E8F"><span class="nav-number">2.1.</span> <span class="nav-text">单页Web程序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Node_uFF1A__u4E00_u79CD_u65B0_u578BWeb_u670D_u52A1_u5668"><span class="nav-number">2.2.</span> <span class="nav-text">Node： 一种新型Web服务器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Node__u7684_u751F_u6001_u7CFB_u7EDF"><span class="nav-number">2.3.</span> <span class="nav-text">Node 的生态系统</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6388_u6743"><span class="nav-number">3.</span> <span class="nav-text">授权</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u4ECENode_u5F00_u59CB"><span class="nav-number">4.</span> <span class="nav-text">从Node开始</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u8FDB_u5165_Node__u7684_u9996_u9875_http_3A//nodejs-org__u3002"><span class="nav-number">4.1.</span> <span class="nav-text">进入 Node 的首页 http://nodejs.org 。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hello_World"><span class="nav-number">5.</span> <span class="nav-text">Hello World</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number"></span> <span class="nav-text">hello</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number"></span> <span class="nav-text">hello</span></a></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2012 - 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Janrone</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="powered-by">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+<div class="theme-info">
+  Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"janrone"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

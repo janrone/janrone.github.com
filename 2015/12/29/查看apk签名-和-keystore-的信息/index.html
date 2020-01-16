@@ -1,0 +1,913 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta name="baidu-site-verification" content="ZMO2TPlYMV" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Keystore," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Janrone's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="1、查看 keystore$ keytool -list -v -keystore debug.keystore 
+$ keytool -list -v -keystore debug.keystore 
+Enter keystore password:  
+
+*****************  WARNING WARNING WARNING  *****************
+* The i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="查看apk签名 和 keystore 的信息">
+<meta property="og:url" content="http://janrone.allone.top/2015/12/29/查看apk签名-和-keystore-的信息/index.html">
+<meta property="og:site_name" content="Janrone's Blog">
+<meta property="og:description" content="1、查看 keystore$ keytool -list -v -keystore debug.keystore 
+$ keytool -list -v -keystore debug.keystore 
+Enter keystore password:  
+
+*****************  WARNING WARNING WARNING  *****************
+* The i">
+<meta property="og:updated_time" content="2020-01-16T02:52:59.534Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="查看apk签名 和 keystore 的信息">
+<meta name="twitter:description" content="1、查看 keystore$ keytool -list -v -keystore debug.keystore 
+$ keytool -list -v -keystore debug.keystore 
+Enter keystore password:  
+
+*****************  WARNING WARNING WARNING  *****************
+* The i">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6239181267347178000,
+      author: '博主'
+    }
+  };
+</script>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  <title> 查看apk签名 和 keystore 的信息 | Janrone's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-72351220-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Janrone's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">The gold housese in the books .</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tools">
+          <a href="/tools" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-bookmark"></i> <br />
+            
+            工具
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-videos">
+          <a href="/videos" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-youtube-play"></i> <br />
+            
+            视频
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-eye"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'if_KrtoyZR9acx37Pibb','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+<div id="ads" style="padding-top:50px">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- janrone.com -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7563402430440865"
+     data-ad-slot="8020904262"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K7LQ83LN95"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-K7LQ83LN95');
+</script>
+</div>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                查看apk签名 和 keystore 的信息
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-12-29T17:20:28+08:00" content="2015-12-29">
+              2015-12-29
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Adnroid/" itemprop="url" rel="index">
+                    <span itemprop="name">Adnroid</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/12/29/查看apk签名-和-keystore-的信息/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/29/查看apk签名-和-keystore-的信息/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv">本文共被围观
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="1_u3001_u67E5_u770B_keystore"><a href="#1_u3001_u67E5_u770B_keystore" class="headerlink" title="1、查看 keystore"></a>1、查看 keystore</h3><p>$ keytool -list -v -keystore debug.keystore </p>
+<pre><code>$ keytool -list -v -keystore debug.keystore 
+Enter keystore password:  
+
+*****************  WARNING WARNING WARNING  *****************
+* The integrity of the information stored in your keystore  *
+* has NOT been verified!  In order to verify its integrity, *
+* you must provide your keystore password.                  *
+*****************  WARNING WARNING WARNING  *****************
+
+Keystore type: JKS
+Keystore provider: SUN
+
+Your keystore contains 1 entry
+
+Alias name: androiddebugkey
+Creation date: Apr 8, 2015
+Entry type: PrivateKeyEntry
+Certificate chain length: 1
+Certificate[1]:
+Owner: CN=Android Debug, O=Android, C=US
+Issuer: CN=Android Debug, O=Android, C=US
+Serial number: 509aeb88
+Valid from: Wed Apr 08 20:48:48 CST 2015 until: Fri Mar 31 20:48:48 CST 2045
+Certificate fingerprints:
+     MD5:  38:43:E1:B6:AB:F2:7F:80:93:CD:E5:EF:75:B9:A5:6C
+     SHA1: 9D:53:DB:6C:DA:D4:08:B3:D4:A6:E5:26:17:BD:80:FA:5A:E4:4F:AB
+     SHA256: D5:FF:04:4A:A2:F8:A4:EA:2A:44:53:28:0C:20:16:45:E8:71:AC:B1:74:76:F6:B4:01:90:86:83:73:E0:B0:8A
+     Signature algorithm name: SHA256withRSA
+     Version: 3
+
+Extensions: 
+
+#1: ObjectId: 2.5.29.14 Criticality=false
+SubjectKeyIdentifier [
+KeyIdentifier [
+0000: B2 FF B2 0D 9C 54 BA BA   A2 EF E3 BA E2 47 90 7F  .....T.......G..
+0010: 17 8A 35 A8                                        ..5.
+]
+]
+
+*******************************************
+</code></pre><hr>
+<h3 id="2_u3001_u67E5_u770B_u4E09_u65B9_u5E94_u7528_u6216_u662F_u7CFB_u7EDF_u5E94_u7528_u7B7E_u540D"><a href="#2_u3001_u67E5_u770B_u4E09_u65B9_u5E94_u7528_u6216_u662F_u7CFB_u7EDF_u5E94_u7528_u7B7E_u540D" class="headerlink" title="2、查看三方应用或是系统应用签名"></a>2、查看三方应用或是系统应用签名</h3><p>打开待查看的apk，将其中META-INF文件夹解压出来，得到其中的CERT.RSA文件   </p>
+<p>$ keytool -printcert -file META-INF/CERT.RSA</p>
+<pre><code>打开待查看的apk，将其中META-INF文件夹解压出来，得到其中的CERT.RSA文件
+$ keytool -printcert -file META-INF/CERT.RSA
+
+Owner: CN=Android Debug, O=Android, C=US
+
+
+Issuer: CN=Android Debug, O=Android, C=US
+
+
+Serial number: 514ab2e1
+
+
+Valid from: Thu Mar 21 15:12:33 CST 2013 until: Sat Mar 14 15:12:33 CST 2043
+
+
+Certificate fingerprints:
+
+
+MD5:  E0:F4:90:EE:CD:77:17:0E:B8:C4:AC:64:B2:F6:FC:83
+
+
+SHA1: 7F:E5:11:D8:37:4F:DA:D7:75:EA:A5:8C:47:06:85:95:6D:1D:3F:2B
+
+
+Signature algorithm name: SHA1withRSA
+
+
+Version: 3
+</code></pre><h3 id="3_u3001_u7ED9_u7A7A_u767D_u5305_u7B7E_u540D__uFF08_u6CE8_u610F_alias__u503C_uFF09"><a href="#3_u3001_u7ED9_u7A7A_u767D_u5305_u7B7E_u540D__uFF08_u6CE8_u610F_alias__u503C_uFF09" class="headerlink" title="3、给空白包签名 （注意 alias 值）"></a>3、给空白包签名 （注意 alias 值）</h3><p>jarsigner -verbose -keystore [keystorePath] -signedjar [apkOut] [apkIn] [alias]</p>
+<p>jarsigner命令格式：-verbose输出详细信息 -keystore密钥库位置 -signedjar要生成的文件 要签名的文件 密钥库文件<br>keystorePath参数代表keyStore的绝对路径，如D:\keystore<br>apkOut参数代表签名后的apk路径，如D:\signed.apk<br>apkin参数代表在腾讯应用中心下载的未签名apk，默认名称为tap_unsign.apk<br>alias参数代表签名用的alias名称（创建keyStore时所填写），如timdong</p>
+<pre><code>$ jarsigner -verbose -keystore debug.keystore -signedjar test2.apk tap_unsign1.apk timdong
+
+Enter Passphrase for keystore: 
+
+   adding: META-INF/MANIFEST.MF
+
+   adding: META-INF/ANDROIDD.SF
+
+   adding: META-INF/ANDROIDD.RSA
+
+  signing: res/drawable/ic_launcher.png
+
+  signing: res/layout/main.xml
+
+  signing: AndroidManifest.xml
+
+  signing: resources.arsc
+
+  signing: classes.dex
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>梦想还是要有的，万一实现了呢？</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat_donate.png" alt="Janrone WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/wechat_donate.png" alt="Janrone Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Keystore/" rel="tag">#Keystore</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/12/23/使用Gradle命令打包Android应用/" rel="next" title="使用Gradle命令打包Android应用">
+                <i class="fa fa-chevron-left"></i> 使用Gradle命令打包Android应用
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/12/29/Android-Studio-开发Android遇到错误和解决方法集合/" rel="prev" title="Android Studio 开发遇到错误和解决方法集合">
+                Android Studio 开发遇到错误和解决方法集合 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/12/29/查看apk签名-和-keystore-的信息/"
+           data-title="查看apk签名 和 keystore 的信息" data-url="http://janrone.allone.top/2015/12/29/查看apk签名-和-keystore-的信息/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar92.png"
+               alt="Janrone" />
+          <p class="site-author-name" itemprop="name">Janrone</p>
+          <p class="site-description motion-element" itemprop="description">The gold housese in the books .</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">35</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/janrone" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://hujiaweibujidao.github.io/" title="家威" target="_blank">家威</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.figotan.org/" title="非戈" target="_blank">非戈</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://quanqi.org/" title="圈齐" target="_blank">圈齐</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.zhaiyifan.cn/" title="markzhai" target="_blank">markzhai</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1_u3001_u67E5_u770B_keystore"><span class="nav-number">1.</span> <span class="nav-text">1、查看 keystore</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2_u3001_u67E5_u770B_u4E09_u65B9_u5E94_u7528_u6216_u662F_u7CFB_u7EDF_u5E94_u7528_u7B7E_u540D"><span class="nav-number">2.</span> <span class="nav-text">2、查看三方应用或是系统应用签名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3_u3001_u7ED9_u7A7A_u767D_u5305_u7B7E_u540D__uFF08_u6CE8_u610F_alias__u503C_uFF09"><span class="nav-number">3.</span> <span class="nav-text">3、给空白包签名 （注意 alias 值）</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2012 - 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Janrone</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="powered-by">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+<div class="theme-info">
+  Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"janrone"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
