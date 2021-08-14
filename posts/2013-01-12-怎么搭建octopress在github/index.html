@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="color-scheme" content="light dark">
+
+    
+
+    <meta name="author" content="Janrone">
+    <meta name="description" content="怎么在github 搭建 Octopress ">
+    <meta name="keywords" content="blog,developer,personal,software,python,c&#43;&#43;,go,rust,android,ios">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="怎么在github 搭建 Octopress "/>
+<meta name="twitter:description" content="怎么在github 搭建 Octopress "/>
+
+    <meta property="og:title" content="怎么在github 搭建 Octopress " />
+<meta property="og:description" content="怎么在github 搭建 Octopress " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://janrone.allone.top/posts/2013-01-12-%E6%80%8E%E4%B9%88%E6%90%AD%E5%BB%BAoctopress%E5%9C%A8github/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2013-01-12T20:34:13+08:00" />
+<meta property="article:modified_time" content="2013-01-12T20:34:13+08:00" />
+
+
+
+    <title>
+  怎么在github 搭建 Octopress  · Janrone‘s Site
+</title>
+
+    
+      <link rel="canonical" href="https://janrone.allone.top/posts/2013-01-12-%E6%80%8E%E4%B9%88%E6%90%AD%E5%BB%BAoctopress%E5%9C%A8github/">
+    
+
+    <link rel="preload" href="https://janrone.allone.top/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+    
+      
+      
+      <link rel="stylesheet" href="https://janrone.allone.top/css/coder.min.34dfa7b2f5cdeb0f5302b2628f4a7a4bfe88a2431e1397ee4ec605c56ab69701.css" integrity="sha256-NN&#43;nsvXN6w9TArJij0p6S/6IokMeE5fuTsYFxWq2lwE=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://janrone.allone.top/css/coder-dark.min.aa883b9ce35a8ff4a2a5008619005175e842bb18a8a9f9cc2bbcf44dab2d91fa.css" integrity="sha256-qog7nONaj/SipQCGGQBRdehCuxioqfnMK7z0Tastkfo=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+      <link rel="stylesheet" href="https://janrone.allone.top/css/custom.css" />
+    
+      <link rel="stylesheet" href="https://janrone.allone.top/css/syntax.css" />
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://janrone.allone.top/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://janrone.allone.top/images/favicon-16x16.png" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="https://janrone.allone.top/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://janrone.allone.top/images/apple-touch-icon.png">
+
+    
+
+    <meta name="generator" content="Hugo 0.87.0" />
+  </head>
+
+  
+  
+    
+  
+  <body class="preload-transitions colorscheme-dark"
+        onload=""
+  >
+    
+
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://janrone.allone.top/">
+      Janrone‘s Site
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://janrone.allone.top/now/">Now</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://janrone.allone.top/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://janrone.allone.top/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://janrone.allone.top/posts/2013-01-12-%E6%80%8E%E4%B9%88%E6%90%AD%E5%BB%BAoctopress%E5%9C%A8github/">
+              怎么在github 搭建 Octopress 
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime='2013-01-12T20:34:13&#43;08:00'>
+                2013-01-12
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              2-minute read
+            </span>
+          </div>
+          
+          
+          
+        </div>
+      </header>
+
+      <div>
+        
+        <h3 id="git-和-github-配置">
+  git 和 github 配置
+  <a class="heading-link" href="#git-%e5%92%8c-github-%e9%85%8d%e7%bd%ae">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<h6 id="1先注册一个github账号-创建github-pages-">
+  1.先注册一个github账号， 创建github pages 。
+  <a class="heading-link" href="#1%e5%85%88%e6%b3%a8%e5%86%8c%e4%b8%80%e4%b8%aagithub%e8%b4%a6%e5%8f%b7-%e5%88%9b%e5%bb%bagithub-pages-">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h6>
+<p>创建一个新的Repository。这里须要重视的是，若是想要博客的首页是http://yourname.github.com，则Repository的project name就必须是yourname.github.com。</p>
+<p>安装Git并进行设置，mac下git默认已经装好 。</p>
+<h6 id="2接下来设置-sh-keys--">
+  2.接下来设置 SH Keys  .
+  <a class="heading-link" href="#2%e6%8e%a5%e4%b8%8b%e6%9d%a5%e8%ae%be%e7%bd%ae-sh-keys--">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h6>
+<p>履行ssh-keygen -t rsa -C &ldquo;your_email＠youremail.com&rdquo;，回车。</p>
+<p>然后输入两遍暗码。</p>
+<!-- raw HTML omitted -->
+<p>到c:\Users\用户名.ssh\目次找到id_rsa.pub，并用文本软件打开复制全部。目录是隐藏的。</p>
+<h5 id="3将ssh-key添加到github">
+  3.将SSH Key添加到GitHub
+  <a class="heading-link" href="#3%e5%b0%86ssh-key%e6%b7%bb%e5%8a%a0%e5%88%b0github">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h5>
+<p>到github网站选择“Account Settings”&raquo;“SSH Public Keys”&raquo;“Add another public key”，将刚才复制的内容粘贴到key文本框内。</p>
+<h5 id="4-测试">
+  4. 测试
+  <a class="heading-link" href="#4-%e6%b5%8b%e8%af%95">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h5>
+<p>为确保设置成功，现在可以测试设置成果啦。记住，&ldquo;<a href="mailto:git@github.com">git@github.com</a>&quot;是默认的，无需修改。</p>
+<pre><code>    $ ssh -T git@github.com  （也可以用 SSH -v git@github.com ）
+</code></pre>
+<h5 id="5设置个人信息">
+  5.设置个人信息
+  <a class="heading-link" href="#5%e8%ae%be%e7%bd%ae%e4%b8%aa%e4%ba%ba%e4%bf%a1%e6%81%af">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h5>
+<p>现在，你已经成功安装Git，并设置好SSH Keys，是设置个人信息的时候啦：</p>
+<p>设置用户名和电子邮件
+$ git config &ndash;global user.name &ldquo;Firstname Lastname&rdquo;
+$ git config &ndash;global user.email &ldquo;<a href="mailto:youremail@youremail.com">youremail@youremail.com</a>&rdquo;</p>
+<h3 id="安装ruby-193-版本-因为目前20-octopress-需要的真是-193-否则到后边rake-install-不会有问题的">
+  安装ruby 1.9.3 版本 ，因为目前2.0 Octopress 需要的真是 1.9.3 ,否则到后边rake install 不会有问题的。
+  <a class="heading-link" href="#%e5%ae%89%e8%a3%85ruby-193-%e7%89%88%e6%9c%ac-%e5%9b%a0%e4%b8%ba%e7%9b%ae%e5%89%8d20-octopress-%e9%9c%80%e8%a6%81%e7%9a%84%e7%9c%9f%e6%98%af-193-%e5%90%a6%e5%88%99%e5%88%b0%e5%90%8e%e8%be%b9rake-install-%e4%b8%8d%e4%bc%9a%e6%9c%89%e9%97%ae%e9%a2%98%e7%9a%84">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<p>mac 本身的版本比这个低。 [id]:http://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/ &ldquo;安装可以参看这篇文章。&rdquo;
+[id]:http://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/</p>
+<h3 id="octopress安装和配置">
+  Octopress安装和配置
+  <a class="heading-link" href="#octopress%e5%ae%89%e8%a3%85%e5%92%8c%e9%85%8d%e7%bd%ae">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<h5 id="1安装octopress">
+  1.安装Octopress
+  <a class="heading-link" href="#1%e5%ae%89%e8%a3%85octopress">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h5>
+<p>建立一个放置Octopress的目录，这里是oblog文件夹，clone octopress程序到本地,替换username为你的自定义名称</p>
+<pre><code>    cd ~/oblog/
+	git clone git://github.com/imathis/octopress.git username.github.com
+	cd ~/oblog/username.github.com
+	gem install bundler
+	bundle install
+</code></pre>
+<p>接下来
+rake setup_github_pages    //配置github项目地址 接下来会提示输入url
+Enter the read/write url for your repository<br>
+(For example, &lsquo;<a href="mailto:git@github.com">git@github.com</a>:your_username/your_username.github.com)</p>
+<pre><code>    rake install    //是安装Octopress默认主题的
+	rake new_post[&quot;Hello World&quot;]   //建立新文章，文章存放在source/_post里面，格式为md的，现在就找个爽快点的[编辑器](#editor)来写文章了
+
+	rake generate  //生成静态文件
+	rake preview  //开启站点预览，动态生成， http://127.0.0.1:4000
+	rake deploy  //生成静态并部署到github
+	选择性的备份source文件夹到github，这样就有了文章md源文件的版本管理
+</code></pre>
+<p>提交的代码到git库
+git add .
+git commit -m &ldquo;your message log 例：保存source文件夹，文章源文件&rdquo;
+git push origin source   //建立sourch分支并保存</p>
+<p>以后写文章就只需要用
+rake generate 
+rake deploy</p>
+<h5 id="2ocotpress博客配置">
+  2.Ocotpress博客配置
+  <a class="heading-link" href="#2ocotpress%e5%8d%9a%e5%ae%a2%e9%85%8d%e7%bd%ae">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h5>
+<p>更改下面的配置后，还需要运行 rake generate、rake deploy等等命令的。</p>
+<p>1、默认的博客运行成功的话，就需要按照自己的要求对博客配置进行修改了，主要是修改Octopress根目录下的主配置文件_config.yml。</p>
+<pre><code>    url:  http://username.github.com           			  博客地址
+	title:  username's blog                               博客标题
+	subtitle: A blogging framework for hackers.           副标题
+	author:  xhhjin                                       作者
+	simple_search:  http://www.google.com.hk/search       搜索引擎
+	description:                                          关于博客的描述
+	subscribe_rss:  /atom.xml                             Rss订阅地址, 默认是  /atom.xml
+	subscribe_email:                                      提供Email订阅的地址
+	email:                                                Rss订阅的Email地址
+	root:/               						          博客路径，默认是&quot;/&quot;，如果你打算在子目录中，记得修改这个路径
+	permalink: /blog/:year/:month/:day/:title/            文章的固定链接形式
+</code></pre>
+<p>2.Jekyll &amp; Plugins</p>
+<pre><code>    paginate: 10                    # 每页的文章数量，超过翻页
+	recent_posts: 5                 # 右侧“最近发表”的模块里显示的文章数量
+	excerpt_link: &quot;Read on &amp;rarr;&quot;  # 在文章中使用&lt;!-- more --&gt;,列表页将不再显示全文，而是显示“Read on”的链接，指向全文
+	default_asides: [asides/recent_posts.html, asides/github.html, asides/twitter.html]    # 用于配置侧边栏
+</code></pre>
+<h4 id="呵呵我的第一篇博文算是写完了希望和大家多交流互相学习">
+  呵呵，我的第一篇博文算是写完了，希望和大家多交流，互相学习。
+  <a class="heading-link" href="#%e5%91%b5%e5%91%b5%e6%88%91%e7%9a%84%e7%ac%ac%e4%b8%80%e7%af%87%e5%8d%9a%e6%96%87%e7%ae%97%e6%98%af%e5%86%99%e5%ae%8c%e4%ba%86%e5%b8%8c%e6%9c%9b%e5%92%8c%e5%a4%a7%e5%ae%b6%e5%a4%9a%e4%ba%a4%e6%b5%81%e4%ba%92%e7%9b%b8%e5%ad%a6%e4%b9%a0">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<h3 id="我安装过程中碰到的问题">
+  我安装过程中碰到的问题。
+  <a class="heading-link" href="#%e6%88%91%e5%ae%89%e8%a3%85%e8%bf%87%e7%a8%8b%e4%b8%ad%e7%a2%b0%e5%88%b0%e7%9a%84%e9%97%ae%e9%a2%98">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<p>操作如果没有响应 ，有的是需要翻墙的 . 而且需要sudo权限 .
+使用bundle 之前需要安装 gem install liquid 
+如果出错看提示，根据提示跟新 我在装  liquid 的时候就需要更新这个 gem update &ndash;system
+之后在安装 liquid .
+之后就可以使用 bundle 了 .
+留意bundle update 提示使用的 rake  和 安装 rake 版本是否一致。不然会出错。（卸载不一样的版本 gem uninstall rake -v=10.0.3）</p>
+<p>或者 在终端提示You have already activated rake 10.0.2, but your Gemfile requires rake 0.9.2.2. Using bundle exec may solve this.，解决办法，找到Gemfile文件，修改gem rake对应那行为10.0.2即可。  我用的以上的方法。</p>
+<p>Fetching gem metadata from <a href="http://rubygems.org/.......">http://rubygems.org/.......</a>.
+Fetching gem metadata from <a href="http://rubygems.org/.">http://rubygems.org/.</a>.
+Installing rake (0.9.6)</p>
+<p>使用rake 命令遇到问题：
+C:\ruby186\workspace&gt;rake db:migrate
+rake aborted!
+No Rakefile found (looking for: rakefile, Rakefile, rakefile.rb, Rakefile.rb)
+c:/ruby186/lib/ruby/gems/1.8/gems/rake-0.8.7/lib/rake.rb:2377:in `raw_load_rakef
+ile&rsquo;
+(See full trace by running task with &ndash;trace)
+原因：没有进入工程目录。</p>
+<p>github page博客搭建参考在github上用octopress搭建博客，关于ruby的安装可参考Ruby在windows下的安装 。下面是自己安装过程中碰到的几个错误，分享下：<br>
+(1) ruby安装目录不能包含空格，否则在某些gem install会报错<br>
+(2) rake setup_github_pages 提示：window No such file or directory – git remote -v
+这是因为windows 的cmd没有配置git路径，只要在环境变量path中加入git的bin目录即可<br>
+(3) invalid byte sequence in GBK rake setup_github_pages
+这是因为本机windows的cmd默认为gbk，运行命令set LC_ALL=en_US.UTF-8 set LANG=en_US.UTF-8先<br>
+(4) rake deploy 提示## Deploying website via Rsync FAILED rake deploy
+没有先rake setup_github_pages</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        <script src="https://utteranc.es/client.js"
+    repo= "luizdepra/luizdepra.com"
+    issue-term="pathname"
+    
+    theme="github-dark"
+    crossorigin="anonymous"
+    async>
+  </script>
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+      
+        ©
+        
+        2021
+         Janrone 
+      
+      
+         · 
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+    </section>
+  </footer>
+
+
+    </main>
+
+    
+      
+      <script src="https://janrone.allone.top/js/coder.min.03b17769f4f91ae35667e1f2a1ca8c16f50562576cf90ff32b3179926914daa5.js" integrity="sha256-A7F3afT5GuNWZ&#43;HyocqMFvUFYlds&#43;Q/zKzF5kmkU2qU="></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <script data-goatcounter="https://luizdepra.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+
+    
+
+    
+
+    
+  </body>
+
+</html>
