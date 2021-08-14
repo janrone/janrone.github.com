@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Java on Janrone‘s Site</title><link>https://janrone.allone.top/tags/java/</link><description>Recent content in Java on Janrone‘s Site</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 05 Jan 2016 10:55:41 +0800</lastBuildDate><atom:link href="https://janrone.allone.top/tags/java/index.xml" rel="self" type="application/rss+xml"/><item><title>Java IO中几个主要类介绍和使用</title><link>https://janrone.allone.top/posts/2016-01-05-java-io-%E5%87%A0%E4%B8%AA%E4%B8%BB%E8%A6%81%E7%B1%BB%E7%9A%84%E4%BD%BF%E7%94%A8/</link><pubDate>Tue, 05 Jan 2016 10:55:41 +0800</pubDate><guid>https://janrone.allone.top/posts/2016-01-05-java-io-%E5%87%A0%E4%B8%AA%E4%B8%BB%E8%A6%81%E7%B1%BB%E7%9A%84%E4%BD%BF%E7%94%A8/</guid><description>&lt;h4 id="1-io流可以有三种分类方法">
+1. I/O流可以有三种分类方法.
+&lt;a class="heading-link" href="#1-io%e6%b5%81%e5%8f%af%e4%bb%a5%e6%9c%89%e4%b8%89%e7%a7%8d%e5%88%86%e7%b1%bb%e6%96%b9%e6%b3%95">
+&lt;i class="fa fa-link" aria-hidden="true">&lt;/i>
+&lt;/a>
+&lt;/h4>
+&lt;pre>&lt;code>第一, 输入流,输出流 .
+第二, 字节流,字符流 .
+第三, 节点流(真正直接处理数据的) ,处理流(装饰加工节点流的) .
+&lt;/code>&lt;/pre>
+&lt;h4 id="2-字节流">
+2. 字节流
+&lt;a class="heading-link" href="#2-%e5%ad%97%e8%8a%82%e6%b5%81">
+&lt;i class="fa fa-link" aria-hidden="true">&lt;/i>
+&lt;/a>
+&lt;/h4>
+&lt;pre>&lt;code>抽象类 &amp;lt;– 面向字节的文件流 .
+InputStream &amp;lt;– FileInputStream
+OutputStream &amp;lt;– FileOutputStream
+常用方法
+InputStream int read(byte [] c,int off, int len)
+OutputStream voidwrite(byte [] c,int off, int len) .
+&lt;/code>&lt;/pre>
+&lt;h4 id="3-字符流">
+3. 字符流
+&lt;a class="heading-link" href="#3-%e5%ad%97%e7%ac%a6%e6%b5%81">
+&lt;i class="fa fa-link" aria-hidden="true">&lt;/i>
+&lt;/a>
+&lt;/h4>
+&lt;pre>&lt;code>抽象类 &amp;lt;– 面向字符文件流 .
+Reader &amp;lt;– FileReader
+Writer &amp;lt;— FileWriter
+常用方法
+FileReader int read(char [] c,int off, int len)
+FileWriter voidwrite(char [] c,int off, int len) .
+&lt;/code>&lt;/pre>
+&lt;h4 id="4-节点流和处理流">
+4. 节点流和处理流
+&lt;a class="heading-link" href="#4-%e8%8a%82%e7%82%b9%e6%b5%81%e5%92%8c%e5%a4%84%e7%90%86%e6%b5%81">
+&lt;i class="fa fa-link" aria-hidden="true">&lt;/i>
+&lt;/a>
+&lt;/h4>
+&lt;pre>&lt;code>类
+BufferdReader 可以称作字符、输入、处理流 .
+方法
+String readLine()
+BufferdReader构造函数接受的是 Reader 类型的参数
+&lt;/code>&lt;/pre></description></item></channel></rss>

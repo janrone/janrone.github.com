@@ -1,1 +1,121 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Janrone‘s Site</title><link>https://janrone.allone.top/</link><description>Recent content on Janrone‘s Site</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><atom:link href="https://janrone.allone.top/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Janrone‘s Site</title><link>https://janrone.allone.top/</link><description>Recent content on Janrone‘s Site</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 04 Apr 2018 16:36:09 +0800</lastBuildDate><atom:link href="https://janrone.allone.top/index.xml" rel="self" type="application/rss+xml"/><item><title>三种碰撞检测</title><link>https://janrone.allone.top/posts/2018-04-28-%E4%B8%89%E7%A7%8D%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B/</link><pubDate>Wed, 04 Apr 2018 16:36:09 +0800</pubDate><guid>https://janrone.allone.top/posts/2018-04-28-%E4%B8%89%E7%A7%8D%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B/</guid><description>碰撞检测 碰撞检测技术 可通过多种方式检测 sprite 之间的碰撞。可采用的三种流行技术（按先进程度和复杂度递增顺序排列）是：
+边界区域（在 3D 游戏中称为包围体） 光线投射 分离轴定理 (Separating Axis Theorem) 使用边界区域的碰撞检测，检测圆圈或多边形的交点。在 图 2 中的示例中，小圆圈是表示一个 sprite（一个小球）的边界区域，大圆圈是一个桶的 sprite 的边界区域，桶比球大。当两个圆形边界区域相交时，球就会掉落到桶中。
+图 2. 边界区域：圆圈之间的碰撞 该图演示了圆圈之间的碰撞检测的原理 检测两个圆圈的碰撞是所有碰撞检测技术中最简单的。如果两个圆圈中心之间距离小于圆圈的半径之和，就会相交，sprite 就会爆炸。
+边界区域碰撞检测很简单，但当边界区域太小或移动得太快时，检测可能失败。在这两种情况下，sprite 可在单个动画帧中彼此穿过，进而避免检测。
+对于小型、快速移动的 sprite，更加可靠的一种技术是光线投射，如 图 3 所示。光线投射检测两个 sprite 的速度向量的焦点。在 图 3 中的 5 个帧中，球的速度向量是以蓝色绘制的对角线，桶的速度向量是红色的水平线（桶水平移动）。在这些向量的交点位于桶顶部的开口内，并且球在开口下方时，球就会落入桶中，如 图 3 中最右边的屏幕截图中所示。
+图 3. 光线投射 该图演示了光线投射碰撞检测的原理 先验或后验碰撞检测 可在碰撞发生之前（先验）或之后（后验）它们。如果在碰撞发生之前进行检测，必须预测 sprite 未来将位于何处。如果在碰撞发生之后检测，通常需要将已碰撞的 sprite 分开。这两种方法孰优孰劣并不明显。
+光线投射非常适合以下环境中的简单形状（比如 图 2 中球落在桶中），其中给出了两个形状的速度向量的焦点，很容易确定它们是否已经发生碰撞。
+对于更复杂的场景，比如任意大小和形状的多边形之间的碰撞，分离轴定理是最可靠的（和最复杂的）碰撞检测技术之一。分离轴定理是将光线从两个不同的角度照射到两个多边形上的数学描述，如 图 4 中所示。如果多边形背后的墙上的影子露出空隙，那么多边形没有发生碰撞。
+图 4. 分离轴定理 该图演示了使用分离轴定理的碰撞检测的原理 本文不会进一步介绍光线投射或分离轴定理。您可以在 Core HTML5 Canvas（Prentice Hall，2012 年）中查阅每种方法的深入讨论。（请参阅 参考资料，获取相关链接。）</description></item><item><title>如何在Excel中使用宏 (版本2013)</title><link>https://janrone.allone.top/posts/2018-04-04-%E5%A6%82%E4%BD%95%E5%9C%A8excel%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%AE%8F/</link><pubDate>Wed, 04 Apr 2018 16:36:09 +0800</pubDate><guid>https://janrone.allone.top/posts/2018-04-04-%E5%A6%82%E4%BD%95%E5%9C%A8excel%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%AE%8F/</guid><description>需求获取网页数据到Excel，用来统计。 1，创建宏： 新建Excel文档，点击视图，点击宏，创建 ，之后是编写宏。保存的时候，遇到到如下问题： 单击否，然后保存文件为 .xlsm 格式 。</description></item><item><title>如何删除git历史记录</title><link>https://janrone.allone.top/posts/2018-03-16-%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4git%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95/</link><pubDate>Fri, 16 Mar 2018 10:36:09 +0800</pubDate><guid>https://janrone.allone.top/posts/2018-03-16-%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4git%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95/</guid><description>清除所有历史 Step 1: remove all history
+rm -rf .git Step 2: reconstruct the Git repo with only the current content
+git init git add . git commit -m &amp;quot;Initial commit&amp;quot; Step 3: push to GitHub.
+git remote add origin &amp;lt;github-uri&amp;gt; git push -u --force origin master 清空上某个文件的历史 首先cd 进入项目文件夹下，然后执行以下代码：
+git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch 文件名' --prune-empty --tag-name-filter cat -- --all git push origin master --force rm -rf .</description></item><item><title>JSON 解析时自动判断是Object还是Array</title><link>https://janrone.allone.top/posts/2017-12-28-json-%E8%A7%A3%E6%9E%90%E6%97%B6%E8%87%AA%E5%8A%A8%E5%88%A4%E6%96%AD%E6%98%AFobject%E8%BF%98%E6%98%AFarray/</link><pubDate>Fri, 17 Nov 2017 14:36:09 +0800</pubDate><guid>https://janrone.allone.top/posts/2017-12-28-json-%E8%A7%A3%E6%9E%90%E6%97%B6%E8%87%AA%E5%8A%A8%E5%88%A4%E6%96%AD%E6%98%AFobject%E8%BF%98%E6%98%AFarray/</guid><description>后端API数据返回有时候是Object有时候有是Array！ 解决方案：通过JSONTokener解析，JSONTokener在解析过程中可以自动转换为对应的类型
+代码示例如下：
+String json =&amp;quot;{\&amp;quot;scm\&amp;quot;:{\&amp;quot;key1\&amp;quot;:\&amp;quot;vlaue1\&amp;quot;,\&amp;quot;key2\&amp;quot;:\&amp;quot;vlaue2\&amp;quot;}}&amp;quot;; String json =&amp;quot;{\&amp;quot;scm\&amp;quot;:[{\&amp;quot;key1\&amp;quot;:\&amp;quot;vlaue1\&amp;quot;,\&amp;quot;key2\&amp;quot;:\&amp;quot;vlaue2\&amp;quot;},{\&amp;quot;key11\&amp;quot;:\&amp;quot;vlaue11\&amp;quot;,\&amp;quot;key22\&amp;quot;:\&amp;quot;vlaue22\&amp;quot;}]}&amp;quot;; JSONObject jsonObject =JSONObject.fromObject(json); Object listArray = new JSONTokener(jsonObject.getString(&amp;quot;scm&amp;quot;)).nextValue(); if (listArray instanceof JSONArray){ JSONArray jsonArray = (JSONArray)listArray; for (int k = 0; k &amp;lt; jsonArray.size(); k++) { JSONObject parameterObject = jsonArray.getJSONObject(k); } }else if (listArray instanceof JSONObject) { JSONObject jsonObject3 = (JSONObject)listArray; } 最后搞定 。
+参考：http://blog.csdn.net/xlyrh/article/details/75091353</description></item><item><title>Scrapy安装和问题处理</title><link>https://janrone.allone.top/posts/2017-11-17-scrapy%E5%AE%89%E8%A3%85%E5%92%8C%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/</link><pubDate>Fri, 17 Nov 2017 14:36:09 +0800</pubDate><guid>https://janrone.allone.top/posts/2017-11-17-scrapy%E5%AE%89%E8%A3%85%E5%92%8C%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/</guid><description>安装 scrapy windows 安装
+pip install Scrapy 结果报错：
+building 'twisted.test.raiser' extension error: [WinError 2] 系统找不到指定的文件。 +++ Command &amp;ldquo;d:\python\python.exe -u -c &amp;ldquo;import setuptools, tokenize;file=&amp;lsquo;C:\Users\Tuteng\AppData\Local\Temp \pip-build-l7ra5rw5\Twisted\setup.py&amp;rsquo;;f=getattr(tokeniz e, &amp;lsquo;open&amp;rsquo;, open)(file);code=f.read().replace('\r\n', &amp;lsquo;\n&amp;rsquo;);f.close();exec(compile(code, file, &amp;lsquo;exec&amp;rsquo;))&amp;rdquo; install &amp;ndash;record C:\Users\Tuteng\AppData\Local\Temp\pip-yon9xl5j-record\ins tall-record.txt &amp;ndash;single-version-externally-managed &amp;ndash;compile&amp;rdquo; failed with error code 1 in C:\Users\Tuteng\AppData\Local\Temp\pip-build-l7ra5rw5\Twis ted\
+因为scrapy框架是基于twisted 的， 所以又要去上面那个网站： http://www.lfd.uci.edu/~gohlke/pythonlibs/#lxml
+搜Twisted Twisted, an event-driven networking engine. Twisted, an event-driven networking engine. ● Twisted‑17.9.0‑cp27‑cp27m‑win32.whl ● Twisted‑17.</description></item><item><title>使用Gradle构建多个不同applicationId包</title><link>https://janrone.allone.top/posts/2017-05-13-%E4%BD%BF%E7%94%A8gradle%E6%9E%84%E5%BB%BA%E5%A4%9A%E4%B8%AA%E4%B8%8D%E5%90%8Capplicationid%E5%8C%85/</link><pubDate>Sat, 13 May 2017 14:36:09 +0800</pubDate><guid>https://janrone.allone.top/posts/2017-05-13-%E4%BD%BF%E7%94%A8gradle%E6%9E%84%E5%BB%BA%E5%A4%9A%E4%B8%AA%E4%B8%8D%E5%90%8Capplicationid%E5%8C%85/</guid><description>假设下面是我们的目前的代码，想要哪个地址就改下API_URL重新打个包就ok了
+public static final String API_URL = &amp;ldquo;http://www.google.com&amp;rdquo;;//美国us// public static final String API_URL = &amp;ldquo;http://www.nanfei.com&amp;rdquo;;//南非za public static final String API_URL = &amp;ldquo;http://www.baidu.com&amp;rdquo;;//本地
+localRetrofit retrofit = new Retrofit.Builder().baseUrl(API_URL).client(client).addConverterFactory(GsonConverterFactory.create()) .build();
+可是有一天，测试同事跑来说，每次测试不同版本只能安装一个app(applicationId是唯一的,会进行覆盖),他想在同一台手机上安装多个app，app之间的区别只是它们的后台服务接口地址API_URL不同，当然最好app的桌面名字能区分出来是哪个服务接口地址,这样测试就方便了
+如何实现呢，同时打多个包肯定会想到用productFlavors，同时API_URL和app_name需要动态改变。
+1.移除strings的app_name 由于app_name是动态的所以肯定不能写死了,把它删掉
+2.设置build.gradle的productFlavors productFlavors { local { applicationId &amp;ldquo;com.lwp.app&amp;rdquo; buildConfigField &amp;lsquo;String&amp;rsquo;, &amp;lsquo;API_URL&amp;rsquo;, &amp;lsquo;&amp;ldquo;http://www.baidu.com&amp;rdquo;&amp;rsquo; resValue &amp;ldquo;string&amp;rdquo;, &amp;ldquo;app_name&amp;rdquo;, &amp;ldquo;app&amp;rdquo;
+} us { applicationId &amp;ldquo;com.lwp.app.us&amp;rdquo; buildConfigField &amp;lsquo;String&amp;rsquo;, &amp;lsquo;API_URL&amp;rsquo;, &amp;lsquo;&amp;ldquo;http://www.google.com&amp;rdquo;&amp;rsquo; resValue &amp;ldquo;string&amp;rdquo;, &amp;ldquo;app_name&amp;rdquo;, &amp;ldquo;app_us&amp;rdquo;
+} za { applicationId &amp;ldquo;com.</description></item><item><title>Shell命令</title><link>https://janrone.allone.top/posts/2016-05-29-shell%E5%91%BD%E4%BB%A4/</link><pubDate>Sun, 29 May 2016 20:36:09 +0800</pubDate><guid>https://janrone.allone.top/posts/2016-05-29-shell%E5%91%BD%E4%BB%A4/</guid><description>###（一）文件创建命令
+1.touch命令 例如：touch abc命令在本地目录中创建了一个名为abc的空文件 2.cp命令 cp命令允许我们把一个文件的内容复制到同名或不同名的文件中，复制得到的文件可以在任何目录。 使用cp命令的一个风险 是它会在不提示用户的情况下很容易覆盖掉不同目录中的文件 -r选项支持递归复制。例如：cp -ar /usr/share/doc/. /doc/ 将复制源目录中所有子目录以及相关文件 3.mv命令 mv命令实质上市给文件贴上不同的标签，例如：mv file1 file2 命令就是把file1的名字改为file2 mv命令也可以用于目录 4.ln命令 链接文件允许用户编辑不同目录中的同一个文件 硬链接包含了文件的一个副本。只要硬链接文件是在同一个分区中，则它们的索引号相同 。 ln /etc/samba/smb.conf smb.conf 软连接起着重定向的作用。当我们打开一个用软链接创建的文件时，则链接把我们重定向到原来的文件。 ln -s /etc/ samba/smb.conf smb.conf 5.rm命令 -r开关选项可以按递归方式进行 -f开关选项可以覆盖掉任何安全措施 rm -rf /root/a/b 6.目录创建和删除 mkdir和rmdir命令用于创建和删除目录 -p no error if existing, make parent directories as needed 例如 mkdir -p /test1/test2/test3 rmdir -p /test1/test2/test3 7.</description></item><item><title>Node与Express开发笔记一</title><link>https://janrone.allone.top/posts/2016-05-26-node%E4%B8%8Eexpress%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%E4%B8%80/</link><pubDate>Thu, 26 May 2016 18:38:13 +0800</pubDate><guid>https://janrone.allone.top/posts/2016-05-26-node%E4%B8%8Eexpress%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%E4%B8%80/</guid><description>前言 JavaScript、 Node 和 Express 的组合是 Web 团队的理想选择， 这个强大的、 可快速部署的技术栈得到了开发社区和大公司的广泛认可。
+Node 和 Express 就像发射 JavaScript 希望之银弹的机关枪。
+初识Express 老实说， JavaScript 确实降低了业余选手进入的门槛， 也有很多充斥着各种问题的 JavaScript 代码， 这损坏了 JavaScript 的名声。 用句通俗的话说， 即“ 不是游戏太差， 而是玩家太烂”。
+Express 网站上是这样介绍 Express 的：“ 精简的、 灵活的 Node.js Web 程序框架， 为构建单页、 多页及混合的 Web 程序提供了一系列健壮的功能特性。”
+单页Web程序 单页 Web 程序是比较新颖的想法。 不像之前的网站， 用户每次访问不同的页面都要发起网络请求， 单页 Web 程序把整个网站（ 或很大一部分） 都下载到客户端浏览器上。经过初始下载后， 用户访问不同页面的速度更快了， 因为几乎不需要或者只要很少的服务端通信。
+单页程序的开发可以使用 Angular 或 Ember 等流行框架， Express 跟它们都配合得很好。</description></item><item><title>利用Daocloud持续部署Hexo</title><link>https://janrone.allone.top/posts/2016-05-10-%E5%88%A9%E7%94%A8daocloud%E6%8C%81%E7%BB%AD%E9%83%A8%E7%BD%B2hexo/</link><pubDate>Tue, 10 May 2016 13:25:42 +0800</pubDate><guid>https://janrone.allone.top/posts/2016-05-10-%E5%88%A9%E7%94%A8daocloud%E6%8C%81%E7%BB%AD%E9%83%A8%E7%BD%B2hexo/</guid><description>Hexo安装 npm install -g hexo //安装完成后，进入到Hexo文件夹目录， 即会自动在目标文件夹建立网站所需要的所有文件。 hexo init //初始化 npm install //安装依赖包 hexo g //生成静态的网页 hexo s //开启本地服务，可以在本地预览 Hexo d //上传生产的文件到配置的服务仓库（见_config.yml） 官方文档：https://hexo.io/docs/
+同时部署到Coding和Github平台 Coding Pages Coding Pages 是一个免费的静态网页托管和演示服务。
+在Coding创建一个和你用户相同项目用来部署你的Hexo 。
+同时在代码选项开启的你的 pages服务。分支填写master(这里的分支要和部署时的对应)。
+用户 Pages 可以通过{user_name}.coding.me 形式的 URL 直接访问。
+官方文档 https://coding.net/help/doc/pages/index.html
+Github pages 同样Gtihub也提供了一个 Pages免费服务。 同样你在Github创建一个名为username.github.io的仓库 。用来部署你的Hexo代码。
+官方文档 https://pages.github.com/
+_config.yml配置 同时部署到2个平台，就要修改博客根目录下面的_config.yml文件中的deploy如下
+deploy: type: git repo: github: &amp;lt;repository url&amp;gt;,[branch] coding: &amp;lt;repository url&amp;gt;,[branch] Daocloud 自动构建 项目主页：http://daocloud.</description></item><item><title>Mac上Ruby和RubyGems安装使用说明</title><link>https://janrone.allone.top/posts/2016-03-26-mac%E4%B8%8Aruby%E5%92%8Crubygems%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</link><pubDate>Sat, 26 Mar 2016 15:52:33 +0800</pubDate><guid>https://janrone.allone.top/posts/2016-03-26-mac%E4%B8%8Aruby%E5%92%8Crubygems%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</guid><description>安装 RVM RVM:Ruby Version Manager,Ruby版本管理器，包括Ruby的版本管理和Gem库管理(gemset)
+　$ curl -L https://get.rvm.io | bash -s stable 然后，载入 RVM 环境 　$ source ~/.rvm/scripts/rvm
+查看当前ruby版本 $ ruby -v ruby 1.8.7 #列出已知的ruby版本 $ rvm list known #安装ruby 1.9.3 $ rvm install 1.9.3 步骤3 － 设置 Ruby 版本 RVM 装好以后，需要执行下面的命令将指定版本的 Ruby 设置为系统默认版本
+　$ rvm 2.0.0 &amp;ndash;default 有可能是因为Ruby的默认源使用的是cocoapods.org，国内访问这个网址有时候会有问题，网上的一种解决方案是将远替换成淘宝的，替换方式如下：
+$ gem source -r https://rubygems.org/ $ gem source -a https://ruby.</description></item><item><title>Mac下安装及配置 ProxyChains-NG 实现终端下代理</title><link>https://janrone.allone.top/posts/2016-03-26-mac%E4%B8%8B%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE-proxychains-ng-%E5%AE%9E%E7%8E%B0%E7%BB%88%E7%AB%AF%E4%B8%8B%E4%BB%A3%E7%90%86/</link><pubDate>Sat, 26 Mar 2016 13:30:42 +0800</pubDate><guid>https://janrone.allone.top/posts/2016-03-26-mac%E4%B8%8B%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE-proxychains-ng-%E5%AE%9E%E7%8E%B0%E7%BB%88%E7%AB%AF%E4%B8%8B%E4%BB%A3%E7%90%86/</guid><description>ProxyChains-NG 项目主页：https://github.com/rofl0r/proxychains-ng
+官方说明：
+proxychains ng (new generation) - a preloader which hooks calls to sockets in dynamically linked programs and redirects it through one or more socks/http proxies. continuation of the unmaintained proxychains project.
+安装 使用 Homebrew 安装
+brew install proxychains-ng
+配置 编辑配置文件
+sudo vim /usr/local/Cellar/proxychains-ng/4.10/etc/proxychains.conf 在 [ProxyList] 下面（也就是末尾）加入代理类型，代理地址和端口 注释掉原来的代理并添加
+socks5 127.0.0.1 1080 ps: 默认的socks4 127.0.0.1 9095是tor代理，而socks5 127.0.0.1 1080是shadowsocks的代理。</description></item><item><title>读写给大家看的设计书</title><link>https://janrone.allone.top/posts/2016-01-13-%E8%AF%BB%E5%86%99%E7%BB%99%E5%A4%A7%E5%AE%B6%E7%9C%8B%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B9%A6/</link><pubDate>Wed, 13 Jan 2016 15:20:09 +0800</pubDate><guid>https://janrone.allone.top/posts/2016-01-13-%E8%AF%BB%E5%86%99%E7%BB%99%E5%A4%A7%E5%AE%B6%E7%9C%8B%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B9%A6/</guid><description>{% cq %} 有些人需要设计页面，但完全没有设计背景，或者在设计方面没有经过正规培训，本书正是为这些人所写的。
+From: 威谦斯 (Robin Williams). “写给大家看的设计书(第3版).” {% endcq %}
+第一部分 4大设计原则
+“对比（Contrast）”“重复（Repetition）”“对齐（Alignment）”“亲密性（Proximity）”
+“亲密性原则是指：将相关的项组织在一起，移动这些项，使它们的物理位置相互靠近，这样一来，相关的项将被看作凝聚为一体的一个组，而不再是一堆彼此无关的片段。”
+“对齐原则是指：任何元素都不能在页面上随意安放。每一项都应当与页面上的某个内容存在某种视觉联系。”</description></item><item><title>时间与艺术——怀表</title><link>https://janrone.allone.top/posts/2016-01-07-%E6%97%B6%E9%97%B4%E4%B8%8E%E8%89%BA%E6%9C%AF-%E6%80%80%E8%A1%A8/</link><pubDate>Thu, 07 Jan 2016 11:29:19 +0800</pubDate><guid>https://janrone.allone.top/posts/2016-01-07-%E6%97%B6%E9%97%B4%E4%B8%8E%E8%89%BA%E6%9C%AF-%E6%80%80%E8%A1%A8/</guid><description>1. 科普 Gold Filled , Gold Plated 与 14K金 Gold Filled 指的是将10Kt以上品位的金层用机械以高温高压处理的方式压延附着在金属基材（铜材等）上，也就是通常说的贴金。
+美国联邦规定中，&amp;ldquo;Gold Filled&amp;quot;是指那些金层的重量在包括金属基材在内的总重量中占到1/20以上的制品。 粗略的计算大约应该是25微米左右的厚度 金制品一般表面刻有&amp;quot;GF&amp;rdquo;，&amp;ldquo;Gold Filled&amp;rdquo;
+而在英国，两面贴金或全面贴金被称为&amp;quot;Filled&amp;quot;，单面或部分贴金是&amp;quot;Rolled&amp;quot;，刻印为&amp;quot;GR&amp;quot;，&amp;ldquo;Gold Rolled&amp;rdquo;。
+Gold Plated 指的是采用电解法等方法使金层以微米单位附着在金属基材上，也就是通常说的镀金，但是准确地说，象这种薄薄的镀层应该称为&amp;quot;Flash&amp;quot;。
+美国联邦规定中，10Kt以上的金镀层在0.5微米（约20/1000000厘米）以上的制品可标示为&amp;quot;GP&amp;quot;或&amp;quot;Gold Plated&amp;quot;。
+还有，&amp;ldquo;GEP&amp;rdquo;，&amp;ldquo;Gold ElectroPlated&amp;rdquo; 指的是用电加工方法，金镀层约0.175微米的制品。 &amp;ldquo;Heavy Gold ElectroPlated&amp;rdquo; 指的是金镀层为2.5微米的制品。
+14K金
+K是确定金饰品中黄金含量的单位，英语为Karat，简称为“K”。14K黄金表示首饰中黄金含量为58.5%。
+K金制规定K金分为24种，24k金为纯黄金，理论值为100%；相应地，1K=1/24，14K黄金的黄金含量计算公式如下： 14k=100%/24*14=58.333%（585‰）。为方便标识，国际上一般把14K金的黄金含量约定为58.5%。 14k黄金的出现，跟黄金本身的特点有关，是人们为了满足首饰的耐用性和多样性的需求，在实践中探索出来的：“黄金有一个特点是自身比较柔软，所以难以镶嵌制成比较精美的首饰款式，尤其是镶嵌珍珠、宝石和翡翠等珍贵宝石时，容易丢失。古人发现在纯金中加入少量的银、铜、锌等金属就可以增加黄金的硬度与韧性，进而制作出各式各样的金饰。”
+2. 表外观 主要分没表盖（open-face）和有表盖（hunter），有表盖里面还分双表盖（double-hunter），半开（half-hunter），还有可不可以透视（skeleton）等等
+3. 品牌 Hamilton（汉密尔顿）、Elgin（爱尔近）、Waltham（华生）、Hampton（汉普顿）、Illinois（伊利诺斯）、Westclox（西部钟表公司）等众多至今为人熟悉或似曾熟悉的品牌纷纷登上历史舞台，至此美国已成为制表业的世界第一大国。
+4. 查询网址 英国银质怀表查询 http://www.silvermakersmarks.co.uk/index.htm
+针对美国怀表生产日期查询的网址包括了华生、波尔、汉米尔顿、汉普顿、爱尔近、伊利诺斯、Southbend和Rockford等。
+https://pocketwatchdatabase.com/</description></item><item><title>Java IO中几个主要类介绍和使用</title><link>https://janrone.allone.top/posts/2016-01-05-java-io-%E5%87%A0%E4%B8%AA%E4%B8%BB%E8%A6%81%E7%B1%BB%E7%9A%84%E4%BD%BF%E7%94%A8/</link><pubDate>Tue, 05 Jan 2016 10:55:41 +0800</pubDate><guid>https://janrone.allone.top/posts/2016-01-05-java-io-%E5%87%A0%E4%B8%AA%E4%B8%BB%E8%A6%81%E7%B1%BB%E7%9A%84%E4%BD%BF%E7%94%A8/</guid><description>&lt;h4 id="1-io流可以有三种分类方法">
+1. I/O流可以有三种分类方法.
+&lt;a class="heading-link" href="#1-io%e6%b5%81%e5%8f%af%e4%bb%a5%e6%9c%89%e4%b8%89%e7%a7%8d%e5%88%86%e7%b1%bb%e6%96%b9%e6%b3%95">
+&lt;i class="fa fa-link" aria-hidden="true">&lt;/i>
+&lt;/a>
+&lt;/h4>
+&lt;pre>&lt;code>第一, 输入流,输出流 .
+第二, 字节流,字符流 .
+第三, 节点流(真正直接处理数据的) ,处理流(装饰加工节点流的) .
+&lt;/code>&lt;/pre>
+&lt;h4 id="2-字节流">
+2. 字节流
+&lt;a class="heading-link" href="#2-%e5%ad%97%e8%8a%82%e6%b5%81">
+&lt;i class="fa fa-link" aria-hidden="true">&lt;/i>
+&lt;/a>
+&lt;/h4>
+&lt;pre>&lt;code>抽象类 &amp;lt;– 面向字节的文件流 .
+InputStream &amp;lt;– FileInputStream
+OutputStream &amp;lt;– FileOutputStream
+常用方法
+InputStream int read(byte [] c,int off, int len)
+OutputStream voidwrite(byte [] c,int off, int len) .
+&lt;/code>&lt;/pre>
+&lt;h4 id="3-字符流">
+3. 字符流
+&lt;a class="heading-link" href="#3-%e5%ad%97%e7%ac%a6%e6%b5%81">
+&lt;i class="fa fa-link" aria-hidden="true">&lt;/i>
+&lt;/a>
+&lt;/h4>
+&lt;pre>&lt;code>抽象类 &amp;lt;– 面向字符文件流 .
+Reader &amp;lt;– FileReader
+Writer &amp;lt;— FileWriter
+常用方法
+FileReader int read(char [] c,int off, int len)
+FileWriter voidwrite(char [] c,int off, int len) .
+&lt;/code>&lt;/pre>
+&lt;h4 id="4-节点流和处理流">
+4. 节点流和处理流
+&lt;a class="heading-link" href="#4-%e8%8a%82%e7%82%b9%e6%b5%81%e5%92%8c%e5%a4%84%e7%90%86%e6%b5%81">
+&lt;i class="fa fa-link" aria-hidden="true">&lt;/i>
+&lt;/a>
+&lt;/h4>
+&lt;pre>&lt;code>类
+BufferdReader 可以称作字符、输入、处理流 .
+方法
+String readLine()
+BufferdReader构造函数接受的是 Reader 类型的参数
+&lt;/code>&lt;/pre></description></item><item><title>Android Studio 开发遇到错误和解决方法集合</title><link>https://janrone.allone.top/posts/2015-12-29-android-studio-%E5%BC%80%E5%8F%91android%E9%81%87%E5%88%B0%E9%94%99%E8%AF%AF%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E9%9B%86%E5%90%88/</link><pubDate>Tue, 29 Dec 2015 19:28:59 +0800</pubDate><guid>https://janrone.allone.top/posts/2015-12-29-android-studio-%E5%BC%80%E5%8F%91android%E9%81%87%E5%88%B0%E9%94%99%E8%AF%AF%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E9%9B%86%E5%90%88/</guid><description>1 .Duplicate files copied in APK META-INF/LICENSE.txt android { packagingOptions { exclude 'META-INF/LICENSE.txt' } } My logcat: log Execution failed for task ':Prog:packageDebug'. Duplicate files copied in APK META-INF/LICENSE.txt File 1: /home/scijoker/AndroidStudioProjects/ProgProject/Prog/libs/httpclient-4.1.1.jar File 2: /home/scijoker/AndroidStudioProjects/ProgProject/Prog/libs/httpclient-4.1.1.jar 解决方法 android { packagingOptions { exclude 'META-INF/DEPENDENCIES.txt' exclude 'META-INF/LICENSE.txt' exclude 'META-INF/NOTICE.txt' exclude 'META-INF/NOTICE' exclude 'META-INF/LICENSE' exclude 'META-INF/DEPENDENCIES' exclude 'META-INF/notice.txt' exclude 'META-INF/license.txt' exclude 'META-INF/dependencies.txt' exclude 'META-INF/LGPL2.1' } } 2 .</description></item><item><title>使用Gradle命令打包Android应用</title><link>https://janrone.allone.top/posts/2015-12-23-%E4%BD%BF%E7%94%A8gradle%E5%91%BD%E4%BB%A4%E6%89%93%E5%8C%85android%E5%BA%94%E7%94%A8/</link><pubDate>Wed, 23 Dec 2015 11:52:09 +0800</pubDate><guid>https://janrone.allone.top/posts/2015-12-23-%E4%BD%BF%E7%94%A8gradle%E5%91%BD%E4%BB%A4%E6%89%93%E5%8C%85android%E5%BA%94%E7%94%A8/</guid><description>gradlew －－ gradle wrapper ./gradlew -v 版本号 ./gradlew clean app目录下的build文件夹 ./gradlew build 检查依赖并编译打包,同时把debug、release环境的包都打出来。 ./gradlew installRelease Release模式打包并安装 ./gradlew uninstallRelease 卸载Release模式包 配合assemble ./gradlew assembleDebug 编译并打Debug包 ./gradlew assembleRelease 编译并打Release的包 其实 assemble 是和 Build Variants 一起结合使用的，而 Build Variants = Build Type + Product Flavor 除此之外 assemble 还能和 Product Flavor 结合创建新的任务， ./gradlew assembleWandoujiaRelease 生成wandoujia渠道的release版本 ./gradlew assembleWandoujia 生成wandoujia渠道的Release和Debug版本 ./gradlew assembleRelease 生成全部渠道Release版本。即生成Product Flavor下的所有渠道的Release版本都打出来。 总结一下，assemble 命令创建task有如下用法： **assemble**： 允许直接构建一个Variant版本，例如assembleFlavor1Debug。 **assemble**： 允许构建指定Build Type的所有APK，例如assembleDebug将会构建Flavor1Debug和Flavor2Debug两个Variant版本。 **assemble**： 允许构建指定flavor的所有APK，例如assembleFlavor1将会构建Flavor1Debug和Flavor1Release两个Variant版本。 最佳实践 signingConfigs { release { try { storeFile file(&amp;quot;xxxx&amp;quot;) storePassword KEYSTORE_PASSWORD keyAlias &amp;quot;xxxxx&amp;quot; keyPassword KEY_PASSWORD } catch (ex) { throw new InvalidUserDataException(&amp;quot;You should define KEYSTORE_PASSWORD and KEY_PASSWORD in gradle.</description></item><item><title>TextView 设置中划线下划线等各种效果</title><link>https://janrone.allone.top/posts/2015-12-29-textview-%E8%AE%BE%E7%BD%AE%E4%B8%AD%E5%88%92%E7%BA%BF%E4%B8%8B%E5%88%92%E7%BA%BF/</link><pubDate>Wed, 25 Jul 2012 15:25:15 +0800</pubDate><guid>https://janrone.allone.top/posts/2015-12-29-textview-%E8%AE%BE%E7%BD%AE%E4%B8%AD%E5%88%92%E7%BA%BF%E4%B8%8B%E5%88%92%E7%BA%BF/</guid><description>android:textAppearance 设置文字外观。如“?android:attr/textAppearanceLargeInverse
+”这里引用的是系统自带的一个外观，？表示系统是否有这种外观，否则使用默认的外观。可设置的值如下：
+textAppearanceButton/ textAppearanceInverse/ textAppearanceLarge/ textAppearanceLargeInverse/ textAppearanceMedium/ textAppearanceMediumInverse/ textAppearanceSmall/ textAppearanceSmallInverse textView.getPaint().setFlags(Paint. UNDERLINE_TEXT_FLAG ); //下划线 textView.getPaint().setAntiAlias(true);//抗锯齿 textview.getPaint().setFlags(Paint. STRIKE_THRU_TEXT_FLAG); //中划线 setFlags(Paint. STRIKE_THRU_TEXT_FLAG|Paint.ANTI_ALIAS_FLAG); // 设置中划线并加清晰 textView.getPaint().setFlags(0); // 取消设置的的划线</description></item></channel></rss>

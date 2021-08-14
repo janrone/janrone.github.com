@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>游戏 on Janrone‘s Site</title><link>https://janrone.allone.top/tags/%E6%B8%B8%E6%88%8F/</link><description>Recent content in 游戏 on Janrone‘s Site</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 04 Apr 2018 16:36:09 +0800</lastBuildDate><atom:link href="https://janrone.allone.top/tags/%E6%B8%B8%E6%88%8F/index.xml" rel="self" type="application/rss+xml"/><item><title>三种碰撞检测</title><link>https://janrone.allone.top/posts/2018-04-28-%E4%B8%89%E7%A7%8D%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B/</link><pubDate>Wed, 04 Apr 2018 16:36:09 +0800</pubDate><guid>https://janrone.allone.top/posts/2018-04-28-%E4%B8%89%E7%A7%8D%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B/</guid><description>碰撞检测 碰撞检测技术 可通过多种方式检测 sprite 之间的碰撞。可采用的三种流行技术（按先进程度和复杂度递增顺序排列）是：
+边界区域（在 3D 游戏中称为包围体） 光线投射 分离轴定理 (Separating Axis Theorem) 使用边界区域的碰撞检测，检测圆圈或多边形的交点。在 图 2 中的示例中，小圆圈是表示一个 sprite（一个小球）的边界区域，大圆圈是一个桶的 sprite 的边界区域，桶比球大。当两个圆形边界区域相交时，球就会掉落到桶中。
+图 2. 边界区域：圆圈之间的碰撞 该图演示了圆圈之间的碰撞检测的原理 检测两个圆圈的碰撞是所有碰撞检测技术中最简单的。如果两个圆圈中心之间距离小于圆圈的半径之和，就会相交，sprite 就会爆炸。
+边界区域碰撞检测很简单，但当边界区域太小或移动得太快时，检测可能失败。在这两种情况下，sprite 可在单个动画帧中彼此穿过，进而避免检测。
+对于小型、快速移动的 sprite，更加可靠的一种技术是光线投射，如 图 3 所示。光线投射检测两个 sprite 的速度向量的焦点。在 图 3 中的 5 个帧中，球的速度向量是以蓝色绘制的对角线，桶的速度向量是红色的水平线（桶水平移动）。在这些向量的交点位于桶顶部的开口内，并且球在开口下方时，球就会落入桶中，如 图 3 中最右边的屏幕截图中所示。
+图 3. 光线投射 该图演示了光线投射碰撞检测的原理 先验或后验碰撞检测 可在碰撞发生之前（先验）或之后（后验）它们。如果在碰撞发生之前进行检测，必须预测 sprite 未来将位于何处。如果在碰撞发生之后检测，通常需要将已碰撞的 sprite 分开。这两种方法孰优孰劣并不明显。
+光线投射非常适合以下环境中的简单形状（比如 图 2 中球落在桶中），其中给出了两个形状的速度向量的焦点，很容易确定它们是否已经发生碰撞。
+对于更复杂的场景，比如任意大小和形状的多边形之间的碰撞，分离轴定理是最可靠的（和最复杂的）碰撞检测技术之一。分离轴定理是将光线从两个不同的角度照射到两个多边形上的数学描述，如 图 4 中所示。如果多边形背后的墙上的影子露出空隙，那么多边形没有发生碰撞。
+图 4. 分离轴定理 该图演示了使用分离轴定理的碰撞检测的原理 本文不会进一步介绍光线投射或分离轴定理。您可以在 Core HTML5 Canvas（Prentice Hall，2012 年）中查阅每种方法的深入讨论。（请参阅 参考资料，获取相关链接。）</description></item></channel></rss>

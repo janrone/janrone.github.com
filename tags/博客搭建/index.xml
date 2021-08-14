@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>博客搭建 on Janrone‘s Site</title>
+    <link>https://janrone.allone.top/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</link>
+    <description>Recent content in 博客搭建 on Janrone‘s Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 12 Jan 2013 20:34:13 +0800</lastBuildDate><atom:link href="https://janrone.allone.top/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>怎么在github 搭建 Octopress </title>
+      <link>https://janrone.allone.top/posts/2013-01-12-%E6%80%8E%E4%B9%88%E6%90%AD%E5%BB%BAoctopress%E5%9C%A8github/</link>
+      <pubDate>Sat, 12 Jan 2013 20:34:13 +0800</pubDate>
+      
+      <guid>https://janrone.allone.top/posts/2013-01-12-%E6%80%8E%E4%B9%88%E6%90%AD%E5%BB%BAoctopress%E5%9C%A8github/</guid>
+      <description>git 和 github 配置1.先注册一个github账号， 创建github pages 。创建一个新的Repository。这里须要重视的是，若是想要博客的首页是http://yourname.github.com，则Repository的project name就必须是yourname.github.com。
+安装Git并进行设置，mac下git默认已经装好 。
+2.接下来设置 SH Keys .履行ssh-keygen -t rsa -C &amp;ldquo;your_email＠youremail.com&amp;rdquo;，回车。
+然后输入两遍暗码。
+到c:\Users\用户名.ssh\目次找到id_rsa.pub，并用文本软件打开复制全部。目录是隐藏的。
+3.将SSH Key添加到GitHub到github网站选择“Account Settings”&amp;raquo;“SSH Public Keys”&amp;raquo;“Add another public key”，将刚才复制的内容粘贴到key文本框内。
+4. 测试为确保设置成功，现在可以测试设置成果啦。记住，&amp;ldquo;git@github.com&amp;quot;是默认的，无需修改。
+ $ ssh -T git@github.com （也可以用 SSH -v git@github.com ） 5.设置个人信息现在，你已经成功安装Git，并设置好SSH Keys，是设置个人信息的时候啦：
+设置用户名和电子邮件 $ git config &amp;ndash;global user.</description>
+    </item>
+    
+  </channel>
+</rss>
