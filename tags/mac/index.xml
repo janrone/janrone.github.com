@@ -1,12 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mac on Janrone‘s Site</title><link>https://janrone.allone.top/tags/mac/</link><description>Recent content in Mac on Janrone‘s Site</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 26 Mar 2016 15:52:33 +0800</lastBuildDate><atom:link href="https://janrone.allone.top/tags/mac/index.xml" rel="self" type="application/rss+xml"/><item><title>Mac上Ruby和RubyGems安装使用说明</title><link>https://janrone.allone.top/posts/2016-03-26-mac%E4%B8%8Aruby%E5%92%8Crubygems%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</link><pubDate>Sat, 26 Mar 2016 15:52:33 +0800</pubDate><guid>https://janrone.allone.top/posts/2016-03-26-mac%E4%B8%8Aruby%E5%92%8Crubygems%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</guid><description>安装 RVM RVM:Ruby Version Manager,Ruby版本管理器，包括Ruby的版本管理和Gem库管理(gemset)
-　$ curl -L https://get.rvm.io | bash -s stable 然后，载入 RVM 环境 　$ source ~/.rvm/scripts/rvm
-查看当前ruby版本 $ ruby -v ruby 1.8.7 #列出已知的ruby版本 $ rvm list known #安装ruby 1.9.3 $ rvm install 1.9.3 步骤3 － 设置 Ruby 版本 RVM 装好以后，需要执行下面的命令将指定版本的 Ruby 设置为系统默认版本
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mac on Janrone‘s Site</title>
+    <link>https://janrone.allone.top/tags/mac/</link>
+    <description>Recent content in Mac on Janrone‘s Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 26 Mar 2016 15:52:33 +0800</lastBuildDate><atom:link href="https://janrone.allone.top/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mac上Ruby和RubyGems安装使用说明</title>
+      <link>https://janrone.allone.top/posts/2016-03-26-mac%E4%B8%8Aruby%E5%92%8Crubygems%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</link>
+      <pubDate>Sat, 26 Mar 2016 15:52:33 +0800</pubDate>
+      
+      <guid>https://janrone.allone.top/posts/2016-03-26-mac%E4%B8%8Aruby%E5%92%8Crubygems%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</guid>
+      <description>安装 RVM    RVM:Ruby Version Manager,Ruby版本管理器，包括Ruby的版本管理和Gem库管理(gemset)
+　$ curl -L https://get.rvm.io | bash -s stable 然后，载入 RVM 环境    　$ source ~/.rvm/scripts/rvm
+查看当前ruby版本    $ ruby -v ruby 1.8.7 #列出已知的ruby版本 $ rvm list known #安装ruby 1.9.3 $ rvm install 1.9.3 步骤3 － 设置 Ruby 版本  RVM 装好以后，需要执行下面的命令将指定版本的 Ruby 设置为系统默认版本
 　$ rvm 2.0.0 &amp;ndash;default 有可能是因为Ruby的默认源使用的是cocoapods.org，国内访问这个网址有时候会有问题，网上的一种解决方案是将远替换成淘宝的，替换方式如下：
-$ gem source -r https://rubygems.org/ $ gem source -a https://ruby.</description></item><item><title>Mac下安装及配置 ProxyChains-NG 实现终端下代理</title><link>https://janrone.allone.top/posts/2016-03-26-mac%E4%B8%8B%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE-proxychains-ng-%E5%AE%9E%E7%8E%B0%E7%BB%88%E7%AB%AF%E4%B8%8B%E4%BB%A3%E7%90%86/</link><pubDate>Sat, 26 Mar 2016 13:30:42 +0800</pubDate><guid>https://janrone.allone.top/posts/2016-03-26-mac%E4%B8%8B%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE-proxychains-ng-%E5%AE%9E%E7%8E%B0%E7%BB%88%E7%AB%AF%E4%B8%8B%E4%BB%A3%E7%90%86/</guid><description>ProxyChains-NG 项目主页：https://github.com/rofl0r/proxychains-ng
+$ gem source -r https://rubygems.org/ $ gem source -a https://ruby.</description>
+    </item>
+    
+    <item>
+      <title>Mac下安装及配置 ProxyChains-NG 实现终端下代理</title>
+      <link>https://janrone.allone.top/posts/2016-03-26-mac%E4%B8%8B%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE-proxychains-ng-%E5%AE%9E%E7%8E%B0%E7%BB%88%E7%AB%AF%E4%B8%8B%E4%BB%A3%E7%90%86/</link>
+      <pubDate>Sat, 26 Mar 2016 13:30:42 +0800</pubDate>
+      
+      <guid>https://janrone.allone.top/posts/2016-03-26-mac%E4%B8%8B%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE-proxychains-ng-%E5%AE%9E%E7%8E%B0%E7%BB%88%E7%AB%AF%E4%B8%8B%E4%BB%A3%E7%90%86/</guid>
+      <description>ProxyChains-NG    项目主页：https://github.com/rofl0r/proxychains-ng
 官方说明：
 proxychains ng (new generation) - a preloader which hooks calls to sockets in dynamically linked programs and redirects it through one or more socks/http proxies. continuation of the unmaintained proxychains project.
-安装 使用 Homebrew 安装
+安装    使用 Homebrew 安装
 brew install proxychains-ng
-配置 编辑配置文件
-sudo vim /usr/local/Cellar/proxychains-ng/4.10/etc/proxychains.conf 在 [ProxyList] 下面（也就是末尾）加入代理类型，代理地址和端口 注释掉原来的代理并添加
-socks5 127.0.0.1 1080 ps: 默认的socks4 127.0.0.1 9095是tor代理，而socks5 127.0.0.1 1080是shadowsocks的代理。</description></item></channel></rss>
+配置    编辑配置文件
+sudo vim /usr/local/Cellar/proxychains-ng/4.10/etc/proxychains.conf  在 [ProxyList] 下面（也就是末尾）加入代理类型，代理地址和端口 注释掉原来的代理并添加
+socks5 127.0.0.1 1080  ps: 默认的socks4 127.0.0.1 9095是tor代理，而socks5 127.0.0.1 1080是shadowsocks的代理。</description>
+    </item>
+    
+  </channel>
+</rss>

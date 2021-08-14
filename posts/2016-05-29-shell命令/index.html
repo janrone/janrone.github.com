@@ -1,59 +1,303 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=content-language content="en"><meta name=color-scheme content="light dark"><meta name=author content="Janrone"><meta name=description content="###（一）文件创建命令
-1.touch命令    例如：touch abc命令在本地目录中创建了一个名为abc的空文件  2.cp命令    cp命令允许我们把一个文件的内容复制到同名或不同名的文件中，复制得到的文件可以在任何目录。 使用cp命令的一个风险	是它会在不提示用户的情况下很容易覆盖掉不同目录中的文件 -r选项支持递归复制。例如：cp -ar /usr/share/doc/. /doc/ 将复制源目录中所有子目录以及相关文件  3.mv命令    mv命令实质上市给文件贴上不同的标签，例如：mv file1 file2 命令就是把file1的名字改为file2 mv命令也可以用于目录  4.ln命令    链接文件允许用户编辑不同目录中的同一个文件 硬链接包含了文件的一个副本。只要硬链接文件是在同一个分区中，则它们的索引号相同 。 ln /etc/samba/smb.conf smb.conf 软连接起着重定向的作用。当我们打开一个用软链接创建的文件时，则链接把我们重定向到原来的文件。 ln -s /etc/	samba/smb.conf smb.conf  5.rm命令    -r开关选项可以按递归方式进行 -f开关选项可以覆盖掉任何安全措施 rm -rf /root/a/b  6.目录创建和删除    mkdir和rmdir命令用于创建和删除目录 -p no error if existing, make parent directories as needed 例如 mkdir -p /test1/test2/test3 rmdir -p /test1/test2/test3  7."><meta name=keywords content="blog,developer,personal,software,python,c++,go,rust,android,ios"><meta name=twitter:card content="summary"><meta name=twitter:title content="Shell命令"><meta name=twitter:description content="###（一）文件创建命令
-1.touch命令    例如：touch abc命令在本地目录中创建了一个名为abc的空文件  2.cp命令    cp命令允许我们把一个文件的内容复制到同名或不同名的文件中，复制得到的文件可以在任何目录。 使用cp命令的一个风险	是它会在不提示用户的情况下很容易覆盖掉不同目录中的文件 -r选项支持递归复制。例如：cp -ar /usr/share/doc/. /doc/ 将复制源目录中所有子目录以及相关文件  3.mv命令    mv命令实质上市给文件贴上不同的标签，例如：mv file1 file2 命令就是把file1的名字改为file2 mv命令也可以用于目录  4.ln命令    链接文件允许用户编辑不同目录中的同一个文件 硬链接包含了文件的一个副本。只要硬链接文件是在同一个分区中，则它们的索引号相同 。 ln /etc/samba/smb.conf smb.conf 软连接起着重定向的作用。当我们打开一个用软链接创建的文件时，则链接把我们重定向到原来的文件。 ln -s /etc/	samba/smb.conf smb.conf  5.rm命令    -r开关选项可以按递归方式进行 -f开关选项可以覆盖掉任何安全措施 rm -rf /root/a/b  6.目录创建和删除    mkdir和rmdir命令用于创建和删除目录 -p no error if existing, make parent directories as needed 例如 mkdir -p /test1/test2/test3 rmdir -p /test1/test2/test3  7."><meta property="og:title" content="Shell命令"><meta property="og:description" content="###（一）文件创建命令
-1.touch命令    例如：touch abc命令在本地目录中创建了一个名为abc的空文件  2.cp命令    cp命令允许我们把一个文件的内容复制到同名或不同名的文件中，复制得到的文件可以在任何目录。 使用cp命令的一个风险	是它会在不提示用户的情况下很容易覆盖掉不同目录中的文件 -r选项支持递归复制。例如：cp -ar /usr/share/doc/. /doc/ 将复制源目录中所有子目录以及相关文件  3.mv命令    mv命令实质上市给文件贴上不同的标签，例如：mv file1 file2 命令就是把file1的名字改为file2 mv命令也可以用于目录  4.ln命令    链接文件允许用户编辑不同目录中的同一个文件 硬链接包含了文件的一个副本。只要硬链接文件是在同一个分区中，则它们的索引号相同 。 ln /etc/samba/smb.conf smb.conf 软连接起着重定向的作用。当我们打开一个用软链接创建的文件时，则链接把我们重定向到原来的文件。 ln -s /etc/	samba/smb.conf smb.conf  5.rm命令    -r开关选项可以按递归方式进行 -f开关选项可以覆盖掉任何安全措施 rm -rf /root/a/b  6.目录创建和删除    mkdir和rmdir命令用于创建和删除目录 -p no error if existing, make parent directories as needed 例如 mkdir -p /test1/test2/test3 rmdir -p /test1/test2/test3  7."><meta property="og:type" content="article"><meta property="og:url" content="https://janrone.allone.top/posts/2016-05-29-shell%E5%91%BD%E4%BB%A4/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2016-05-29T20:36:09+08:00"><meta property="article:modified_time" content="2016-05-29T20:36:09+08:00"><title>Shell命令 · Janrone‘s Site</title><link rel=canonical href=https://janrone.allone.top/posts/2016-05-29-shell%E5%91%BD%E4%BB%A4/><link rel=preload href="https://janrone.allone.top/fonts/forkawesome-webfont.woff2?v=1.2.0" as=font type=font/woff2 crossorigin><link rel=stylesheet href=https://janrone.allone.top/css/coder.min.34dfa7b2f5cdeb0f5302b2628f4a7a4bfe88a2431e1397ee4ec605c56ab69701.css integrity="sha256-NN+nsvXN6w9TArJij0p6S/6IokMeE5fuTsYFxWq2lwE=" crossorigin=anonymous media=screen><link rel=stylesheet href=https://janrone.allone.top/css/coder-dark.min.aa883b9ce35a8ff4a2a5008619005175e842bb18a8a9f9cc2bbcf44dab2d91fa.css integrity="sha256-qog7nONaj/SipQCGGQBRdehCuxioqfnMK7z0Tastkfo=" crossorigin=anonymous media=screen><link rel=stylesheet href=https://janrone.allone.top/css/custom.css><link rel=stylesheet href=https://janrone.allone.top/css/syntax.css><link rel=icon type=image/png href=https://janrone.allone.top/images/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=https://janrone.allone.top/images/favicon-16x16.png sizes=16x16><link rel=apple-touch-icon href=https://janrone.allone.top/images/apple-touch-icon.png><link rel=apple-touch-icon sizes=180x180 href=https://janrone.allone.top/images/apple-touch-icon.png><meta name=generator content="Hugo 0.85.0"></head><body class="preload-transitions colorscheme-dark"><div class=float-container><a id=dark-mode-toggle class=colorscheme-toggle><i class="fa fa-adjust fa-fw" aria-hidden=true></i></a></div><main class=wrapper><nav class=navigation><section class=container><a class=navigation-title href=https://janrone.allone.top/>Janrone‘s Site</a>
-<input type=checkbox id=menu-toggle>
-<label class="menu-button float-right" for=menu-toggle><i class="fa fa-bars fa-fw" aria-hidden=true></i></label><ul class=navigation-list><li class=navigation-item><a class=navigation-link href=https://janrone.allone.top/now/>Now</a></li><li class=navigation-item><a class=navigation-link href=https://janrone.allone.top/posts/>Blog</a></li><li class=navigation-item><a class=navigation-link href=https://janrone.allone.top/about/>About</a></li></ul></section></nav><div class=content><section class="container post"><article><header><div class=post-title><h1 class=title><a class=title-link href=https://janrone.allone.top/posts/2016-05-29-shell%E5%91%BD%E4%BB%A4/>Shell命令</a></h1></div><div class=post-meta><div class=date><span class=posted-on><i class="fa fa-calendar" aria-hidden=true></i>
-<time datetime=2016-05-29T20:36:09+08:00>2016-05-29</time></span>
-<span class=reading-time><i class="fa fa-clock-o" aria-hidden=true></i>
-4-minute read</span></div><div class=categories><i class="fa fa-folder" aria-hidden=true></i>
-<a href=https://janrone.allone.top/categories/%E6%8A%80%E6%9C%AF/>技术</a></div><div class=tags><i class="fa fa-tag" aria-hidden=true></i>
-<span class=tag><a href=https://janrone.allone.top/tags/shell/>Shell</a></span></div></div></header><div><p>###（一）文件创建命令</p><h4 id=1touch命令>1.touch命令
-<a class=heading-link href=#1touch%e5%91%bd%e4%bb%a4><i class="fa fa-link" aria-hidden=true></i></a></h4><pre><code>例如：touch abc命令在本地目录中创建了一个名为abc的空文件
-</code></pre><h4 id=2cp命令>2.cp命令
-<a class=heading-link href=#2cp%e5%91%bd%e4%bb%a4><i class="fa fa-link" aria-hidden=true></i></a></h4><pre><code>cp命令允许我们把一个文件的内容复制到同名或不同名的文件中，复制得到的文件可以在任何目录。
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="color-scheme" content="light dark">
+
+    
+
+    <meta name="author" content="Janrone">
+    <meta name="description" content="###（一）文件创建命令
+1.touch命令    例如：touch abc命令在本地目录中创建了一个名为abc的空文件  2.cp命令    cp命令允许我们把一个文件的内容复制到同名或不同名的文件中，复制得到的文件可以在任何目录。 使用cp命令的一个风险	是它会在不提示用户的情况下很容易覆盖掉不同目录中的文件 -r选项支持递归复制。例如：cp -ar /usr/share/doc/. /doc/ 将复制源目录中所有子目录以及相关文件  3.mv命令    mv命令实质上市给文件贴上不同的标签，例如：mv file1 file2 命令就是把file1的名字改为file2 mv命令也可以用于目录  4.ln命令    链接文件允许用户编辑不同目录中的同一个文件 硬链接包含了文件的一个副本。只要硬链接文件是在同一个分区中，则它们的索引号相同 。 ln /etc/samba/smb.conf smb.conf 软连接起着重定向的作用。当我们打开一个用软链接创建的文件时，则链接把我们重定向到原来的文件。 ln -s /etc/	samba/smb.conf smb.conf  5.rm命令    -r开关选项可以按递归方式进行 -f开关选项可以覆盖掉任何安全措施 rm -rf /root/a/b  6.目录创建和删除    mkdir和rmdir命令用于创建和删除目录 -p no error if existing, make parent directories as needed 例如 mkdir -p /test1/test2/test3 rmdir -p /test1/test2/test3  7.">
+    <meta name="keywords" content="blog,developer,personal,software,python,c&#43;&#43;,go,rust,android,ios">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Shell命令"/>
+<meta name="twitter:description" content="###（一）文件创建命令
+1.touch命令    例如：touch abc命令在本地目录中创建了一个名为abc的空文件  2.cp命令    cp命令允许我们把一个文件的内容复制到同名或不同名的文件中，复制得到的文件可以在任何目录。 使用cp命令的一个风险	是它会在不提示用户的情况下很容易覆盖掉不同目录中的文件 -r选项支持递归复制。例如：cp -ar /usr/share/doc/. /doc/ 将复制源目录中所有子目录以及相关文件  3.mv命令    mv命令实质上市给文件贴上不同的标签，例如：mv file1 file2 命令就是把file1的名字改为file2 mv命令也可以用于目录  4.ln命令    链接文件允许用户编辑不同目录中的同一个文件 硬链接包含了文件的一个副本。只要硬链接文件是在同一个分区中，则它们的索引号相同 。 ln /etc/samba/smb.conf smb.conf 软连接起着重定向的作用。当我们打开一个用软链接创建的文件时，则链接把我们重定向到原来的文件。 ln -s /etc/	samba/smb.conf smb.conf  5.rm命令    -r开关选项可以按递归方式进行 -f开关选项可以覆盖掉任何安全措施 rm -rf /root/a/b  6.目录创建和删除    mkdir和rmdir命令用于创建和删除目录 -p no error if existing, make parent directories as needed 例如 mkdir -p /test1/test2/test3 rmdir -p /test1/test2/test3  7."/>
+
+    <meta property="og:title" content="Shell命令" />
+<meta property="og:description" content="###（一）文件创建命令
+1.touch命令    例如：touch abc命令在本地目录中创建了一个名为abc的空文件  2.cp命令    cp命令允许我们把一个文件的内容复制到同名或不同名的文件中，复制得到的文件可以在任何目录。 使用cp命令的一个风险	是它会在不提示用户的情况下很容易覆盖掉不同目录中的文件 -r选项支持递归复制。例如：cp -ar /usr/share/doc/. /doc/ 将复制源目录中所有子目录以及相关文件  3.mv命令    mv命令实质上市给文件贴上不同的标签，例如：mv file1 file2 命令就是把file1的名字改为file2 mv命令也可以用于目录  4.ln命令    链接文件允许用户编辑不同目录中的同一个文件 硬链接包含了文件的一个副本。只要硬链接文件是在同一个分区中，则它们的索引号相同 。 ln /etc/samba/smb.conf smb.conf 软连接起着重定向的作用。当我们打开一个用软链接创建的文件时，则链接把我们重定向到原来的文件。 ln -s /etc/	samba/smb.conf smb.conf  5.rm命令    -r开关选项可以按递归方式进行 -f开关选项可以覆盖掉任何安全措施 rm -rf /root/a/b  6.目录创建和删除    mkdir和rmdir命令用于创建和删除目录 -p no error if existing, make parent directories as needed 例如 mkdir -p /test1/test2/test3 rmdir -p /test1/test2/test3  7." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://janrone.allone.top/posts/2016-05-29-shell%E5%91%BD%E4%BB%A4/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2016-05-29T20:36:09+08:00" />
+<meta property="article:modified_time" content="2016-05-29T20:36:09+08:00" />
+
+
+
+    <title>
+  Shell命令 · Janrone‘s Site
+</title>
+
+    
+      <link rel="canonical" href="https://janrone.allone.top/posts/2016-05-29-shell%E5%91%BD%E4%BB%A4/">
+    
+
+    <link rel="preload" href="https://janrone.allone.top/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+    
+      
+      
+      <link rel="stylesheet" href="https://janrone.allone.top/css/coder.min.34dfa7b2f5cdeb0f5302b2628f4a7a4bfe88a2431e1397ee4ec605c56ab69701.css" integrity="sha256-NN&#43;nsvXN6w9TArJij0p6S/6IokMeE5fuTsYFxWq2lwE=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://janrone.allone.top/css/coder-dark.min.aa883b9ce35a8ff4a2a5008619005175e842bb18a8a9f9cc2bbcf44dab2d91fa.css" integrity="sha256-qog7nONaj/SipQCGGQBRdehCuxioqfnMK7z0Tastkfo=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+      <link rel="stylesheet" href="https://janrone.allone.top/css/custom.css" />
+    
+      <link rel="stylesheet" href="https://janrone.allone.top/css/syntax.css" />
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://janrone.allone.top/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://janrone.allone.top/images/favicon-16x16.png" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="https://janrone.allone.top/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://janrone.allone.top/images/apple-touch-icon.png">
+
+    
+
+    <meta name="generator" content="Hugo 0.85.0" />
+  </head>
+
+  
+  
+    
+  
+  <body class="preload-transitions colorscheme-dark"
+        onload=""
+  >
+    
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://janrone.allone.top/">
+      Janrone‘s Site
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://janrone.allone.top/now/">Now</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://janrone.allone.top/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://janrone.allone.top/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://janrone.allone.top/posts/2016-05-29-shell%E5%91%BD%E4%BB%A4/">
+              Shell命令
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime='2016-05-29T20:36:09&#43;08:00'>
+                2016-05-29
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              4-minute read
+            </span>
+          </div>
+          
+          <div class="categories">
+  <i class="fa fa-folder" aria-hidden="true"></i>
+    <a href="https://janrone.allone.top/categories/%E6%8A%80%E6%9C%AF/">技术</a></div>
+
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="https://janrone.allone.top/tags/shell/">Shell</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <p>###（一）文件创建命令</p>
+<h4 id="1touch命令">
+  1.touch命令
+  <a class="heading-link" href="#1touch%e5%91%bd%e4%bb%a4">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<pre><code>例如：touch abc命令在本地目录中创建了一个名为abc的空文件
+</code></pre>
+<h4 id="2cp命令">
+  2.cp命令
+  <a class="heading-link" href="#2cp%e5%91%bd%e4%bb%a4">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<pre><code>cp命令允许我们把一个文件的内容复制到同名或不同名的文件中，复制得到的文件可以在任何目录。
 使用cp命令的一个风险	是它会在不提示用户的情况下很容易覆盖掉不同目录中的文件
 -r选项支持递归复制。例如：cp -ar /usr/share/doc/. /doc/ 将复制源目录中所有子目录以及相关文件
-</code></pre><h4 id=3mv命令>3.mv命令
-<a class=heading-link href=#3mv%e5%91%bd%e4%bb%a4><i class="fa fa-link" aria-hidden=true></i></a></h4><pre><code>mv命令实质上市给文件贴上不同的标签，例如：mv file1 file2 命令就是把file1的名字改为file2
+</code></pre>
+<h4 id="3mv命令">
+  3.mv命令
+  <a class="heading-link" href="#3mv%e5%91%bd%e4%bb%a4">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<pre><code>mv命令实质上市给文件贴上不同的标签，例如：mv file1 file2 命令就是把file1的名字改为file2
 mv命令也可以用于目录
-</code></pre><h4 id=4ln命令>4.ln命令
-<a class=heading-link href=#4ln%e5%91%bd%e4%bb%a4><i class="fa fa-link" aria-hidden=true></i></a></h4><pre><code>链接文件允许用户编辑不同目录中的同一个文件
+</code></pre>
+<h4 id="4ln命令">
+  4.ln命令
+  <a class="heading-link" href="#4ln%e5%91%bd%e4%bb%a4">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<pre><code>链接文件允许用户编辑不同目录中的同一个文件
 硬链接包含了文件的一个副本。只要硬链接文件是在同一个分区中，则它们的索引号相同 。
 ln /etc/samba/smb.conf 	smb.conf
 软连接起着重定向的作用。当我们打开一个用软链接创建的文件时，则链接把我们重定向到原来的文件。
 ln -s /etc/	samba/smb.conf smb.conf
-</code></pre><h4 id=5rm命令>5.rm命令
-<a class=heading-link href=#5rm%e5%91%bd%e4%bb%a4><i class="fa fa-link" aria-hidden=true></i></a></h4><pre><code>-r开关选项可以按递归方式进行
+</code></pre>
+<h4 id="5rm命令">
+  5.rm命令
+  <a class="heading-link" href="#5rm%e5%91%bd%e4%bb%a4">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<pre><code>-r开关选项可以按递归方式进行
 -f开关选项可以覆盖掉任何安全措施  rm -rf  /root/a/b
-</code></pre><h4 id=6目录创建和删除>6.目录创建和删除
-<a class=heading-link href=#6%e7%9b%ae%e5%bd%95%e5%88%9b%e5%bb%ba%e5%92%8c%e5%88%a0%e9%99%a4><i class="fa fa-link" aria-hidden=true></i></a></h4><pre><code>mkdir和rmdir命令用于创建和删除目录
+</code></pre>
+<h4 id="6目录创建和删除">
+  6.目录创建和删除
+  <a class="heading-link" href="#6%e7%9b%ae%e5%bd%95%e5%88%9b%e5%bb%ba%e5%92%8c%e5%88%a0%e9%99%a4">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<pre><code>mkdir和rmdir命令用于创建和删除目录
 -p  no error if existing, make parent directories as needed
 例如 mkdir -p /test1/test2/test3 
 rmdir -p /test1/test2/test3
-</code></pre><h4 id=7alias命令>7.alias命令
-<a class=heading-link href=#7alias%e5%91%bd%e4%bb%a4><i class="fa fa-link" aria-hidden=true></i></a></h4><pre><code>可以用来简化几个命令。对于root用户，默认的别名可以提供一点安全性
-</code></pre><p>###（二）文件搜索</p><h4 id=1find命令>1.find命令
-<a class=heading-link href=#1find%e5%91%bd%e4%bb%a4><i class="fa fa-link" aria-hidden=true></i></a></h4><pre><code>find / -name name.conf 此命令从根目录开始搜索
+</code></pre>
+<h4 id="7alias命令">
+  7.alias命令
+  <a class="heading-link" href="#7alias%e5%91%bd%e4%bb%a4">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<pre><code>可以用来简化几个命令。对于root用户，默认的别名可以提供一点安全性
+</code></pre>
+<p>###（二）文件搜索</p>
+<h4 id="1find命令">
+  1.find命令
+  <a class="heading-link" href="#1find%e5%91%bd%e4%bb%a4">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<pre><code>find / -name name.conf 此命令从根目录开始搜索
 find /usr -name name.conf 从/usr目录下开始搜索
-</code></pre><h4 id=2locate命令>2.locate命令
-<a class=heading-link href=#2locate%e5%91%bd%e4%bb%a4><i class="fa fa-link" aria-hidden=true></i></a></h4><pre><code>RHEL允许用户创建一个数据库，它保存了全部的安装文件和目录。
+</code></pre>
+<h4 id="2locate命令">
+  2.locate命令
+  <a class="heading-link" href="#2locate%e5%91%bd%e4%bb%a4">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<pre><code>RHEL允许用户创建一个数据库，它保存了全部的安装文件和目录。
 locate命令的缺点是此数据库通常每天只更新一次，这	在/etc/cron.daily/mlocate.cron脚本文件中有记录
 这个脚本文件可以直接由root用户从命令行接口中执行。只要输入这个文件的完整目录就行
-</code></pre><p>###（三）文本文件的管理</p><h4 id=1cat命令>1.cat命令
-<a class=heading-link href=#1cat%e5%91%bd%e4%bb%a4><i class="fa fa-link" aria-hidden=true></i></a></h4><pre><code>最简单的文本文件读取命令是cat。cat filename命令可以翻页显示filename文件的内容。
-</code></pre><h4 id=2less和more命令>2.less和more命令
-<a class=heading-link href=#2less%e5%92%8cmore%e5%91%bd%e4%bb%a4><i class="fa fa-link" aria-hidden=true></i></a></h4><pre><code>用more filename命令可以翻页显示文本文件的内容，每次一个屏幕从头到尾显示
+</code></pre>
+<p>###（三）文本文件的管理</p>
+<h4 id="1cat命令">
+  1.cat命令
+  <a class="heading-link" href="#1cat%e5%91%bd%e4%bb%a4">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<pre><code>最简单的文本文件读取命令是cat。cat filename命令可以翻页显示filename文件的内容。
+</code></pre>
+<h4 id="2less和more命令">
+  2.less和more命令
+  <a class="heading-link" href="#2less%e5%92%8cmore%e5%91%bd%e4%bb%a4">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<pre><code>用more filename命令可以翻页显示文本文件的内容，每次一个屏幕从头到尾显示
 用less filename命令，我们可以用PAGE UP和PAGE DOWN键向前或向后翻页查看铜件的文本
 less命令有几个功能是more和cat这两个命令所没有的。它可以读取用Gzip格式压缩的文本文件，通常这种文件的扩展名为.gz
-</code></pre><h4 id=3head和tail命令>3.head和tail命令
-<a class=heading-link href=#3head%e5%92%8ctail%e5%91%bd%e4%bb%a4><i class="fa fa-link" aria-hidden=true></i></a></h4><pre><code>head 命令读取文件的头部
+</code></pre>
+<h4 id="3head和tail命令">
+  3.head和tail命令
+  <a class="heading-link" href="#3head%e5%92%8ctail%e5%91%bd%e4%bb%a4">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<pre><code>head 命令读取文件的头部
 语法：$ head –n N file 打印前N行 $ head –n -N file 打印除最后N行外的所有行
 tail命令总是读取文件的尾部
 语法：$ tail –n N file 打印后N行 $ taill –n +N file 打印除了前N行之外的所有行
-</code></pre><p>###（四）处理文本流的命令</p><p>文本流就是数据的流动。例如，cat filename命令把来自filename的数据流输出到屏幕上。当这些文件变大时，最好先用过滤器命令对这些流进行处理。</p><h4 id=1sort命令>1.sort命令
-<a class=heading-link href=#1sort%e5%91%bd%e4%bb%a4><i class="fa fa-link" aria-hidden=true></i></a></h4><p>可以用多种方法对文件的内容进行排序。默认情况下，sort命令按照字母顺序将文件内容按每行首字符进行排序。</p><h4 id=2grep命令>2.grep命令
-<a class=heading-link href=#2grep%e5%91%bd%e4%bb%a4><i class="fa fa-link" aria-hidden=true></i></a></h4><pre><code>grep命令用于文本搜索，默认读取一个文件的所有行
+</code></pre>
+<p>###（四）处理文本流的命令</p>
+<p>文本流就是数据的流动。例如，cat filename命令把来自filename的数据流输出到屏幕上。当这些文件变大时，最好先用过滤器命令对这些流进行处理。</p>
+<h4 id="1sort命令">
+  1.sort命令
+  <a class="heading-link" href="#1sort%e5%91%bd%e4%bb%a4">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<p>可以用多种方法对文件的内容进行排序。默认情况下，sort命令按照字母顺序将文件内容按每行首字符进行排序。</p>
+<h4 id="2grep命令">
+  2.grep命令
+  <a class="heading-link" href="#2grep%e5%91%bd%e4%bb%a4">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<pre><code>grep命令用于文本搜索，默认读取一个文件的所有行
 $ grep match_pattern filename 或者 $ grep “match_pattern” filename
 一个grep命令也可以对多个文件进行搜索 $grep &quot;match_text&quot; file1 file2 file3 ...
 grep命令通常将match_pattern视为通配符。如果要使用正则表达式，需要添加-E选项——这意味着使用扩展（extended）正则表达式，或者使用默认允许正则表达式的egrep命令。 例如： $ grep -E &quot;[a-z]+&quot; 或者 $egrep &quot;[a-z]&quot; 匹配url的正则表达式 $ egrep -o &quot;http://[a-zA-Z0-9.]+\.[a-zA-z]{2,3}&quot; index.html
@@ -80,17 +324,35 @@ $ grep &quot;test&quot; file* -lZ | xargs -0 rm 。-Z通常和-l结合使用
 要打印匹配某个结果之前的3行，使用-B选项 -B NUM, --before-context=NUM。例如 $seq 10 | grep  -B 3 5
 要打印匹配某个结果之前以及之后的3行，使用-C选项  -C NUM, -NUM, --context=NUM。例如 $seq 10 | grep-C 3 5
 如果有多个匹配，那么以一行“--”作为各匹配之间的定界符。例如 $ echo -e &quot;a\nb\nc\na\nb\nc&quot; | grep a -A 1
-</code></pre><h4 id=3diff命令>3.diff命令
-<a class=heading-link href=#3diff%e5%91%bd%e4%bb%a4><i class="fa fa-link" aria-hidden=true></i></a></h4><pre><code>diff命令可以找出两个文件的差别。
+</code></pre>
+<h4 id="3diff命令">
+  3.diff命令
+  <a class="heading-link" href="#3diff%e5%91%bd%e4%bb%a4">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<pre><code>diff命令可以找出两个文件的差别。
 diff /root/ifcfg-eth0 /etc/sysconfig/network-scripts/ifcfg-eth0
-</code></pre><h4 id=4wc命令>4.wc命令
-<a class=heading-link href=#4wc%e5%91%bd%e4%bb%a4><i class="fa fa-link" aria-hidden=true></i></a></h4><pre><code>wc是一个用于统计的工具。它是Word Count(单词统计)的缩写。
+</code></pre>
+<h4 id="4wc命令">
+  4.wc命令
+  <a class="heading-link" href="#4wc%e5%91%bd%e4%bb%a4">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<pre><code>wc是一个用于统计的工具。它是Word Count(单词统计)的缩写。
 1）统计行数$ wc -l file
 2）统计单词数 $ wc -w file
 3）统计字符数 $ wc -c file
 4）当不适用任何选项执行wc时：$ wc file 它只会打印文件的行数、单词数和字符数，彼此之间用制表符分割
-</code></pre><h4 id=5sed命令>5.sed命令
-<a class=heading-link href=#5sed%e5%91%bd%e4%bb%a4><i class="fa fa-link" aria-hidden=true></i></a></h4><pre><code>sed命令是流编辑（stream editor）的缩写符，用于搜索并修改文件中指定的单词甚至文本流。
+</code></pre>
+<h4 id="5sed命令">
+  5.sed命令
+  <a class="heading-link" href="#5sed%e5%91%bd%e4%bb%a4">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<pre><code>sed命令是流编辑（stream editor）的缩写符，用于搜索并修改文件中指定的单词甚至文本流。
 如果要替换所有内容，需要在命令尾部加上参数g 其方法如下：$ sed 's/pattern/replace_string/g' file 后缀/g意味着sed会替换每一处匹配。但是有时候我们不需要替换前N处匹配，而是需要替换剩下的匹配。当需要从第N处匹配开始替换时，可以使用/Ng 例如： $echo this thisthisthisthis | sed 's/this/THIS/4g'
 sed常用组合命令
 1）移除空白行
@@ -106,8 +368,14 @@ sed可以替换给定文本中的字符串。 $ sed 's/pattern/replace_string/' 
 $ echo seven EIGNT | sed 's/\([a-z]\+\) \([A-Z]\+\)/\2 \1/'   ([a-z]\+\)匹配第一个单词 ([A-Z]\+\)匹配第二个单词 \1和、2用来引用它们。这种医用被称为向后引用（back  referencing）。在替换部分，它们的次序被更改为 \2  \1 因此结果就呈现出逆序的形式。
 $ sed 'expression' | sed &quot;expression' 等价于 $ sed  'expression; expression'
 sed表达式通常用单引号引用。不过也可以使用双引号。双引号会通过对表达式求值来对其进行扩展。当我们想在sed表达式中使用一些变量字符串时，双引号就有用武之地了。例如： $  text=hello  $echo hello world | sed &quot;s/$text/HELLO/&quot;  结果HELLO word， $text的求值结果是hello
-</code></pre><h4 id=6awk命令>6.awk命令
-<a class=heading-link href=#6awk%e5%91%bd%e4%bb%a4><i class="fa fa-link" aria-hidden=true></i></a></h4><pre><code>一个awk脚本通常由3部分组成： BEGIN语句块、END语句块和能够使用模式匹配的通用语句块。
+</code></pre>
+<h4 id="6awk命令">
+  6.awk命令
+  <a class="heading-link" href="#6awk%e5%91%bd%e4%bb%a4">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<pre><code>一个awk脚本通常由3部分组成： BEGIN语句块、END语句块和能够使用模式匹配的通用语句块。
 例如 echo -e &quot;line1\nline2&quot; | awk  'BEGIN {print &quot;Start&quot;} {print} END{print &quot;End&quot;}‘
 关于print，需要记住两件重要的事情：当print的参数是以逗号进行分割时，参数打印时则以空格作为定界符；在awk的print语句中，双引号是被当做拼接操作符（concatenation operator）使用的。例如：
 $ echo | awk '{ var1=&quot;v1&quot;; var2=&quot;v2&quot;; var3=&quot;v3&quot;; \ print var1,var2,var3;}' 输出 v1 v2 v3
@@ -139,9 +407,78 @@ $N ：这个变量包含第N个字段的文本内容
 默认的字段定界符是空格。我们可以用-F “delimiter”明确指定一个界定符： $ awk -F: '{ print $NF }' /etc/passwd
 $echo | awk '{ &quot;grep root /etc/password&quot; | getline cmdout; print cmdout }' 通过使用getline，能够将外部shell命令的输出读入变量cmdout
 在awk中可以使用for循环，其格式： for( i=0;i&lt;10;i++) { print $i; } 或者 for( i in array) { print array[i] }
-</code></pre></div><footer><script src=https://utteranc.es/client.js repo=luizdepra/luizdepra.com issue-term=pathname theme=github-dark crossorigin=anonymous async></script></footer></article></section></div><footer class=footer><section class=container>©
-2012 -
-2021
-Janrone
-·
-Powered by <a href=https://gohugo.io/>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/>Coder</a>.</section></footer></main><script src=https://janrone.allone.top/js/coder.min.03b17769f4f91ae35667e1f2a1ca8c16f50562576cf90ff32b3179926914daa5.js integrity="sha256-A7F3afT5GuNWZ+HyocqMFvUFYlds+Q/zKzF5kmkU2qU="></script><script data-goatcounter=https://janrone.goatcounter.com/count async src=//gc.zgo.at/count.js></script></body></html>
+</code></pre>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        <script src="https://utteranc.es/client.js"
+    repo= "luizdepra/luizdepra.com"
+    issue-term="pathname"
+    
+    theme="github-dark"
+    crossorigin="anonymous"
+    async>
+  </script>
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+      
+        ©
+        
+          2012 -
+        
+        2021
+         Janrone 
+      
+      
+         · 
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+    </section>
+  </footer>
+
+
+    </main>
+
+    
+      
+      <script src="https://janrone.allone.top/js/coder.min.03b17769f4f91ae35667e1f2a1ca8c16f50562576cf90ff32b3179926914daa5.js" integrity="sha256-A7F3afT5GuNWZ&#43;HyocqMFvUFYlds&#43;Q/zKzF5kmkU2qU="></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <script data-goatcounter="https://janrone.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+
+    
+
+    
+
+    
+  </body>
+
+</html>

@@ -1,5 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Scrapy on Janrone‘s Site</title><link>https://janrone.allone.top/tags/scrapy/</link><description>Recent content in Scrapy on Janrone‘s Site</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 17 Nov 2017 14:36:09 +0800</lastBuildDate><atom:link href="https://janrone.allone.top/tags/scrapy/index.xml" rel="self" type="application/rss+xml"/><item><title>Scrapy安装和问题处理</title><link>https://janrone.allone.top/posts/2017-11-17-scrapy%E5%AE%89%E8%A3%85%E5%92%8C%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/</link><pubDate>Fri, 17 Nov 2017 14:36:09 +0800</pubDate><guid>https://janrone.allone.top/posts/2017-11-17-scrapy%E5%AE%89%E8%A3%85%E5%92%8C%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/</guid><description>安装 scrapy windows 安装
-pip install Scrapy 结果报错：
-building 'twisted.test.raiser' extension error: [WinError 2] 系统找不到指定的文件。 +++ Command &amp;ldquo;d:\python\python.exe -u -c &amp;ldquo;import setuptools, tokenize;file=&amp;lsquo;C:\Users\Tuteng\AppData\Local\Temp \pip-build-l7ra5rw5\Twisted\setup.py&amp;rsquo;;f=getattr(tokeniz e, &amp;lsquo;open&amp;rsquo;, open)(file);code=f.read().replace('\r\n', &amp;lsquo;\n&amp;rsquo;);f.close();exec(compile(code, file, &amp;lsquo;exec&amp;rsquo;))&amp;rdquo; install &amp;ndash;record C:\Users\Tuteng\AppData\Local\Temp\pip-yon9xl5j-record\ins tall-record.txt &amp;ndash;single-version-externally-managed &amp;ndash;compile&amp;rdquo; failed with error code 1 in C:\Users\Tuteng\AppData\Local\Temp\pip-build-l7ra5rw5\Twis ted\
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Scrapy on Janrone‘s Site</title>
+    <link>https://janrone.allone.top/tags/scrapy/</link>
+    <description>Recent content in Scrapy on Janrone‘s Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 17 Nov 2017 14:36:09 +0800</lastBuildDate><atom:link href="https://janrone.allone.top/tags/scrapy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Scrapy安装和问题处理</title>
+      <link>https://janrone.allone.top/posts/2017-11-17-scrapy%E5%AE%89%E8%A3%85%E5%92%8C%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/</link>
+      <pubDate>Fri, 17 Nov 2017 14:36:09 +0800</pubDate>
+      
+      <guid>https://janrone.allone.top/posts/2017-11-17-scrapy%E5%AE%89%E8%A3%85%E5%92%8C%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/</guid>
+      <description>安装 scrapy    windows 安装
+pip install Scrapy  结果报错：
+building &#39;twisted.test.raiser&#39; extension error: [WinError 2] 系统找不到指定的文件。  +++ Command &amp;ldquo;d:\python\python.exe -u -c &amp;ldquo;import setuptools, tokenize;file=&amp;lsquo;C:\Users\Tuteng\AppData\Local\Temp \pip-build-l7ra5rw5\Twisted\setup.py&amp;rsquo;;f=getattr(tokeniz e, &amp;lsquo;open&amp;rsquo;, open)(file);code=f.read().replace(&#39;\r\n&#39;, &amp;lsquo;\n&amp;rsquo;);f.close();exec(compile(code, file, &amp;lsquo;exec&amp;rsquo;))&amp;rdquo; install &amp;ndash;record C:\Users\Tuteng\AppData\Local\Temp\pip-yon9xl5j-record\ins tall-record.txt &amp;ndash;single-version-externally-managed &amp;ndash;compile&amp;rdquo; failed with error code 1 in C:\Users\Tuteng\AppData\Local\Temp\pip-build-l7ra5rw5\Twis ted\
 因为scrapy框架是基于twisted 的， 所以又要去上面那个网站： http://www.lfd.uci.edu/~gohlke/pythonlibs/#lxml
-搜Twisted Twisted, an event-driven networking engine. Twisted, an event-driven networking engine. ● Twisted‑17.9.0‑cp27‑cp27m‑win32.whl ● Twisted‑17.</description></item></channel></rss>
+搜Twisted    Twisted, an event-driven networking engine. Twisted, an event-driven networking engine. ● Twisted‑17.9.0‑cp27‑cp27m‑win32.whl ● Twisted‑17.</description>
+    </item>
+    
+  </channel>
+</rss>

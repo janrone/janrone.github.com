@@ -1,48 +1,139 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Java on Janrone‘s Site</title><link>https://janrone.allone.top/tags/java/</link><description>Recent content in Java on Janrone‘s Site</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 05 Jan 2016 10:55:41 +0800</lastBuildDate><atom:link href="https://janrone.allone.top/tags/java/index.xml" rel="self" type="application/rss+xml"/><item><title>Java IO中几个主要类介绍和使用</title><link>https://janrone.allone.top/posts/2016-01-05-java-io-%E5%87%A0%E4%B8%AA%E4%B8%BB%E8%A6%81%E7%B1%BB%E7%9A%84%E4%BD%BF%E7%94%A8/</link><pubDate>Tue, 05 Jan 2016 10:55:41 +0800</pubDate><guid>https://janrone.allone.top/posts/2016-01-05-java-io-%E5%87%A0%E4%B8%AA%E4%B8%BB%E8%A6%81%E7%B1%BB%E7%9A%84%E4%BD%BF%E7%94%A8/</guid><description>&lt;h4 id="1-io流可以有三种分类方法">
-1. I/O流可以有三种分类方法.
-&lt;a class="heading-link" href="#1-io%e6%b5%81%e5%8f%af%e4%bb%a5%e6%9c%89%e4%b8%89%e7%a7%8d%e5%88%86%e7%b1%bb%e6%96%b9%e6%b3%95">
-&lt;i class="fa fa-link" aria-hidden="true">&lt;/i>
-&lt;/a>
-&lt;/h4>
-&lt;pre>&lt;code>第一, 输入流,输出流 .
-第二, 字节流,字符流 .
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on Janrone‘s Site</title>
+    <link>https://janrone.allone.top/tags/java/</link>
+    <description>Recent content in Java on Janrone‘s Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 05 Jan 2016 10:55:41 +0800</lastBuildDate><atom:link href="https://janrone.allone.top/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java IO中几个主要类介绍和使用</title>
+      <link>https://janrone.allone.top/posts/2016-01-05-java-io-%E5%87%A0%E4%B8%AA%E4%B8%BB%E8%A6%81%E7%B1%BB%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Tue, 05 Jan 2016 10:55:41 +0800</pubDate>
+      
+      <guid>https://janrone.allone.top/posts/2016-01-05-java-io-%E5%87%A0%E4%B8%AA%E4%B8%BB%E8%A6%81%E7%B1%BB%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <description>&lt;h4 id=&#34;1-io流可以有三种分类方法&#34;&gt;
+  1. I/O流可以有三种分类方法.
+  &lt;a class=&#34;heading-link&#34; href=&#34;#1-io%e6%b5%81%e5%8f%af%e4%bb%a5%e6%9c%89%e4%b8%89%e7%a7%8d%e5%88%86%e7%b1%bb%e6%96%b9%e6%b3%95&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;
+  &lt;/a&gt;
+&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;第一, 输入流,输出流 .
+第二, 字节流,字符流 . 
 第三, 节点流(真正直接处理数据的) ,处理流(装饰加工节点流的) .
-&lt;/code>&lt;/pre>
-&lt;h4 id="2-字节流">
-2. 字节流
-&lt;a class="heading-link" href="#2-%e5%ad%97%e8%8a%82%e6%b5%81">
-&lt;i class="fa fa-link" aria-hidden="true">&lt;/i>
-&lt;/a>
-&lt;/h4>
-&lt;pre>&lt;code>抽象类 &amp;lt;– 面向字节的文件流 .
-InputStream &amp;lt;– FileInputStream
-OutputStream &amp;lt;– FileOutputStream
-常用方法
-InputStream int read(byte [] c,int off, int len)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;2-字节流&#34;&gt;
+  2. 字节流
+  &lt;a class=&#34;heading-link&#34; href=&#34;#2-%e5%ad%97%e8%8a%82%e6%b5%81&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;
+  &lt;/a&gt;
+&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;抽象类 &amp;lt;– 面向字节的文件流 .  
+InputStream &amp;lt;– FileInputStream  
+OutputStream &amp;lt;– FileOutputStream  
+
+常用方法 
+InputStream  int read(byte [] c,int off, int len)  
 OutputStream voidwrite(byte [] c,int off, int len) .
-&lt;/code>&lt;/pre>
-&lt;h4 id="3-字符流">
-3. 字符流
-&lt;a class="heading-link" href="#3-%e5%ad%97%e7%ac%a6%e6%b5%81">
-&lt;i class="fa fa-link" aria-hidden="true">&lt;/i>
-&lt;/a>
-&lt;/h4>
-&lt;pre>&lt;code>抽象类 &amp;lt;– 面向字符文件流 .
-Reader &amp;lt;– FileReader
-Writer &amp;lt;— FileWriter
-常用方法
-FileReader int read(char [] c,int off, int len)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;3-字符流&#34;&gt;
+  3. 字符流
+  &lt;a class=&#34;heading-link&#34; href=&#34;#3-%e5%ad%97%e7%ac%a6%e6%b5%81&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;
+  &lt;/a&gt;
+&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;抽象类 &amp;lt;– 面向字符文件流 .
+Reader &amp;lt;– FileReader 
+Writer &amp;lt;— FileWriter 
+
+常用方法 
+FileReader int read(char [] c,int off, int len)   
 FileWriter voidwrite(char [] c,int off, int len) .
-&lt;/code>&lt;/pre>
-&lt;h4 id="4-节点流和处理流">
-4. 节点流和处理流
-&lt;a class="heading-link" href="#4-%e8%8a%82%e7%82%b9%e6%b5%81%e5%92%8c%e5%a4%84%e7%90%86%e6%b5%81">
-&lt;i class="fa fa-link" aria-hidden="true">&lt;/i>
-&lt;/a>
-&lt;/h4>
-&lt;pre>&lt;code>类
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;4-节点流和处理流&#34;&gt;
+  4. 节点流和处理流
+  &lt;a class=&#34;heading-link&#34; href=&#34;#4-%e8%8a%82%e7%82%b9%e6%b5%81%e5%92%8c%e5%a4%84%e7%90%86%e6%b5%81&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;
+  &lt;/a&gt;
+&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;类
 BufferdReader 可以称作字符、输入、处理流 .
+
 方法
 String readLine()
+
 BufferdReader构造函数接受的是 Reader 类型的参数
-&lt;/code>&lt;/pre></description></item></channel></rss>
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>Android 用openFileOutput 和 openFileInput操作文件</title>
+      <link>https://janrone.allone.top/posts/android-%E7%94%A8openfileoutput-%E5%92%8C-openfileinput%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Sun, 11 Nov 2012 15:44:13 +0800</pubDate>
+      
+      <guid>https://janrone.allone.top/posts/android-%E7%94%A8openfileoutput-%E5%92%8C-openfileinput%E6%93%8D%E4%BD%9C%E6%96%87%E4%BB%B6/</guid>
+      <description>&lt;h5 id=&#34;照旧废话不说-贴代码&#34;&gt;
+  照旧废话不说 贴代码
+  &lt;a class=&#34;heading-link&#34; href=&#34;#%e7%85%a7%e6%97%a7%e5%ba%9f%e8%af%9d%e4%b8%8d%e8%af%b4-%e8%b4%b4%e4%bb%a3%e7%a0%81&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;
+  &lt;/a&gt;
+&lt;/h5&gt;
+&lt;h5 id=&#34;文件操作类&#34;&gt;
+  文件操作类
+  &lt;a class=&#34;heading-link&#34; href=&#34;#%e6%96%87%e4%bb%b6%e6%93%8d%e4%bd%9c%e7%b1%bb&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;
+  &lt;/a&gt;
+&lt;/h5&gt;
+&lt;pre&gt;&lt;code&gt;package demo.filerw.service;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import android.content.Context;
+import android.os.Environment;
+/**
+* 文件操作类
+* @author janrone
+*/
+public class FileService {
+   private Context context;
+   public FileService(Context context) {
+       this.context = context;
+   }
+   //存储数据到文件
+   public void saveName(String name) throws Exception{
+       //context.getFilesDir();// 得到存放文件的系统目录 /data/data/&amp;lt;package name&amp;gt;/files
+       //context.getCacheDir(); //缓存目录  /data/data/&amp;lt;package name&amp;gt;/cache
+       FileOutputStream outputStream=context.openFileOutput(“deomfilerw.txt”, Context.MODE_APPEND);
+       outputStream.write(name.getBytes());
+       outputStream.close();
+   }
+   //存储数据到sdcard
+   public void saveNameToSDCard(String name) throws Exception{
+       Environment.getExternalStorageDirectory(); //得到sdcard目录
+        File file=new File(“/sdcard”,”demosdcard.txt”);
+        FileOutputStream outputStream=new FileOutputStream(file);
+        outputStream.write(name.getBytes());
+        outputStream.close();
+    }
+    // 读取数据
+    public String getName() throws Exception{
+        FileInputStream inputStream=context.openFileInput(“deomfilerw.txt”);
+        ByteArrayOutputStream outStream=new ByteArrayOutputStream();
+        byte[] buffer=new byte[1024];
+        int len=0;
+        while ((len=inputStream.read(buffer))!=-1){
+            outStream.write(buffer, 0, len);
+        }
+        outStream.close();
+        byte[] data=outStream.toByteArray();
+        String name=new String(data);
+        return name;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

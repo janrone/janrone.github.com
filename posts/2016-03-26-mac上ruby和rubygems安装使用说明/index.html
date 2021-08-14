@@ -1,27 +1,201 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=content-language content="en"><meta name=color-scheme content="light dark"><meta name=author content="Janrone"><meta name=description content="安装 RVM    RVM:Ruby Version Manager,Ruby版本管理器，包括Ruby的版本管理和Gem库管理(gemset)
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="color-scheme" content="light dark">
+
+    
+
+    <meta name="author" content="Janrone">
+    <meta name="description" content="安装 RVM    RVM:Ruby Version Manager,Ruby版本管理器，包括Ruby的版本管理和Gem库管理(gemset)
 　$ curl -L https://get.rvm.io | bash -s stable 然后，载入 RVM 环境    　$ source ~/.rvm/scripts/rvm
 查看当前ruby版本    $ ruby -v ruby 1.8.7 #列出已知的ruby版本 $ rvm list known #安装ruby 1.9.3 $ rvm install 1.9.3 步骤3 － 设置 Ruby 版本  RVM 装好以后，需要执行下面的命令将指定版本的 Ruby 设置为系统默认版本
 　$ rvm 2.0.0 &ndash;default 有可能是因为Ruby的默认源使用的是cocoapods.org，国内访问这个网址有时候会有问题，网上的一种解决方案是将远替换成淘宝的，替换方式如下：
-$ gem source -r https://rubygems.org/ $ gem source -a https://ruby."><meta name=keywords content="blog,developer,personal,software,python,c++,go,rust,android,ios"><meta name=twitter:card content="summary"><meta name=twitter:title content="Mac上Ruby和RubyGems安装使用说明"><meta name=twitter:description content="安装 RVM    RVM:Ruby Version Manager,Ruby版本管理器，包括Ruby的版本管理和Gem库管理(gemset)
+$ gem source -r https://rubygems.org/ $ gem source -a https://ruby.">
+    <meta name="keywords" content="blog,developer,personal,software,python,c&#43;&#43;,go,rust,android,ios">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Mac上Ruby和RubyGems安装使用说明"/>
+<meta name="twitter:description" content="安装 RVM    RVM:Ruby Version Manager,Ruby版本管理器，包括Ruby的版本管理和Gem库管理(gemset)
 　$ curl -L https://get.rvm.io | bash -s stable 然后，载入 RVM 环境    　$ source ~/.rvm/scripts/rvm
 查看当前ruby版本    $ ruby -v ruby 1.8.7 #列出已知的ruby版本 $ rvm list known #安装ruby 1.9.3 $ rvm install 1.9.3 步骤3 － 设置 Ruby 版本  RVM 装好以后，需要执行下面的命令将指定版本的 Ruby 设置为系统默认版本
 　$ rvm 2.0.0 &ndash;default 有可能是因为Ruby的默认源使用的是cocoapods.org，国内访问这个网址有时候会有问题，网上的一种解决方案是将远替换成淘宝的，替换方式如下：
-$ gem source -r https://rubygems.org/ $ gem source -a https://ruby."><meta property="og:title" content="Mac上Ruby和RubyGems安装使用说明"><meta property="og:description" content="安装 RVM    RVM:Ruby Version Manager,Ruby版本管理器，包括Ruby的版本管理和Gem库管理(gemset)
+$ gem source -r https://rubygems.org/ $ gem source -a https://ruby."/>
+
+    <meta property="og:title" content="Mac上Ruby和RubyGems安装使用说明" />
+<meta property="og:description" content="安装 RVM    RVM:Ruby Version Manager,Ruby版本管理器，包括Ruby的版本管理和Gem库管理(gemset)
 　$ curl -L https://get.rvm.io | bash -s stable 然后，载入 RVM 环境    　$ source ~/.rvm/scripts/rvm
 查看当前ruby版本    $ ruby -v ruby 1.8.7 #列出已知的ruby版本 $ rvm list known #安装ruby 1.9.3 $ rvm install 1.9.3 步骤3 － 设置 Ruby 版本  RVM 装好以后，需要执行下面的命令将指定版本的 Ruby 设置为系统默认版本
 　$ rvm 2.0.0 &ndash;default 有可能是因为Ruby的默认源使用的是cocoapods.org，国内访问这个网址有时候会有问题，网上的一种解决方案是将远替换成淘宝的，替换方式如下：
-$ gem source -r https://rubygems.org/ $ gem source -a https://ruby."><meta property="og:type" content="article"><meta property="og:url" content="https://janrone.allone.top/posts/2016-03-26-mac%E4%B8%8Aruby%E5%92%8Crubygems%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2016-03-26T15:52:33+08:00"><meta property="article:modified_time" content="2016-03-26T15:52:33+08:00"><title>Mac上Ruby和RubyGems安装使用说明 · Janrone‘s Site</title><link rel=canonical href=https://janrone.allone.top/posts/2016-03-26-mac%E4%B8%8Aruby%E5%92%8Crubygems%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/><link rel=preload href="https://janrone.allone.top/fonts/forkawesome-webfont.woff2?v=1.2.0" as=font type=font/woff2 crossorigin><link rel=stylesheet href=https://janrone.allone.top/css/coder.min.34dfa7b2f5cdeb0f5302b2628f4a7a4bfe88a2431e1397ee4ec605c56ab69701.css integrity="sha256-NN+nsvXN6w9TArJij0p6S/6IokMeE5fuTsYFxWq2lwE=" crossorigin=anonymous media=screen><link rel=stylesheet href=https://janrone.allone.top/css/coder-dark.min.aa883b9ce35a8ff4a2a5008619005175e842bb18a8a9f9cc2bbcf44dab2d91fa.css integrity="sha256-qog7nONaj/SipQCGGQBRdehCuxioqfnMK7z0Tastkfo=" crossorigin=anonymous media=screen><link rel=stylesheet href=https://janrone.allone.top/css/custom.css><link rel=stylesheet href=https://janrone.allone.top/css/syntax.css><link rel=icon type=image/png href=https://janrone.allone.top/images/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=https://janrone.allone.top/images/favicon-16x16.png sizes=16x16><link rel=apple-touch-icon href=https://janrone.allone.top/images/apple-touch-icon.png><link rel=apple-touch-icon sizes=180x180 href=https://janrone.allone.top/images/apple-touch-icon.png><meta name=generator content="Hugo 0.85.0"></head><body class="preload-transitions colorscheme-dark"><div class=float-container><a id=dark-mode-toggle class=colorscheme-toggle><i class="fa fa-adjust fa-fw" aria-hidden=true></i></a></div><main class=wrapper><nav class=navigation><section class=container><a class=navigation-title href=https://janrone.allone.top/>Janrone‘s Site</a>
-<input type=checkbox id=menu-toggle>
-<label class="menu-button float-right" for=menu-toggle><i class="fa fa-bars fa-fw" aria-hidden=true></i></label><ul class=navigation-list><li class=navigation-item><a class=navigation-link href=https://janrone.allone.top/now/>Now</a></li><li class=navigation-item><a class=navigation-link href=https://janrone.allone.top/posts/>Blog</a></li><li class=navigation-item><a class=navigation-link href=https://janrone.allone.top/about/>About</a></li></ul></section></nav><div class=content><section class="container post"><article><header><div class=post-title><h1 class=title><a class=title-link href=https://janrone.allone.top/posts/2016-03-26-mac%E4%B8%8Aruby%E5%92%8Crubygems%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/>Mac上Ruby和RubyGems安装使用说明</a></h1></div><div class=post-meta><div class=date><span class=posted-on><i class="fa fa-calendar" aria-hidden=true></i>
-<time datetime=2016-03-26T15:52:33+08:00>2016-03-26</time></span>
-<span class=reading-time><i class="fa fa-clock-o" aria-hidden=true></i>
-One-minute read</span></div><div class=categories><i class="fa fa-folder" aria-hidden=true></i>
-<a href=https://janrone.allone.top/categories/%E6%8A%80%E6%9C%AF/>技术</a></div><div class=tags><i class="fa fa-tag" aria-hidden=true></i>
-<span class=tag><a href=https://janrone.allone.top/tags/mac/>Mac</a></span></div></div></header><div><h4 id=安装-rvm>安装 RVM
-<a class=heading-link href=#%e5%ae%89%e8%a3%85-rvm><i class="fa fa-link" aria-hidden=true></i></a></h4><p>RVM:Ruby Version Manager,Ruby版本管理器，包括Ruby的版本管理和Gem库管理(gemset)</p><p>　　　　$ curl -L <a href=https://get.rvm.io>https://get.rvm.io</a> | bash -s stable
-　　　　</p><h4 id=然后载入-rvm-环境>然后，载入 RVM 环境
-<a class=heading-link href=#%e7%84%b6%e5%90%8e%e8%bd%bd%e5%85%a5-rvm-%e7%8e%af%e5%a2%83><i class="fa fa-link" aria-hidden=true></i></a></h4><p>　　　　$ source ~/.rvm/scripts/rvm</p><h4 id=查看当前ruby版本>查看当前ruby版本
-<a class=heading-link href=#%e6%9f%a5%e7%9c%8b%e5%bd%93%e5%89%8druby%e7%89%88%e6%9c%ac><i class="fa fa-link" aria-hidden=true></i></a></h4><pre><code>$ ruby -v  
+$ gem source -r https://rubygems.org/ $ gem source -a https://ruby." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://janrone.allone.top/posts/2016-03-26-mac%E4%B8%8Aruby%E5%92%8Crubygems%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2016-03-26T15:52:33+08:00" />
+<meta property="article:modified_time" content="2016-03-26T15:52:33+08:00" />
+
+
+
+    <title>
+  Mac上Ruby和RubyGems安装使用说明 · Janrone‘s Site
+</title>
+
+    
+      <link rel="canonical" href="https://janrone.allone.top/posts/2016-03-26-mac%E4%B8%8Aruby%E5%92%8Crubygems%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">
+    
+
+    <link rel="preload" href="https://janrone.allone.top/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+    
+      
+      
+      <link rel="stylesheet" href="https://janrone.allone.top/css/coder.min.34dfa7b2f5cdeb0f5302b2628f4a7a4bfe88a2431e1397ee4ec605c56ab69701.css" integrity="sha256-NN&#43;nsvXN6w9TArJij0p6S/6IokMeE5fuTsYFxWq2lwE=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://janrone.allone.top/css/coder-dark.min.aa883b9ce35a8ff4a2a5008619005175e842bb18a8a9f9cc2bbcf44dab2d91fa.css" integrity="sha256-qog7nONaj/SipQCGGQBRdehCuxioqfnMK7z0Tastkfo=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+      <link rel="stylesheet" href="https://janrone.allone.top/css/custom.css" />
+    
+      <link rel="stylesheet" href="https://janrone.allone.top/css/syntax.css" />
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://janrone.allone.top/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://janrone.allone.top/images/favicon-16x16.png" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="https://janrone.allone.top/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://janrone.allone.top/images/apple-touch-icon.png">
+
+    
+
+    <meta name="generator" content="Hugo 0.85.0" />
+  </head>
+
+  
+  
+    
+  
+  <body class="preload-transitions colorscheme-dark"
+        onload=""
+  >
+    
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://janrone.allone.top/">
+      Janrone‘s Site
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://janrone.allone.top/now/">Now</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://janrone.allone.top/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://janrone.allone.top/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://janrone.allone.top/posts/2016-03-26-mac%E4%B8%8Aruby%E5%92%8Crubygems%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">
+              Mac上Ruby和RubyGems安装使用说明
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime='2016-03-26T15:52:33&#43;08:00'>
+                2016-03-26
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              One-minute read
+            </span>
+          </div>
+          
+          <div class="categories">
+  <i class="fa fa-folder" aria-hidden="true"></i>
+    <a href="https://janrone.allone.top/categories/%E6%8A%80%E6%9C%AF/">技术</a></div>
+
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="https://janrone.allone.top/tags/mac/">Mac</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <h4 id="安装-rvm">
+  安装 RVM
+  <a class="heading-link" href="#%e5%ae%89%e8%a3%85-rvm">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<p>RVM:Ruby Version Manager,Ruby版本管理器，包括Ruby的版本管理和Gem库管理(gemset)</p>
+<p>　　　　$ curl -L <a href="https://get.rvm.io">https://get.rvm.io</a> | bash -s stable
+　　　　</p>
+<h4 id="然后载入-rvm-环境">
+  然后，载入 RVM 环境
+  <a class="heading-link" href="#%e7%84%b6%e5%90%8e%e8%bd%bd%e5%85%a5-rvm-%e7%8e%af%e5%a2%83">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<p>　　　　$ source ~/.rvm/scripts/rvm</p>
+<h4 id="查看当前ruby版本">
+  查看当前ruby版本
+  <a class="heading-link" href="#%e6%9f%a5%e7%9c%8b%e5%bd%93%e5%89%8druby%e7%89%88%e6%9c%ac">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<pre><code>$ ruby -v  
 ruby 1.8.7  
 #列出已知的ruby版本  
 $ rvm list known  
@@ -29,23 +203,36 @@ $ rvm list known
 $ rvm install 1.9.3 
 
 步骤3 － 设置 Ruby 版本
-</code></pre><p>RVM 装好以后，需要执行下面的命令将指定版本的 Ruby 设置为系统默认版本</p><p>　　　　$ rvm 2.0.0 &ndash;default
+</code></pre>
+<p>RVM 装好以后，需要执行下面的命令将指定版本的 Ruby 设置为系统默认版本</p>
+<p>　　　　$ rvm 2.0.0 &ndash;default
 　　　　
 　　　　
-有可能是因为Ruby的默认源使用的是cocoapods.org，国内访问这个网址有时候会有问题，网上的一种解决方案是将远替换成淘宝的，替换方式如下：</p><pre><code>$ gem source -r https://rubygems.org/
+有可能是因为Ruby的默认源使用的是cocoapods.org，国内访问这个网址有时候会有问题，网上的一种解决方案是将远替换成淘宝的，替换方式如下：</p>
+<pre><code>$ gem source -r https://rubygems.org/
 $ gem source -a https://ruby.taobao.org
 
 $ gem source -r https://rubygems.org/
 https://rubygems.org/ removed from sources
 $ gem source -a https://ruby.taobao.org
 https://ruby.taobao.org added to sources
-</code></pre><p>要想验证是否替换成功了，可以执行：</p><pre><code>$ gem sources -l  
+</code></pre>
+<p>要想验证是否替换成功了，可以执行：</p>
+<pre><code>$ gem sources -l  
 正常的输出结果：
 $ gem sources -l
 *** CURRENT SOURCES ***
 https://ruby.taobao.org
-</code></pre><p>这里就表示已经把Ruby环境成功的安装到了Mac 上了。</p><h3 id=erorr>ERORR
-<a class=heading-link href=#erorr><i class="fa fa-link" aria-hidden=true></i></a></h3><p>1,dependency.rb:307:in `to_spec'</p><pre><code>First verify ruby is correctly installed:
+</code></pre>
+<p>这里就表示已经把Ruby环境成功的安装到了Mac 上了。</p>
+<h3 id="erorr">
+  ERORR
+  <a class="heading-link" href="#erorr">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<p>1,dependency.rb:307:in `to_spec'</p>
+<pre><code>First verify ruby is correctly installed:
 
 $ ruby -e 'puts &quot;Testing Ruby&quot;'
 From the error, it seems like you haven't installed the rhc gem. First check if it's installed:
@@ -56,10 +243,80 @@ If rhc isn't installed, try this:
 $ sudo gem install rhc
 $ rhc setup
 And try again. 
-</code></pre><p>参考
-<a href=https://rubygems.org/>https://rubygems.org/</a></p></div><footer><script src=https://utteranc.es/client.js repo=luizdepra/luizdepra.com issue-term=pathname theme=github-dark crossorigin=anonymous async></script></footer></article></section></div><footer class=footer><section class=container>©
-2012 -
-2021
-Janrone
-·
-Powered by <a href=https://gohugo.io/>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/>Coder</a>.</section></footer></main><script src=https://janrone.allone.top/js/coder.min.03b17769f4f91ae35667e1f2a1ca8c16f50562576cf90ff32b3179926914daa5.js integrity="sha256-A7F3afT5GuNWZ+HyocqMFvUFYlds+Q/zKzF5kmkU2qU="></script><script data-goatcounter=https://janrone.goatcounter.com/count async src=//gc.zgo.at/count.js></script></body></html>
+</code></pre>
+<p>参考
+<a href="https://rubygems.org/">https://rubygems.org/</a></p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        <script src="https://utteranc.es/client.js"
+    repo= "luizdepra/luizdepra.com"
+    issue-term="pathname"
+    
+    theme="github-dark"
+    crossorigin="anonymous"
+    async>
+  </script>
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+      
+        ©
+        
+          2012 -
+        
+        2021
+         Janrone 
+      
+      
+         · 
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+    </section>
+  </footer>
+
+
+    </main>
+
+    
+      
+      <script src="https://janrone.allone.top/js/coder.min.03b17769f4f91ae35667e1f2a1ca8c16f50562576cf90ff32b3179926914daa5.js" integrity="sha256-A7F3afT5GuNWZ&#43;HyocqMFvUFYlds&#43;Q/zKzF5kmkU2qU="></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <script data-goatcounter="https://janrone.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+
+    
+
+    
+
+    
+  </body>
+
+</html>

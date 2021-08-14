@@ -1,12 +1,173 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=content-language content="en"><meta name=color-scheme content="light dark"><meta name=author content="Janrone"><meta name=description content="gradlew －－ gradle wrapper    ./gradlew -v 版本号 ./gradlew clean app目录下的build文件夹 ./gradlew build 检查依赖并编译打包,同时把debug、release环境的包都打出来。 ./gradlew installRelease Release模式打包并安装 ./gradlew uninstallRelease 卸载Release模式包 配合assemble ./gradlew assembleDebug 编译并打Debug包 ./gradlew assembleRelease 编译并打Release的包  其实 assemble 是和 Build Variants 一起结合使用的，而 Build Variants = Build Type + Product Flavor 除此之外 assemble 还能和 Product Flavor 结合创建新的任务，    ./gradlew assembleWandoujiaRelease 生成wandoujia渠道的release版本 ./gradlew assembleWandoujia 生成wandoujia渠道的Release和Debug版本 ./gradlew assembleRelease 生成全部渠道Release版本。即生成Product Flavor下的所有渠道的Release版本都打出来。  总结一下，assemble 命令创建task有如下用法：    **assemble**： 允许直接构建一个Variant版本，例如assembleFlavor1Debug。 **assemble**： 允许构建指定Build Type的所有APK，例如assembleDebug将会构建Flavor1Debug和Flavor2Debug两个Variant版本。 **assemble**： 允许构建指定flavor的所有APK，例如assembleFlavor1将会构建Flavor1Debug和Flavor1Release两个Variant版本。  最佳实践    signingConfigs { release { try { storeFile file(&#34;xxxx&#34;) storePassword KEYSTORE_PASSWORD keyAlias &#34;xxxxx&#34; keyPassword KEY_PASSWORD } catch (ex) { throw new InvalidUserDataException(&#34;You should define KEYSTORE_PASSWORD and KEY_PASSWORD in gradle."><meta name=keywords content="blog,developer,personal,software,python,c++,go,rust,android,ios"><meta name=twitter:card content="summary"><meta name=twitter:title content="使用Gradle命令打包Android应用"><meta name=twitter:description content="gradlew －－ gradle wrapper    ./gradlew -v 版本号 ./gradlew clean app目录下的build文件夹 ./gradlew build 检查依赖并编译打包,同时把debug、release环境的包都打出来。 ./gradlew installRelease Release模式打包并安装 ./gradlew uninstallRelease 卸载Release模式包 配合assemble ./gradlew assembleDebug 编译并打Debug包 ./gradlew assembleRelease 编译并打Release的包  其实 assemble 是和 Build Variants 一起结合使用的，而 Build Variants = Build Type + Product Flavor 除此之外 assemble 还能和 Product Flavor 结合创建新的任务，    ./gradlew assembleWandoujiaRelease 生成wandoujia渠道的release版本 ./gradlew assembleWandoujia 生成wandoujia渠道的Release和Debug版本 ./gradlew assembleRelease 生成全部渠道Release版本。即生成Product Flavor下的所有渠道的Release版本都打出来。  总结一下，assemble 命令创建task有如下用法：    **assemble**： 允许直接构建一个Variant版本，例如assembleFlavor1Debug。 **assemble**： 允许构建指定Build Type的所有APK，例如assembleDebug将会构建Flavor1Debug和Flavor2Debug两个Variant版本。 **assemble**： 允许构建指定flavor的所有APK，例如assembleFlavor1将会构建Flavor1Debug和Flavor1Release两个Variant版本。  最佳实践    signingConfigs { release { try { storeFile file(&#34;xxxx&#34;) storePassword KEYSTORE_PASSWORD keyAlias &#34;xxxxx&#34; keyPassword KEY_PASSWORD } catch (ex) { throw new InvalidUserDataException(&#34;You should define KEYSTORE_PASSWORD and KEY_PASSWORD in gradle."><meta property="og:title" content="使用Gradle命令打包Android应用"><meta property="og:description" content="gradlew －－ gradle wrapper    ./gradlew -v 版本号 ./gradlew clean app目录下的build文件夹 ./gradlew build 检查依赖并编译打包,同时把debug、release环境的包都打出来。 ./gradlew installRelease Release模式打包并安装 ./gradlew uninstallRelease 卸载Release模式包 配合assemble ./gradlew assembleDebug 编译并打Debug包 ./gradlew assembleRelease 编译并打Release的包  其实 assemble 是和 Build Variants 一起结合使用的，而 Build Variants = Build Type + Product Flavor 除此之外 assemble 还能和 Product Flavor 结合创建新的任务，    ./gradlew assembleWandoujiaRelease 生成wandoujia渠道的release版本 ./gradlew assembleWandoujia 生成wandoujia渠道的Release和Debug版本 ./gradlew assembleRelease 生成全部渠道Release版本。即生成Product Flavor下的所有渠道的Release版本都打出来。  总结一下，assemble 命令创建task有如下用法：    **assemble**： 允许直接构建一个Variant版本，例如assembleFlavor1Debug。 **assemble**： 允许构建指定Build Type的所有APK，例如assembleDebug将会构建Flavor1Debug和Flavor2Debug两个Variant版本。 **assemble**： 允许构建指定flavor的所有APK，例如assembleFlavor1将会构建Flavor1Debug和Flavor1Release两个Variant版本。  最佳实践    signingConfigs { release { try { storeFile file(&#34;xxxx&#34;) storePassword KEYSTORE_PASSWORD keyAlias &#34;xxxxx&#34; keyPassword KEY_PASSWORD } catch (ex) { throw new InvalidUserDataException(&#34;You should define KEYSTORE_PASSWORD and KEY_PASSWORD in gradle."><meta property="og:type" content="article"><meta property="og:url" content="https://janrone.allone.top/posts/2015-12-23-%E4%BD%BF%E7%94%A8gradle%E5%91%BD%E4%BB%A4%E6%89%93%E5%8C%85android%E5%BA%94%E7%94%A8/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2015-12-23T11:52:09+08:00"><meta property="article:modified_time" content="2015-12-23T11:52:09+08:00"><title>使用Gradle命令打包Android应用 · Janrone‘s Site</title><link rel=canonical href=https://janrone.allone.top/posts/2015-12-23-%E4%BD%BF%E7%94%A8gradle%E5%91%BD%E4%BB%A4%E6%89%93%E5%8C%85android%E5%BA%94%E7%94%A8/><link rel=preload href="https://janrone.allone.top/fonts/forkawesome-webfont.woff2?v=1.2.0" as=font type=font/woff2 crossorigin><link rel=stylesheet href=https://janrone.allone.top/css/coder.min.34dfa7b2f5cdeb0f5302b2628f4a7a4bfe88a2431e1397ee4ec605c56ab69701.css integrity="sha256-NN+nsvXN6w9TArJij0p6S/6IokMeE5fuTsYFxWq2lwE=" crossorigin=anonymous media=screen><link rel=stylesheet href=https://janrone.allone.top/css/coder-dark.min.aa883b9ce35a8ff4a2a5008619005175e842bb18a8a9f9cc2bbcf44dab2d91fa.css integrity="sha256-qog7nONaj/SipQCGGQBRdehCuxioqfnMK7z0Tastkfo=" crossorigin=anonymous media=screen><link rel=stylesheet href=https://janrone.allone.top/css/custom.css><link rel=stylesheet href=https://janrone.allone.top/css/syntax.css><link rel=icon type=image/png href=https://janrone.allone.top/images/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=https://janrone.allone.top/images/favicon-16x16.png sizes=16x16><link rel=apple-touch-icon href=https://janrone.allone.top/images/apple-touch-icon.png><link rel=apple-touch-icon sizes=180x180 href=https://janrone.allone.top/images/apple-touch-icon.png><meta name=generator content="Hugo 0.85.0"></head><body class="preload-transitions colorscheme-dark"><div class=float-container><a id=dark-mode-toggle class=colorscheme-toggle><i class="fa fa-adjust fa-fw" aria-hidden=true></i></a></div><main class=wrapper><nav class=navigation><section class=container><a class=navigation-title href=https://janrone.allone.top/>Janrone‘s Site</a>
-<input type=checkbox id=menu-toggle>
-<label class="menu-button float-right" for=menu-toggle><i class="fa fa-bars fa-fw" aria-hidden=true></i></label><ul class=navigation-list><li class=navigation-item><a class=navigation-link href=https://janrone.allone.top/now/>Now</a></li><li class=navigation-item><a class=navigation-link href=https://janrone.allone.top/posts/>Blog</a></li><li class=navigation-item><a class=navigation-link href=https://janrone.allone.top/about/>About</a></li></ul></section></nav><div class=content><section class="container post"><article><header><div class=post-title><h1 class=title><a class=title-link href=https://janrone.allone.top/posts/2015-12-23-%E4%BD%BF%E7%94%A8gradle%E5%91%BD%E4%BB%A4%E6%89%93%E5%8C%85android%E5%BA%94%E7%94%A8/>使用Gradle命令打包Android应用</a></h1></div><div class=post-meta><div class=date><span class=posted-on><i class="fa fa-calendar" aria-hidden=true></i>
-<time datetime=2015-12-23T11:52:09+08:00>2015-12-23</time></span>
-<span class=reading-time><i class="fa fa-clock-o" aria-hidden=true></i>
-One-minute read</span></div><div class=categories><i class="fa fa-folder" aria-hidden=true></i>
-<a href=https://janrone.allone.top/categories/%E6%8A%80%E6%9C%AF/>技术</a></div><div class=tags><i class="fa fa-tag" aria-hidden=true></i>
-<span class=tag><a href=https://janrone.allone.top/tags/gradle/>Gradle</a></span></div></div></header><div><h3 id=gradlew--gradle-wrapper>gradlew －－ gradle wrapper
-<a class=heading-link href=#gradlew--gradle-wrapper><i class="fa fa-link" aria-hidden=true></i></a></h3><pre><code>./gradlew -v 版本号
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="color-scheme" content="light dark">
+
+    
+
+    <meta name="author" content="Janrone">
+    <meta name="description" content="gradlew －－ gradle wrapper    ./gradlew -v 版本号 ./gradlew clean app目录下的build文件夹 ./gradlew build 检查依赖并编译打包,同时把debug、release环境的包都打出来。 ./gradlew installRelease Release模式打包并安装 ./gradlew uninstallRelease 卸载Release模式包 配合assemble ./gradlew assembleDebug 编译并打Debug包 ./gradlew assembleRelease 编译并打Release的包  其实 assemble 是和 Build Variants 一起结合使用的，而 Build Variants = Build Type &#43; Product Flavor 除此之外 assemble 还能和 Product Flavor 结合创建新的任务，    ./gradlew assembleWandoujiaRelease 生成wandoujia渠道的release版本 ./gradlew assembleWandoujia 生成wandoujia渠道的Release和Debug版本 ./gradlew assembleRelease 生成全部渠道Release版本。即生成Product Flavor下的所有渠道的Release版本都打出来。  总结一下，assemble 命令创建task有如下用法：    **assemble**： 允许直接构建一个Variant版本，例如assembleFlavor1Debug。 **assemble**： 允许构建指定Build Type的所有APK，例如assembleDebug将会构建Flavor1Debug和Flavor2Debug两个Variant版本。 **assemble**： 允许构建指定flavor的所有APK，例如assembleFlavor1将会构建Flavor1Debug和Flavor1Release两个Variant版本。  最佳实践    signingConfigs { release { try { storeFile file(&quot;xxxx&quot;) storePassword KEYSTORE_PASSWORD keyAlias &quot;xxxxx&quot; keyPassword KEY_PASSWORD } catch (ex) { throw new InvalidUserDataException(&quot;You should define KEYSTORE_PASSWORD and KEY_PASSWORD in gradle.">
+    <meta name="keywords" content="blog,developer,personal,software,python,c&#43;&#43;,go,rust,android,ios">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用Gradle命令打包Android应用"/>
+<meta name="twitter:description" content="gradlew －－ gradle wrapper    ./gradlew -v 版本号 ./gradlew clean app目录下的build文件夹 ./gradlew build 检查依赖并编译打包,同时把debug、release环境的包都打出来。 ./gradlew installRelease Release模式打包并安装 ./gradlew uninstallRelease 卸载Release模式包 配合assemble ./gradlew assembleDebug 编译并打Debug包 ./gradlew assembleRelease 编译并打Release的包  其实 assemble 是和 Build Variants 一起结合使用的，而 Build Variants = Build Type &#43; Product Flavor 除此之外 assemble 还能和 Product Flavor 结合创建新的任务，    ./gradlew assembleWandoujiaRelease 生成wandoujia渠道的release版本 ./gradlew assembleWandoujia 生成wandoujia渠道的Release和Debug版本 ./gradlew assembleRelease 生成全部渠道Release版本。即生成Product Flavor下的所有渠道的Release版本都打出来。  总结一下，assemble 命令创建task有如下用法：    **assemble**： 允许直接构建一个Variant版本，例如assembleFlavor1Debug。 **assemble**： 允许构建指定Build Type的所有APK，例如assembleDebug将会构建Flavor1Debug和Flavor2Debug两个Variant版本。 **assemble**： 允许构建指定flavor的所有APK，例如assembleFlavor1将会构建Flavor1Debug和Flavor1Release两个Variant版本。  最佳实践    signingConfigs { release { try { storeFile file(&quot;xxxx&quot;) storePassword KEYSTORE_PASSWORD keyAlias &quot;xxxxx&quot; keyPassword KEY_PASSWORD } catch (ex) { throw new InvalidUserDataException(&quot;You should define KEYSTORE_PASSWORD and KEY_PASSWORD in gradle."/>
+
+    <meta property="og:title" content="使用Gradle命令打包Android应用" />
+<meta property="og:description" content="gradlew －－ gradle wrapper    ./gradlew -v 版本号 ./gradlew clean app目录下的build文件夹 ./gradlew build 检查依赖并编译打包,同时把debug、release环境的包都打出来。 ./gradlew installRelease Release模式打包并安装 ./gradlew uninstallRelease 卸载Release模式包 配合assemble ./gradlew assembleDebug 编译并打Debug包 ./gradlew assembleRelease 编译并打Release的包  其实 assemble 是和 Build Variants 一起结合使用的，而 Build Variants = Build Type &#43; Product Flavor 除此之外 assemble 还能和 Product Flavor 结合创建新的任务，    ./gradlew assembleWandoujiaRelease 生成wandoujia渠道的release版本 ./gradlew assembleWandoujia 生成wandoujia渠道的Release和Debug版本 ./gradlew assembleRelease 生成全部渠道Release版本。即生成Product Flavor下的所有渠道的Release版本都打出来。  总结一下，assemble 命令创建task有如下用法：    **assemble**： 允许直接构建一个Variant版本，例如assembleFlavor1Debug。 **assemble**： 允许构建指定Build Type的所有APK，例如assembleDebug将会构建Flavor1Debug和Flavor2Debug两个Variant版本。 **assemble**： 允许构建指定flavor的所有APK，例如assembleFlavor1将会构建Flavor1Debug和Flavor1Release两个Variant版本。  最佳实践    signingConfigs { release { try { storeFile file(&quot;xxxx&quot;) storePassword KEYSTORE_PASSWORD keyAlias &quot;xxxxx&quot; keyPassword KEY_PASSWORD } catch (ex) { throw new InvalidUserDataException(&quot;You should define KEYSTORE_PASSWORD and KEY_PASSWORD in gradle." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://janrone.allone.top/posts/2015-12-23-%E4%BD%BF%E7%94%A8gradle%E5%91%BD%E4%BB%A4%E6%89%93%E5%8C%85android%E5%BA%94%E7%94%A8/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2015-12-23T11:52:09+08:00" />
+<meta property="article:modified_time" content="2015-12-23T11:52:09+08:00" />
+
+
+
+    <title>
+  使用Gradle命令打包Android应用 · Janrone‘s Site
+</title>
+
+    
+      <link rel="canonical" href="https://janrone.allone.top/posts/2015-12-23-%E4%BD%BF%E7%94%A8gradle%E5%91%BD%E4%BB%A4%E6%89%93%E5%8C%85android%E5%BA%94%E7%94%A8/">
+    
+
+    <link rel="preload" href="https://janrone.allone.top/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+    
+      
+      
+      <link rel="stylesheet" href="https://janrone.allone.top/css/coder.min.34dfa7b2f5cdeb0f5302b2628f4a7a4bfe88a2431e1397ee4ec605c56ab69701.css" integrity="sha256-NN&#43;nsvXN6w9TArJij0p6S/6IokMeE5fuTsYFxWq2lwE=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://janrone.allone.top/css/coder-dark.min.aa883b9ce35a8ff4a2a5008619005175e842bb18a8a9f9cc2bbcf44dab2d91fa.css" integrity="sha256-qog7nONaj/SipQCGGQBRdehCuxioqfnMK7z0Tastkfo=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+      <link rel="stylesheet" href="https://janrone.allone.top/css/custom.css" />
+    
+      <link rel="stylesheet" href="https://janrone.allone.top/css/syntax.css" />
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://janrone.allone.top/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://janrone.allone.top/images/favicon-16x16.png" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="https://janrone.allone.top/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://janrone.allone.top/images/apple-touch-icon.png">
+
+    
+
+    <meta name="generator" content="Hugo 0.85.0" />
+  </head>
+
+  
+  
+    
+  
+  <body class="preload-transitions colorscheme-dark"
+        onload=""
+  >
+    
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://janrone.allone.top/">
+      Janrone‘s Site
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://janrone.allone.top/now/">Now</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://janrone.allone.top/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://janrone.allone.top/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://janrone.allone.top/posts/2015-12-23-%E4%BD%BF%E7%94%A8gradle%E5%91%BD%E4%BB%A4%E6%89%93%E5%8C%85android%E5%BA%94%E7%94%A8/">
+              使用Gradle命令打包Android应用
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime='2015-12-23T11:52:09&#43;08:00'>
+                2015-12-23
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              One-minute read
+            </span>
+          </div>
+          
+          <div class="categories">
+  <i class="fa fa-folder" aria-hidden="true"></i>
+    <a href="https://janrone.allone.top/categories/%E6%8A%80%E6%9C%AF/">技术</a></div>
+
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="https://janrone.allone.top/tags/gradle/">Gradle</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <h3 id="gradlew--gradle-wrapper">
+  gradlew －－ gradle wrapper
+  <a class="heading-link" href="#gradlew--gradle-wrapper">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<pre><code>./gradlew -v 版本号
 
 ./gradlew clean app目录下的build文件夹
 
@@ -22,20 +183,38 @@ One-minute read</span></div><div class=categories><i class="fa fa-folder" aria-h
 ./gradlew assembleDebug 编译并打Debug包
 
 ./gradlew assembleRelease 编译并打Release的包
-</code></pre><h4 id=其实-assemble-是和-build-variants-一起结合使用的而-build-variants--build-type--product-flavor--除此之外-assemble-还能和-product-flavor-结合创建新的任务>其实 assemble 是和 Build Variants 一起结合使用的，而 Build Variants = Build Type + Product Flavor 除此之外 assemble 还能和 Product Flavor 结合创建新的任务，
-<a class=heading-link href=#%e5%85%b6%e5%ae%9e-assemble-%e6%98%af%e5%92%8c-build-variants-%e4%b8%80%e8%b5%b7%e7%bb%93%e5%90%88%e4%bd%bf%e7%94%a8%e7%9a%84%e8%80%8c-build-variants--build-type--product-flavor--%e9%99%a4%e6%ad%a4%e4%b9%8b%e5%a4%96-assemble-%e8%bf%98%e8%83%bd%e5%92%8c-product-flavor-%e7%bb%93%e5%90%88%e5%88%9b%e5%bb%ba%e6%96%b0%e7%9a%84%e4%bb%bb%e5%8a%a1><i class="fa fa-link" aria-hidden=true></i></a></h4><pre><code>./gradlew assembleWandoujiaRelease 生成wandoujia渠道的release版本
+</code></pre>
+<h4 id="其实-assemble-是和-build-variants-一起结合使用的而-build-variants--build-type--product-flavor--除此之外-assemble-还能和-product-flavor-结合创建新的任务">
+  其实 assemble 是和 Build Variants 一起结合使用的，而 Build Variants = Build Type + Product Flavor  除此之外 assemble 还能和 Product Flavor 结合创建新的任务，
+  <a class="heading-link" href="#%e5%85%b6%e5%ae%9e-assemble-%e6%98%af%e5%92%8c-build-variants-%e4%b8%80%e8%b5%b7%e7%bb%93%e5%90%88%e4%bd%bf%e7%94%a8%e7%9a%84%e8%80%8c-build-variants--build-type--product-flavor--%e9%99%a4%e6%ad%a4%e4%b9%8b%e5%a4%96-assemble-%e8%bf%98%e8%83%bd%e5%92%8c-product-flavor-%e7%bb%93%e5%90%88%e5%88%9b%e5%bb%ba%e6%96%b0%e7%9a%84%e4%bb%bb%e5%8a%a1">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<pre><code>./gradlew assembleWandoujiaRelease 生成wandoujia渠道的release版本
 
 ./gradlew assembleWandoujia 生成wandoujia渠道的Release和Debug版本
 
 ./gradlew assembleRelease 生成全部渠道Release版本。即生成Product Flavor下的所有渠道的Release版本都打出来。
-</code></pre><h4 id=总结一下assemble-命令创建task有如下用法>总结一下，assemble 命令创建task有如下用法：
-<a class=heading-link href=#%e6%80%bb%e7%bb%93%e4%b8%80%e4%b8%8bassemble-%e5%91%bd%e4%bb%a4%e5%88%9b%e5%bb%batask%e6%9c%89%e5%a6%82%e4%b8%8b%e7%94%a8%e6%b3%95><i class="fa fa-link" aria-hidden=true></i></a></h4><pre><code>**assemble**： 允许直接构建一个Variant版本，例如assembleFlavor1Debug。
+</code></pre>
+<h4 id="总结一下assemble-命令创建task有如下用法">
+  总结一下，assemble 命令创建task有如下用法：
+  <a class="heading-link" href="#%e6%80%bb%e7%bb%93%e4%b8%80%e4%b8%8bassemble-%e5%91%bd%e4%bb%a4%e5%88%9b%e5%bb%batask%e6%9c%89%e5%a6%82%e4%b8%8b%e7%94%a8%e6%b3%95">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<pre><code>**assemble**： 允许直接构建一个Variant版本，例如assembleFlavor1Debug。
 
 **assemble**： 允许构建指定Build Type的所有APK，例如assembleDebug将会构建Flavor1Debug和Flavor2Debug两个Variant版本。
 
 **assemble**： 允许构建指定flavor的所有APK，例如assembleFlavor1将会构建Flavor1Debug和Flavor1Release两个Variant版本。
-</code></pre><h3 id=最佳实践>最佳实践
-<a class=heading-link href=#%e6%9c%80%e4%bd%b3%e5%ae%9e%e8%b7%b5><i class="fa fa-link" aria-hidden=true></i></a></h3><pre><code>signingConfigs {
+</code></pre>
+<h3 id="最佳实践">
+  最佳实践
+  <a class="heading-link" href="#%e6%9c%80%e4%bd%b3%e5%ae%9e%e8%b7%b5">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<pre><code>signingConfigs {
 release {
 try {
 storeFile file(&quot;xxxx&quot;)
@@ -50,10 +229,84 @@ throw new InvalidUserDataException(&quot;You should define KEYSTORE_PASSWORD and
 然后将password定义在gradle.properties中:
 KEYSTORE_PASSWORD=pass
 KEY_PASSWORD=pass
-</code></pre><h4 id=参考httpstormzhangcomdevtools20150115android-studio-tutorial6httpstormzhangcomdevtools20150115android-studio-tutorial6>参考：<a href=http://stormzhang.com/devtools/2015/01/15/android-studio-tutorial6/>http://stormzhang.com/devtools/2015/01/15/android-studio-tutorial6/</a>
-<a class=heading-link href=#%e5%8f%82%e8%80%83httpstormzhangcomdevtools20150115android-studio-tutorial6httpstormzhangcomdevtools20150115android-studio-tutorial6><i class="fa fa-link" aria-hidden=true></i></a></h4></div><footer><script src=https://utteranc.es/client.js repo=luizdepra/luizdepra.com issue-term=pathname theme=github-dark crossorigin=anonymous async></script></footer></article></section></div><footer class=footer><section class=container>©
-2012 -
-2021
-Janrone
-·
-Powered by <a href=https://gohugo.io/>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/>Coder</a>.</section></footer></main><script src=https://janrone.allone.top/js/coder.min.03b17769f4f91ae35667e1f2a1ca8c16f50562576cf90ff32b3179926914daa5.js integrity="sha256-A7F3afT5GuNWZ+HyocqMFvUFYlds+Q/zKzF5kmkU2qU="></script><script data-goatcounter=https://janrone.goatcounter.com/count async src=//gc.zgo.at/count.js></script></body></html>
+</code></pre>
+<h4 id="参考httpstormzhangcomdevtools20150115android-studio-tutorial6httpstormzhangcomdevtools20150115android-studio-tutorial6">
+  参考：<a href="http://stormzhang.com/devtools/2015/01/15/android-studio-tutorial6/">http://stormzhang.com/devtools/2015/01/15/android-studio-tutorial6/</a>
+  <a class="heading-link" href="#%e5%8f%82%e8%80%83httpstormzhangcomdevtools20150115android-studio-tutorial6httpstormzhangcomdevtools20150115android-studio-tutorial6">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        <script src="https://utteranc.es/client.js"
+    repo= "luizdepra/luizdepra.com"
+    issue-term="pathname"
+    
+    theme="github-dark"
+    crossorigin="anonymous"
+    async>
+  </script>
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+      
+        ©
+        
+          2012 -
+        
+        2021
+         Janrone 
+      
+      
+         · 
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+    </section>
+  </footer>
+
+
+    </main>
+
+    
+      
+      <script src="https://janrone.allone.top/js/coder.min.03b17769f4f91ae35667e1f2a1ca8c16f50562576cf90ff32b3179926914daa5.js" integrity="sha256-A7F3afT5GuNWZ&#43;HyocqMFvUFYlds&#43;Q/zKzF5kmkU2qU="></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <script data-goatcounter="https://janrone.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+
+    
+
+    
+
+    
+  </body>
+
+</html>

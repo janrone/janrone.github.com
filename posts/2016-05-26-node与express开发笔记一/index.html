@@ -1,54 +1,292 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=content-language content="en"><meta name=color-scheme content="light dark"><meta name=author content="Janrone"><meta name=description content="前言    JavaScript、 Node 和 Express 的组合是 Web 团队的理想选择， 这个强大的、 可快速部署的技术栈得到了开发社区和大公司的广泛认可。
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="color-scheme" content="light dark">
+
+    
+
+    <meta name="author" content="Janrone">
+    <meta name="description" content="前言    JavaScript、 Node 和 Express 的组合是 Web 团队的理想选择， 这个强大的、 可快速部署的技术栈得到了开发社区和大公司的广泛认可。
 Node 和 Express 就像发射 JavaScript 希望之银弹的机关枪。
 初识Express    老实说， JavaScript 确实降低了业余选手进入的门槛， 也有很多充斥着各种问题的 JavaScript 代码， 这损坏了 JavaScript 的名声。 用句通俗的话说， 即“ 不是游戏太差， 而是玩家太烂”。
 Express 网站上是这样介绍 Express 的：“ 精简的、 灵活的 Node.js Web 程序框架， 为构建单页、 多页及混合的 Web 程序提供了一系列健壮的功能特性。”
 单页Web程序    单页 Web 程序是比较新颖的想法。 不像之前的网站， 用户每次访问不同的页面都要发起网络请求， 单页 Web 程序把整个网站（ 或很大一部分） 都下载到客户端浏览器上。经过初始下载后， 用户访问不同页面的速度更快了， 因为几乎不需要或者只要很少的服务端通信。
-单页程序的开发可以使用 Angular 或 Ember 等流行框架， Express 跟它们都配合得很好。"><meta name=keywords content="blog,developer,personal,software,python,c++,go,rust,android,ios"><meta name=twitter:card content="summary"><meta name=twitter:title content="Node与Express开发笔记一"><meta name=twitter:description content="前言    JavaScript、 Node 和 Express 的组合是 Web 团队的理想选择， 这个强大的、 可快速部署的技术栈得到了开发社区和大公司的广泛认可。
+单页程序的开发可以使用 Angular 或 Ember 等流行框架， Express 跟它们都配合得很好。">
+    <meta name="keywords" content="blog,developer,personal,software,python,c&#43;&#43;,go,rust,android,ios">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Node与Express开发笔记一"/>
+<meta name="twitter:description" content="前言    JavaScript、 Node 和 Express 的组合是 Web 团队的理想选择， 这个强大的、 可快速部署的技术栈得到了开发社区和大公司的广泛认可。
 Node 和 Express 就像发射 JavaScript 希望之银弹的机关枪。
 初识Express    老实说， JavaScript 确实降低了业余选手进入的门槛， 也有很多充斥着各种问题的 JavaScript 代码， 这损坏了 JavaScript 的名声。 用句通俗的话说， 即“ 不是游戏太差， 而是玩家太烂”。
 Express 网站上是这样介绍 Express 的：“ 精简的、 灵活的 Node.js Web 程序框架， 为构建单页、 多页及混合的 Web 程序提供了一系列健壮的功能特性。”
 单页Web程序    单页 Web 程序是比较新颖的想法。 不像之前的网站， 用户每次访问不同的页面都要发起网络请求， 单页 Web 程序把整个网站（ 或很大一部分） 都下载到客户端浏览器上。经过初始下载后， 用户访问不同页面的速度更快了， 因为几乎不需要或者只要很少的服务端通信。
-单页程序的开发可以使用 Angular 或 Ember 等流行框架， Express 跟它们都配合得很好。"><meta property="og:title" content="Node与Express开发笔记一"><meta property="og:description" content="前言    JavaScript、 Node 和 Express 的组合是 Web 团队的理想选择， 这个强大的、 可快速部署的技术栈得到了开发社区和大公司的广泛认可。
+单页程序的开发可以使用 Angular 或 Ember 等流行框架， Express 跟它们都配合得很好。"/>
+
+    <meta property="og:title" content="Node与Express开发笔记一" />
+<meta property="og:description" content="前言    JavaScript、 Node 和 Express 的组合是 Web 团队的理想选择， 这个强大的、 可快速部署的技术栈得到了开发社区和大公司的广泛认可。
 Node 和 Express 就像发射 JavaScript 希望之银弹的机关枪。
 初识Express    老实说， JavaScript 确实降低了业余选手进入的门槛， 也有很多充斥着各种问题的 JavaScript 代码， 这损坏了 JavaScript 的名声。 用句通俗的话说， 即“ 不是游戏太差， 而是玩家太烂”。
 Express 网站上是这样介绍 Express 的：“ 精简的、 灵活的 Node.js Web 程序框架， 为构建单页、 多页及混合的 Web 程序提供了一系列健壮的功能特性。”
 单页Web程序    单页 Web 程序是比较新颖的想法。 不像之前的网站， 用户每次访问不同的页面都要发起网络请求， 单页 Web 程序把整个网站（ 或很大一部分） 都下载到客户端浏览器上。经过初始下载后， 用户访问不同页面的速度更快了， 因为几乎不需要或者只要很少的服务端通信。
-单页程序的开发可以使用 Angular 或 Ember 等流行框架， Express 跟它们都配合得很好。"><meta property="og:type" content="article"><meta property="og:url" content="https://janrone.allone.top/posts/2016-05-26-node%E4%B8%8Eexpress%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%E4%B8%80/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2016-05-26T18:38:13+08:00"><meta property="article:modified_time" content="2016-05-26T18:38:13+08:00"><title>Node与Express开发笔记一 · Janrone‘s Site</title><link rel=canonical href=https://janrone.allone.top/posts/2016-05-26-node%E4%B8%8Eexpress%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%E4%B8%80/><link rel=preload href="https://janrone.allone.top/fonts/forkawesome-webfont.woff2?v=1.2.0" as=font type=font/woff2 crossorigin><link rel=stylesheet href=https://janrone.allone.top/css/coder.min.34dfa7b2f5cdeb0f5302b2628f4a7a4bfe88a2431e1397ee4ec605c56ab69701.css integrity="sha256-NN+nsvXN6w9TArJij0p6S/6IokMeE5fuTsYFxWq2lwE=" crossorigin=anonymous media=screen><link rel=stylesheet href=https://janrone.allone.top/css/coder-dark.min.aa883b9ce35a8ff4a2a5008619005175e842bb18a8a9f9cc2bbcf44dab2d91fa.css integrity="sha256-qog7nONaj/SipQCGGQBRdehCuxioqfnMK7z0Tastkfo=" crossorigin=anonymous media=screen><link rel=stylesheet href=https://janrone.allone.top/css/custom.css><link rel=stylesheet href=https://janrone.allone.top/css/syntax.css><link rel=icon type=image/png href=https://janrone.allone.top/images/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=https://janrone.allone.top/images/favicon-16x16.png sizes=16x16><link rel=apple-touch-icon href=https://janrone.allone.top/images/apple-touch-icon.png><link rel=apple-touch-icon sizes=180x180 href=https://janrone.allone.top/images/apple-touch-icon.png><meta name=generator content="Hugo 0.85.0"></head><body class="preload-transitions colorscheme-dark"><div class=float-container><a id=dark-mode-toggle class=colorscheme-toggle><i class="fa fa-adjust fa-fw" aria-hidden=true></i></a></div><main class=wrapper><nav class=navigation><section class=container><a class=navigation-title href=https://janrone.allone.top/>Janrone‘s Site</a>
-<input type=checkbox id=menu-toggle>
-<label class="menu-button float-right" for=menu-toggle><i class="fa fa-bars fa-fw" aria-hidden=true></i></label><ul class=navigation-list><li class=navigation-item><a class=navigation-link href=https://janrone.allone.top/now/>Now</a></li><li class=navigation-item><a class=navigation-link href=https://janrone.allone.top/posts/>Blog</a></li><li class=navigation-item><a class=navigation-link href=https://janrone.allone.top/about/>About</a></li></ul></section></nav><div class=content><section class="container post"><article><header><div class=post-title><h1 class=title><a class=title-link href=https://janrone.allone.top/posts/2016-05-26-node%E4%B8%8Eexpress%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%E4%B8%80/>Node与Express开发笔记一</a></h1></div><div class=post-meta><div class=date><span class=posted-on><i class="fa fa-calendar" aria-hidden=true></i>
-<time datetime=2016-05-26T18:38:13+08:00>2016-05-26</time></span>
-<span class=reading-time><i class="fa fa-clock-o" aria-hidden=true></i>
-3-minute read</span></div><div class=categories><i class="fa fa-folder" aria-hidden=true></i>
-<a href=https://janrone.allone.top/categories/node/>Node</a></div><div class=tags><i class="fa fa-tag" aria-hidden=true></i>
-<span class=tag><a href=https://janrone.allone.top/tags/node/>Node</a></span>
-<span class=separator>•</span>
-<span class=tag><a href=https://janrone.allone.top/tags/express/>express</a></span></div></div></header><div><h3 id=前言>前言
-<a class=heading-link href=#%e5%89%8d%e8%a8%80><i class="fa fa-link" aria-hidden=true></i></a></h3><p>JavaScript、 Node 和 Express 的组合是 Web 团队的理想选择， 这个强大的、 可快速部署的技术栈得到了开发社区和大公司的广泛认可。</p><p>Node 和 Express 就像发射 JavaScript 希望之银弹的机关枪。</p><h3 id=初识express>初识Express
-<a class=heading-link href=#%e5%88%9d%e8%af%86express><i class="fa fa-link" aria-hidden=true></i></a></h3><p>老实说， JavaScript 确实降低了业余选手进入的门槛， 也有很多充斥着各种问题的 JavaScript 代码， 这损坏了 JavaScript 的名声。 用句通俗的话说， 即“ 不是游戏太差， 而是玩家太烂”。</p><p>Express 网站上是这样介绍 Express 的：“ 精简的、 灵活的 Node.js Web 程序框架， 为构建单页、 多页及混合的 Web 程序提供了一系列健壮的功能特性。”</p><h4 id=单页web程序>单页Web程序
-<a class=heading-link href=#%e5%8d%95%e9%a1%b5web%e7%a8%8b%e5%ba%8f><i class="fa fa-link" aria-hidden=true></i></a></h4><p>单页 Web 程序是比较新颖的想法。<br>不像之前的网站， 用户每次访问不同的页面都要发起网络请求， 单页 Web 程序把整个网站（ 或很大一部分） 都下载到客户端浏览器上。经过初始下载后， 用户访问不同页面的速度更快了， 因为几乎不需要或者只要很少的服务端通信。<br>单页程序的开发可以使用 Angular 或 Ember 等流行框架， Express 跟它们都配合得很好。</p><p>Express 的缔造者 TJ Holowaychuk 说 Express 是在 Sinatra 的启发下创建的， 后者是一个基于 Ruby 的框架。</p><p>Express 从 2.x 升级到 3.0 时做了大量的改写， 从 3.x 到 4.0 时也是这样。 本书会重点介绍版本 4.0。</p><p>Node 和传统的 Web 服务器之间的另一个主要区别是： Node 是单线程的。</p><p>如果你需要多线程程序的性能， 只需启用更多的 Node 实例， 就可以得到多线程的性能优势。</p><h4 id=node-一种新型web服务器>Node： 一种新型Web服务器
-<a class=heading-link href=#node-%e4%b8%80%e7%a7%8d%e6%96%b0%e5%9e%8bweb%e6%9c%8d%e5%8a%a1%e5%99%a8><i class="fa fa-link" aria-hidden=true></i></a></h4><p>Node 跟其他流行的 Web 服务器， 比如微软的互联网信息服务（ IIS） 或Apache， 有很多共同点。 然而更有趣的是探究它的不同之处， 所以我们先从讨论它的不同开始。<br>Node 实现 Web 服务器的方式跟 Express 很像， 也非常精简。
-Node 的搭建和配置非常容易，不像 IIS 或 Apache 要花费多年的时间才能掌握。</p><p>Node 程序更像 PHP 或 Ruby。</p><p>Node 所用的 JavaScript 引擎（ 谷歌的 V8） 确实会将 JavaScript 编译为本地机器码（ 更像C 或 C++）， 但这一操作是透明的 ， 所以从用户的角度来看， 它表现的还是像纯粹的解释型语言一样。 没有单独的编译步骤， 这减少了维护和部署的麻烦。 你所要做的只是更新JavaScript 文件， 然后你的修改就自动生效了。
-Node 程序的另一个好处是它的平台无关性。</p><h4 id=node-的生态系统>Node 的生态系统
-<a class=heading-link href=#node-%e7%9a%84%e7%94%9f%e6%80%81%e7%b3%bb%e7%bb%9f><i class="fa fa-link" aria-hidden=true></i></a></h4><p>“ 技术栈” 的缩略语。
+单页程序的开发可以使用 Angular 或 Ember 等流行框架， Express 跟它们都配合得很好。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://janrone.allone.top/posts/2016-05-26-node%E4%B8%8Eexpress%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%E4%B8%80/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2016-05-26T18:38:13+08:00" />
+<meta property="article:modified_time" content="2016-05-26T18:38:13+08:00" />
+
+
+
+    <title>
+  Node与Express开发笔记一 · Janrone‘s Site
+</title>
+
+    
+      <link rel="canonical" href="https://janrone.allone.top/posts/2016-05-26-node%E4%B8%8Eexpress%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%E4%B8%80/">
+    
+
+    <link rel="preload" href="https://janrone.allone.top/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+    
+      
+      
+      <link rel="stylesheet" href="https://janrone.allone.top/css/coder.min.34dfa7b2f5cdeb0f5302b2628f4a7a4bfe88a2431e1397ee4ec605c56ab69701.css" integrity="sha256-NN&#43;nsvXN6w9TArJij0p6S/6IokMeE5fuTsYFxWq2lwE=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://janrone.allone.top/css/coder-dark.min.aa883b9ce35a8ff4a2a5008619005175e842bb18a8a9f9cc2bbcf44dab2d91fa.css" integrity="sha256-qog7nONaj/SipQCGGQBRdehCuxioqfnMK7z0Tastkfo=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+      <link rel="stylesheet" href="https://janrone.allone.top/css/custom.css" />
+    
+      <link rel="stylesheet" href="https://janrone.allone.top/css/syntax.css" />
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://janrone.allone.top/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://janrone.allone.top/images/favicon-16x16.png" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="https://janrone.allone.top/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://janrone.allone.top/images/apple-touch-icon.png">
+
+    
+
+    <meta name="generator" content="Hugo 0.85.0" />
+  </head>
+
+  
+  
+    
+  
+  <body class="preload-transitions colorscheme-dark"
+        onload=""
+  >
+    
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://janrone.allone.top/">
+      Janrone‘s Site
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://janrone.allone.top/now/">Now</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://janrone.allone.top/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://janrone.allone.top/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://janrone.allone.top/posts/2016-05-26-node%E4%B8%8Eexpress%E5%BC%80%E5%8F%91%E7%AC%94%E8%AE%B0%E4%B8%80/">
+              Node与Express开发笔记一
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime='2016-05-26T18:38:13&#43;08:00'>
+                2016-05-26
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              3-minute read
+            </span>
+          </div>
+          
+          <div class="categories">
+  <i class="fa fa-folder" aria-hidden="true"></i>
+    <a href="https://janrone.allone.top/categories/node/">Node</a></div>
+
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="https://janrone.allone.top/tags/node/">Node</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="https://janrone.allone.top/tags/express/">express</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <h3 id="前言">
+  前言
+  <a class="heading-link" href="#%e5%89%8d%e8%a8%80">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<p>JavaScript、 Node 和 Express 的组合是 Web 团队的理想选择， 这个强大的、 可快速部署的技术栈得到了开发社区和大公司的广泛认可。</p>
+<p>Node 和 Express 就像发射 JavaScript 希望之银弹的机关枪。</p>
+<h3 id="初识express">
+  初识Express
+  <a class="heading-link" href="#%e5%88%9d%e8%af%86express">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<p>老实说， JavaScript 确实降低了业余选手进入的门槛， 也有很多充斥着各种问题的 JavaScript 代码， 这损坏了 JavaScript 的名声。 用句通俗的话说， 即“ 不是游戏太差， 而是玩家太烂”。</p>
+<p>Express 网站上是这样介绍 Express 的：“ 精简的、 灵活的 Node.js Web 程序框架， 为构建单页、 多页及混合的 Web 程序提供了一系列健壮的功能特性。”</p>
+<h4 id="单页web程序">
+  单页Web程序
+  <a class="heading-link" href="#%e5%8d%95%e9%a1%b5web%e7%a8%8b%e5%ba%8f">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<p>单页 Web 程序是比较新颖的想法。 <br>
+不像之前的网站， 用户每次访问不同的页面都要发起网络请求， 单页 Web 程序把整个网站（ 或很大一部分） 都下载到客户端浏览器上。经过初始下载后， 用户访问不同页面的速度更快了， 因为几乎不需要或者只要很少的服务端通信。<br>
+单页程序的开发可以使用 Angular 或 Ember 等流行框架， Express 跟它们都配合得很好。</p>
+<p>Express 的缔造者 TJ Holowaychuk 说 Express 是在 Sinatra 的启发下创建的， 后者是一个基于 Ruby 的框架。</p>
+<p>Express 从 2.x 升级到 3.0 时做了大量的改写， 从 3.x 到 4.0 时也是这样。 本书会重点介绍版本 4.0。</p>
+<p>Node 和传统的 Web 服务器之间的另一个主要区别是： Node 是单线程的。</p>
+<p>如果你需要多线程程序的性能， 只需启用更多的 Node 实例， 就可以得到多线程的性能优势。</p>
+<h4 id="node-一种新型web服务器">
+  Node： 一种新型Web服务器
+  <a class="heading-link" href="#node-%e4%b8%80%e7%a7%8d%e6%96%b0%e5%9e%8bweb%e6%9c%8d%e5%8a%a1%e5%99%a8">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<p>Node 跟其他流行的 Web 服务器， 比如微软的互联网信息服务（ IIS） 或Apache， 有很多共同点。 然而更有趣的是探究它的不同之处， 所以我们先从讨论它的不同开始。<br>
+Node 实现 Web 服务器的方式跟 Express 很像， 也非常精简。
+Node 的搭建和配置非常容易，不像 IIS 或 Apache 要花费多年的时间才能掌握。</p>
+<p>Node 程序更像 PHP 或 Ruby。</p>
+<p>Node 所用的 JavaScript 引擎（ 谷歌的 V8） 确实会将 JavaScript 编译为本地机器码（ 更像C 或 C++）， 但这一操作是透明的 ， 所以从用户的角度来看， 它表现的还是像纯粹的解释型语言一样。 没有单独的编译步骤， 这减少了维护和部署的麻烦。 你所要做的只是更新JavaScript 文件， 然后你的修改就自动生效了。
+Node 程序的另一个好处是它的平台无关性。</p>
+<h4 id="node-的生态系统">
+  Node 的生态系统
+  <a class="heading-link" href="#node-%e7%9a%84%e7%94%9f%e6%80%81%e7%b3%bb%e7%bb%9f">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<p>“ 技术栈” 的缩略语。
 比如说， Linux、 Apache、 MySQL 和 PHP 被称为 LAMP 栈。
-MongoDB的工程师 Valeri Karpov 发明了一个缩略语 MEAN， 指代 Mongo、 Express、 Angular 和Node。</p><p>将所有这些技术结合到一起的是 JavaScript， 所以为了做到兼容并包， 我将其称为“ JavaScript 技术栈”。 对于本书而言， 即指 Node、 Express 和 MongoDB。</p><h3 id=授权>授权
-<a class=heading-link href=#%e6%8e%88%e6%9d%83><i class="fa fa-link" aria-hidden=true></i></a></h3><p>GNU通用公共授权（ GPL）<br>GPL 是非常流行的开源授权， 它为保证软件的自由做了精巧的构思。 这意味着如果你在项目中用了 GPL 授权的代码， 那么你的项目必须也是 GPL 授权的。 这自然也就意味着你的项目不能是闭源的。</p><p>Apache 2.0<br>这个授权像 MIT 一样， 你可以为自己的项目使用不同的授权， 包括闭源的授权。 然而，你必须对那些使用 Apache 2.0 授权的组件做出声明。</p><p>伯克利软件分发（ BSD）<br>与 Apache 类似， 这个授权允许你为自己的项目使用任何授权， 只是你声明使用了 BSD授权的组件。</p><h3 id=从node开始>从Node开始
-<a class=heading-link href=#%e4%bb%8enode%e5%bc%80%e5%a7%8b><i class="fa fa-link" aria-hidden=true></i></a></h3><p>npm 是随处可见的 Node 开发包管理器（ 我们就是用它获取并安装 Express 的）。“ npm” 跟PHP、 GNU、 WINE 等那些古怪的传统名字不一样， 它不是首字母缩写（ 所以也没有大写）， 而是“ npm 不是缩写” 的递归缩写。</p><pre><code> npm install npm@latest -g  //升级npm到最新版本
-</code></pre><h4 id=进入-node-的首页-httpnodejsorghttpnodejsorg->进入 Node 的首页 <a href=http://nodejs.org>http://nodejs.org</a> 。
-<a class=heading-link href=#%e8%bf%9b%e5%85%a5-node-%e7%9a%84%e9%a6%96%e9%a1%b5-httpnodejsorghttpnodejsorg-><i class="fa fa-link" aria-hidden=true></i></a></h4><p>npm 是一个快速、高能并且毫不费力的包管理器，包管理器的两个主要职责是安装开发包和管理依赖项。</p><p>在使用 npm 时，（ 毫无悬念） 最主要的命令是 install。 比如要安装 Grunt（ 一个流行的JavaScript 任务执行器）， 你将会（ 在控制台里） 发起下面这个命令：
+MongoDB的工程师 Valeri Karpov 发明了一个缩略语 MEAN， 指代 Mongo、 Express、 Angular 和Node。</p>
+<p>将所有这些技术结合到一起的是 JavaScript， 所以为了做到兼容并包， 我将其称为“ JavaScript 技术栈”。 对于本书而言， 即指 Node、 Express 和 MongoDB。</p>
+<h3 id="授权">
+  授权
+  <a class="heading-link" href="#%e6%8e%88%e6%9d%83">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<p>GNU通用公共授权（ GPL）<br>
+GPL 是非常流行的开源授权， 它为保证软件的自由做了精巧的构思。 这意味着如果你在项目中用了 GPL 授权的代码， 那么你的项目必须也是 GPL 授权的。 这自然也就意味着你的项目不能是闭源的。</p>
+<p>Apache 2.0<br>
+这个授权像 MIT 一样， 你可以为自己的项目使用不同的授权， 包括闭源的授权。 然而，你必须对那些使用 Apache 2.0 授权的组件做出声明。</p>
+<p>伯克利软件分发（ BSD）<br>
+与 Apache 类似， 这个授权允许你为自己的项目使用任何授权， 只是你声明使用了 BSD授权的组件。</p>
+<h3 id="从node开始">
+  从Node开始
+  <a class="heading-link" href="#%e4%bb%8enode%e5%bc%80%e5%a7%8b">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<p>npm 是随处可见的 Node 开发包管理器（ 我们就是用它获取并安装 Express 的）。“ npm” 跟PHP、 GNU、 WINE 等那些古怪的传统名字不一样， 它不是首字母缩写（ 所以也没有大写）， 而是“ npm 不是缩写” 的递归缩写。</p>
+<pre><code> npm install npm@latest -g  //升级npm到最新版本
+</code></pre>
+<h4 id="进入-node-的首页-httpnodejsorghttpnodejsorg-">
+  进入 Node 的首页 <a href="http://nodejs.org">http://nodejs.org</a> 。
+  <a class="heading-link" href="#%e8%bf%9b%e5%85%a5-node-%e7%9a%84%e9%a6%96%e9%a1%b5-httpnodejsorghttpnodejsorg-">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<p>npm 是一个快速、高能并且毫不费力的包管理器，包管理器的两个主要职责是安装开发包和管理依赖项。</p>
+<p>在使用 npm 时，（ 毫无悬念） 最主要的命令是 install。 比如要安装 Grunt（ 一个流行的JavaScript 任务执行器）， 你将会（ 在控制台里） 发起下面这个命令：
 npm install -g grunt-cli
-标记 -g 的意思是告诉 npm 这个包要全局安装， 即系统全局都可以访问它。</p><p>用Node实现的简单Web服务器</p><p>Node 所提供的范式跟传统的 Web 服务器不同： 你写的程序就是 Web 服务器。 Node 只是给你提供了一个构建 Web 服务器的框架。</p><p>如果你用的是远程的机器（ 比如通过 SSH 访问的）， 记得浏览 localhost 时访问的不是你眼前的那台机器。</p><h3 id=hello-world>Hello World
-<a class=heading-link href=#hello-world><i class="fa fa-link" aria-hidden=true></i></a></h3><pre><code>var http = require('http');
+标记 -g 的意思是告诉 npm 这个包要全局安装， 即系统全局都可以访问它。</p>
+<p>用Node实现的简单Web服务器</p>
+<p>Node 所提供的范式跟传统的 Web 服务器不同： 你写的程序就是 Web 服务器。 Node 只是给你提供了一个构建 Web 服务器的框架。</p>
+<p>如果你用的是远程的机器（ 比如通过 SSH 访问的）， 记得浏览 localhost 时访问的不是你眼前的那台机器。</p>
+<h3 id="hello-world">
+  Hello World
+  <a class="heading-link" href="#hello-world">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<pre><code>var http = require('http');
 http.createServer(function(req,res){
 	res.writeHead(200, { 'Content-Type': 'text/plain' });
 	res.end('Hello world!');
 }).listen(3000);
 console.log('Server started on localhost:3000; press Ctrl-C to terminate....');
-</code></pre><p>确保是和 helloWorld.js 在同一个目录下， 输入 node hello World.js。
-然后打开浏览器访问http://localhost:3000， 你的第一个 Web 服务器就建成啦！</p><pre><code>在开发过程中，每次修改代码保存后，我们都需要手动重启程序，才能查看改动的效果。使用 supervisor 可以解决这个繁琐的问题，全局安装 supervisor：
+</code></pre>
+<p>确保是和 helloWorld.js 在同一个目录下， 输入 node hello World.js。
+然后打开浏览器访问http://localhost:3000， 你的第一个 Web 服务器就建成啦！</p>
+<pre><code>在开发过程中，每次修改代码保存后，我们都需要手动重启程序，才能查看改动的效果。使用 supervisor 可以解决这个繁琐的问题，全局安装 supervisor：
 npm install -g supervisor
 运行 supervisor --harmony index 启动程序 。
-</code></pre><p>事件驱动编程Node 的核心理念是事件驱动编程。</p><p>路由是指向客户端提供它所发出的请求内容的机制。</p><pre><code>var http = require('http');
+</code></pre>
+<p>事件驱动编程Node 的核心理念是事件驱动编程。</p>
+<p>路由是指向客户端提供它所发出的请求内容的机制。</p>
+<pre><code>var http = require('http');
 http.createServer(function(req,res){
 var path = req.url.replace(/\/?(?:\?.*)?$/,'').toLowerCase();
 switch(path){
@@ -67,13 +305,85 @@ switch(path){
 }
 }).listen(3000);
 console.log('Server started on localhost:3000; press Ctrl-C to terminate');
-</code></pre><p>运行这段代码， 你会发现现在你可以访问首页（ http://localhost: 3000） 和关于页面（ http://localhost:3000/about）。<br>所有查询字符串都会被忽略（ 所以 http://localhost:3000/?foo=bar 也是返回首页）， 并且其他所有 URL（ http://localhost:3000/foo） 返回的都是未找到页面。</p><p>ejs 有 3 种常用标签：
-&lt;% code %>：运行 JavaScript 代码，不输出
-&lt;%= code %>：显示转义后的 HTML内容
-&lt;%- code %>：显示原始 HTML 内容
-注意：&lt;%= code %> 和 &lt;%- code %> 都可以是 JavaScript 表达式生成的字符串，当变量 code 为普通字符串时，两者没有区别。当 code 比如为 hello 这种字符串时，&lt;%= code %> 会原样输出 hello，而 &lt;%- code %> 则会显示 H1 大的 hello 字符串。</p></div><footer><script src=https://utteranc.es/client.js repo=luizdepra/luizdepra.com issue-term=pathname theme=github-dark crossorigin=anonymous async></script></footer></article></section></div><footer class=footer><section class=container>©
-2012 -
-2021
-Janrone
-·
-Powered by <a href=https://gohugo.io/>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/>Coder</a>.</section></footer></main><script src=https://janrone.allone.top/js/coder.min.03b17769f4f91ae35667e1f2a1ca8c16f50562576cf90ff32b3179926914daa5.js integrity="sha256-A7F3afT5GuNWZ+HyocqMFvUFYlds+Q/zKzF5kmkU2qU="></script><script data-goatcounter=https://janrone.goatcounter.com/count async src=//gc.zgo.at/count.js></script></body></html>
+</code></pre>
+<p>运行这段代码， 你会发现现在你可以访问首页（ http://localhost: 3000） 和关于页面（ http://localhost:3000/about）。 <br>
+所有查询字符串都会被忽略（ 所以 http://localhost:3000/?foo=bar 也是返回首页）， 并且其他所有 URL（ http://localhost:3000/foo） 返回的都是未找到页面。</p>
+<p>ejs 有 3 种常用标签：
+&lt;% code %&gt;：运行 JavaScript 代码，不输出
+&lt;%= code %&gt;：显示转义后的 HTML内容
+&lt;%- code %&gt;：显示原始 HTML 内容
+注意：&lt;%= code %&gt; 和 &lt;%- code %&gt; 都可以是 JavaScript 表达式生成的字符串，当变量 code 为普通字符串时，两者没有区别。当 code 比如为 <!-- raw HTML omitted -->hello<!-- raw HTML omitted --> 这种字符串时，&lt;%= code %&gt; 会原样输出 <!-- raw HTML omitted -->hello<!-- raw HTML omitted -->，而 &lt;%- code %&gt; 则会显示 H1 大的 hello 字符串。</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        <script src="https://utteranc.es/client.js"
+    repo= "luizdepra/luizdepra.com"
+    issue-term="pathname"
+    
+    theme="github-dark"
+    crossorigin="anonymous"
+    async>
+  </script>
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+      
+        ©
+        
+          2012 -
+        
+        2021
+         Janrone 
+      
+      
+         · 
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+    </section>
+  </footer>
+
+
+    </main>
+
+    
+      
+      <script src="https://janrone.allone.top/js/coder.min.03b17769f4f91ae35667e1f2a1ca8c16f50562576cf90ff32b3179926914daa5.js" integrity="sha256-A7F3afT5GuNWZ&#43;HyocqMFvUFYlds&#43;Q/zKzF5kmkU2qU="></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <script data-goatcounter="https://janrone.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+
+    
+
+    
+
+    
+  </body>
+
+</html>

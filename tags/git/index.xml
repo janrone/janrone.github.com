@@ -1,5 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Git on Janrone‘s Site</title><link>https://janrone.allone.top/tags/git/</link><description>Recent content in Git on Janrone‘s Site</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 16 Mar 2018 10:36:09 +0800</lastBuildDate><atom:link href="https://janrone.allone.top/tags/git/index.xml" rel="self" type="application/rss+xml"/><item><title>如何删除git历史记录</title><link>https://janrone.allone.top/posts/2018-03-16-%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4git%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95/</link><pubDate>Fri, 16 Mar 2018 10:36:09 +0800</pubDate><guid>https://janrone.allone.top/posts/2018-03-16-%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4git%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95/</guid><description>清除所有历史 Step 1: remove all history
-rm -rf .git Step 2: reconstruct the Git repo with only the current content
-git init git add . git commit -m &amp;quot;Initial commit&amp;quot; Step 3: push to GitHub.
-git remote add origin &amp;lt;github-uri&amp;gt; git push -u --force origin master 清空上某个文件的历史 首先cd 进入项目文件夹下，然后执行以下代码：
-git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch 文件名' --prune-empty --tag-name-filter cat -- --all git push origin master --force rm -rf .</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on Janrone‘s Site</title>
+    <link>https://janrone.allone.top/tags/git/</link>
+    <description>Recent content in Git on Janrone‘s Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 16 Mar 2018 10:36:09 +0800</lastBuildDate><atom:link href="https://janrone.allone.top/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何删除git历史记录</title>
+      <link>https://janrone.allone.top/posts/2018-03-16-%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4git%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Fri, 16 Mar 2018 10:36:09 +0800</pubDate>
+      
+      <guid>https://janrone.allone.top/posts/2018-03-16-%E5%A6%82%E4%BD%95%E5%88%A0%E9%99%A4git%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95/</guid>
+      <description>清除所有历史    Step 1: remove all history
+rm -rf .git  Step 2: reconstruct the Git repo with only the current content
+git init git add . git commit -m &amp;quot;Initial commit&amp;quot;  Step 3: push to GitHub.
+git remote add origin &amp;lt;github-uri&amp;gt; git push -u --force origin master  清空上某个文件的历史    首先cd 进入项目文件夹下，然后执行以下代码：
+git filter-branch --force --index-filter &#39;git rm --cached --ignore-unmatch 文件名&#39; --prune-empty --tag-name-filter cat -- --all git push origin master --force rm -rf .</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,11 +1,73 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Android on Janrone‘s Site</title><link>https://janrone.allone.top/tags/android/</link><description>Recent content in Android on Janrone‘s Site</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 13 May 2017 14:36:09 +0800</lastBuildDate><atom:link href="https://janrone.allone.top/tags/android/index.xml" rel="self" type="application/rss+xml"/><item><title>使用Gradle构建多个不同applicationId包</title><link>https://janrone.allone.top/posts/2017-05-13-%E4%BD%BF%E7%94%A8gradle%E6%9E%84%E5%BB%BA%E5%A4%9A%E4%B8%AA%E4%B8%8D%E5%90%8Capplicationid%E5%8C%85/</link><pubDate>Sat, 13 May 2017 14:36:09 +0800</pubDate><guid>https://janrone.allone.top/posts/2017-05-13-%E4%BD%BF%E7%94%A8gradle%E6%9E%84%E5%BB%BA%E5%A4%9A%E4%B8%AA%E4%B8%8D%E5%90%8Capplicationid%E5%8C%85/</guid><description>假设下面是我们的目前的代码，想要哪个地址就改下API_URL重新打个包就ok了
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Android on Janrone‘s Site</title>
+    <link>https://janrone.allone.top/tags/android/</link>
+    <description>Recent content in Android on Janrone‘s Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 13 May 2017 14:36:09 +0800</lastBuildDate><atom:link href="https://janrone.allone.top/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用Gradle构建多个不同applicationId包</title>
+      <link>https://janrone.allone.top/posts/2017-05-13-%E4%BD%BF%E7%94%A8gradle%E6%9E%84%E5%BB%BA%E5%A4%9A%E4%B8%AA%E4%B8%8D%E5%90%8Capplicationid%E5%8C%85/</link>
+      <pubDate>Sat, 13 May 2017 14:36:09 +0800</pubDate>
+      
+      <guid>https://janrone.allone.top/posts/2017-05-13-%E4%BD%BF%E7%94%A8gradle%E6%9E%84%E5%BB%BA%E5%A4%9A%E4%B8%AA%E4%B8%8D%E5%90%8Capplicationid%E5%8C%85/</guid>
+      <description>假设下面是我们的目前的代码，想要哪个地址就改下API_URL重新打个包就ok了
 public static final String API_URL = &amp;ldquo;http://www.google.com&amp;rdquo;;//美国us// public static final String API_URL = &amp;ldquo;http://www.nanfei.com&amp;rdquo;;//南非za public static final String API_URL = &amp;ldquo;http://www.baidu.com&amp;rdquo;;//本地
 localRetrofit retrofit = new Retrofit.Builder().baseUrl(API_URL).client(client).addConverterFactory(GsonConverterFactory.create()) .build();
 可是有一天，测试同事跑来说，每次测试不同版本只能安装一个app(applicationId是唯一的,会进行覆盖),他想在同一台手机上安装多个app，app之间的区别只是它们的后台服务接口地址API_URL不同，当然最好app的桌面名字能区分出来是哪个服务接口地址,这样测试就方便了
 如何实现呢，同时打多个包肯定会想到用productFlavors，同时API_URL和app_name需要动态改变。
-1.移除strings的app_name 由于app_name是动态的所以肯定不能写死了,把它删掉
-2.设置build.gradle的productFlavors productFlavors { local { applicationId &amp;ldquo;com.lwp.app&amp;rdquo; buildConfigField &amp;lsquo;String&amp;rsquo;, &amp;lsquo;API_URL&amp;rsquo;, &amp;lsquo;&amp;ldquo;http://www.baidu.com&amp;rdquo;&amp;rsquo; resValue &amp;ldquo;string&amp;rdquo;, &amp;ldquo;app_name&amp;rdquo;, &amp;ldquo;app&amp;rdquo;
+1.移除strings的app_name    由于app_name是动态的所以肯定不能写死了,把它删掉
+2.设置build.gradle的productFlavors    productFlavors { local { applicationId &amp;ldquo;com.lwp.app&amp;rdquo; buildConfigField &amp;lsquo;String&amp;rsquo;, &amp;lsquo;API_URL&amp;rsquo;, &amp;lsquo;&amp;ldquo;http://www.baidu.com&amp;rdquo;&amp;rsquo; resValue &amp;ldquo;string&amp;rdquo;, &amp;ldquo;app_name&amp;rdquo;, &amp;ldquo;app&amp;rdquo;
 } us { applicationId &amp;ldquo;com.lwp.app.us&amp;rdquo; buildConfigField &amp;lsquo;String&amp;rsquo;, &amp;lsquo;API_URL&amp;rsquo;, &amp;lsquo;&amp;ldquo;http://www.google.com&amp;rdquo;&amp;rsquo; resValue &amp;ldquo;string&amp;rdquo;, &amp;ldquo;app_name&amp;rdquo;, &amp;ldquo;app_us&amp;rdquo;
-} za { applicationId &amp;ldquo;com.</description></item><item><title>Android Studio 开发遇到错误和解决方法集合</title><link>https://janrone.allone.top/posts/2015-12-29-android-studio-%E5%BC%80%E5%8F%91android%E9%81%87%E5%88%B0%E9%94%99%E8%AF%AF%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E9%9B%86%E5%90%88/</link><pubDate>Tue, 29 Dec 2015 19:28:59 +0800</pubDate><guid>https://janrone.allone.top/posts/2015-12-29-android-studio-%E5%BC%80%E5%8F%91android%E9%81%87%E5%88%B0%E9%94%99%E8%AF%AF%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E9%9B%86%E5%90%88/</guid><description>1 .Duplicate files copied in APK META-INF/LICENSE.txt android { packagingOptions { exclude 'META-INF/LICENSE.txt' } } My logcat: log Execution failed for task ':Prog:packageDebug'. Duplicate files copied in APK META-INF/LICENSE.txt File 1: /home/scijoker/AndroidStudioProjects/ProgProject/Prog/libs/httpclient-4.1.1.jar File 2: /home/scijoker/AndroidStudioProjects/ProgProject/Prog/libs/httpclient-4.1.1.jar 解决方法 android { packagingOptions { exclude 'META-INF/DEPENDENCIES.txt' exclude 'META-INF/LICENSE.txt' exclude 'META-INF/NOTICE.txt' exclude 'META-INF/NOTICE' exclude 'META-INF/LICENSE' exclude 'META-INF/DEPENDENCIES' exclude 'META-INF/notice.txt' exclude 'META-INF/license.txt' exclude 'META-INF/dependencies.txt' exclude 'META-INF/LGPL2.1' } } 2 .</description></item><item><title>TextView 设置中划线下划线等各种效果</title><link>https://janrone.allone.top/posts/2015-12-29-textview-%E8%AE%BE%E7%BD%AE%E4%B8%AD%E5%88%92%E7%BA%BF%E4%B8%8B%E5%88%92%E7%BA%BF/</link><pubDate>Wed, 25 Jul 2012 15:25:15 +0800</pubDate><guid>https://janrone.allone.top/posts/2015-12-29-textview-%E8%AE%BE%E7%BD%AE%E4%B8%AD%E5%88%92%E7%BA%BF%E4%B8%8B%E5%88%92%E7%BA%BF/</guid><description>android:textAppearance 设置文字外观。如“?android:attr/textAppearanceLargeInverse
+} za { applicationId &amp;ldquo;com.</description>
+    </item>
+    
+    <item>
+      <title>Android Studio 开发遇到错误和解决方法集合</title>
+      <link>https://janrone.allone.top/posts/2015-12-29-android-studio-%E5%BC%80%E5%8F%91android%E9%81%87%E5%88%B0%E9%94%99%E8%AF%AF%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E9%9B%86%E5%90%88/</link>
+      <pubDate>Tue, 29 Dec 2015 19:28:59 +0800</pubDate>
+      
+      <guid>https://janrone.allone.top/posts/2015-12-29-android-studio-%E5%BC%80%E5%8F%91android%E9%81%87%E5%88%B0%E9%94%99%E8%AF%AF%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E9%9B%86%E5%90%88/</guid>
+      <description>1 .Duplicate files copied in APK META-INF/LICENSE.txt    android { packagingOptions { exclude &#39;META-INF/LICENSE.txt&#39; } } My logcat: log Execution failed for task &#39;:Prog:packageDebug&#39;. Duplicate files copied in APK META-INF/LICENSE.txt File 1: /home/scijoker/AndroidStudioProjects/ProgProject/Prog/libs/httpclient-4.1.1.jar File 2: /home/scijoker/AndroidStudioProjects/ProgProject/Prog/libs/httpclient-4.1.1.jar  解决方法    android { packagingOptions { exclude &#39;META-INF/DEPENDENCIES.txt&#39; exclude &#39;META-INF/LICENSE.txt&#39; exclude &#39;META-INF/NOTICE.txt&#39; exclude &#39;META-INF/NOTICE&#39; exclude &#39;META-INF/LICENSE&#39; exclude &#39;META-INF/DEPENDENCIES&#39; exclude &#39;META-INF/notice.txt&#39; exclude &#39;META-INF/license.txt&#39; exclude &#39;META-INF/dependencies.txt&#39; exclude &#39;META-INF/LGPL2.1&#39; } }  2 .</description>
+    </item>
+    
+    <item>
+      <title>在Android上搭建Python环境</title>
+      <link>https://janrone.allone.top/posts/2013-04-09-%E5%9C%A8android%E4%B8%8A%E6%90%AD%E5%BB%BApython%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Tue, 09 Apr 2013 14:00:11 +0800</pubDate>
+      
+      <guid>https://janrone.allone.top/posts/2013-04-09-%E5%9C%A8android%E4%B8%8A%E6%90%AD%E5%BB%BApython%E7%8E%AF%E5%A2%83/</guid>
+      <description>&lt;h3 id=&#34;1下载和安装-scripting-layer-for-android-sl4a&#34;&gt;
+  1.下载和安装 Scripting Layer for Android (SL4A)
+  &lt;a class=&#34;heading-link&#34; href=&#34;#1%e4%b8%8b%e8%bd%bd%e5%92%8c%e5%ae%89%e8%a3%85-scripting-layer-for-android-sl4a&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Scripting Layer for Android (SL4A) 是一个开源项目，目标是为android系统提供脚本语言的支持，使用户可以直接在android平台上进行脚本语言的编辑、解释和执行。这些脚本语言已 经可是使用很多封装好的android API来开发功能丰富的android应用程序，并且使开发变得更加的简单和高效!
+这个平台支持多种脚本语言，比如 Python, Perl, JRuby, Lua, BeanShell, JavaScript, Tcl, shell 等，你可以选择你熟悉的语言进行开发，本系列教程使用Python为编程脚本语言。
+SL4A项目的地址: &lt;a href=&#34;http://code.google.com/p/android-scripting/&#34;&gt;http://code.google.com/p/android-scripting/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2下载和安装-python-for-android&#34;&gt;
+  2.下载和安装 Python for android
+  &lt;a class=&#34;heading-link&#34; href=&#34;#2%e4%b8%8b%e8%bd%bd%e5%92%8c%e5%ae%89%e8%a3%85-python-for-android&#34;&gt;
+    &lt;i class=&#34;fa fa-link&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;
+  &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;在项目主页面的右上方，有该应用支持的所有脚本语言的下载列表，如下图所示;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://janrone.allone.top/images/post/2013-04-09-01.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TextView 设置中划线下划线等各种效果</title>
+      <link>https://janrone.allone.top/posts/2015-12-29-textview-%E8%AE%BE%E7%BD%AE%E4%B8%AD%E5%88%92%E7%BA%BF%E4%B8%8B%E5%88%92%E7%BA%BF/</link>
+      <pubDate>Wed, 25 Jul 2012 15:25:15 +0800</pubDate>
+      
+      <guid>https://janrone.allone.top/posts/2015-12-29-textview-%E8%AE%BE%E7%BD%AE%E4%B8%AD%E5%88%92%E7%BA%BF%E4%B8%8B%E5%88%92%E7%BA%BF/</guid>
+      <description>android:textAppearance    设置文字外观。如“?android:attr/textAppearanceLargeInverse
 ”这里引用的是系统自带的一个外观，？表示系统是否有这种外观，否则使用默认的外观。可设置的值如下：
-textAppearanceButton/ textAppearanceInverse/ textAppearanceLarge/ textAppearanceLargeInverse/ textAppearanceMedium/ textAppearanceMediumInverse/ textAppearanceSmall/ textAppearanceSmallInverse textView.getPaint().setFlags(Paint. UNDERLINE_TEXT_FLAG ); //下划线 textView.getPaint().setAntiAlias(true);//抗锯齿 textview.getPaint().setFlags(Paint. STRIKE_THRU_TEXT_FLAG); //中划线 setFlags(Paint. STRIKE_THRU_TEXT_FLAG|Paint.ANTI_ALIAS_FLAG); // 设置中划线并加清晰 textView.getPaint().setFlags(0); // 取消设置的的划线</description></item></channel></rss>
+textAppearanceButton/ textAppearanceInverse/ textAppearanceLarge/ textAppearanceLargeInverse/ textAppearanceMedium/ textAppearanceMediumInverse/ textAppearanceSmall/ textAppearanceSmallInverse  textView.getPaint().setFlags(Paint. UNDERLINE_TEXT_FLAG ); //下划线 textView.getPaint().setAntiAlias(true);//抗锯齿 textview.getPaint().setFlags(Paint. STRIKE_THRU_TEXT_FLAG); //中划线 setFlags(Paint. STRIKE_THRU_TEXT_FLAG|Paint.ANTI_ALIAS_FLAG); // 设置中划线并加清晰 textView.getPaint().setFlags(0); // 取消设置的的划线  </description>
+    </item>
+    
+  </channel>
+</rss>

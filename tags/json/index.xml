@@ -1,4 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Json on Janrone‘s Site</title><link>https://janrone.allone.top/tags/json/</link><description>Recent content in Json on Janrone‘s Site</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 17 Nov 2017 14:36:09 +0800</lastBuildDate><atom:link href="https://janrone.allone.top/tags/json/index.xml" rel="self" type="application/rss+xml"/><item><title>JSON 解析时自动判断是Object还是Array</title><link>https://janrone.allone.top/posts/2017-12-28-json-%E8%A7%A3%E6%9E%90%E6%97%B6%E8%87%AA%E5%8A%A8%E5%88%A4%E6%96%AD%E6%98%AFobject%E8%BF%98%E6%98%AFarray/</link><pubDate>Fri, 17 Nov 2017 14:36:09 +0800</pubDate><guid>https://janrone.allone.top/posts/2017-12-28-json-%E8%A7%A3%E6%9E%90%E6%97%B6%E8%87%AA%E5%8A%A8%E5%88%A4%E6%96%AD%E6%98%AFobject%E8%BF%98%E6%98%AFarray/</guid><description>后端API数据返回有时候是Object有时候有是Array！ 解决方案：通过JSONTokener解析，JSONTokener在解析过程中可以自动转换为对应的类型
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Json on Janrone‘s Site</title>
+    <link>https://janrone.allone.top/tags/json/</link>
+    <description>Recent content in Json on Janrone‘s Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 17 Nov 2017 14:36:09 +0800</lastBuildDate><atom:link href="https://janrone.allone.top/tags/json/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JSON 解析时自动判断是Object还是Array</title>
+      <link>https://janrone.allone.top/posts/2017-12-28-json-%E8%A7%A3%E6%9E%90%E6%97%B6%E8%87%AA%E5%8A%A8%E5%88%A4%E6%96%AD%E6%98%AFobject%E8%BF%98%E6%98%AFarray/</link>
+      <pubDate>Fri, 17 Nov 2017 14:36:09 +0800</pubDate>
+      
+      <guid>https://janrone.allone.top/posts/2017-12-28-json-%E8%A7%A3%E6%9E%90%E6%97%B6%E8%87%AA%E5%8A%A8%E5%88%A4%E6%96%AD%E6%98%AFobject%E8%BF%98%E6%98%AFarray/</guid>
+      <description>后端API数据返回有时候是Object有时候有是Array！    解决方案：通过JSONTokener解析，JSONTokener在解析过程中可以自动转换为对应的类型
 代码示例如下：
-String json =&amp;quot;{\&amp;quot;scm\&amp;quot;:{\&amp;quot;key1\&amp;quot;:\&amp;quot;vlaue1\&amp;quot;,\&amp;quot;key2\&amp;quot;:\&amp;quot;vlaue2\&amp;quot;}}&amp;quot;; String json =&amp;quot;{\&amp;quot;scm\&amp;quot;:[{\&amp;quot;key1\&amp;quot;:\&amp;quot;vlaue1\&amp;quot;,\&amp;quot;key2\&amp;quot;:\&amp;quot;vlaue2\&amp;quot;},{\&amp;quot;key11\&amp;quot;:\&amp;quot;vlaue11\&amp;quot;,\&amp;quot;key22\&amp;quot;:\&amp;quot;vlaue22\&amp;quot;}]}&amp;quot;; JSONObject jsonObject =JSONObject.fromObject(json); Object listArray = new JSONTokener(jsonObject.getString(&amp;quot;scm&amp;quot;)).nextValue(); if (listArray instanceof JSONArray){ JSONArray jsonArray = (JSONArray)listArray; for (int k = 0; k &amp;lt; jsonArray.size(); k++) { JSONObject parameterObject = jsonArray.getJSONObject(k); } }else if (listArray instanceof JSONObject) { JSONObject jsonObject3 = (JSONObject)listArray; } 最后搞定 。
-参考：http://blog.csdn.net/xlyrh/article/details/75091353</description></item></channel></rss>
+ String json =&amp;quot;{\&amp;quot;scm\&amp;quot;:{\&amp;quot;key1\&amp;quot;:\&amp;quot;vlaue1\&amp;quot;,\&amp;quot;key2\&amp;quot;:\&amp;quot;vlaue2\&amp;quot;}}&amp;quot;; String json =&amp;quot;{\&amp;quot;scm\&amp;quot;:[{\&amp;quot;key1\&amp;quot;:\&amp;quot;vlaue1\&amp;quot;,\&amp;quot;key2\&amp;quot;:\&amp;quot;vlaue2\&amp;quot;},{\&amp;quot;key11\&amp;quot;:\&amp;quot;vlaue11\&amp;quot;,\&amp;quot;key22\&amp;quot;:\&amp;quot;vlaue22\&amp;quot;}]}&amp;quot;; JSONObject jsonObject =JSONObject.fromObject(json); Object listArray = new JSONTokener(jsonObject.getString(&amp;quot;scm&amp;quot;)).nextValue(); if (listArray instanceof JSONArray){ JSONArray jsonArray = (JSONArray)listArray; for (int k = 0; k &amp;lt; jsonArray.size(); k++) { JSONObject parameterObject = jsonArray.getJSONObject(k); } }else if (listArray instanceof JSONObject) { JSONObject jsonObject3 = (JSONObject)listArray; }  最后搞定 。
+参考：http://blog.csdn.net/xlyrh/article/details/75091353</description>
+    </item>
+    
+  </channel>
+</rss>

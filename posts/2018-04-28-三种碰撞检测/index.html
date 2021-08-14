@@ -1,4 +1,16 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=content-language content="en"><meta name=color-scheme content="light dark"><meta name=author content="Janrone"><meta name=description content="碰撞检测    碰撞检测技术 可通过多种方式检测 sprite 之间的碰撞。可采用的三种流行技术（按先进程度和复杂度递增顺序排列）是：
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="color-scheme" content="light dark">
+
+    
+
+    <meta name="author" content="Janrone">
+    <meta name="description" content="碰撞检测    碰撞检测技术 可通过多种方式检测 sprite 之间的碰撞。可采用的三种流行技术（按先进程度和复杂度递增顺序排列）是：
 边界区域（在 3D 游戏中称为包围体） 光线投射 分离轴定理 (Separating Axis Theorem) 使用边界区域的碰撞检测，检测圆圈或多边形的交点。在 图 2 中的示例中，小圆圈是表示一个 sprite（一个小球）的边界区域，大圆圈是一个桶的 sprite 的边界区域，桶比球大。当两个圆形边界区域相交时，球就会掉落到桶中。
 图 2. 边界区域：圆圈之间的碰撞 该图演示了圆圈之间的碰撞检测的原理 检测两个圆圈的碰撞是所有碰撞检测技术中最简单的。如果两个圆圈中心之间距离小于圆圈的半径之和，就会相交，sprite 就会爆炸。
 边界区域碰撞检测很简单，但当边界区域太小或移动得太快时，检测可能失败。在这两种情况下，sprite 可在单个动画帧中彼此穿过，进而避免检测。
@@ -6,7 +18,12 @@
 图 3. 光线投射 该图演示了光线投射碰撞检测的原理 先验或后验碰撞检测 可在碰撞发生之前（先验）或之后（后验）它们。如果在碰撞发生之前进行检测，必须预测 sprite 未来将位于何处。如果在碰撞发生之后检测，通常需要将已碰撞的 sprite 分开。这两种方法孰优孰劣并不明显。
 光线投射非常适合以下环境中的简单形状（比如 图 2 中球落在桶中），其中给出了两个形状的速度向量的焦点，很容易确定它们是否已经发生碰撞。
 对于更复杂的场景，比如任意大小和形状的多边形之间的碰撞，分离轴定理是最可靠的（和最复杂的）碰撞检测技术之一。分离轴定理是将光线从两个不同的角度照射到两个多边形上的数学描述，如 图 4 中所示。如果多边形背后的墙上的影子露出空隙，那么多边形没有发生碰撞。
-图 4. 分离轴定理 该图演示了使用分离轴定理的碰撞检测的原理 本文不会进一步介绍光线投射或分离轴定理。您可以在 Core HTML5 Canvas（Prentice Hall，2012 年）中查阅每种方法的深入讨论。（请参阅 参考资料，获取相关链接。）"><meta name=keywords content="blog,developer,personal,software,python,c++,go,rust,android,ios"><meta name=twitter:card content="summary"><meta name=twitter:title content="三种碰撞检测"><meta name=twitter:description content="碰撞检测    碰撞检测技术 可通过多种方式检测 sprite 之间的碰撞。可采用的三种流行技术（按先进程度和复杂度递增顺序排列）是：
+图 4. 分离轴定理 该图演示了使用分离轴定理的碰撞检测的原理 本文不会进一步介绍光线投射或分离轴定理。您可以在 Core HTML5 Canvas（Prentice Hall，2012 年）中查阅每种方法的深入讨论。（请参阅 参考资料，获取相关链接。）">
+    <meta name="keywords" content="blog,developer,personal,software,python,c&#43;&#43;,go,rust,android,ios">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="三种碰撞检测"/>
+<meta name="twitter:description" content="碰撞检测    碰撞检测技术 可通过多种方式检测 sprite 之间的碰撞。可采用的三种流行技术（按先进程度和复杂度递增顺序排列）是：
 边界区域（在 3D 游戏中称为包围体） 光线投射 分离轴定理 (Separating Axis Theorem) 使用边界区域的碰撞检测，检测圆圈或多边形的交点。在 图 2 中的示例中，小圆圈是表示一个 sprite（一个小球）的边界区域，大圆圈是一个桶的 sprite 的边界区域，桶比球大。当两个圆形边界区域相交时，球就会掉落到桶中。
 图 2. 边界区域：圆圈之间的碰撞 该图演示了圆圈之间的碰撞检测的原理 检测两个圆圈的碰撞是所有碰撞检测技术中最简单的。如果两个圆圈中心之间距离小于圆圈的半径之和，就会相交，sprite 就会爆炸。
 边界区域碰撞检测很简单，但当边界区域太小或移动得太快时，检测可能失败。在这两种情况下，sprite 可在单个动画帧中彼此穿过，进而避免检测。
@@ -14,7 +31,10 @@
 图 3. 光线投射 该图演示了光线投射碰撞检测的原理 先验或后验碰撞检测 可在碰撞发生之前（先验）或之后（后验）它们。如果在碰撞发生之前进行检测，必须预测 sprite 未来将位于何处。如果在碰撞发生之后检测，通常需要将已碰撞的 sprite 分开。这两种方法孰优孰劣并不明显。
 光线投射非常适合以下环境中的简单形状（比如 图 2 中球落在桶中），其中给出了两个形状的速度向量的焦点，很容易确定它们是否已经发生碰撞。
 对于更复杂的场景，比如任意大小和形状的多边形之间的碰撞，分离轴定理是最可靠的（和最复杂的）碰撞检测技术之一。分离轴定理是将光线从两个不同的角度照射到两个多边形上的数学描述，如 图 4 中所示。如果多边形背后的墙上的影子露出空隙，那么多边形没有发生碰撞。
-图 4. 分离轴定理 该图演示了使用分离轴定理的碰撞检测的原理 本文不会进一步介绍光线投射或分离轴定理。您可以在 Core HTML5 Canvas（Prentice Hall，2012 年）中查阅每种方法的深入讨论。（请参阅 参考资料，获取相关链接。）"><meta property="og:title" content="三种碰撞检测"><meta property="og:description" content="碰撞检测    碰撞检测技术 可通过多种方式检测 sprite 之间的碰撞。可采用的三种流行技术（按先进程度和复杂度递增顺序排列）是：
+图 4. 分离轴定理 该图演示了使用分离轴定理的碰撞检测的原理 本文不会进一步介绍光线投射或分离轴定理。您可以在 Core HTML5 Canvas（Prentice Hall，2012 年）中查阅每种方法的深入讨论。（请参阅 参考资料，获取相关链接。）"/>
+
+    <meta property="og:title" content="三种碰撞检测" />
+<meta property="og:description" content="碰撞检测    碰撞检测技术 可通过多种方式检测 sprite 之间的碰撞。可采用的三种流行技术（按先进程度和复杂度递增顺序排列）是：
 边界区域（在 3D 游戏中称为包围体） 光线投射 分离轴定理 (Separating Axis Theorem) 使用边界区域的碰撞检测，检测圆圈或多边形的交点。在 图 2 中的示例中，小圆圈是表示一个 sprite（一个小球）的边界区域，大圆圈是一个桶的 sprite 的边界区域，桶比球大。当两个圆形边界区域相交时，球就会掉落到桶中。
 图 2. 边界区域：圆圈之间的碰撞 该图演示了圆圈之间的碰撞检测的原理 检测两个圆圈的碰撞是所有碰撞检测技术中最简单的。如果两个圆圈中心之间距离小于圆圈的半径之和，就会相交，sprite 就会爆炸。
 边界区域碰撞检测很简单，但当边界区域太小或移动得太快时，检测可能失败。在这两种情况下，sprite 可在单个动画帧中彼此穿过，进而避免检测。
@@ -22,28 +42,249 @@
 图 3. 光线投射 该图演示了光线投射碰撞检测的原理 先验或后验碰撞检测 可在碰撞发生之前（先验）或之后（后验）它们。如果在碰撞发生之前进行检测，必须预测 sprite 未来将位于何处。如果在碰撞发生之后检测，通常需要将已碰撞的 sprite 分开。这两种方法孰优孰劣并不明显。
 光线投射非常适合以下环境中的简单形状（比如 图 2 中球落在桶中），其中给出了两个形状的速度向量的焦点，很容易确定它们是否已经发生碰撞。
 对于更复杂的场景，比如任意大小和形状的多边形之间的碰撞，分离轴定理是最可靠的（和最复杂的）碰撞检测技术之一。分离轴定理是将光线从两个不同的角度照射到两个多边形上的数学描述，如 图 4 中所示。如果多边形背后的墙上的影子露出空隙，那么多边形没有发生碰撞。
-图 4. 分离轴定理 该图演示了使用分离轴定理的碰撞检测的原理 本文不会进一步介绍光线投射或分离轴定理。您可以在 Core HTML5 Canvas（Prentice Hall，2012 年）中查阅每种方法的深入讨论。（请参阅 参考资料，获取相关链接。）"><meta property="og:type" content="article"><meta property="og:url" content="https://janrone.allone.top/posts/2018-04-28-%E4%B8%89%E7%A7%8D%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2018-04-04T16:36:09+08:00"><meta property="article:modified_time" content="2018-04-04T16:36:09+08:00"><title>三种碰撞检测 · Janrone‘s Site</title><link rel=canonical href=https://janrone.allone.top/posts/2018-04-28-%E4%B8%89%E7%A7%8D%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B/><link rel=preload href="https://janrone.allone.top/fonts/forkawesome-webfont.woff2?v=1.2.0" as=font type=font/woff2 crossorigin><link rel=stylesheet href=https://janrone.allone.top/css/coder.min.34dfa7b2f5cdeb0f5302b2628f4a7a4bfe88a2431e1397ee4ec605c56ab69701.css integrity="sha256-NN+nsvXN6w9TArJij0p6S/6IokMeE5fuTsYFxWq2lwE=" crossorigin=anonymous media=screen><link rel=stylesheet href=https://janrone.allone.top/css/coder-dark.min.aa883b9ce35a8ff4a2a5008619005175e842bb18a8a9f9cc2bbcf44dab2d91fa.css integrity="sha256-qog7nONaj/SipQCGGQBRdehCuxioqfnMK7z0Tastkfo=" crossorigin=anonymous media=screen><link rel=stylesheet href=https://janrone.allone.top/css/custom.css><link rel=stylesheet href=https://janrone.allone.top/css/syntax.css><link rel=icon type=image/png href=https://janrone.allone.top/images/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=https://janrone.allone.top/images/favicon-16x16.png sizes=16x16><link rel=apple-touch-icon href=https://janrone.allone.top/images/apple-touch-icon.png><link rel=apple-touch-icon sizes=180x180 href=https://janrone.allone.top/images/apple-touch-icon.png><meta name=generator content="Hugo 0.85.0"></head><body class="preload-transitions colorscheme-dark"><div class=float-container><a id=dark-mode-toggle class=colorscheme-toggle><i class="fa fa-adjust fa-fw" aria-hidden=true></i></a></div><main class=wrapper><nav class=navigation><section class=container><a class=navigation-title href=https://janrone.allone.top/>Janrone‘s Site</a>
-<input type=checkbox id=menu-toggle>
-<label class="menu-button float-right" for=menu-toggle><i class="fa fa-bars fa-fw" aria-hidden=true></i></label><ul class=navigation-list><li class=navigation-item><a class=navigation-link href=https://janrone.allone.top/now/>Now</a></li><li class=navigation-item><a class=navigation-link href=https://janrone.allone.top/posts/>Blog</a></li><li class=navigation-item><a class=navigation-link href=https://janrone.allone.top/about/>About</a></li></ul></section></nav><div class=content><section class="container post"><article><header><div class=post-title><h1 class=title><a class=title-link href=https://janrone.allone.top/posts/2018-04-28-%E4%B8%89%E7%A7%8D%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B/>三种碰撞检测</a></h1></div><div class=post-meta><div class=date><span class=posted-on><i class="fa fa-calendar" aria-hidden=true></i>
-<time datetime=2018-04-04T16:36:09+08:00>2018-04-04</time></span>
-<span class=reading-time><i class="fa fa-clock-o" aria-hidden=true></i>
-One-minute read</span></div><div class=categories><i class="fa fa-folder" aria-hidden=true></i>
-<a href=https://janrone.allone.top/categories/%E6%8A%80%E6%9C%AF/>技术</a></div><div class=tags><i class="fa fa-tag" aria-hidden=true></i>
-<span class=tag><a href=https://janrone.allone.top/tags/%E6%B8%B8%E6%88%8F/>游戏</a></span></div></div></header><div><h3 id=碰撞检测>碰撞检测
-<a class=heading-link href=#%e7%a2%b0%e6%92%9e%e6%a3%80%e6%b5%8b><i class="fa fa-link" aria-hidden=true></i></a></h3><p>碰撞检测技术
-可通过多种方式检测 sprite 之间的碰撞。可采用的三种流行技术（按先进程度和复杂度递增顺序排列）是：</p><p>边界区域（在 3D 游戏中称为包围体）
+图 4. 分离轴定理 该图演示了使用分离轴定理的碰撞检测的原理 本文不会进一步介绍光线投射或分离轴定理。您可以在 Core HTML5 Canvas（Prentice Hall，2012 年）中查阅每种方法的深入讨论。（请参阅 参考资料，获取相关链接。）" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://janrone.allone.top/posts/2018-04-28-%E4%B8%89%E7%A7%8D%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2018-04-04T16:36:09+08:00" />
+<meta property="article:modified_time" content="2018-04-04T16:36:09+08:00" />
+
+
+
+    <title>
+  三种碰撞检测 · Janrone‘s Site
+</title>
+
+    
+      <link rel="canonical" href="https://janrone.allone.top/posts/2018-04-28-%E4%B8%89%E7%A7%8D%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B/">
+    
+
+    <link rel="preload" href="https://janrone.allone.top/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+    
+      
+      
+      <link rel="stylesheet" href="https://janrone.allone.top/css/coder.min.34dfa7b2f5cdeb0f5302b2628f4a7a4bfe88a2431e1397ee4ec605c56ab69701.css" integrity="sha256-NN&#43;nsvXN6w9TArJij0p6S/6IokMeE5fuTsYFxWq2lwE=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://janrone.allone.top/css/coder-dark.min.aa883b9ce35a8ff4a2a5008619005175e842bb18a8a9f9cc2bbcf44dab2d91fa.css" integrity="sha256-qog7nONaj/SipQCGGQBRdehCuxioqfnMK7z0Tastkfo=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+      <link rel="stylesheet" href="https://janrone.allone.top/css/custom.css" />
+    
+      <link rel="stylesheet" href="https://janrone.allone.top/css/syntax.css" />
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://janrone.allone.top/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://janrone.allone.top/images/favicon-16x16.png" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="https://janrone.allone.top/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://janrone.allone.top/images/apple-touch-icon.png">
+
+    
+
+    <meta name="generator" content="Hugo 0.85.0" />
+  </head>
+
+  
+  
+    
+  
+  <body class="preload-transitions colorscheme-dark"
+        onload=""
+  >
+    
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://janrone.allone.top/">
+      Janrone‘s Site
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://janrone.allone.top/now/">Now</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://janrone.allone.top/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://janrone.allone.top/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://janrone.allone.top/posts/2018-04-28-%E4%B8%89%E7%A7%8D%E7%A2%B0%E6%92%9E%E6%A3%80%E6%B5%8B/">
+              三种碰撞检测
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime='2018-04-04T16:36:09&#43;08:00'>
+                2018-04-04
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              One-minute read
+            </span>
+          </div>
+          
+          <div class="categories">
+  <i class="fa fa-folder" aria-hidden="true"></i>
+    <a href="https://janrone.allone.top/categories/%E6%8A%80%E6%9C%AF/">技术</a></div>
+
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="https://janrone.allone.top/tags/%E6%B8%B8%E6%88%8F/">游戏</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <h3 id="碰撞检测">
+  碰撞检测
+  <a class="heading-link" href="#%e7%a2%b0%e6%92%9e%e6%a3%80%e6%b5%8b">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<p>碰撞检测技术
+可通过多种方式检测 sprite 之间的碰撞。可采用的三种流行技术（按先进程度和复杂度递增顺序排列）是：</p>
+<p>边界区域（在 3D 游戏中称为包围体）
 光线投射
 分离轴定理 (Separating Axis Theorem)
-使用边界区域的碰撞检测，检测圆圈或多边形的交点。在 图 2 中的示例中，小圆圈是表示一个 sprite（一个小球）的边界区域，大圆圈是一个桶的 sprite 的边界区域，桶比球大。当两个圆形边界区域相交时，球就会掉落到桶中。</p><p>图 2. 边界区域：圆圈之间的碰撞
-<img src=https://janrone.allone.top/images/post/2018/circle-collision.jpg alt></p><p>该图演示了圆圈之间的碰撞检测的原理
-检测两个圆圈的碰撞是所有碰撞检测技术中最简单的。如果两个圆圈中心之间距离小于圆圈的半径之和，就会相交，sprite 就会爆炸。</p><p>边界区域碰撞检测很简单，但当边界区域太小或移动得太快时，检测可能失败。在这两种情况下，sprite 可在单个动画帧中彼此穿过，进而避免检测。</p><p>对于小型、快速移动的 sprite，更加可靠的一种技术是光线投射，如 图 3 所示。光线投射检测两个 sprite 的速度向量的焦点。在 图 3 中的 5 个帧中，球的速度向量是以蓝色绘制的对角线，桶的速度向量是红色的水平线（桶水平移动）。在这些向量的交点位于桶顶部的开口内，并且球在开口下方时，球就会落入桶中，如 图 3 中最右边的屏幕截图中所示。</p><p>图 3. 光线投射
-<img src=https://janrone.allone.top/images/post/2018/ray-casting-closeup.jpg alt></p><p>该图演示了光线投射碰撞检测的原理
+使用边界区域的碰撞检测，检测圆圈或多边形的交点。在 图 2 中的示例中，小圆圈是表示一个 sprite（一个小球）的边界区域，大圆圈是一个桶的 sprite 的边界区域，桶比球大。当两个圆形边界区域相交时，球就会掉落到桶中。</p>
+<p>图 2. 边界区域：圆圈之间的碰撞
+<img src="https://janrone.allone.top/images/post/2018/circle-collision.jpg" alt=""></p>
+<p>该图演示了圆圈之间的碰撞检测的原理
+检测两个圆圈的碰撞是所有碰撞检测技术中最简单的。如果两个圆圈中心之间距离小于圆圈的半径之和，就会相交，sprite 就会爆炸。</p>
+<p>边界区域碰撞检测很简单，但当边界区域太小或移动得太快时，检测可能失败。在这两种情况下，sprite 可在单个动画帧中彼此穿过，进而避免检测。</p>
+<p>对于小型、快速移动的 sprite，更加可靠的一种技术是光线投射，如 图 3 所示。光线投射检测两个 sprite 的速度向量的焦点。在 图 3 中的 5 个帧中，球的速度向量是以蓝色绘制的对角线，桶的速度向量是红色的水平线（桶水平移动）。在这些向量的交点位于桶顶部的开口内，并且球在开口下方时，球就会落入桶中，如 图 3 中最右边的屏幕截图中所示。</p>
+<p>图 3. 光线投射
+<img src="https://janrone.allone.top/images/post/2018/ray-casting-closeup.jpg" alt=""></p>
+<p>该图演示了光线投射碰撞检测的原理
 先验或后验碰撞检测
-可在碰撞发生之前（先验）或之后（后验）它们。如果在碰撞发生之前进行检测，必须预测 sprite 未来将位于何处。如果在碰撞发生之后检测，通常需要将已碰撞的 sprite 分开。这两种方法孰优孰劣并不明显。</p><p>光线投射非常适合以下环境中的简单形状（比如 图 2 中球落在桶中），其中给出了两个形状的速度向量的焦点，很容易确定它们是否已经发生碰撞。</p><p>对于更复杂的场景，比如任意大小和形状的多边形之间的碰撞，分离轴定理是最可靠的（和最复杂的）碰撞检测技术之一。分离轴定理是将光线从两个不同的角度照射到两个多边形上的数学描述，如 图 4 中所示。如果多边形背后的墙上的影子露出空隙，那么多边形没有发生碰撞。</p><p>图 4. 分离轴定理
-<img src=https://janrone.allone.top/images/post/2018/sat.jpg alt></p><p>该图演示了使用分离轴定理的碰撞检测的原理
-本文不会进一步介绍光线投射或分离轴定理。您可以在 Core HTML5 Canvas（Prentice Hall，2012 年）中查阅每种方法的深入讨论。（请参阅 参考资料，获取相关链接。）</p></div><footer><script src=https://utteranc.es/client.js repo=luizdepra/luizdepra.com issue-term=pathname theme=github-dark crossorigin=anonymous async></script></footer></article></section></div><footer class=footer><section class=container>©
-2012 -
-2021
-Janrone
-·
-Powered by <a href=https://gohugo.io/>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/>Coder</a>.</section></footer></main><script src=https://janrone.allone.top/js/coder.min.03b17769f4f91ae35667e1f2a1ca8c16f50562576cf90ff32b3179926914daa5.js integrity="sha256-A7F3afT5GuNWZ+HyocqMFvUFYlds+Q/zKzF5kmkU2qU="></script><script data-goatcounter=https://janrone.goatcounter.com/count async src=//gc.zgo.at/count.js></script></body></html>
+可在碰撞发生之前（先验）或之后（后验）它们。如果在碰撞发生之前进行检测，必须预测 sprite 未来将位于何处。如果在碰撞发生之后检测，通常需要将已碰撞的 sprite 分开。这两种方法孰优孰劣并不明显。</p>
+<p>光线投射非常适合以下环境中的简单形状（比如 图 2 中球落在桶中），其中给出了两个形状的速度向量的焦点，很容易确定它们是否已经发生碰撞。</p>
+<p>对于更复杂的场景，比如任意大小和形状的多边形之间的碰撞，分离轴定理是最可靠的（和最复杂的）碰撞检测技术之一。分离轴定理是将光线从两个不同的角度照射到两个多边形上的数学描述，如 图 4 中所示。如果多边形背后的墙上的影子露出空隙，那么多边形没有发生碰撞。</p>
+<p>图 4. 分离轴定理
+<img src="https://janrone.allone.top/images/post/2018/sat.jpg" alt=""></p>
+<p>该图演示了使用分离轴定理的碰撞检测的原理
+本文不会进一步介绍光线投射或分离轴定理。您可以在 Core HTML5 Canvas（Prentice Hall，2012 年）中查阅每种方法的深入讨论。（请参阅 参考资料，获取相关链接。）</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        <script src="https://utteranc.es/client.js"
+    repo= "luizdepra/luizdepra.com"
+    issue-term="pathname"
+    
+    theme="github-dark"
+    crossorigin="anonymous"
+    async>
+  </script>
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+      
+        ©
+        
+          2012 -
+        
+        2021
+         Janrone 
+      
+      
+         · 
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+    </section>
+  </footer>
+
+
+    </main>
+
+    
+      
+      <script src="https://janrone.allone.top/js/coder.min.03b17769f4f91ae35667e1f2a1ca8c16f50562576cf90ff32b3179926914daa5.js" integrity="sha256-A7F3afT5GuNWZ&#43;HyocqMFvUFYlds&#43;Q/zKzF5kmkU2qU="></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <script data-goatcounter="https://janrone.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+
+    
+
+    
+
+    
+  </body>
+
+</html>
