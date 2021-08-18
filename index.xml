@@ -13,7 +13,10 @@
       <pubDate>Sat, 14 Aug 2021 16:03:26 +0800</pubDate>
       
       <guid>https://janrone.allone.top/about/</guid>
-      <description></description>
+      <description>一些对自己和看到我博客人说的话：    做自己。 投资自己。 价值投资。
+不做空！ 珍爱生命，远离杠杆！
+温饱解决了，起码有点小追求小梦想啥的！ 保持好奇心！即使你因为此吃过亏。你可以停止好奇，但我认为那样的你已经死掉了。 要敢于想象，有想象力！
+所有资产，如果都可以变成数字的，那就太酷了。</description>
     </item>
     
     <item>
@@ -22,9 +25,17 @@
       <pubDate>Sat, 14 Aug 2021 01:10:33 +0800</pubDate>
       
       <guid>https://janrone.allone.top/posts/rebuild_blog_three_yeas_pass/</guid>
-      <description>互联网    从最早的折腾octopress到hexo再到hugo，一眨眼已经有小十年了。这十年国内互联网飞速发展再到现在如此内卷，几大互联网巨头更是依仗自己的优势压榨用户。 以至于国家都出手打压各大巨头，先是阿里被罚，然后又是腾讯，美团。
-自动部署Hugo到github page
-https://tianhui.xin/blog/2019/11/17/hugousegithubactionstopages/</description>
+      <description>互联网    从最早的折腾octopress到hexo再到hugo，一眨眼已经有小十年了。 这十年国内互联网飞速发展再到现在如此内卷，几大互联网巨头更是依仗自己的优势压榨用户。 以至于国家都出手打压各大巨头，先是阿里被罚，然后又是腾讯，美团。
+大厂不知道什么时候流行起来996风气。不少95，甚至00都失去了应该有的个性。加入了内卷的队伍。
+移动互联网起步到热火朝天再到现在内卷，基本没有创新，只是在做些替代传统的工作。
+最早看好的APP，有Keep ，雪球。
+还有就是加密货币的出现简直就是造富运动，经历一波大牛市。一堆人一夜暴富，当然炒币的人也有丢了小命的。
+A股2015也经历一波大牛市。
+短视频的诞生，抖音，快手已经毒入人心，上至80岁的耄耋老者，下至蹒跚学步的孩童都会抱着手机上划。
+美团从千团大战活了下来，搞起了送外卖的行当。
+我的博客进化史    1，怎么在github 搭建 Octopress
+2，利用Daocloud持续部署Hexo
+3，自动部署Hugo到github page https://tianhui.xin/blog/2019/11/17/hugousegithubactionstopages/</description>
     </item>
     
     <item>
