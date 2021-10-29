@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://janrone.allone.top/</loc>
+    <lastmod>2021-08-18T21:34:26+08:00</lastmod>
+  </url><url>
     <loc>https://janrone.allone.top/now/</loc>
+    <lastmod>2021-08-18T21:34:26+08:00</lastmod>
+  </url><url>
+    <loc>https://janrone.allone.top/weekly/now/</loc>
+    <lastmod>2021-08-18T21:34:26+08:00</lastmod>
+  </url><url>
+    <loc>https://janrone.allone.top/weekly/</loc>
     <lastmod>2021-08-18T21:34:26+08:00</lastmod>
   </url><url>
     <loc>https://janrone.allone.top/about/</loc>
     <lastmod>2021-08-14T16:03:26+08:00</lastmod>
   </url><url>
     <loc>https://janrone.allone.top/categories/</loc>
-    <lastmod>2021-08-14T01:10:33+08:00</lastmod>
-  </url><url>
-    <loc>https://janrone.allone.top/</loc>
     <lastmod>2021-08-14T01:10:33+08:00</lastmod>
   </url><url>
     <loc>https://janrone.allone.top/posts/</loc>
