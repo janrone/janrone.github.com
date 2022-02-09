@@ -456,5 +456,14 @@ public class FileService {
 textAppearanceButton/ textAppearanceInverse/ textAppearanceLarge/ textAppearanceLargeInverse/ textAppearanceMedium/ textAppearanceMediumInverse/ textAppearanceSmall/ textAppearanceSmallInverse  textView.getPaint().setFlags(Paint. UNDERLINE_TEXT_FLAG ); //下划线 textView.getPaint().setAntiAlias(true);//抗锯齿 textview.getPaint().setFlags(Paint. STRIKE_THRU_TEXT_FLAG); //中划线 setFlags(Paint. STRIKE_THRU_TEXT_FLAG|Paint.ANTI_ALIAS_FLAG); // 设置中划线并加清晰 textView.getPaint().setFlags(0); // 取消设置的的划线  </description>
     </item>
     
+    <item>
+      <title></title>
+      <link>https://janrone.allone.top/tools/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://janrone.allone.top/tools/</guid>
+      <description>我的工具收集箱    反向词典——清华大学开源的 https://wantwords.thunlp.org/</description>
+    </item>
+    
   </channel>
 </rss>
