@@ -6,7 +6,27 @@
     <description>Recent content on Janrone‘s Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 11 Mar 2022 21:47:26 +0800</lastBuildDate><atom:link href="https://janrone.allone.top/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 14 Apr 2022 14:34:26 +0800</lastBuildDate><atom:link href="https://janrone.allone.top/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>独白录</title>
+      <link>https://janrone.allone.top/projects/%E7%8B%AC%E7%99%BD%E5%BD%95/</link>
+      <pubDate>Thu, 14 Apr 2022 14:34:26 +0800</pubDate>
+      
+      <guid>https://janrone.allone.top/projects/%E7%8B%AC%E7%99%BD%E5%BD%95/</guid>
+      <description>独白    独白-造了一个给自己念念碎的小程序。
+现在大家朋友圈大多都是三天可见。 我也不想发，有些话只想发给自，留给以后看。
+可以记录每天自己的心情感悟啥的， 封闭式的，只能自己看。
+其实我开始设计的不想要图片，所以限制了一张图片。
+后续打算限制每天只能发一条数据。
+就这样！
+功能完善中，大家可以扫码体验。欢迎反馈！
+或者微信搜索 独白录 小程序
+Timeline    2022.04.15    v0.9.9 新增删除功能； 新增了feed列表； 添加客服入口；
+2022.04.14    v0.9.8 修复无法发送独白的问题； 优化了发布体验； 这个版本的bug是竟然无法发布独白，😅 。
+2022.04.14    v0.9.7 修改个签无法保存的问题； 加入天数避免为0；
+2022.04.13    v0.8.9 beta version 发布第一个版本。完成基本功能！</description>
+    </item>
+    
     <item>
       <title>周报005|娱乐至死，无声无息</title>
       <link>https://janrone.allone.top/weekly/%E5%91%A8%E6%8A%A5005-%E5%A8%B1%E4%B9%90%E8%87%B3%E6%AD%BB%E6%97%A0%E5%A3%B0%E6%97%A0%E6%81%AF/</link>
