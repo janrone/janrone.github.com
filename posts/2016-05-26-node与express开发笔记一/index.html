@@ -327,7 +327,7 @@ console.log('Server started on localhost:3000; press Ctrl-C to terminate');
 &lt;% code %&gt;：运行 JavaScript 代码，不输出
 &lt;%= code %&gt;：显示转义后的 HTML内容
 &lt;%- code %&gt;：显示原始 HTML 内容
-注意：&lt;%= code %&gt; 和 &lt;%- code %&gt; 都可以是 JavaScript 表达式生成的字符串，当变量 code 为普通字符串时，两者没有区别。当 code 比如为 <!-- raw HTML omitted -->hello<!-- raw HTML omitted --> 这种字符串时，&lt;%= code %&gt; 会原样输出 <!-- raw HTML omitted -->hello<!-- raw HTML omitted -->，而 &lt;%- code %&gt; 则会显示 H1 大的 hello 字符串。</p>
+注意：&lt;%= code %&gt; 和 &lt;%- code %&gt; 都可以是 JavaScript 表达式生成的字符串，当变量 code 为普通字符串时，两者没有区别。当 code 比如为 <h1>hello</h1> 这种字符串时，&lt;%= code %&gt; 会原样输出 <h1>hello</h1>，而 &lt;%- code %&gt; 则会显示 H1 大的 hello 字符串。</p>
 
       </div>
 
