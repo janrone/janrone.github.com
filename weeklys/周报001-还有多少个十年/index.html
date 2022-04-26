@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta name="referrer" content="no-referrer"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="color-scheme" content="light dark">
+
+    
+
+    <meta name="author" content="Janrone">
+    <meta name="description" content="我的周报：记录一周阅读和学习主要内容，以及工作和生活中的感悟！
+ 千里之行，始于足下！
+ 公众号注册也有很久了，之前主要记录了投资相关的内容，日更真的做不到，主要是内容输出对我来说着实困难，也不想一些废话！哈哈。
+周报的想法（也有受老胡的周刊的启发）已经有很久，一直没有写拖到现在。
+还有多少个十年 沈宁 - 还有多少个十年(励志版2019)
+写文章之前刚听到这歌，感觉不错，大家可以边听边看，周到吧，嘿嘿！
+一个有意思工具 反相词典    https://wantwords.thunlp.org/。
+https://wantwords.net/
+普通的词典告诉你某个词语的定义，而反向词典恰好相反，可以告诉你哪些词语符合你输入描述的意思。下图为万词王在线反向词典的页面截图，其中演示了反向查词的一个示例，输入“山非常高”，系统将返回一系列模型认为表达“山非常高”意思的词语，例如“高峻”、“巍峨”等。
+Free Solo 纪录片 徒手攀岩大神Alex    一个字牛皮，没有之一！因为是一个人徒手没有任何辅助工具。失误就是粉身碎骨，不成功便成仁！
+耸立于美国约塞米蒂国家公园内的酋长岩（El Capitan）是攀爬爱好者心目中的圣地和“宇宙中心”。这块完整的花岗岩以陡峭和凶险著称，几乎90度的立面，光滑无比，高916米，有号称全球最硬核的攀爬路线。
+2014年，美国专业攀登者Tommy Caldwell在花了2年时间研究考察后，完成了酋长岩东南面（southeast face）的线路Dawn Wall Free的首次自由攀登。全程一共32个绳距，最高难度5.14C，762米，耗时19天。汤米哥吃喝拉撒都在岩壁上，他和同伴一起，用绳子保护，把整个线路分成多个小段进行，逐一攻破。
+Tommy的成绩已经非常惊人了。然而2017 年 6 月 3 日，一位惊天地泣鬼神的超人，美国人亚历克斯霍诺德 ( Alex Honnold )在没有任何保护、没有攀爬伴侣的情况下徒手攀爬约 4 小时，成为全宇宙首位Free Solo（徒手攀登）酋长岩的人。
+Alex徒手攀登的线路名称是 Freerider Route，位于酋长岩西南面，高度1005.84米，最高难度5.13a。注意， Tommy用的是Free Climb模式，而Alex Honnold用的是Free Solo方式。这两个英文虽然相似，性质却天差地别。
+“Free Solo”这个词由两部分组成，Free是指Free of Aid，即没有任何工具辅助，Solo的意思是指独自一人。Alex在Free Solo攀登酋长岩的时候没有任何伙伴，也没有任何辅助他攀爬的工具，比如绳子和其他“硬件”（piton, nuts, cams）。通常这些工具能帮助攀岩者更好地粘附在岩壁上。Alex全程只穿着攀岩鞋，背了一只粉袋，里面的粉用来涂抹双手增强摩擦力。
+这些年来，Alex被问最多的一个问题是：难道你不怕死吗？你不害怕掉下来吗？毕竟过去40年，只有十几个人做过Free Solo攀爬，其中一半的人都死了。
+我最好奇的点，是Alex如何克服恐惧，他又如何看待风险。因为哪怕是一阵风吹来，或者是脚底一打滑，有几只鸟飞过，或者他打了个喷嚏，稍有闪失，都会落入万丈深渊。他不怕死吗？为什么一定要去Free Solo？为什么故意将自己暴露在无限的危险之下？他究竟是什么样的怪物？ 对于人们的疑惑，Alex的回答是那么朴素：山在那，不去爬，我永远不会满足。
+“谁都能活得舒服快活，但如果人人都追求舒适快活，世界就无法进步。你知道，吃得苦中苦，方为人上人。在我看来，生命之意义在于奋勇当先，至于个中原因，倒不见得多么重要，这就是你的人生道路，你要好好走下去。你直面恐惧，只因这是实现目标的必然要求。这就是他妈的勇士精神。”
+电影 误杀2 值得一看    医院外的围观群众，为何知道林日朗劫持事件的缘由后都支持林日朗。">
+    <meta name="keywords" content="blog,developer,personal,software,python,c&#43;&#43;,go,rust,android,ios">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="周报001|还有多少个十年"/>
+<meta name="twitter:description" content="我的周报：记录一周阅读和学习主要内容，以及工作和生活中的感悟！
+ 千里之行，始于足下！
+ 公众号注册也有很久了，之前主要记录了投资相关的内容，日更真的做不到，主要是内容输出对我来说着实困难，也不想一些废话！哈哈。
+周报的想法（也有受老胡的周刊的启发）已经有很久，一直没有写拖到现在。
+还有多少个十年 沈宁 - 还有多少个十年(励志版2019)
+写文章之前刚听到这歌，感觉不错，大家可以边听边看，周到吧，嘿嘿！
+一个有意思工具 反相词典    https://wantwords.thunlp.org/。
+https://wantwords.net/
+普通的词典告诉你某个词语的定义，而反向词典恰好相反，可以告诉你哪些词语符合你输入描述的意思。下图为万词王在线反向词典的页面截图，其中演示了反向查词的一个示例，输入“山非常高”，系统将返回一系列模型认为表达“山非常高”意思的词语，例如“高峻”、“巍峨”等。
+Free Solo 纪录片 徒手攀岩大神Alex    一个字牛皮，没有之一！因为是一个人徒手没有任何辅助工具。失误就是粉身碎骨，不成功便成仁！
+耸立于美国约塞米蒂国家公园内的酋长岩（El Capitan）是攀爬爱好者心目中的圣地和“宇宙中心”。这块完整的花岗岩以陡峭和凶险著称，几乎90度的立面，光滑无比，高916米，有号称全球最硬核的攀爬路线。
+2014年，美国专业攀登者Tommy Caldwell在花了2年时间研究考察后，完成了酋长岩东南面（southeast face）的线路Dawn Wall Free的首次自由攀登。全程一共32个绳距，最高难度5.14C，762米，耗时19天。汤米哥吃喝拉撒都在岩壁上，他和同伴一起，用绳子保护，把整个线路分成多个小段进行，逐一攻破。
+Tommy的成绩已经非常惊人了。然而2017 年 6 月 3 日，一位惊天地泣鬼神的超人，美国人亚历克斯霍诺德 ( Alex Honnold )在没有任何保护、没有攀爬伴侣的情况下徒手攀爬约 4 小时，成为全宇宙首位Free Solo（徒手攀登）酋长岩的人。
+Alex徒手攀登的线路名称是 Freerider Route，位于酋长岩西南面，高度1005.84米，最高难度5.13a。注意， Tommy用的是Free Climb模式，而Alex Honnold用的是Free Solo方式。这两个英文虽然相似，性质却天差地别。
+“Free Solo”这个词由两部分组成，Free是指Free of Aid，即没有任何工具辅助，Solo的意思是指独自一人。Alex在Free Solo攀登酋长岩的时候没有任何伙伴，也没有任何辅助他攀爬的工具，比如绳子和其他“硬件”（piton, nuts, cams）。通常这些工具能帮助攀岩者更好地粘附在岩壁上。Alex全程只穿着攀岩鞋，背了一只粉袋，里面的粉用来涂抹双手增强摩擦力。
+这些年来，Alex被问最多的一个问题是：难道你不怕死吗？你不害怕掉下来吗？毕竟过去40年，只有十几个人做过Free Solo攀爬，其中一半的人都死了。
+我最好奇的点，是Alex如何克服恐惧，他又如何看待风险。因为哪怕是一阵风吹来，或者是脚底一打滑，有几只鸟飞过，或者他打了个喷嚏，稍有闪失，都会落入万丈深渊。他不怕死吗？为什么一定要去Free Solo？为什么故意将自己暴露在无限的危险之下？他究竟是什么样的怪物？ 对于人们的疑惑，Alex的回答是那么朴素：山在那，不去爬，我永远不会满足。
+“谁都能活得舒服快活，但如果人人都追求舒适快活，世界就无法进步。你知道，吃得苦中苦，方为人上人。在我看来，生命之意义在于奋勇当先，至于个中原因，倒不见得多么重要，这就是你的人生道路，你要好好走下去。你直面恐惧，只因这是实现目标的必然要求。这就是他妈的勇士精神。”
+电影 误杀2 值得一看    医院外的围观群众，为何知道林日朗劫持事件的缘由后都支持林日朗。"/>
+
+    <meta property="og:title" content="周报001|还有多少个十年" />
+<meta property="og:description" content="我的周报：记录一周阅读和学习主要内容，以及工作和生活中的感悟！
+ 千里之行，始于足下！
+ 公众号注册也有很久了，之前主要记录了投资相关的内容，日更真的做不到，主要是内容输出对我来说着实困难，也不想一些废话！哈哈。
+周报的想法（也有受老胡的周刊的启发）已经有很久，一直没有写拖到现在。
+还有多少个十年 沈宁 - 还有多少个十年(励志版2019)
+写文章之前刚听到这歌，感觉不错，大家可以边听边看，周到吧，嘿嘿！
+一个有意思工具 反相词典    https://wantwords.thunlp.org/。
+https://wantwords.net/
+普通的词典告诉你某个词语的定义，而反向词典恰好相反，可以告诉你哪些词语符合你输入描述的意思。下图为万词王在线反向词典的页面截图，其中演示了反向查词的一个示例，输入“山非常高”，系统将返回一系列模型认为表达“山非常高”意思的词语，例如“高峻”、“巍峨”等。
+Free Solo 纪录片 徒手攀岩大神Alex    一个字牛皮，没有之一！因为是一个人徒手没有任何辅助工具。失误就是粉身碎骨，不成功便成仁！
+耸立于美国约塞米蒂国家公园内的酋长岩（El Capitan）是攀爬爱好者心目中的圣地和“宇宙中心”。这块完整的花岗岩以陡峭和凶险著称，几乎90度的立面，光滑无比，高916米，有号称全球最硬核的攀爬路线。
+2014年，美国专业攀登者Tommy Caldwell在花了2年时间研究考察后，完成了酋长岩东南面（southeast face）的线路Dawn Wall Free的首次自由攀登。全程一共32个绳距，最高难度5.14C，762米，耗时19天。汤米哥吃喝拉撒都在岩壁上，他和同伴一起，用绳子保护，把整个线路分成多个小段进行，逐一攻破。
+Tommy的成绩已经非常惊人了。然而2017 年 6 月 3 日，一位惊天地泣鬼神的超人，美国人亚历克斯霍诺德 ( Alex Honnold )在没有任何保护、没有攀爬伴侣的情况下徒手攀爬约 4 小时，成为全宇宙首位Free Solo（徒手攀登）酋长岩的人。
+Alex徒手攀登的线路名称是 Freerider Route，位于酋长岩西南面，高度1005.84米，最高难度5.13a。注意， Tommy用的是Free Climb模式，而Alex Honnold用的是Free Solo方式。这两个英文虽然相似，性质却天差地别。
+“Free Solo”这个词由两部分组成，Free是指Free of Aid，即没有任何工具辅助，Solo的意思是指独自一人。Alex在Free Solo攀登酋长岩的时候没有任何伙伴，也没有任何辅助他攀爬的工具，比如绳子和其他“硬件”（piton, nuts, cams）。通常这些工具能帮助攀岩者更好地粘附在岩壁上。Alex全程只穿着攀岩鞋，背了一只粉袋，里面的粉用来涂抹双手增强摩擦力。
+这些年来，Alex被问最多的一个问题是：难道你不怕死吗？你不害怕掉下来吗？毕竟过去40年，只有十几个人做过Free Solo攀爬，其中一半的人都死了。
+我最好奇的点，是Alex如何克服恐惧，他又如何看待风险。因为哪怕是一阵风吹来，或者是脚底一打滑，有几只鸟飞过，或者他打了个喷嚏，稍有闪失，都会落入万丈深渊。他不怕死吗？为什么一定要去Free Solo？为什么故意将自己暴露在无限的危险之下？他究竟是什么样的怪物？ 对于人们的疑惑，Alex的回答是那么朴素：山在那，不去爬，我永远不会满足。
+“谁都能活得舒服快活，但如果人人都追求舒适快活，世界就无法进步。你知道，吃得苦中苦，方为人上人。在我看来，生命之意义在于奋勇当先，至于个中原因，倒不见得多么重要，这就是你的人生道路，你要好好走下去。你直面恐惧，只因这是实现目标的必然要求。这就是他妈的勇士精神。”
+电影 误杀2 值得一看    医院外的围观群众，为何知道林日朗劫持事件的缘由后都支持林日朗。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://janrone.allone.top/weeklys/%E5%91%A8%E6%8A%A5001-%E8%BF%98%E6%9C%89%E5%A4%9A%E5%B0%91%E4%B8%AA%E5%8D%81%E5%B9%B4/" /><meta property="article:section" content="weeklys" />
+<meta property="article:published_time" content="2022-02-12T21:34:26+08:00" />
+<meta property="article:modified_time" content="2022-02-12T21:34:26+08:00" />
+
+
+
+    <title>
+  周报001|还有多少个十年 · Janrone‘s Site
+</title>
+
+    
+      <link rel="canonical" href="https://janrone.allone.top/weeklys/%E5%91%A8%E6%8A%A5001-%E8%BF%98%E6%9C%89%E5%A4%9A%E5%B0%91%E4%B8%AA%E5%8D%81%E5%B9%B4/">
+    
+
+    <link rel="preload" href="https://janrone.allone.top/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+    
+      
+      
+      <link rel="stylesheet" href="https://janrone.allone.top/css/coder.min.34dfa7b2f5cdeb0f5302b2628f4a7a4bfe88a2431e1397ee4ec605c56ab69701.css" integrity="sha256-NN&#43;nsvXN6w9TArJij0p6S/6IokMeE5fuTsYFxWq2lwE=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://janrone.allone.top/css/coder-dark.min.aa883b9ce35a8ff4a2a5008619005175e842bb18a8a9f9cc2bbcf44dab2d91fa.css" integrity="sha256-qog7nONaj/SipQCGGQBRdehCuxioqfnMK7z0Tastkfo=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+      <link rel="stylesheet" href="https://janrone.allone.top/css/custom.css" />
+    
+      <link rel="stylesheet" href="https://janrone.allone.top/css/syntax.css" />
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://janrone.allone.top/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://janrone.allone.top/images/favicon-16x16.png" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="https://janrone.allone.top/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://janrone.allone.top/images/apple-touch-icon.png">
+
+    
+
+    <meta name="generator" content="Hugo 0.85.0" />
+  </head>
+
+  
+  
+    
+  
+  <body class="preload-transitions colorscheme-dark"
+        onload=""
+  >
+    
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+    <main class="wrapper">
+      <nav class="navigation">
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+  <section class="container">
+    <a class="navigation-title" href="https://janrone.allone.top/">
+      Janrone‘s Site
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle"> 
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://janrone.allone.top/now/">Now</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://janrone.allone.top/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://janrone.allone.top/weeklys/">Weekly</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://janrone.allone.top/projects/">Project</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://janrone.allone.top/tools/">Tools</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://janrone.allone.top/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://janrone.allone.top/weeklys/%E5%91%A8%E6%8A%A5001-%E8%BF%98%E6%9C%89%E5%A4%9A%E5%B0%91%E4%B8%AA%E5%8D%81%E5%B9%B4/">
+              周报001|还有多少个十年
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime='2022-02-12T21:34:26&#43;08:00'>
+                2022-02-12
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              One-minute read
+            </span>
+          </div>
+          
+          <div class="categories">
+  <i class="fa fa-folder" aria-hidden="true"></i>
+    <a href="https://janrone.allone.top/categories/%E5%91%A8%E6%8A%A5/">周报</a></div>
+
+          
+        </div>
+      </header>
+
+      <div>
+        
+        <p><strong>我的周报：记录一周阅读和学习主要内容，以及工作和生活中的感悟！</strong></p>
+<blockquote>
+<p>千里之行，始于足下！</p>
+</blockquote>
+<p>公众号注册也有很久了，之前主要记录了投资相关的内容，日更真的做不到，主要是内容输出对我来说着实困难，也不想一些废话！哈哈。</p>
+<p>周报的想法（也有受<a href="https://weekly.howie6879.cn/%E3%80%82" title="老胡的周刊">老胡的周刊</a>的启发）已经有很久，一直没有写拖到现在。</p>
+<p>还有多少个十年
+沈宁 - 还有多少个十年(励志版2019)</p>
+<p>写文章之前刚听到这歌，感觉不错，大家可以边听边看，周到吧，嘿嘿！</p>
+<h2 id="一个有意思工具-反相词典">
+  一个有意思工具 反相词典
+  <a class="heading-link" href="#%e4%b8%80%e4%b8%aa%e6%9c%89%e6%84%8f%e6%80%9d%e5%b7%a5%e5%85%b7-%e5%8f%8d%e7%9b%b8%e8%af%8d%e5%85%b8">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p><del><a href="https://wantwords.thunlp.org/">https://wantwords.thunlp.org/</a>。</del></p>
+<p><a href="https://wantwords.net/">https://wantwords.net/</a></p>
+<p>普通的词典告诉你某个词语的定义，而反向词典恰好相反，可以告诉你哪些词语符合你输入描述的意思。下图为万词王在线反向词典的页面截图，其中演示了反向查词的一个示例，输入“山非常高”，系统将返回一系列模型认为表达“山非常高”意思的词语，例如“高峻”、“巍峨”等。</p>
+<p><img src="https://files.mdnice.com/user/8292/179db4d0-0187-4cdc-a731-cd2208922d06.png" alt=""></p>
+<h2 id="free-solo-纪录片-徒手攀岩大神alex">
+  Free Solo 纪录片 徒手攀岩大神Alex
+  <a class="heading-link" href="#free-solo-%e7%ba%aa%e5%bd%95%e7%89%87-%e5%be%92%e6%89%8b%e6%94%80%e5%b2%a9%e5%a4%a7%e7%a5%9ealex">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>一个字牛皮，没有之一！因为是一个人徒手没有任何辅助工具。失误就是粉身碎骨，不成功便成仁！</p>
+<p><img src="https://files.mdnice.com/user/8292/21cdf8bf-37fa-4bd7-abbc-7b2a58c05a0e.png" alt="酋长岩（El Capitan）"></p>
+<p>耸立于美国约塞米蒂国家公园内的酋长岩（El Capitan）是攀爬爱好者心目中的圣地和“宇宙中心”。这块完整的花岗岩以陡峭和凶险著称，几乎90度的立面，光滑无比，高916米，有号称全球最硬核的攀爬路线。</p>
+<p><img src="https://files.mdnice.com/user/8292/64ebdeca-8d29-476c-82d4-14463cd55e62.png" alt=""></p>
+<p>2014年，美国专业攀登者Tommy Caldwell在花了2年时间研究考察后，完成了酋长岩东南面（southeast face）的线路Dawn Wall Free的首次自由攀登。全程一共32个绳距，最高难度5.14C，762米，耗时19天。汤米哥吃喝拉撒都在岩壁上，他和同伴一起，用绳子保护，把整个线路分成多个小段进行，逐一攻破。</p>
+<p>Tommy的成绩已经非常惊人了。然而2017 年 6 月 3 日，一位惊天地泣鬼神的超人，美国人亚历克斯霍诺德 ( Alex Honnold )在没有任何保护、没有攀爬伴侣的情况下徒手攀爬约 4 小时，成为全宇宙首位Free Solo（徒手攀登）酋长岩的人。</p>
+<p>Alex徒手攀登的线路名称是 Freerider Route，位于酋长岩西南面，高度1005.84米，最高难度5.13a。注意， Tommy用的是Free Climb模式，而Alex Honnold用的是Free Solo方式。这两个英文虽然相似，性质却天差地别。</p>
+<p>“Free Solo”这个词由两部分组成，Free是指Free of Aid，即没有任何工具辅助，Solo的意思是指独自一人。Alex在Free Solo攀登酋长岩的时候没有任何伙伴，也没有任何辅助他攀爬的工具，比如绳子和其他“硬件”（piton, nuts, cams）。通常这些工具能帮助攀岩者更好地粘附在岩壁上。Alex全程只穿着攀岩鞋，背了一只粉袋，里面的粉用来涂抹双手增强摩擦力。</p>
+<p><img src="https://files.mdnice.com/user/8292/cda5f492-d273-433f-bb81-ba58c4b40070.png" alt=""></p>
+<p><img src="https://files.mdnice.com/user/8292/e6aab782-0379-489d-9304-152d5c15b42b.png" alt=""></p>
+<p>这些年来，Alex被问最多的一个问题是：难道你不怕死吗？你不害怕掉下来吗？<strong>毕竟过去40年，只有十几个人做过Free Solo攀爬，其中一半的人都死了。</strong></p>
+<p>我最好奇的点，是Alex如何克服恐惧，他又如何看待风险。因为哪怕是一阵风吹来，或者是脚底一打滑，有几只鸟飞过，或者他打了个喷嚏，稍有闪失，都会落入万丈深渊。他不怕死吗？为什么一定要去Free Solo？为什么故意将自己暴露在无限的危险之下？他究竟是什么样的怪物？
+对于人们的疑惑，Alex的回答是那么朴素：山在那，不去爬，我永远不会满足。</p>
+<p>“谁都能活得舒服快活，但如果人人都追求舒适快活，世界就无法进步。你知道，吃得苦中苦，方为人上人。在我看来，生命之意义在于奋勇当先，至于个中原因，倒不见得多么重要，这就是你的人生道路，你要好好走下去。你直面恐惧，只因这是实现目标的必然要求。这就是他妈的勇士精神。”</p>
+<h2 id="电影-误杀2-值得一看">
+  电影 误杀2 值得一看
+  <a class="heading-link" href="#%e7%94%b5%e5%bd%b1-%e8%af%af%e6%9d%802-%e5%80%bc%e5%be%97%e4%b8%80%e7%9c%8b">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p><img src="https://files.mdnice.com/user/8292/3e54cbec-cd67-474f-8610-e561525783c8.png" alt=""></p>
+<p>医院外的围观群众，为何知道林日朗劫持事件的缘由后都支持林日朗。</p>
+<p>他们支持的是林日朗吗？不，他们支持的是他们自己。</p>
+<p>因为“今天的事情发生在林日朗身上，明天就能发生在千千万万我们的身上。”</p>
+<p>我们可以为了生活忍气吞声，可以接受卑微的活着，但是他们不能像虫子一样把我们随意踩死！</p>
+<p>大人物破坏规则的后果就是，小人物的生存资源被占用。</p>
+<p>林日朗说：“为什么赢的总是你们？”</p>
+<p>是啊，为什么赢的总是你们呢？我们也不想与你们争，只是想维护本该是我们的东西。</p>
+<h2 id="铿锵玫瑰-中国女足">
+  铿锵玫瑰 中国女足
+  <a class="heading-link" href="#%e9%93%bf%e9%94%b5%e7%8e%ab%e7%91%b0-%e4%b8%ad%e5%9b%bd%e5%a5%b3%e8%b6%b3">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p><img src="https://files.mdnice.com/user/8292/e647cf8e-d880-49bd-b832-352b6aedf389.png" alt=""></p>
+<p>早饭看新闻，看到她们进球的时刻眼睛都模糊了！</p>
+<p>谁说我不爱国，没有民族荣誉感。我只是对无作为的当权者嗤之以鼻，失望至极！</p>
+<h2 id="胡言乱语">
+  胡言乱语
+  <a class="heading-link" href="#%e8%83%a1%e8%a8%80%e4%b9%b1%e8%af%ad">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<ul>
+<li>投资者的未来  一本书粉碎了传统理念，为那些力图在长期成为赢家的投资者提供了一个选择股票的框架。</li>
+</ul>
+<p>在畅销书《彼得·林奇的成功投资》一书中林奇提出了一种简单的股票选择策略。他引导读者“长期增长率……加上股利率……再除以市盈率……小于1的结果很糟糕，1.5差强人意，不过你真正应该寻找的是那些结果大于或等于2的股票”。</p>
+<p>其他人也提出过类似的方法，并将其命名为“合理价格成长投资策略”。该方法需要计算股票的PEG比率，即市盈率/利润增长率。如果把股利率加到分母上，那么PEG比率实际上就是林奇提出的比率的倒数。PEG比率越低，这家公司的股票价格相对于其利润增长率就越有吸引力。仿照林奇的标准，PEG比率必须小于1，最好小于等于0.5。</p>
+<ul>
+<li>
+<p>Show Your Work 一本介绍如何做自媒体的书</p>
+<p>作者说他会经常读 obituary（讣告）调整心态，从别人的生平故事中获得力量。这里我推荐《经济学人》出版的 Book of Obituaries，《读库》最近也出版了它的中文版本。</p>
+</li>
+<li>
+<p>“丰县生育八孩女子“ 事件。官方几度发打脸通过。丢人！
+<img src="https://files.mdnice.com/user/8292/368d9f08-322a-4f3c-b9e3-dcb70f87fec5.png" alt=""></p>
+</li>
+<li>
+<p>她有美国的国籍和中国的永居[二哈][二哈][二哈] ,很励志 ！ #2022冬奥#</p>
+</li>
+</ul>
+<p>在冬奥会自由式滑雪女子大跳台决赛中，谷爱凌在前两跳只是排名第三的情况下，选择最后一跳冲击极限动作，并以无所畏惧的勇气与自信，完成了此前从未成功过的偏轴空翻转体1620，最终凭借此逆天一跳，以总分188.25分的出色成绩，夺得个人首枚奥运金牌！</p>
+<p><img src="https://files.mdnice.com/user/8292/45b78cd3-928c-4209-bef2-45f126cf4983.png" alt=""></p>
+<ul>
+<li>论卷我就没赢过😭fuck</li>
+<li>其实我都打听好了，老了失业了我就去打扫厕所🚽 ​​​</li>
+<li>现在特别讨厌不节制的胖子</li>
+<li>把时间用在你最终不会引以为豪的东西上面，是一件可怕的事情，浪费了你在地球上的短暂旅程。</li>
+<li>中国男足真的是耻辱！</li>
+</ul>
+<h2 id="观察与数据">
+  观察与数据
+  <a class="heading-link" href="#%e8%a7%82%e5%af%9f%e4%b8%8e%e6%95%b0%e6%8d%ae">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<ul>
+<li>微软宣布收购暴雪后，微软CEO Satya Nadella在接受采访时表示，<strong>元宇宙</strong>本质上是在创造游戏，它可以把人、地方和事物放入物理引擎，然后相互关联。</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/8292/6bc62bde-2c78-449a-94b7-174440439d8d.jpg" alt=""></p>
+<ul>
+<li>AI战胜人类三冠王，索尼把赛车游戏发上Nature封面</li>
+</ul>
+<p><img src="https://files.mdnice.com/user/8292/63931aa5-5762-4d49-8ff4-926b20d8e818.png" alt=""></p>
+<p>一只来自索尼的AI，名叫GT Sophy。GT Sophy也是世界上首个在此类需要持续判断和高速反应的赛车游戏中，战胜人类冠军的AI。</p>
+<p>　　斯坦福汽车研究中心联合主任Chris Gerdes教授就对此表示：GT Sophy在比赛中如此熟练地超越人类驾驶员，这对于人工智能而言是一项里程碑式的进步。</p>
+<p><img src="https://files.mdnice.com/user/8292/29d31b84-c189-4ef4-aff3-8bc2656e421e.jpg" alt=""></p>
+<hr>
+<p>感谢你阅读到这里！如果你觉得内容还不错，可以帮忙<strong>转发分享留言</strong>，让更多人看到！也欢迎找我<strong>沟通交流！</strong></p>
+<p><strong>祝大家周末愉快！再次感谢！</strong></p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        <script src="https://utteranc.es/client.js"
+    repo= "luizdepra/luizdepra.com"
+    issue-term="pathname"
+    
+    theme="github-dark"
+    crossorigin="anonymous"
+    async>
+  </script>
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      
+<footer class="footer">
+  <section class="container">
+    
+    
+    ©
+    
+    2012 -
+    
+    2022
+     Janrone 
+    
+    
+     · 
+    Powered by <a href="https://gohugo.io/">Hugo</a> & <a
+      href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+    
+    <p><span id="busuanzi_container_site_uv">
+        本站访客数<span id="busuanzi_value_site_uv"></span>人次
+      </span></p>
+  </section>
+</footer>
+
+
+  
+
+    </main>
+
+    
+      
+      <script src="https://janrone.allone.top/js/coder.min.03b17769f4f91ae35667e1f2a1ca8c16f50562576cf90ff32b3179926914daa5.js" integrity="sha256-A7F3afT5GuNWZ&#43;HyocqMFvUFYlds&#43;Q/zKzF5kmkU2qU="></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <script data-goatcounter="https://janrone.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+
+    
+
+    
+
+    
+  </body>
+
+</html>
