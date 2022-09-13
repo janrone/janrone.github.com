@@ -3,16 +3,25 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://janrone.allone.top/categories/</loc>
-    <lastmod>2022-07-24T18:19:57+08:00</lastmod>
+    <lastmod>2022-09-05T18:19:57+08:00</lastmod>
   </url><url>
     <loc>https://janrone.allone.top/</loc>
-    <lastmod>2022-07-24T18:19:57+08:00</lastmod>
+    <lastmod>2022-09-05T18:19:57+08:00</lastmod>
   </url><url>
     <loc>https://janrone.allone.top/weeklys/</loc>
-    <lastmod>2022-07-24T18:19:57+08:00</lastmod>
+    <lastmod>2022-09-05T18:19:57+08:00</lastmod>
   </url><url>
     <loc>https://janrone.allone.top/categories/%E5%91%A8%E6%8A%A5/</loc>
-    <lastmod>2022-07-24T18:19:57+08:00</lastmod>
+    <lastmod>2022-09-05T18:19:57+08:00</lastmod>
+  </url><url>
+    <loc>https://janrone.allone.top/weeklys/%E5%91%A8%E6%8A%A5030-%E6%B5%B7%E4%B8%8D%E8%BE%9E%E7%9B%88%E6%96%B9%E6%9C%89%E5%85%B6%E9%98%94/</loc>
+    <lastmod>2022-09-05T18:19:57+08:00</lastmod>
+  </url><url>
+    <loc>https://janrone.allone.top/weeklys/%E5%91%A8%E6%8A%A5031-%E5%A4%A9%E6%B6%AF%E6%AD%A4%E6%97%B6%E9%81%A5%E5%AF%84%E6%80%9D%E5%BF%B5/</loc>
+    <lastmod>2022-09-05T18:19:57+08:00</lastmod>
+  </url><url>
+    <loc>https://janrone.allone.top/weeklys/%E5%91%A8%E6%8A%A5029-%E5%B1%B1%E4%B8%8D%E8%AE%A9%E5%B0%98%E4%B9%83%E6%9C%89%E5%85%B6%E9%AB%98/</loc>
+    <lastmod>2022-08-28T18:19:57+08:00</lastmod>
   </url><url>
     <loc>https://janrone.allone.top/weeklys/%E5%91%A8%E6%8A%A5024-%E5%A5%BD%E4%BA%8B%E5%A4%9A%E7%A3%A8%E5%8B%A4%E5%AD%A6%E5%85%BB%E5%BE%B7/</loc>
     <lastmod>2022-07-24T18:19:57+08:00</lastmod>
@@ -253,6 +262,9 @@
   </url><url>
     <loc>https://janrone.allone.top/posts/2015-12-29-textview-%E8%AE%BE%E7%BD%AE%E4%B8%AD%E5%88%92%E7%BA%BF%E4%B8%8B%E5%88%92%E7%BA%BF/</loc>
     <lastmod>2012-07-25T15:25:15+08:00</lastmod>
+  </url><url>
+    <loc>https://janrone.allone.top/todo/</loc>
+    <priority>0</priority>
   </url><url>
     <loc>https://janrone.allone.top/tools/</loc>
     <priority>0</priority>
