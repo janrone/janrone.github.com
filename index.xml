@@ -795,7 +795,8 @@ Alex徒手攀登的线路名称是 Freerider Route，位于酋长岩西南面，
       <guid>https://janrone.allone.top/now/</guid>
       <description>再见过去，已至当下！    生活    享受与家人相处的美好时光！
 没有什么问题是睡一觉解决不了的，如果没解决，那就再睡一觉！
-工作    在一家小公司做Android开发，农业相关的项目。</description>
+工作    在一家小公司做 Android 开发，农业相关的项目。 （2024.2.18 结束）
+目前待业中，need a job ，欢迎给位勾搭。</description>
     </item>
     
     <item>
@@ -846,9 +847,15 @@ Alex徒手攀登的线路名称是 Freerider Route，位于酋长岩西南面，
 A股2015也经历一波大牛市。
 短视频的诞生，抖音，快手已经毒入人心，上至80岁的耄耋老者，下至蹒跚学步的孩童都会抱着手机上划。
 美团从千团大战活了下来，搞起了送外卖的行当。
-我的博客进化史    1，怎么在github 搭建 Octopress
-2，利用Daocloud持续部署Hexo
-3，自动部署Hugo到github page https://tianhui.xin/blog/2019/11/17/hugousegithubactionstopages/</description>
+我的博客进化史    1，怎么在 GitHub 搭建 Octopress
+2，利用 Daocloud 持续部署 Hexo
+3，自动部署 Hugo 到 GitHub Page
+https://tianhui.xin/blog/2019/11/17/hugousegithubactionstopages/
+4，直接在 Vercel 上部署 Hugo，再用 Cloudflare 解析域名，丝滑
+有段时间发现发现 GitHub Page 抽风，果断更新到了 Vercel
+https://vercel.com/ https://www.cloudflare.com/
+更新于：2024.3.23
+ </description>
     </item>
     
     <item>
